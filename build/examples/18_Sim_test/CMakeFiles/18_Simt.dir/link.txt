@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/18_Simt.dir/Simt_18.cu.o -o 18_Simt   -L/usr/local/cuda-10.2/lib64/stubs  -Wl,-rpath,/usr/local/cuda-10.2/lib64/stubs:/usr/local/cuda-10.2/lib64: /usr/local/cuda-10.2/lib64/libcudart.so -Wl,-rpath,'$ORIGIN' -Wl,-rpath,'$ORIGIN/../lib64' -Wl,-rpath,'$ORIGIN/../lib' -Wl,-rpath,'/usr/local/cuda-10.2/lib64' -Wl,-rpath,'/usr/local/cuda-10.2/lib' 
