@@ -47,7 +47,8 @@ void Kernel(typename Operator::Params params) {
       reinterpret_cast<typename Operator::SharedStorage *>(SharedStorageBase);
 
   Operator op;
-
+  // It is used in the current example (Comment added by Javi Fdez)
+  //printf("Arrive to device_kernel");
   op(params, *shared_storage);
 }
 

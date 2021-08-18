@@ -188,7 +188,7 @@ public:
     //
     // Prologue
     //
-
+   //printf("Gemm_k_iterations:%i\n",gemm_k_iterations);
     // Perform accumulation in the 'd' output operand
     accum = src_accum;
 
@@ -239,20 +239,22 @@ public:
     // Issue loads during the first warp-level matrix multiply-add *AFTER* issuing 
     // shared memory loads (which have the tighest latency requirement).
 
-    //
-    // Mainloop
-    //
+    // =================================================
+    //                Mainloop
+    // =================================================
 
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
     CUTLASS_GEMM_LOOP
     for (; gemm_k_iterations > 0; --gemm_k_iterations) {
-      //
-      // Loop over GEMM K dimension
-      //
-
+      // ================================
+      //    Loop over GEMM K dimension
+      // ================================
+    
       CUTLASS_PRAGMA_UNROLL
       for (int warp_mma_k = 0; warp_mma_k < Base::kWarpGemmIterations; ++warp_mma_k) {
-
+        // Added by JFdez
+        //printf("Gemm_k_iterations= %d \t Warp_mma_k=%d\n",gemm_k_iterations, warp_mma_k); 
+        
         // Load warp-level tiles from shared memory, wrapping to k offset if this is the last group
         // as the case may be.
 
@@ -307,9 +309,15 @@ public:
             iterator_B.clear_mask();
           }
         }
-
+    // It is used in the current example (Comment added by Javi Fdez)
+    //printf("Arrive to mmma_pipelined");
+    // I think that here should be initialized the values of ES. This info is shared by threads 
+    // (TBD: To Check how put data in shared memory) 
+    // Experiment 1: generate here 32 execution signatures (1 ES/thread)
+         
         warp_mma(accum, warp_frag_A[warp_mma_k % 2],
                  warp_frag_B[warp_mma_k % 2], accum);
+        //printf("%u\n",ES_b[warp_mma_k]);
       }
     }
 

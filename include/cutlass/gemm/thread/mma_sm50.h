@@ -34,6 +34,8 @@
 #include "cutlass/arch/mma.h"
 #include "cutlass/gemm/gemm.h"
 #include "cutlass/gemm/thread/mma.h"
+//included by JFDEZ
+#include "cutlass/gemm/threadblock/mma_pipelined.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -116,7 +118,8 @@ struct MmaGeneric {
     FragmentC & D,
     FragmentA const & A,
     FragmentB const & B,
-    FragmentC const & C) {
+    FragmentC const & C,
+    uint32_t ES_b_thread) {
 
     TensorRef<ElementA const, LayoutA> a_ref(
       reinterpret_cast<ElementA const *>(&A), LayoutA::packed({Shape::kM, Shape::kK}));
@@ -131,7 +134,12 @@ struct MmaGeneric {
 
     // Copy accumulators
     D = C;
-
+    // Added by JFdez
+    //printf("Shape::kM= %i \tShape::kN= %i \tShape::kk= %i \t",Shape::kM,Shape::kN,Shape::kK);
+    
+    //included by JFdez
+    //uint32_t ES_a = 0;
+   
     // Compute matrix product
     CUTLASS_PRAGMA_UNROLL
     for (int k = 0; k < Shape::kK; ++k) {
@@ -143,11 +151,13 @@ struct MmaGeneric {
         for (int m = 0; m < Shape::kM; ++m) {
 
           int m_serpentine = (n % 2) ? (Shape::kM - 1 - m) : m;
-
+          
+          
           MatrixCoord mn(m_serpentine, n);
           MatrixCoord mk(m_serpentine, k);
           MatrixCoord kn(k, n);
-
+// It is used in the current example (Comment added by Javi Fdez)
+//printf("Arrive  to mma_sm50.h");
           Array<ElementC, 1> d;
           Array<ElementA, 1> a;
           Array<ElementB, 1> b;
@@ -156,8 +166,17 @@ struct MmaGeneric {
           a[0] = a_ref.at(mk);
           b[0] = b_ref.at(kn);
 
-          mma_op(d, a, b, d);
 
+          //included by JFdez
+          //printf("kM: %d \tkN: %d \tkK:%d \t m=%d\t n=%d\t k=%d\n", Shape::kM, Shape::kN, Shape::kK,m,n,k);
+          //printf("Before:\tb[0]=%u \t b[1]: %u, \t b[2]: %u \t ES_[2]: %u\n",(uint32_t) *((uint32_t*) &b[0]),(uint32_t) *((uint32_t*) &b[1]),(uint32_t) *((uint32_t*) &b[2]), ES_b);
+          //printf("BlockDimX:%u \t BlockIdxX: %u \t ThreadIdxX:%u\n ",(uint32_t) gemm::threadblock::RematerializeBlockDimX(),(uint32_t) gemm::threadblock::RematerializeBlockIdxX(),(uint32_t) gemm::threadblock::RematerializeThreadIdxX()); 
+          ES_b_thread = mma_op(d, a, b, d, ES_b_thread);
+          //printf("After: a=%4.1f \t b=%4.1f \t d=%4.1f\n",a[0],b[0],d[0]);
+  
+          //atomicXor(&ES_b,(uint32_t) *((uint32_t*) &b[0]));
+          //printf("After: b=%lf \tES_b: %u\n",b[0],ES_b[((uint32_t) gemm::threadblock::RematerializeThreadIdxX())%32]);;
+          //printf("\t value of a: %u \tES_a: %u\n",(uint32_t) *((uint32_t*) &b[0]), ES_b);
           d_ref.at(mn) = d[0];
         }
       }
@@ -260,7 +279,8 @@ struct Mma<
       ElementC,
       LayoutC,
       Operator> mma;
-
+// It is used in the current example (Comment added by Javi Fdez)
+//printf("LLEGA a mma (diff mma_sm50");
     mma(D, A, B, C);
   }
 };

@@ -327,7 +327,8 @@ public:
 
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
-
+  // JFdez
+  printf("\n gemm.h First constructor \n");
     if (!kSplitKSerial && args.split_k_slices > 1) {
       return Status::kErrorInvalidProblem;
     }
@@ -444,6 +445,8 @@ public:
     dim3 block(GemmKernel::kThreadCount, 1, 1);
 
     cudaError_t result;
+
+
 
     int smem_size = int(sizeof(typename GemmKernel::SharedStorage));
     if (smem_size >= (48 << 10)) {
@@ -660,6 +663,8 @@ public:
 
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
+  // JFdez
+  printf("gemm.h Second constructor \n");
 
     return UnderlyingOperator::can_implement(to_underlying_arguments(args));
   }
@@ -687,6 +692,7 @@ public:
 
     return underlying_operator_.run(stream);
   }
+
 
   /// Runs the kernel using initialized state.
   Status operator()(cudaStream_t stream = nullptr) {

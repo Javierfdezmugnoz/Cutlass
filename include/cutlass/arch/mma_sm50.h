@@ -30,6 +30,8 @@
 
 #include "cutlass/arch/mma.h"
 #include "cutlass/complex.h"
+// Included by JFdez
+#include "cutlass/gemm/threadblock/threadblock_swizzle.h"
 
 #include "cutlass/layout/matrix.h"
 #include "cutlass/gemm/gemm.h"
@@ -56,18 +58,27 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
   using Operator = OpMultiplyAdd;
 
   CUTLASS_HOST_DEVICE
-  void operator()(
+  uint32_t operator()(
     Array<float, 1> &d,
     Array<float, 1> const &a,
     Array<float, 1> const &b,
-    Array<float, 1> const &c
+    Array<float, 1> const &c,
+    uint32_t ES_b
   ) {
     d[0] = a[0] * b[0] + c[0];
     // Added by JFdez
-    printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
-    uint32_t ES_a = 0, ES_b= 0, ES_c= 0;
-    ES_a = atomicXor(&ES_a,(uint32_t) a[0]);
-    printf("value of ES_a: %i\n", ES_a); 
+    atomicXor(&ES_b,((uint32_t) b[0]));
+    return ES_b;
+    // If you want to see the files using this operation uncomment the following line
+    //printf("%4.1f \t %x \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
+    
+    //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
+    //uint32_t ES_a = 0u, ES_b= 0u, ES_c= 0u;
+    //printf("\t value of b: %u \n ",(uint32_t) *((uint32_t*) &b[0])); 
+    //printf("BlockDimX:%u \t BlockIdxX: %u \t ThreadIdxX:%u\n ",(uint32_t) gemm::threadblock::RematerializeBlockDimX(),(uint32_t) gemm::threadblock::RematerializeBlockIdxX(),(uint32_t) gemm::threadblock::RematerializeThreadIdxX()); 
+    //printf("\t BlockIdxY: %u \t ThreadIdxY:%u\n ",(uint32_t) gemm::threadblock::RematerializeBlockIdxY(),(uint32_t) gemm::threadblock::RematerializeThreadIdxY()); 
+    //atomicXor(&ES_a,(uint32_t) *((uint32_t*) &b[0]));
+    //printf("\t value of b: %u \tES_a: %u\n",(uint32_t) *((uint32_t*) &b[0]), ES_a); 
   }
 };
 
@@ -94,7 +105,6 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, double, LayoutA, double, LayoutB, double
     Array<double, 1> const &b,
     Array<double, 1> const &c
   ) {
-
     d[0] = a[0] * b[0] + c[0];
   }
 };

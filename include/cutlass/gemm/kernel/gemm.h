@@ -244,6 +244,9 @@ struct Gemm {
     //
 
     // Construct thread-scoped matrix multiply
+    // It is used in the current example (Comment added by Javi Fdez)
+    //printf("Arrive to kernel");
+    printf("%d,%d,%d\n",thread_idx, warp_idx, lane_idx);
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
 
     typename Mma::FragmentC accumulators;
