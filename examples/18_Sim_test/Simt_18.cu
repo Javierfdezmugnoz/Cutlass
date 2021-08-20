@@ -81,7 +81,8 @@ cudaError_t CutlassSgemmNN(
   int ldb,
   float beta,
   float *C,
-  int ldc) {
+  int ldc,
+  float *d_ES_0) {
 
   // Define type definition for single-precision CUTLASS GEMM with column-major
   // input matrices and 128x128x8 threadblock tile size (chosen by default).
@@ -104,6 +105,9 @@ cudaError_t CutlassSgemmNN(
   // Define a CUTLASS GEMM type
   CutlassGemm gemm_operator;
 
+
+  //printf("\n Direction of h_ES_0: %p and value: %f \n", (void *) h_ES_0, h_ES_0[4]);
+
   // Construct the CUTLASS GEMM arguments object.
   //
   // One of CUTLASS's design patterns is to define gemm argument objects that are constructible
@@ -118,7 +122,10 @@ cudaError_t CutlassSgemmNN(
                               {B, ldb},    // Tensor-ref for source matrix B
                               {C, ldc},    // Tensor-ref for source matrix C
                               {C, ldc},    // Tensor-ref for destination matrix D (may be different memory than source C matrix)
-                              {alpha, beta}); // Scalars used in the Epilogue
+                              {alpha, beta},// Scalars used in the Epilogue
+                              d_ES_0);  // Pointer to d_ES_O
+
+  // Code included by JFdez: I have to include in args variable this: d_ES_0 and d_ES_1
 
   //
   // Launch the CUTLASS GEMM kernel.
@@ -162,7 +169,10 @@ __global__ void InitializeMatrix_kernel(
     int const k = 16807;
     int const m = 16;
     float value = float(((offset + seed) * k % m) - m / 2);
-
+    /*if(((offset+1)%columns)==0){
+      printf("\n");
+    }
+    printf("Matrix[%d]=%f \t",offset,value);*/
     matrix[offset] = value;
   }
 }
@@ -299,16 +309,54 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   float *C_cutlass;
   float *C_reference;
 
+  // =============================================================
+  // Author:  Javier Fdez
+  // Date:    2021/08/17
+  // Summary: In the following chunk of code are initialized in 
+  //          CPU and GPU the variables ES_0 and ES_1 in which are 
+  //          stored the Execution Signatures (1 per thread*SMP)
+  // =============================================================
+
+  // Define the number of elements of the ES 
+  uint32_t nElem_ES = 32;
+  size_t nBytes_ES = nElem_ES * sizeof(float);
+
+  // Define pointers to ES_0 and ES_1 in CPU (host)
+  float *h_ES_0;
+  float *h_ES_1;
+
+  // Allocate ES_0 y ES_1 in CPU and GPU
+  h_ES_0 = (float *) malloc(nBytes_ES);
+  h_ES_1 = (float *) malloc(nBytes_ES);
+
+  // Initialice to 0 all values of ES_0 and ES_1
+  memset(h_ES_0,0,nBytes_ES);
+  memset(h_ES_1,0,nBytes_ES);
+
+  // Define pointers to ES_0 and ES_1 in GPU (device)
+  float *d_ES_0;
+  float *d_ES_1;
+
+  // Allocate ES_0 y ES_1 in CPU and GPU
+  cudaMalloc((float **) &d_ES_0, nBytes_ES);
+  cudaMalloc((float **) &d_ES_1, nBytes_ES);
+
+  // Transfer data from host to device (first time it has no sense, it could
+  // be directly initilized in GPU, but it will not be always initially zero)
+  cudaMemcpy(d_ES_0, h_ES_0, nBytes_ES, cudaMemcpyHostToDevice);
+  cudaMemcpy(d_ES_1, h_ES_1, nBytes_ES, cudaMemcpyHostToDevice);
+
   //
   // Allocate matrices in GPU device memory with arbitrary seeds.
   //
 
+  //printf("Matrix A:\n");
   result = AllocateMatrix(&A, M, K, 0);
 
   if (result !=  cudaSuccess) {
     return result;
   }
-
+  //printf("Matrix B:\n");
   result = AllocateMatrix(&B, K, N, 17);
 
   if (result !=  cudaSuccess) {
@@ -351,7 +399,8 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   // Launch CUTLASS GEMM.
   //
 
-  result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc);
+  //result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc);
+  result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_0);
 
   if (result != cudaSuccess) {
     std::cerr << "CUTLASS GEMM kernel failed: "

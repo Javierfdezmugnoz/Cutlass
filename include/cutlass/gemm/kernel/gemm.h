@@ -77,6 +77,8 @@ struct Gemm {
     int *semaphore;
     int gemm_k_iterations;
     int gemm_k_size;
+    // JFdez
+    float *d_ES_0;
 
     //
     // Methods
@@ -94,6 +96,7 @@ struct Gemm {
       typename Epilogue::OutputTileIterator::TensorRef ref_C,
       typename Epilogue::OutputTileIterator::TensorRef ref_D,
       typename OutputOp::Params output_op = typename OutputOp::Params(),
+      float *d_ES_0_ = nullptr,
       int *workspace = nullptr
     ):
       problem_size(problem_size),
@@ -106,6 +109,7 @@ struct Gemm {
       ref_C(ref_C),
       params_D(ref_D.layout()),
       ref_D(ref_D),
+      d_ES_0(d_ES_0_),
       output_op(output_op) {
 
       int total_gemm_k_iterations = (problem_size.k() + Mma::Shape::kK - 1) / Mma::Shape::kK;
@@ -244,6 +248,9 @@ struct Gemm {
     //
 
     // Construct thread-scoped matrix multiply
+    // Comment added by Javi Fdez: It is used in the current example 
+    //printf("Arrive to kernel");
+    printf("%d,%d,%d\n",thread_idx, warp_idx, lane_idx);
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
 
     typename Mma::FragmentC accumulators;

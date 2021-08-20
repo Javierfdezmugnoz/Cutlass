@@ -64,10 +64,10 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
   ) {
     d[0] = a[0] * b[0] + c[0];
     // Added by JFdez
-    printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
+    //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
     uint32_t ES_a = 0, ES_b= 0, ES_c= 0;
     ES_a = atomicXor(&ES_a,(uint32_t) a[0]);
-    printf("value of ES_a: %i\n", ES_a); 
+    //printf("value of ES_a: %i\n", ES_a); 
   }
 };
 

@@ -281,6 +281,7 @@ class Gemm {
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
+    float *d_ES_0;
 
     //
     // Methods
@@ -288,7 +289,7 @@ class Gemm {
 
     /// Default ctor
     CUTLASS_HOST_DEVICE
-    Arguments(): problem_size(0, 0, 0), split_k_slices(1) {
+    Arguments(): problem_size(0, 0, 0), split_k_slices(1), d_ES_0(nullptr) {
 
     }
 
@@ -302,6 +303,7 @@ class Gemm {
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
+      float *d_ES_0_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -310,8 +312,9 @@ class Gemm {
       ref_C(ref_C_),
       ref_D(ref_D_),
       epilogue(epilogue_),
+      d_ES_0(d_ES_0_),
       split_k_slices(split_k_slices) {
-
+      
     }
   };
 
@@ -327,7 +330,8 @@ public:
 
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
-
+  // JFdez
+  printf("\n gemm.h First constructor \n");
     if (!kSplitKSerial && args.split_k_slices > 1) {
       return Status::kErrorInvalidProblem;
     }
@@ -410,7 +414,9 @@ public:
       args.ref_C.non_const_ref(),
       args.ref_D,
       args.epilogue,
-      static_cast<int *>(workspace)
+      // Included by JFdez
+      args.d_ES_0,
+      static_cast<int *>(workspace)      
     };
 
     return Status::kSuccess;
@@ -431,6 +437,8 @@ public:
     params_.ref_D.reset(args.ref_D.data());
     params_.output_op = args.epilogue;
     params_.semaphore = static_cast<int *>(workspace);
+    // Included by JFdez
+    params_.d_ES_0 = args.d_ES_0;
 
     return Status::kSuccess;
   }
@@ -444,6 +452,8 @@ public:
     dim3 block(GemmKernel::kThreadCount, 1, 1);
 
     cudaError_t result;
+
+
 
     int smem_size = int(sizeof(typename GemmKernel::SharedStorage));
     if (smem_size >= (48 << 10)) {
@@ -606,6 +616,7 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
+    float *d_ES_0;
 
     //
     // Methods
@@ -625,6 +636,7 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
+      float *d_ES_0_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -633,7 +645,9 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       ref_C(ref_C_),
       ref_D(ref_D_),
       epilogue(epilogue_),
-      split_k_slices(split_k_slices) { }
+      d_ES_0(d_ES_0_),
+      split_k_slices(split_k_slices){
+      }
   };
 
 private:
@@ -654,12 +668,15 @@ public:
       {args.ref_C.data(), args.ref_C.stride(0)},
       {args.ref_D.data(), args.ref_D.stride(0)},
       args.epilogue,
-      args.split_k_slices
+      args.d_ES_0,
+      args.split_k_slices      
     );
   }
 
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
+  // JFdez
+  printf("gemm.h Second constructor \n");
 
     return UnderlyingOperator::can_implement(to_underlying_arguments(args));
   }
@@ -687,6 +704,7 @@ public:
 
     return underlying_operator_.run(stream);
   }
+
 
   /// Runs the kernel using initialized state.
   Status operator()(cudaStream_t stream = nullptr) {
