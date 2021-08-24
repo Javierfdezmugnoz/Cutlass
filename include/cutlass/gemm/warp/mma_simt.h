@@ -221,7 +221,9 @@ public:
     FragmentC &d, 
     FragmentA a, 
     FragmentB b, 
-    FragmentC const &c, int group_idx = 0) const {
+    FragmentC const &c,
+    uint32_t *d_ES_0 = nullptr,
+    int group_idx = 0) const {
 
     ThreadMma mma;
 
@@ -234,8 +236,8 @@ public:
       conjugate<FragmentB> conj_b;
       b = conj_b(b);
     }
-
-    mma(d, a, b, c);
+ // Included by JFdez
+    mma(d, a, b, c, d_ES_0);
   }
 
   /// Transform the mma operands to the required types

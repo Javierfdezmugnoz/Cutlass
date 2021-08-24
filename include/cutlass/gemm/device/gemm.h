@@ -281,7 +281,7 @@ class Gemm {
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
-    float *d_ES_0;
+    uint32_t *d_ES_0;
 
     //
     // Methods
@@ -303,7 +303,7 @@ class Gemm {
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
-      float *d_ES_0_ = nullptr,
+      uint32_t *d_ES_0_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -616,7 +616,7 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
-    float *d_ES_0;
+    uint32_t *d_ES_0;
 
     //
     // Methods
@@ -636,7 +636,7 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
-      float *d_ES_0_ = nullptr,
+      uint32_t *d_ES_0_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -669,7 +669,7 @@ public:
       {args.ref_D.data(), args.ref_D.stride(0)},
       args.epilogue,
       args.d_ES_0,
-      args.split_k_slices      
+      args.split_k_slices    
     );
   }
 

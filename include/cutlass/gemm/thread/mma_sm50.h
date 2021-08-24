@@ -113,11 +113,13 @@ struct MmaGeneric {
   /// Computes a matrix product D = A * B + C
   CUTLASS_HOST_DEVICE
   void operator()(
+ // uint32_t* operator()(
     FragmentC & D,
     FragmentA const & A,
     FragmentB const & B,
-    FragmentC const & C) {
-
+    FragmentC const & C,
+    uint32_t *d_ES_0 =nullptr
+    ) {
     TensorRef<ElementA const, LayoutA> a_ref(
       reinterpret_cast<ElementA const *>(&A), LayoutA::packed({Shape::kM, Shape::kK}));
 
@@ -132,6 +134,9 @@ struct MmaGeneric {
     // Copy accumulators
     D = C;
 
+
+//uint32_t *d_ES_0;
+//*d_ES_0 = 20;
     // Compute matrix product
     CUTLASS_PRAGMA_UNROLL
     for (int k = 0; k < Shape::kK; ++k) {
@@ -155,8 +160,9 @@ struct MmaGeneric {
           d[0] = d_ref.at(mn);
           a[0] = a_ref.at(mk);
           b[0] = b_ref.at(kn);
-
-          mma_op(d, a, b, d);
+          //mma_op(d, a, b, d);
+          
+          mma_op(d, a, b, d, d_ES_0);
 
           d_ref.at(mn) = d[0];
         }
@@ -249,7 +255,8 @@ struct Mma<
     FragmentC & D,
     FragmentA const & A,
     FragmentB const & B,
-    FragmentC const & C) {
+    FragmentC const & C,
+    uint32_t *d_ES_0 =nullptr) {
 
     MmaGeneric<
       Shape,
@@ -261,7 +268,7 @@ struct Mma<
       LayoutC,
       Operator> mma;
 
-    mma(D, A, B, C);
+    mma(D, A, B, C,d_ES_0);
   }
 };
 

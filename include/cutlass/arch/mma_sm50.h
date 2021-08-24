@@ -57,17 +57,19 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
 
   CUTLASS_HOST_DEVICE
   void operator()(
+  //void operator()(
     Array<float, 1> &d,
     Array<float, 1> const &a,
     Array<float, 1> const &b,
     Array<float, 1> const &c
+    // Included by JFdez
+    ,uint32_t *ES_b = nullptr
   ) {
     d[0] = a[0] * b[0] + c[0];
     // Added by JFdez
     //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
-    uint32_t ES_a = 0, ES_b= 0, ES_c= 0;
-    ES_a = atomicXor(&ES_a,(uint32_t) a[0]);
-    //printf("value of ES_a: %i\n", ES_a); 
+    ES_b[0] =  atomicXor(&ES_b[0], (uint32_t) b[0]);
+    printf("value of ES_b: %u\n", ES_b[0]); 
   }
 };
 

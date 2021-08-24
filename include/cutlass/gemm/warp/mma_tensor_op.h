@@ -271,7 +271,8 @@ public:
     FragmentC &D, 
     TransformedFragmentA const &A, 
     TransformedFragmentB const &B, 
-    FragmentC const &C
+    FragmentC const &C,
+    uint32_t *d_ES_0 = nullptr
   ) const {
 
     using MmaOperandA = typename ArchMmaOperator::FragmentA;

@@ -82,7 +82,7 @@ cudaError_t CutlassSgemmNN(
   float beta,
   float *C,
   int ldc,
-  float *d_ES_0) {
+  uint32_t *d_ES_0) {
 
   // Define type definition for single-precision CUTLASS GEMM with column-major
   // input matrices and 128x128x8 threadblock tile size (chosen by default).
@@ -218,7 +218,8 @@ cudaError_t AllocateMatrix(float **matrix, int rows, int columns, int seed = 0) 
   }
 
   // Initialize matrix elements to arbitrary small integers.
-  result = InitializeMatrix(*matrix, rows, columns, seed);
+  // cHANGED BY Jfdez
+  // result = InitializeMatrix(*matrix, rows, columns, seed);
 
   if (result != cudaSuccess) {
     std::cerr << "Failed to initialize matrix: "
@@ -319,27 +320,27 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
   // Define the number of elements of the ES 
   uint32_t nElem_ES = 32;
-  size_t nBytes_ES = nElem_ES * sizeof(float);
+  size_t nBytes_ES = nElem_ES * sizeof(uint32_t);
 
   // Define pointers to ES_0 and ES_1 in CPU (host)
-  float *h_ES_0;
-  float *h_ES_1;
+  uint32_t *h_ES_0;
+  uint32_t *h_ES_1;
 
-  // Allocate ES_0 y ES_1 in CPU and GPU
-  h_ES_0 = (float *) malloc(nBytes_ES);
-  h_ES_1 = (float *) malloc(nBytes_ES);
+  // Allocate ES_0 y ES_1 in CPU 
+  h_ES_0 = (uint32_t *) malloc(nBytes_ES);
+  h_ES_1 = (uint32_t *) malloc(nBytes_ES);
 
   // Initialice to 0 all values of ES_0 and ES_1
-  memset(h_ES_0,0,nBytes_ES);
-  memset(h_ES_1,0,nBytes_ES);
+  memset(h_ES_0,1,nBytes_ES);
+  memset(h_ES_1,1,nBytes_ES);
 
   // Define pointers to ES_0 and ES_1 in GPU (device)
-  float *d_ES_0;
-  float *d_ES_1;
+  uint32_t *d_ES_0;
+  uint32_t *d_ES_1;
 
-  // Allocate ES_0 y ES_1 in CPU and GPU
-  cudaMalloc((float **) &d_ES_0, nBytes_ES);
-  cudaMalloc((float **) &d_ES_1, nBytes_ES);
+  // Allocate ES_0 y ES_1 in GPU
+  cudaMalloc((uint32_t **) &d_ES_0, nBytes_ES);
+  cudaMalloc((uint32_t **) &d_ES_1, nBytes_ES);
 
   // Transfer data from host to device (first time it has no sense, it could
   // be directly initilized in GPU, but it will not be always initially zero)
