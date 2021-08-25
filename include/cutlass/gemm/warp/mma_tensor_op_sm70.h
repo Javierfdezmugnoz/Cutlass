@@ -216,9 +216,9 @@ public:
     FragmentC &D, 
     FragmentA const &A, 
     FragmentB const &B, 
-    FragmentC const &C,
-    uint32_t *d_ES_0 = nullptr
+    FragmentC const &C
     )  {
+
 
     using MmaOperandA = typename ArchMmaOperator::FragmentA;
     using MmaOperandB = typename ArchMmaOperator::FragmentB;
@@ -257,8 +257,8 @@ public:
               ptr_D[op_idx],
               ptr_A[op_row],
               ptr_B[op_col],
-              ptr_D[op_idx],
-              d_ES_0);
+              ptr_D[op_idx]
+              );
 
           }
         }

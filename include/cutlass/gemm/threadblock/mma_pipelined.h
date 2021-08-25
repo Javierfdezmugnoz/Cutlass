@@ -152,7 +152,9 @@ public:
     int thread_idx,                                     ///< ID within the threadblock
     int warp_idx,                                       ///< ID of warp
     int lane_idx,                                       ///< ID of each thread within a warp
-    uint32_t *d_ES_0 = nullptr
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr
   ):
     Base(shared_storage, thread_idx, warp_idx, lane_idx),
     smem_iterator_A_(shared_storage.operand_A_ref(), thread_idx),
@@ -183,7 +185,9 @@ public:
     IteratorA iterator_A,                             ///< iterator over A operand in global memory
     IteratorB iterator_B,                             ///< iterator over B operand in global memory
     FragmentC const &src_accum,                       ///< source accumulator tile
-    uint32_t *d_ES_0 = nullptr,
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr,
     TransformA transform_A = TransformA(),            ///< transformation applied to A fragment
     TransformB transform_B = TransformB()             ///< transformation applied to B fragment
     ) {
@@ -312,7 +316,7 @@ public:
         }
 
         warp_mma(accum, warp_frag_A[warp_mma_k % 2],
-                 warp_frag_B[warp_mma_k % 2], accum, d_ES_0);
+                 warp_frag_B[warp_mma_k % 2], accum, d_ES_a, d_ES_b, d_ES_c);
       }
     }
 

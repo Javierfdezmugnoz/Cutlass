@@ -63,16 +63,20 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     Array<float, 1> &d,
     Array<float, 1> const &a,
     Array<float, 1> const &b,
-    Array<float, 1> const &c
+    Array<float, 1> const &c,
     // Included by JFdez
-    ,uint32_t *ES_b = nullptr
+    uint32_t *ES_a =nullptr,
+    uint32_t *ES_b =nullptr,
+    uint32_t *ES_c =nullptr
   ) {
-    int lane_idx = threadIdx.x % 32;
+    //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
     // ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]); // this is working
 //    printf("value of threadIdx: %i\n",lane_idx);
     
+    ES_a[0] =  atomicXor((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
     ES_b[0] =  atomicXor((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    ES_c[0] =  atomicXor((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
     //printf("Before: %4.1f \t ES_b[%i]=%u \n", b[0], lane_idx, ES_b[0]);
     // Added by JFdez
     //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);

@@ -67,13 +67,13 @@ typedef float    float32_t;
 //#include "cutlass/sequential_MMM/Smmm.h"
 
   // Definition of an struct to store th values of the Execution Signatures
-  struct ESs_sequential{
-    uint32_t ES_a;
-    uint32_t ES_b;
-    uint32_t ES_c;
+  struct ESs{
+    uint32_t A;
+    uint32_t B;
+    uint32_t C;
   };
 
- ESs_sequential smm_xor_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t *paf32_mc)
+ ESs smm_xor_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t *paf32_mc)
 {
 	uint32_t ui32_idx_i = 0u,
 		ui32_idx_j = 0u,
@@ -89,10 +89,10 @@ typedef float    float32_t;
 		f32_c = 0.0f;
 
 	/* XOR checksum */
-  struct ESs_sequential ES;
-  ES.ES_a = 0u;
-  ES.ES_b = 0u;
-  ES.ES_c = 0u;
+  struct ESs ES;
+  ES.A = 0u;
+  ES.B = 0u;
+  ES.C = 0u;
 
 
 	// Verification of the input values
@@ -106,7 +106,7 @@ typedef float    float32_t;
 		for (ui32_idx_k = 0u; ui32_idx_k < ui32_k; ui32_idx_k++, ui32_idx_a++)
 		{
 			PUT_IN_REGISTER f32_a_part = f32_alpha * paf32_ma[ui32_idx_a];
-			ES.ES_a ^= (uint32_t) *((uint32_t*)&f32_a_part);
+			ES.A ^= (uint32_t) *((uint32_t*)&f32_a_part);
 
 			for (ui32_idx_j = 0u, ui32_idx_b = ui32_idx_b_ref, ui32_idx_c = ui32_idx_c_ref; ui32_idx_j < ui32_n; ui32_idx_j++, ui32_idx_b++, ui32_idx_c++)
 			{
@@ -115,9 +115,11 @@ typedef float    float32_t;
 				f32_c = paf32_mc[ui32_idx_c];
 
 				/* XOR checksum */
-				ES.ES_b ^= (uint32_t) *((uint32_t*)&f32_b);
-				ES.ES_c ^= (uint32_t) *((uint32_t*)&f32_c);
+				ES.B ^= (uint32_t) *((uint32_t*)&f32_b);
+        //printf("Value[%u]=%u\n",ui32_idx_b,(uint32_t) *((uint32_t*)&f32_b));
+				ES.C ^= (uint32_t) *((uint32_t*)&f32_c);
 			}
+      //printf("%u\n",ES.B);
 			ui32_idx_b_ref += ui32_n;
 		}
 		ui32_idx_c_ref += ui32_n;
@@ -148,7 +150,9 @@ cudaError_t CutlassSgemmNN(
   float beta,
   float *C,
   int ldc,
-  uint32_t *d_ES_0) {
+  uint32_t *d_ES_a,
+  uint32_t *d_ES_b,
+  uint32_t *d_ES_c) {
 
   // Define type definition for single-precision CUTLASS GEMM with column-major
   // input matrices and 128x128x8 threadblock tile size (chosen by default).
@@ -188,7 +192,9 @@ cudaError_t CutlassSgemmNN(
                               {C, ldc},    // Tensor-ref for source matrix C
                               {C, ldc},    // Tensor-ref for destination matrix D (may be different memory than source C matrix)
                               {alpha, beta},// Scalars used in the Epilogue
-                              d_ES_0);  // Pointer to d_ES_O
+                              d_ES_a,   // Pointer to d_ES_a
+                              d_ES_b,   // Pointer to d_ES_b
+                              d_ES_c);  // Pointer to d_ES_c
 
   // Code included by JFdez: I have to include in args variable this: d_ES_0 and d_ES_1
 
@@ -384,48 +390,54 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   // =============================================================
 
   // Definition of an struct with the values of the ES:
-  struct ESs_sequential h_ES;
-
-  // Define pointers to matrices in CPU device memory
-  float *h_A;
-  float *h_B;
+  struct ESs h_ES;
+  struct ESs d_ES;
 
   // Define the number of elements of the ES 
   uint32_t nElem_ES = 32;
   size_t nBytes_ES = nElem_ES * sizeof(uint32_t);
 
-  // Define pointers to ES_0 and ES_1 in CPU (host)
-  uint32_t *h_ES_0;
-  uint32_t *h_ES_1;
+  // Define pointers to ES_a, ES_b and ES_c in CPU (host)
+  uint32_t *h_ES_a;
+  uint32_t *h_ES_b;
+  uint32_t *h_ES_c;
 
   // Allocate ES_0 y ES_1 in CPU 
-  h_ES_0 = (uint32_t *) malloc(nBytes_ES);
-  h_ES_1 = (uint32_t *) malloc(nBytes_ES);
+  h_ES_a = (uint32_t *) malloc(nBytes_ES);
+  h_ES_b = (uint32_t *) malloc(nBytes_ES);
+  h_ES_c = (uint32_t *) malloc(nBytes_ES);
 
-  // Initialice to 0 all values of ES_0 and ES_1
-  memset(h_ES_0,0,nBytes_ES);
-  memset(h_ES_1,0,nBytes_ES);
+  // Initialice to 0 all values of ES_a, ES_b and ES_c
+  memset(h_ES_a,0,nBytes_ES);
+  memset(h_ES_b,0,nBytes_ES);
+  memset(h_ES_c,0,nBytes_ES);
 
-//h_ES_0[1] = 1;
-//h_ES_0[2] = 2;
+/*
+h_ES_0[1] = 1;
+h_ES_0[2] = 2;
+
 
 for(int i=0;i<nElem_ES;i++){
-  printf("ES[%i] = %u \n",i,h_ES_0[i]);
+  printf("ES[%i] = %u \n",i,h_ES_a[i]);
 }
+*/
 
 
-  // Define pointers to ES_0 and ES_1 in GPU (device)
-  uint32_t *d_ES_0;
-  uint32_t *d_ES_1;
+  // Define pointers to ES_a, ES_b and ES_c in GPU (device)
+  uint32_t *d_ES_a;
+  uint32_t *d_ES_b;
+  uint32_t *d_ES_c;
 
   // Allocate ES_0 y ES_1 in GPU
-  cudaMalloc((uint32_t **) &d_ES_0, nBytes_ES);
-  cudaMalloc((uint32_t **) &d_ES_1, nBytes_ES);
+  cudaMalloc((uint32_t **) &d_ES_a, nBytes_ES);
+  cudaMalloc((uint32_t **) &d_ES_b, nBytes_ES);
+  cudaMalloc((uint32_t **) &d_ES_c, nBytes_ES);
 
   // Transfer data from host to device (first time it has no sense, it could
   // be directly initilized in GPU, but it will not be always initially zero)
-  cudaMemcpy(d_ES_0, h_ES_0, nBytes_ES, cudaMemcpyHostToDevice);
-  cudaMemcpy(d_ES_1, h_ES_1, nBytes_ES, cudaMemcpyHostToDevice);
+  cudaMemcpy(d_ES_a, h_ES_a, nBytes_ES, cudaMemcpyHostToDevice);
+  cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
+  cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
 
   //
   // Allocate matrices in GPU device memory with arbitrary seeds.
@@ -445,8 +457,6 @@ for(int i=0;i<nElem_ES;i++){
     return result;
   }
 
-
-
   result = AllocateMatrix(&C_cutlass, M, N, 101);
 
   if (result != cudaSuccess) {
@@ -463,6 +473,10 @@ for(int i=0;i<nElem_ES;i++){
     cudaFree(C_cutlass);
     return result;
   }
+
+  // Define pointers to matrices in CPU device memory
+  float *h_A;
+  float *h_B;
 
   // Allocate h_A and h_B in CPU 
   h_A = (float *) malloc( M*K*sizeof(float));
@@ -501,21 +515,28 @@ for(int i=0;i<nElem_ES;i++){
   //
 
   //result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc);
-  result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_0);
+  result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
 
- result = cudaMemcpy(h_ES_0, d_ES_0, nBytes_ES, cudaMemcpyDeviceToHost);
+  // Copy to host the values of the ES of A, B and C performed and stored in the GPU device
+  result = cudaMemcpy(h_ES_a, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
+  result = cudaMemcpy(h_ES_b, d_ES_b, nBytes_ES, cudaMemcpyDeviceToHost);
+  result = cudaMemcpy(h_ES_c, d_ES_c, nBytes_ES, cudaMemcpyDeviceToHost);
 
-uint32_t ES_b_GPU = 0;
-uint32_t ES_b_sequential  = 0;
-for(int i=0;i<nElem_ES;i++){
-  printf("ES[%i] = %u \n",i,h_ES_0[i]);
-  ES_b_GPU ^= h_ES_0[i];
-}
-printf("Final ES_b(GPU) = %u\n",ES_b_GPU);
+   d_ES.A = 0;
+   d_ES.B = 0;
+   d_ES.C = 0;
+
+  for(int i=0;i<nElem_ES;i++){
+    printf("ES_a[%i] = %u \n",i,h_ES_a[i]);
+    d_ES.A ^= h_ES_a[i];
+    d_ES.B ^= h_ES_b[i];
+    d_ES.C ^= h_ES_c[i];
+  }
+printf("Final ES_b(GPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", d_ES.A, d_ES.B, d_ES.C);
  
 // Verify that with a sequential implementation we obtain the same value
 h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_A, h_B, C_reference_sequential);
-printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.ES_a, h_ES.ES_b, h_ES.ES_c);
+printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.A, h_ES.B, h_ES.C);
 
   if (result != cudaSuccess) {
     std::cerr << "CUTLASS GEMM kernel failed: "
@@ -618,7 +639,7 @@ int main(int argc, const char *arg[]) {
   //
 
   // GEMM problem dimensions.
-  int problem[3] = { 128, 128, 128 };
+  int problem[3] = { 128, 128, 131  };
 
   for (int i = 1; i < argc && i < 4; ++i) {
     std::stringstream ss(arg[i]);

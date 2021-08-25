@@ -118,7 +118,9 @@ struct MmaGeneric {
     FragmentA const & A,
     FragmentB const & B,
     FragmentC const & C,
-    uint32_t *d_ES_0 =nullptr
+    uint32_t *d_ES_a =nullptr,
+    uint32_t *d_ES_b =nullptr,
+    uint32_t *d_ES_c =nullptr
     ) {
     TensorRef<ElementA const, LayoutA> a_ref(
       reinterpret_cast<ElementA const *>(&A), LayoutA::packed({Shape::kM, Shape::kK}));
@@ -162,7 +164,7 @@ struct MmaGeneric {
           b[0] = b_ref.at(kn);
           //mma_op(d, a, b, d);
           
-          mma_op(d, a, b, d, d_ES_0);
+          mma_op(d, a, b, d, d_ES_a, d_ES_b, d_ES_c);
 
           d_ref.at(mn) = d[0];
         }
@@ -256,7 +258,10 @@ struct Mma<
     FragmentA const & A,
     FragmentB const & B,
     FragmentC const & C,
-    uint32_t *d_ES_0 =nullptr) {
+    uint32_t *d_ES_a =nullptr,
+    uint32_t *d_ES_b =nullptr,
+    uint32_t *d_ES_c =nullptr
+    ) {
 
     MmaGeneric<
       Shape,
@@ -268,7 +273,7 @@ struct Mma<
       LayoutC,
       Operator> mma;
 
-    mma(D, A, B, C,d_ES_0);
+    mma(D, A, B, C,  d_ES_a, d_ES_b, d_ES_c);
   }
 };
 
