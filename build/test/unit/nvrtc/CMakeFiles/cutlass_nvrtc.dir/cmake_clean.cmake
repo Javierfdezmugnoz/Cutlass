@@ -243,6 +243,7 @@ file(REMOVE_RECURSE
   "nvrtc/cutlass/reduction/threadblock_swizzle.h"
   "nvrtc/cutlass/relatively_equal.h"
   "nvrtc/cutlass/semaphore.h"
+  "nvrtc/cutlass/sequential_MMM/Smmm.h"
   "nvrtc/cutlass/subbyte_reference.h"
   "nvrtc/cutlass/tensor_coord.h"
   "nvrtc/cutlass/tensor_ref.h"

@@ -318,6 +318,8 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm75.h \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma.h \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm50.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_pipelined.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_base.h \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm60.h \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm61.h \
   /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm70.h \
@@ -331,8 +333,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/default_mma_tensor_op_sm80.h \
   /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_complex_tensor_op_tile_iterator_sm80.h \
   /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core.h \
-  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_pipelined.h \
-  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_base.h \
   /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_singlestage.h \
   /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm70.h \
   /home/ubuntu/github/cutlass/include/cutlass/layout/tensor_op_multiplicand_sm70.h \

@@ -333,6 +333,8 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   ../include/cutlass/arch/mma_sm75.h \
   ../include/cutlass/arch/mma.h \
   ../include/cutlass/arch/mma_sm50.h \
+  ../include/cutlass/gemm/threadblock/mma_pipelined.h \
+  ../include/cutlass/gemm/threadblock/mma_base.h \
   ../include/cutlass/arch/mma_sm60.h \
   ../include/cutlass/arch/mma_sm61.h \
   ../include/cutlass/arch/mma_sm70.h \
@@ -346,8 +348,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   ../include/cutlass/gemm/warp/default_mma_tensor_op_sm80.h \
   ../include/cutlass/gemm/warp/mma_complex_tensor_op_tile_iterator_sm80.h \
   ../include/cutlass/gemm/threadblock/default_mma_core.h \
-  ../include/cutlass/gemm/threadblock/mma_pipelined.h \
-  ../include/cutlass/gemm/threadblock/mma_base.h \
   ../include/cutlass/gemm/threadblock/mma_singlestage.h \
   ../include/cutlass/gemm/threadblock/default_mma_core_sm70.h \
   ../include/cutlass/layout/tensor_op_multiplicand_sm70.h \
@@ -496,8 +496,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/gemm/threadblock/mma_singlestage.h:
 
-../include/cutlass/gemm/threadblock/mma_base.h:
-
 ../include/cutlass/gemm/threadblock/default_mma_core.h:
 
 ../include/cutlass/gemm/warp/default_mma_tensor_op_sm80.h:
@@ -514,6 +512,10 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/arch/mma_sparse_sm80.h:
 
+../include/cutlass/arch/mma_sm80.h:
+
+../include/cutlass/arch/mma_sm70.h:
+
 /usr/include/c++/7.5.0/ext/numeric_traits.h:
 
 /usr/include/c++/7.5.0/type_traits:
@@ -525,6 +527,8 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 /usr/include/c++/7.5.0/bits/algorithmfwd.h:
 
 /usr/include/c++/7.5.0/bits/nested_exception.h:
+
+../include/cutlass/gemm/threadblock/mma_base.h:
 
 /usr/include/c++/7.5.0/new:
 
@@ -1080,14 +1084,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/bits/locale_classes.tcc:
 
-../include/cutlass/gemm/threadblock/mma_pipelined.h:
-
-/usr/include/aarch64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/7.5.0/bits/basic_ios.tcc:
-
-/usr/include/c++/7.5.0/system_error:
-
 ../include/cutlass/arch/memory_sm80.h:
 
 ../include/cutlass/epilogue/thread/activation.h:
@@ -1228,10 +1224,14 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/gemm/warp/mma_tensor_op.h:
 
+/usr/include/aarch64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/7.5.0/bits/basic_ios.tcc:
+
+/usr/include/c++/7.5.0/system_error:
+
+../include/cutlass/gemm/threadblock/mma_pipelined.h:
+
 /usr/include/c++/7.5.0/bits/stl_algo.h:
 
 ../include/cutlass/arch/mma_sm61.h:
-
-../include/cutlass/arch/mma_sm70.h:
-
-../include/cutlass/arch/mma_sm80.h:

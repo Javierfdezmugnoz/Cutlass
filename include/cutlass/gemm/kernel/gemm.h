@@ -250,7 +250,7 @@ struct Gemm {
     // Construct thread-scoped matrix multiply
     // Comment added by Javi Fdez: It is used in the current example 
     //printf("Arrive to kernel");
-    // printf("%d,%d,%d\n",thread_idx, warp_idx, lane_idx);
+    printf("%d,%d,%d\n",thread_idx, warp_idx, lane_idx);
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_0);
 
     typename Mma::FragmentC accumulators;
@@ -259,7 +259,7 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, params.d_ES_0);
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_0[lane_idx]);
     }
 
     //

@@ -1025,130 +1025,134 @@ test/unit/nvrtc/nvrtc/cutlass/semaphore.h: ../include/cutlass/semaphore.h
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_239) "Generating nvrtc/cutlass/semaphore.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/semaphore.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/semaphore.h" -DVARIABLE_NAME="cutlass_semaphore_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
+test/unit/nvrtc/nvrtc/cutlass/sequential_MMM/Smmm.h: ../include/cutlass/sequential_MMM/Smmm.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Generating nvrtc/cutlass/sequential_MMM/Smmm.h"
+	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/sequential_MMM/Smmm.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/sequential_MMM/Smmm.h" -DVARIABLE_NAME="cutlass_sequential_MMM_Smmm_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
+
 test/unit/nvrtc/nvrtc/cutlass/subbyte_reference.h: ../include/cutlass/subbyte_reference.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Generating nvrtc/cutlass/subbyte_reference.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Generating nvrtc/cutlass/subbyte_reference.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/subbyte_reference.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/subbyte_reference.h" -DVARIABLE_NAME="cutlass_subbyte_reference_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tensor_coord.h: ../include/cutlass/tensor_coord.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Generating nvrtc/cutlass/tensor_coord.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Generating nvrtc/cutlass/tensor_coord.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tensor_coord.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_coord.h" -DVARIABLE_NAME="cutlass_tensor_coord_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tensor_ref.h: ../include/cutlass/tensor_ref.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Generating nvrtc/cutlass/tensor_ref.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Generating nvrtc/cutlass/tensor_ref.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tensor_ref.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_ref.h" -DVARIABLE_NAME="cutlass_tensor_ref_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tensor_ref_planar_complex.h: ../include/cutlass/tensor_ref_planar_complex.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Generating nvrtc/cutlass/tensor_ref_planar_complex.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Generating nvrtc/cutlass/tensor_ref_planar_complex.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tensor_ref_planar_complex.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_ref_planar_complex.h" -DVARIABLE_NAME="cutlass_tensor_ref_planar_complex_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tensor_view.h: ../include/cutlass/tensor_view.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Generating nvrtc/cutlass/tensor_view.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Generating nvrtc/cutlass/tensor_view.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tensor_view.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_view.h" -DVARIABLE_NAME="cutlass_tensor_view_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tensor_view_planar_complex.h: ../include/cutlass/tensor_view_planar_complex.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Generating nvrtc/cutlass/tensor_view_planar_complex.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Generating nvrtc/cutlass/tensor_view_planar_complex.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tensor_view_planar_complex.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_view_planar_complex.h" -DVARIABLE_NAME="cutlass_tensor_view_planar_complex_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/tfloat32.h: ../include/cutlass/tfloat32.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Generating nvrtc/cutlass/tfloat32.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Generating nvrtc/cutlass/tfloat32.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/tfloat32.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tfloat32.h" -DVARIABLE_NAME="cutlass_tfloat32_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/thread/matrix.h: ../include/cutlass/thread/matrix.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Generating nvrtc/cutlass/thread/matrix.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Generating nvrtc/cutlass/thread/matrix.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/thread/matrix.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/thread/matrix.h" -DVARIABLE_NAME="cutlass_thread_matrix_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/trace.h: ../include/cutlass/trace.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Generating nvrtc/cutlass/trace.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Generating nvrtc/cutlass/trace.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/trace.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/trace.h" -DVARIABLE_NAME="cutlass_trace_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/pitch_linear_thread_map.h: ../include/cutlass/transform/pitch_linear_thread_map.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Generating nvrtc/cutlass/transform/pitch_linear_thread_map.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Generating nvrtc/cutlass/transform/pitch_linear_thread_map.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/pitch_linear_thread_map.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/pitch_linear_thread_map.h" -DVARIABLE_NAME="cutlass_transform_pitch_linear_thread_map_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/thread/transpose.h: ../include/cutlass/transform/thread/transpose.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Generating nvrtc/cutlass/transform/thread/transpose.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Generating nvrtc/cutlass/transform/thread/transpose.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/thread/transpose.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/thread/transpose.h" -DVARIABLE_NAME="cutlass_transform_thread_transpose_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/thread/unaryOp.h: ../include/cutlass/transform/thread/unaryOp.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Generating nvrtc/cutlass/transform/thread/unaryOp.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Generating nvrtc/cutlass/transform/thread/unaryOp.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/thread/unaryOp.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/thread/unaryOp.h" -DVARIABLE_NAME="cutlass_transform_thread_unaryOp_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator.h: ../include/cutlass/transform/threadblock/predicated_tile_access_iterator.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator.h" -DVARIABLE_NAME="cutlass_transform_threadblock_predicated_tile_access_iterator_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h: ../include/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h" -DVARIABLE_NAME="cutlass_transform_threadblock_predicated_tile_access_iterator_2dthreadtile_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_iterator.h: ../include/cutlass/transform/threadblock/predicated_tile_iterator.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_iterator.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_iterator.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_iterator.h" -DVARIABLE_NAME="cutlass_transform_threadblock_predicated_tile_iterator_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h: ../include/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Generating nvrtc/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h" -DVARIABLE_NAME="cutlass_transform_threadblock_predicated_tile_iterator_2dthreadtile_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator.h: ../include/cutlass/transform/threadblock/regular_tile_access_iterator.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_access_iterator_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h: ../include/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_access_iterator_pitch_linear_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h: ../include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_access_iterator_tensor_op_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h: ../include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_access_iterator_tensor_op_sm80_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator.h: ../include/cutlass/transform/threadblock/regular_tile_iterator.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_iterator_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h: ../include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_iterator_pitch_linear_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h: ../include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_iterator_pitch_linear_2dthreadtile_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h: ../include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_iterator_tensor_op_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h: ../include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Generating nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h" -DVARIABLE_NAME="cutlass_transform_threadblock_regular_tile_iterator_tensor_op_sm70_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/uint128.h: ../include/cutlass/uint128.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Generating nvrtc/cutlass/uint128.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Generating nvrtc/cutlass/uint128.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/uint128.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/uint128.h" -DVARIABLE_NAME="cutlass_uint128_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/cutlass/wmma_array.h: ../include/cutlass/wmma_array.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Generating nvrtc/cutlass/wmma_array.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Generating nvrtc/cutlass/wmma_array.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/include/cutlass/wmma_array.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/wmma_array.h" -DVARIABLE_NAME="cutlass_wmma_array_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/unit/nvrtc/kernel/thread/testbed_kernel.h: ../test/unit/nvrtc/kernel/thread/testbed_kernel.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Generating nvrtc/unit/nvrtc/kernel/thread/testbed_kernel.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Generating nvrtc/unit/nvrtc/kernel/thread/testbed_kernel.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/test/unit/nvrtc/kernel/thread/testbed_kernel.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/unit/nvrtc/kernel/thread/testbed_kernel.h" -DVARIABLE_NAME="unit_nvrtc_kernel_thread_testbed_kernel_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/assert.h: ../test/unit/nvrtc/stdlib/assert.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Generating nvrtc/assert.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Generating nvrtc/assert.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/test/unit/nvrtc/stdlib/assert.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/assert.h" -DVARIABLE_NAME="assert_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/nvrtc/stdint.h: ../test/unit/nvrtc/stdlib/stdint.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Generating nvrtc/stdint.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Generating nvrtc/stdint.h"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/local/bin/cmake -DFILE_IN="/home/ubuntu/github/cutlass/test/unit/nvrtc/stdlib/stdint.h" -DFILE_OUT="/home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/stdint.h" -DVARIABLE_NAME="stdint_h" -P /home/ubuntu/github/cutlass/bin2hex.cmake
 
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o: test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/flags.make
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o: test/unit/nvrtc/cutlass/nvrtc/environment.cpp
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o: test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Building CXX object test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Building CXX object test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o -MF CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o.d -o CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o -c /home/ubuntu/github/cutlass/build/test/unit/nvrtc/cutlass/nvrtc/environment.cpp
 
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.i: cmake_force
@@ -1169,7 +1173,7 @@ cutlass_nvrtc_EXTERNAL_OBJECTS =
 test/unit/nvrtc/libcutlass_nvrtcd.a: test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/cutlass/nvrtc/environment.cpp.o
 test/unit/nvrtc/libcutlass_nvrtcd.a: test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/build.make
 test/unit/nvrtc/libcutlass_nvrtcd.a: test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Linking CXX static library libcutlass_nvrtcd.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_272) "Linking CXX static library libcutlass_nvrtcd.a"
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_nvrtc.dir/cmake_clean_target.cmake
 	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_nvrtc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -1421,6 +1425,7 @@ test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutla
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/reduction/threadblock_swizzle.h
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/relatively_equal.h
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/semaphore.h
+test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/sequential_MMM/Smmm.h
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/subbyte_reference.h
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/tensor_coord.h
 test/unit/nvrtc/CMakeFiles/cutlass_nvrtc.dir/depend: test/unit/nvrtc/nvrtc/cutlass/tensor_ref.h

@@ -34,6 +34,8 @@
 #include "cutlass/layout/matrix.h"
 #include "cutlass/gemm/gemm.h"
 
+// Included by JFdez
+#include "cutlass/gemm/threadblock/mma_pipelined.h"
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -65,11 +67,20 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     // Included by JFdez
     ,uint32_t *ES_b = nullptr
   ) {
+    int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
+    // ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]); // this is working
+//    printf("value of threadIdx: %i\n",lane_idx);
+    
+    ES_b[0] =  atomicXor((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    //printf("Before: %4.1f \t ES_b[%i]=%u \n", b[0], lane_idx, ES_b[0]);
     // Added by JFdez
     //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
-    ES_b[0] =  atomicXor(&ES_b[0], (uint32_t) b[0]);
-    printf("value of ES_b: %u\n", ES_b[0]); 
+   /* printf("Before: %4.1f \t %u \n", b[0], ES_b[0]);
+    ES_b[0] =  atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    printf("After: %4.1f \t %u \n", b[0], ES_b[0]);
+    ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]);
+    printf("After2: %4.1f \t %u \n", b[0], ES_b[0]);*/
   }
 };
 

@@ -322,6 +322,7 @@ ef5ab4d3d3c5e5632be7992387041765 test/unit/nvrtc/nvrtc/cutlass/reduction/device/
 731f23452bdf44abd3dc065689f2d1a9 test/unit/nvrtc/nvrtc/cutlass/reduction/threadblock_swizzle.h
 2b46ad0a715ecffe5590f4fc59962389 test/unit/nvrtc/nvrtc/cutlass/relatively_equal.h
 7a7b9ff01891196d520c40878aa2a824 test/unit/nvrtc/nvrtc/cutlass/semaphore.h
+bcd580da5d5683f393ad166f0720c089 test/unit/nvrtc/nvrtc/cutlass/sequential_MMM/Smmm.h
 3bf903b6706de22224bda57a5aad835b test/unit/nvrtc/nvrtc/cutlass/subbyte_reference.h
 3c2320f35a1c669e22f4cee170d3cff5 test/unit/nvrtc/nvrtc/cutlass/tensor_coord.h
 d32bf5d7eda29e6fcd496b7235f8bc8f test/unit/nvrtc/nvrtc/cutlass/tensor_ref.h

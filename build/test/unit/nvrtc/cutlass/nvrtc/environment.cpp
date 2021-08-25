@@ -238,6 +238,7 @@
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/reduction/threadblock_swizzle.h>
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/relatively_equal.h>
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/semaphore.h>
+#include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/sequential_MMM/Smmm.h>
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/subbyte_reference.h>
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_coord.h>
 #include </home/ubuntu/github/cutlass/build/test/unit/nvrtc/nvrtc/cutlass/tensor_ref.h>
@@ -512,6 +513,7 @@ char const *kCutlassHeaders[] = {
   cutlass_reduction_threadblock_swizzle_h,
   cutlass_relatively_equal_h,
   cutlass_semaphore_h,
+  cutlass_sequential_MMM_Smmm_h,
   cutlass_subbyte_reference_h,
   cutlass_tensor_coord_h,
   cutlass_tensor_ref_h,
@@ -785,6 +787,7 @@ char const *kCutlassHeaderNames[] = {
   "cutlass/reduction/threadblock_swizzle.h",
   "cutlass/relatively_equal.h",
   "cutlass/semaphore.h",
+  "cutlass/sequential_MMM/Smmm.h",
   "cutlass/subbyte_reference.h",
   "cutlass/tensor_coord.h",
   "cutlass/tensor_ref.h",
