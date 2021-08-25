@@ -77,6 +77,10 @@ struct Gemm {
     int *semaphore;
     int gemm_k_iterations;
     int gemm_k_size;
+    // JFdez
+    uint32_t *d_ES_a;
+    uint32_t *d_ES_b;
+    uint32_t *d_ES_c;
 
     //
     // Methods
@@ -94,6 +98,9 @@ struct Gemm {
       typename Epilogue::OutputTileIterator::TensorRef ref_C,
       typename Epilogue::OutputTileIterator::TensorRef ref_D,
       typename OutputOp::Params output_op = typename OutputOp::Params(),
+      uint32_t *d_ES_a_ = nullptr,
+      uint32_t *d_ES_b_ = nullptr,
+      uint32_t *d_ES_c_ = nullptr,
       int *workspace = nullptr
     ):
       problem_size(problem_size),
@@ -106,6 +113,9 @@ struct Gemm {
       ref_C(ref_C),
       params_D(ref_D.layout()),
       ref_D(ref_D),
+      d_ES_a(d_ES_a_),
+      d_ES_b(d_ES_b_),
+      d_ES_c(d_ES_c_),
       output_op(output_op) {
 
       int total_gemm_k_iterations = (problem_size.k() + Mma::Shape::kK - 1) / Mma::Shape::kK;
@@ -244,10 +254,9 @@ struct Gemm {
     //
 
     // Construct thread-scoped matrix multiply
-    // It is used in the current example (Comment added by Javi Fdez)
-    //printf("Arrive to kernel");
-    printf("%d,%d,%d\n",thread_idx, warp_idx, lane_idx);
-    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
+    // Comment added by Javi Fdez:
+    printf("thread:%d \twarp:%d \tlane%d \tAux:%d\n",thread_idx, warp_idx, lane_idx,lane_idx+(32*(warp_idx%2)));
+    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c);
 
     typename Mma::FragmentC accumulators;
 
@@ -255,7 +264,7 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators);
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx+(32*(warp_idx%2))], &params.d_ES_b[lane_idx+(32*(warp_idx%2))], &params.d_ES_c[lane_idx+(32*(warp_idx%2))]);
     }
 
     //

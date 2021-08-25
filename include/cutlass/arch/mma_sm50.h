@@ -30,12 +30,12 @@
 
 #include "cutlass/arch/mma.h"
 #include "cutlass/complex.h"
-// Included by JFdez
-#include "cutlass/gemm/threadblock/threadblock_swizzle.h"
 
 #include "cutlass/layout/matrix.h"
 #include "cutlass/gemm/gemm.h"
 
+// Included by JFdez
+#include "cutlass/gemm/threadblock/mma_pipelined.h"
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -58,27 +58,33 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
   using Operator = OpMultiplyAdd;
 
   CUTLASS_HOST_DEVICE
-  uint32_t operator()(
+  void operator()(
+  //void operator()(
     Array<float, 1> &d,
     Array<float, 1> const &a,
     Array<float, 1> const &b,
     Array<float, 1> const &c,
-    uint32_t ES_b
+    // Included by JFdez
+    uint32_t *ES_a =nullptr,
+    uint32_t *ES_b =nullptr,
+    uint32_t *ES_c =nullptr
   ) {
+    //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
-    // Added by JFdez
-    atomicXor(&ES_b,((uint32_t) b[0]));
-    return ES_b;
-    // If you want to see the files using this operation uncomment the following line
-    //printf("%4.1f \t %x \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
+    // ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]); // this is working
+//    printf("value of threadIdx: %i\n",lane_idx);
     
+    ES_a[0] =  atomicXor((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    ES_b[0] =  atomicXor((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    ES_c[0] =  atomicXor((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
+    //printf("Before: %4.1f \t ES_b[%i]=%u \n", b[0], lane_idx, ES_b[0]);
+    // Added by JFdez
     //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
-    //uint32_t ES_a = 0u, ES_b= 0u, ES_c= 0u;
-    //printf("\t value of b: %u \n ",(uint32_t) *((uint32_t*) &b[0])); 
-    //printf("BlockDimX:%u \t BlockIdxX: %u \t ThreadIdxX:%u\n ",(uint32_t) gemm::threadblock::RematerializeBlockDimX(),(uint32_t) gemm::threadblock::RematerializeBlockIdxX(),(uint32_t) gemm::threadblock::RematerializeThreadIdxX()); 
-    //printf("\t BlockIdxY: %u \t ThreadIdxY:%u\n ",(uint32_t) gemm::threadblock::RematerializeBlockIdxY(),(uint32_t) gemm::threadblock::RematerializeThreadIdxY()); 
-    //atomicXor(&ES_a,(uint32_t) *((uint32_t*) &b[0]));
-    //printf("\t value of b: %u \tES_a: %u\n",(uint32_t) *((uint32_t*) &b[0]), ES_a); 
+   /* printf("Before: %4.1f \t %u \n", b[0], ES_b[0]);
+    ES_b[0] =  atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    printf("After: %4.1f \t %u \n", b[0], ES_b[0]);
+    ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]);
+    printf("After2: %4.1f \t %u \n", b[0], ES_b[0]);*/
   }
 };
 
@@ -105,6 +111,7 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, double, LayoutA, double, LayoutB, double
     Array<double, 1> const &b,
     Array<double, 1> const &c
   ) {
+
     d[0] = a[0] * b[0] + c[0];
   }
 };

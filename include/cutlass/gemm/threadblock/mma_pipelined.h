@@ -51,7 +51,7 @@ namespace threadblock {
 template <
   /// Size of the Gemm problem - concept: gemm::GemmShape<>
   typename Shape_,
-  /// Iterates over tiles of A operand in global memory 
+  /// Iterates over tiles of A operand in global memory
   //  (concept: ReadableTileIterator | ForwardTileIterator | MaskedTileIterator)
   typename IteratorA_,
   /// Iterates over tiles of A operand in shared memory
@@ -71,14 +71,14 @@ template <
   typename Policy_,
   /// Transformation applied to A operand
   typename TransformA_ = NumericArrayConverter<
-    typename SmemIteratorA_::Element, 
-    typename IteratorA_::Element, 
+    typename SmemIteratorA_::Element,
+    typename IteratorA_::Element,
     IteratorA_::Fragment::kElements>,
   ///
   /// Transformation applied to B operand
   typename TransformB_ = NumericArrayConverter<
-    typename SmemIteratorB_::Element, 
-    typename IteratorB_::Element, 
+    typename SmemIteratorB_::Element,
+    typename IteratorB_::Element,
     IteratorB_::Fragment::kElements>,
   /// Used for partial specialization
   typename Enable = bool
@@ -151,7 +151,10 @@ public:
     typename Base::SharedStorage &shared_storage,       ///< Shared storage needed for internal use by threadblock-scoped GEMM
     int thread_idx,                                     ///< ID within the threadblock
     int warp_idx,                                       ///< ID of warp
-    int lane_idx                                        ///< ID of each thread within a warp
+    int lane_idx,                                       ///< ID of each thread within a warp
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr
   ):
     Base(shared_storage, thread_idx, warp_idx, lane_idx),
     smem_iterator_A_(shared_storage.operand_A_ref(), thread_idx),
@@ -182,13 +185,17 @@ public:
     IteratorA iterator_A,                             ///< iterator over A operand in global memory
     IteratorB iterator_B,                             ///< iterator over B operand in global memory
     FragmentC const &src_accum,                       ///< source accumulator tile
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr,
     TransformA transform_A = TransformA(),            ///< transformation applied to A fragment
-    TransformB transform_B = TransformB()) {          ///< transformation applied to B fragment
+    TransformB transform_B = TransformB()             ///< transformation applied to B fragment
+    ) {
 
     //
     // Prologue
     //
-   //printf("Gemm_k_iterations:%i\n",gemm_k_iterations);
+
     // Perform accumulation in the 'd' output operand
     accum = src_accum;
 
@@ -236,7 +243,7 @@ public:
       iterator_B.clear_mask();
     }
 
-    // Issue loads during the first warp-level matrix multiply-add *AFTER* issuing 
+    // Issue loads during the first warp-level matrix multiply-add *AFTER* issuing
     // shared memory loads (which have the tighest latency requirement).
 
     // =================================================
@@ -246,15 +253,13 @@ public:
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
     CUTLASS_GEMM_LOOP
     for (; gemm_k_iterations > 0; --gemm_k_iterations) {
-      // ================================
-      //    Loop over GEMM K dimension
-      // ================================
-    
+      //
+      // Loop over GEMM K dimension
+      //
+
       CUTLASS_PRAGMA_UNROLL
       for (int warp_mma_k = 0; warp_mma_k < Base::kWarpGemmIterations; ++warp_mma_k) {
-        // Added by JFdez
-        //printf("Gemm_k_iterations= %d \t Warp_mma_k=%d\n",gemm_k_iterations, warp_mma_k); 
-        
+
         // Load warp-level tiles from shared memory, wrapping to k offset if this is the last group
         // as the case may be.
 
@@ -266,7 +271,7 @@ public:
           this->smem_iterator_B_.store(transform_B(tb_frag_B));
 
           __syncthreads();
-          
+
           ++this->smem_iterator_A_;
           ++this->smem_iterator_B_;
 
@@ -288,7 +293,7 @@ public:
 
         this->warp_tile_iterator_A_.set_kgroup_index((warp_mma_k + 1) % Base::kWarpGemmIterations);
         this->warp_tile_iterator_B_.set_kgroup_index((warp_mma_k + 1) % Base::kWarpGemmIterations);
-        
+
         this->warp_tile_iterator_A_.load(warp_frag_A[(warp_mma_k + 1) % 2]);
         this->warp_tile_iterator_B_.load(warp_frag_B[(warp_mma_k + 1) % 2]);
 
@@ -309,15 +314,9 @@ public:
             iterator_B.clear_mask();
           }
         }
-    // It is used in the current example (Comment added by Javi Fdez)
-    //printf("Arrive to mmma_pipelined");
-    // I think that here should be initialized the values of ES. This info is shared by threads 
-    // (TBD: To Check how put data in shared memory) 
-    // Experiment 1: generate here 32 execution signatures (1 ES/thread)
-         
+
         warp_mma(accum, warp_frag_A[warp_mma_k % 2],
-                 warp_frag_B[warp_mma_k % 2], accum);
-        //printf("%u\n",ES_b[warp_mma_k]);
+                 warp_frag_B[warp_mma_k % 2], accum, d_ES_a, d_ES_b, d_ES_c);
       }
     }
 

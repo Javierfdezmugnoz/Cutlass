@@ -281,6 +281,9 @@ class Gemm {
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
+    uint32_t *d_ES_a;
+    uint32_t *d_ES_b;
+    uint32_t *d_ES_c;
 
     //
     // Methods
@@ -302,6 +305,9 @@ class Gemm {
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
+      uint32_t *d_ES_a_ = nullptr,
+      uint32_t *d_ES_b_ = nullptr,
+      uint32_t *d_ES_c_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -310,8 +316,11 @@ class Gemm {
       ref_C(ref_C_),
       ref_D(ref_D_),
       epilogue(epilogue_),
+      d_ES_a(d_ES_a_),
+      d_ES_b(d_ES_b_),
+      d_ES_c(d_ES_c_),
       split_k_slices(split_k_slices) {
-
+      
     }
   };
 
@@ -411,7 +420,11 @@ public:
       args.ref_C.non_const_ref(),
       args.ref_D,
       args.epilogue,
-      static_cast<int *>(workspace)
+      // Included by JFdez
+      args.d_ES_a,
+      args.d_ES_b,
+      args.d_ES_c,
+      static_cast<int *>(workspace)      
     };
 
     return Status::kSuccess;
@@ -432,7 +445,10 @@ public:
     params_.ref_D.reset(args.ref_D.data());
     params_.output_op = args.epilogue;
     params_.semaphore = static_cast<int *>(workspace);
-
+    // Included by JFdez
+    params_.d_ES_a = args.d_ES_a;
+    params_.d_ES_b = args.d_ES_b;
+    params_.d_ES_c = args.d_ES_c;
     return Status::kSuccess;
   }
 
@@ -609,6 +625,9 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
     TensorRef<ElementC, LayoutC> ref_D;
     typename EpilogueOutputOp::Params epilogue;
     int split_k_slices;
+    uint32_t *d_ES_a;
+    uint32_t *d_ES_b;
+    uint32_t *d_ES_c;
 
     //
     // Methods
@@ -628,6 +647,9 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
+      uint32_t *d_ES_a_ = nullptr,
+      uint32_t *d_ES_b_ = nullptr,
+      uint32_t *d_ES_c_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -636,7 +658,11 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       ref_C(ref_C_),
       ref_D(ref_D_),
       epilogue(epilogue_),
-      split_k_slices(split_k_slices) { }
+      d_ES_a(d_ES_a_),
+      d_ES_b(d_ES_b_),
+      d_ES_c(d_ES_c_),
+      split_k_slices(split_k_slices){
+      }
   };
 
 private:
@@ -657,7 +683,10 @@ public:
       {args.ref_C.data(), args.ref_C.stride(0)},
       {args.ref_D.data(), args.ref_D.stride(0)},
       args.epilogue,
-      args.split_k_slices
+      args.d_ES_a,
+      args.d_ES_b,
+      args.d_ES_c,
+      args.split_k_slices    
     );
   }
 

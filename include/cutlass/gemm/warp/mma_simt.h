@@ -221,11 +221,14 @@ public:
     FragmentC &d, 
     FragmentA a, 
     FragmentB b, 
-    FragmentC const &c, int group_idx = 0) const {
+    FragmentC const &c,
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr,
+    int group_idx = 0) const {
 
     ThreadMma mma;
-// It is used in the current example (Comment added by Javi Fdez)
-//printf("LLEGA MmaSimt");
+
     if (kTransformA == ComplexTransform::kConjugate) {
       conjugate<FragmentA> conj_a;
       a = conj_a(a);
@@ -235,9 +238,8 @@ public:
       conjugate<FragmentB> conj_b;
       b = conj_b(b);
     }
-    //uint32_t ES_b_warp[32]={0};
-    //ES_b_warp[0] = mma(d, a, b, c,ES_b_warp[0]);
-     mma(d, a, b, c);
+ // Included by JFdez
+    mma(d, a, b, c, d_ES_a, d_ES_b, d_ES_c);
   }
 
   /// Transform the mma operands to the required types
