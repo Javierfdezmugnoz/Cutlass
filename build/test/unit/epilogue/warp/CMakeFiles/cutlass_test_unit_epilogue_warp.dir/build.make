@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/depend.make
@@ -72,44 +72,44 @@ include test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/f
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/flags.make
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o: ../test/unit/epilogue/warp/fragment_iterator_tensor_op.cu
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o -c /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.i
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.s
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/flags.make
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o: ../test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o -c /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.i
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_volta_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.s
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/flags.make
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o: ../test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o -c /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu > CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.i
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp/fragment_iterator_wmma_tensor_op.cu -o CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_wmma_tensor_op.cu.s
 
 # Object files for target cutlass_test_unit_epilogue_warp
 cutlass_test_unit_epilogue_warp_OBJECTS = \
@@ -119,8 +119,8 @@ cutlass_test_unit_epilogue_warp_OBJECTS = \
 
 # External object files for target cutlass_test_unit_epilogue_warp
 cutlass_test_unit_epilogue_warp_EXTERNAL_OBJECTS = \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
 
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_tensor_op.cu.o
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/fragment_iterator_volta_tensor_op.cu.o
@@ -128,21 +128,21 @@ test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/epilogue/warp
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/build.make
-test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: /usr/local/cuda-10.2/lib64/libcudart.so
+test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: /usr/local/cuda-10.0/lib64/libcudart.so
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: _deps/googletest-build/googlemock/gtest/libgtestd.a
 test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cutlass_test_unit_epilogue_warp"
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_epilogue_warp.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cutlass_test_unit_epilogue_warp"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_epilogue_warp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/build: test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp
 .PHONY : test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/build
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue_warp.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue_warp.dir/cmake_clean.cmake
 .PHONY : test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/clean
 
 test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/epilogue/warp /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/epilogue/warp/CMakeFiles/cutlass_test_unit_epilogue_warp.dir/depend
 

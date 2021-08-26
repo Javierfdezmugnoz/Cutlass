@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_unit_conv_device_tensorop_f32_sm70.
 
@@ -67,7 +67,7 @@ include test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70
 include test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/progress.make
 
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70: test/unit/conv/device/cutlass_test_unit_conv_device_tensorop_f32_sm70
-	cd /home/ubuntu/github/cutlass/build/test/unit/conv/device && ./cutlass_test_unit_conv_device_tensorop_f32_sm70 --gtest_output=xml:test_unit_conv_device_tensorop_f32_sm70.gtest.xml
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/conv/device && ./cutlass_test_unit_conv_device_tensorop_f32_sm70 --gtest_output=xml:test_unit_conv_device_tensorop_f32_sm70.gtest.xml
 
 test_unit_conv_device_tensorop_f32_sm70: test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70
 test_unit_conv_device_tensorop_f32_sm70: test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build.make
@@ -78,10 +78,10 @@ test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/bui
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build
 
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/conv/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/conv/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/cmake_clean.cmake
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/clean
 
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/conv/device /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/conv/device /home/ubuntu/github/cutlass/build/test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/conv/device /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/conv/device /home/javierfdez/github_repository/Cutlass/build/test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/depend
 

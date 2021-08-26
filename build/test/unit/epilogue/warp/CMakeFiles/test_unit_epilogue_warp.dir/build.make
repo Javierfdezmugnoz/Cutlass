@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_unit_epilogue_warp.
 
@@ -67,7 +67,7 @@ include test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/compiler_
 include test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/progress.make
 
 test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp: test/unit/epilogue/warp/cutlass_test_unit_epilogue_warp
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && ./cutlass_test_unit_epilogue_warp --gtest_output=xml:test_unit_epilogue_warp.gtest.xml
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && ./cutlass_test_unit_epilogue_warp --gtest_output=xml:test_unit_epilogue_warp.gtest.xml
 
 test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp
 test_unit_epilogue_warp: test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/build.make
@@ -78,10 +78,10 @@ test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/build: test_unit_
 .PHONY : test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/build
 
 test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_epilogue_warp.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_epilogue_warp.dir/cmake_clean.cmake
 .PHONY : test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/clean
 
 test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/epilogue/warp /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp /home/ubuntu/github/cutlass/build/test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/warp /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/epilogue/warp/CMakeFiles/test_unit_epilogue_warp.dir/depend
 

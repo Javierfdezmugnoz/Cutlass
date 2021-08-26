@@ -394,7 +394,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   struct ESs d_ES;
 
   // Define the number of elements of the ES 
-  uint32_t nElem_ES = 64;
+  uint32_t nElem_ES = 32;
   size_t nBytes_ES = nElem_ES * sizeof(uint32_t);
 
   // Define pointers to ES_a, ES_b and ES_c in CPU (host)
@@ -479,8 +479,8 @@ for(int i=0;i<nElem_ES;i++){
   float *h_B;
 
   // Allocate h_A and h_B in CPU 
-  h_A = (float *) malloc( M*K*sizeof(float));
-  h_B = (float *) malloc( N*K*sizeof(float));
+  h_A = (float *) malloc(M*K*sizeof(float));
+  h_B = (float *) malloc(N*K*sizeof(float));
 
   // Copy from device to host the value of the matrices A and B
   result = cudaMemcpy(h_A, A, M*K*sizeof(float), cudaMemcpyDeviceToHost);
@@ -527,12 +527,12 @@ for(int i=0;i<nElem_ES;i++){
    d_ES.C = 0;
 
   for(int i=0;i<nElem_ES;i++){
-    printf("ES_c[%i] = %u \n",i,h_ES_c[i]);
+    printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u\n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
     d_ES.A ^= h_ES_a[i];
     d_ES.B ^= h_ES_b[i];
     d_ES.C ^= h_ES_c[i];
   }
-printf("Final ES_b(GPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", d_ES.A, d_ES.B, d_ES.C);
+printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
  
 // Verify that with a sequential implementation we obtain the same value
 h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_A, h_B, C_reference_sequential);
@@ -639,7 +639,7 @@ int main(int argc, const char *arg[]) {
   //
 
   // GEMM problem dimensions.
-  int problem[3] = { 128, 128, 128  };
+  int problem[3] = { 128, 130, 128  };
 
   for (int i = 1; i < argc && i < 4; ++i) {
     std::stringstream ss(arg[i]);

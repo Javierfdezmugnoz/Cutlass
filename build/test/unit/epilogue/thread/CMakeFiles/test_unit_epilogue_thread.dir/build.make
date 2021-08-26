@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_unit_epilogue_thread.
 
@@ -67,7 +67,7 @@ include test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/compi
 include test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/progress.make
 
 test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread: test/unit/epilogue/thread/cutlass_test_unit_epilogue_thread
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/thread && ./cutlass_test_unit_epilogue_thread --gtest_output=xml:test_unit_epilogue_thread.gtest.xml
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/thread && ./cutlass_test_unit_epilogue_thread --gtest_output=xml:test_unit_epilogue_thread.gtest.xml
 
 test_unit_epilogue_thread: test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread
 test_unit_epilogue_thread: test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/build.make
@@ -78,10 +78,10 @@ test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/build: test_u
 .PHONY : test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/build
 
 test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_epilogue_thread.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_epilogue_thread.dir/cmake_clean.cmake
 .PHONY : test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/clean
 
 test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/epilogue/thread /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/epilogue/thread /home/ubuntu/github/cutlass/build/test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/epilogue/thread /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/thread /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/epilogue/thread/CMakeFiles/test_unit_epilogue_thread.dir/depend
 

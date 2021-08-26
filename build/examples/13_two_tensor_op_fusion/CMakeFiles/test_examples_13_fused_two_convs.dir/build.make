@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_examples_13_fused_two_convs.
 
@@ -67,7 +67,7 @@ include examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_c
 include examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/progress.make
 
 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs: examples/13_two_tensor_op_fusion/13_fused_two_convs
-	cd /home/ubuntu/github/cutlass/build/examples/13_two_tensor_op_fusion && ./13_fused_two_convs
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/13_two_tensor_op_fusion && ./13_fused_two_convs
 
 test_examples_13_fused_two_convs: examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs
 test_examples_13_fused_two_convs: examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build.make
@@ -78,10 +78,10 @@ examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build
 
 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/13_two_tensor_op_fusion && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_13_fused_two_convs.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/13_two_tensor_op_fusion && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_13_fused_two_convs.dir/cmake_clean.cmake
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/clean
 
 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/13_two_tensor_op_fusion /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/13_two_tensor_op_fusion /home/ubuntu/github/cutlass/build/examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/13_two_tensor_op_fusion /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/13_two_tensor_op_fusion /home/javierfdez/github_repository/Cutlass/build/examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/depend
 

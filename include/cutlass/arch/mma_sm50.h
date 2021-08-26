@@ -73,9 +73,10 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     d[0] = a[0] * b[0] + c[0];
     // ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]); // this is working
 //    printf("value of threadIdx: %i\n",lane_idx);
-    
+    //printf("Value of *ES_a: %p",ES_a);
     ES_a[0] =  atomicXor((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
     ES_b[0] =  atomicXor((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    printf("value of ES_c : %u \n",(uint32_t) *((uint32_t*) &c[0]));
     ES_c[0] =  atomicXor((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
     //printf("Before: %4.1f \t ES_b[%i]=%u \n", b[0], lane_idx, ES_b[0]);
     // Added by JFdez

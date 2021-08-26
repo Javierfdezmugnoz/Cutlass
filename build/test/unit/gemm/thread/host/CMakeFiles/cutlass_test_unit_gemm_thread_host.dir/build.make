@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/depend.make
@@ -72,16 +72,16 @@ include test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o: test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/flags.make
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o: ../test/unit/gemm/thread/host/gemm_sm60_host.cu
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o: test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o -MF CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o.d -o CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o -c /home/ubuntu/github/cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o -MF CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o.d -o CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu
 
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu > CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu > CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.i
 
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu -o CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu -o CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.s
 
 # Object files for target cutlass_test_unit_gemm_thread_host
 cutlass_test_unit_gemm_thread_host_OBJECTS = \
@@ -89,28 +89,28 @@ cutlass_test_unit_gemm_thread_host_OBJECTS = \
 
 # External object files for target cutlass_test_unit_gemm_thread_host
 cutlass_test_unit_gemm_thread_host_EXTERNAL_OBJECTS = \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
 
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/build.make
-test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: /usr/local/cuda-10.2/lib64/libcudart.so
+test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: /usr/local/cuda-10.0/lib64/libcudart.so
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: _deps/googletest-build/googlemock/gtest/libgtestd.a
 test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host: test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cutlass_test_unit_gemm_thread_host"
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cutlass_test_unit_gemm_thread_host"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/build: test/unit/gemm/thread/host/cutlass_test_unit_gemm_thread_host
 .PHONY : test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/build
 
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/cmake_clean.cmake
 .PHONY : test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/clean
 
 test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/gemm/thread/host /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/gemm/thread/host /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/depend
 

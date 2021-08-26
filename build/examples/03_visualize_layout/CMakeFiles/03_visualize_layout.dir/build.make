@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/depend.make
@@ -72,30 +72,30 @@ include examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/flags.ma
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/flags.make
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o: ../examples/03_visualize_layout/visualize_layout.cpp
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o -MF CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o.d -o CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o -c /home/ubuntu/github/cutlass/examples/03_visualize_layout/visualize_layout.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o -MF CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o.d -o CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o -c /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/visualize_layout.cpp
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/03_visualize_layout/visualize_layout.cpp > CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/visualize_layout.cpp > CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.i
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/03_visualize_layout/visualize_layout.cpp -o CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/visualize_layout.cpp -o CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.s
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/flags.make
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o: ../examples/03_visualize_layout/register_layout.cu
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o -MF CMakeFiles/03_visualize_layout.dir/register_layout.cu.o.d -o CMakeFiles/03_visualize_layout.dir/register_layout.cu.o -c /home/ubuntu/github/cutlass/examples/03_visualize_layout/register_layout.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o -MF CMakeFiles/03_visualize_layout.dir/register_layout.cu.o.d -o CMakeFiles/03_visualize_layout.dir/register_layout.cu.o -c /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/register_layout.cu
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/03_visualize_layout.dir/register_layout.cu.i"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/03_visualize_layout/register_layout.cu > CMakeFiles/03_visualize_layout.dir/register_layout.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/register_layout.cu > CMakeFiles/03_visualize_layout.dir/register_layout.cu.i
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/03_visualize_layout.dir/register_layout.cu.s"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/03_visualize_layout/register_layout.cu -o CMakeFiles/03_visualize_layout.dir/register_layout.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout/register_layout.cu -o CMakeFiles/03_visualize_layout.dir/register_layout.cu.s
 
 # Object files for target 03_visualize_layout
 03_visualize_layout_OBJECTS = \
@@ -108,20 +108,20 @@ examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.
 examples/03_visualize_layout/03_visualize_layout: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/visualize_layout.cpp.o
 examples/03_visualize_layout/03_visualize_layout: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/register_layout.cu.o
 examples/03_visualize_layout/03_visualize_layout: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/build.make
-examples/03_visualize_layout/03_visualize_layout: /usr/local/cuda-10.2/lib64/libcudart.so
+examples/03_visualize_layout/03_visualize_layout: /usr/local/cuda-10.0/lib64/libcudart.so
 examples/03_visualize_layout/03_visualize_layout: examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 03_visualize_layout"
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/03_visualize_layout.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 03_visualize_layout"
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/03_visualize_layout.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/build: examples/03_visualize_layout/03_visualize_layout
 .PHONY : examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/build
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -P CMakeFiles/03_visualize_layout.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -P CMakeFiles/03_visualize_layout.dir/cmake_clean.cmake
 .PHONY : examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/clean
 
 examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/03_visualize_layout /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/03_visualize_layout /home/ubuntu/github/cutlass/build/examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/03_visualize_layout/CMakeFiles/03_visualize_layout.dir/depend
 

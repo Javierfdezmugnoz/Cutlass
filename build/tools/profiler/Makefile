@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,7 +131,7 @@ test/fast: test
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -153,7 +153,7 @@ install/fast: preinstall/fast
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/tools/profiler//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/tools/profiler//CMakeFiles/progress.marks
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/clean
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/test_profiler.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler.dir/rule
 .PHONY : tools/profiler/CMakeFiles/test_profiler.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_profiler: tools/profiler/CMakeFiles/test_profiler.dir/rule
 
 # fast build rule for target.
 test_profiler/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler.dir/build.make tools/profiler/CMakeFiles/test_profiler.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler.dir/build.make tools/profiler/CMakeFiles/test_profiler.dir/build
 .PHONY : test_profiler/fast
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/cutlass_profiler.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/cutlass_profiler.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/cutlass_profiler.dir/rule
 .PHONY : tools/profiler/CMakeFiles/cutlass_profiler.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ cutlass_profiler: tools/profiler/CMakeFiles/cutlass_profiler.dir/rule
 
 # fast build rule for target.
 cutlass_profiler/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/build
 .PHONY : cutlass_profiler/fast
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/test_profiler_1.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_1.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_1.dir/rule
 .PHONY : tools/profiler/CMakeFiles/test_profiler_1.dir/rule
 
 # Convenience name for target.
@@ -231,12 +231,12 @@ test_profiler_1: tools/profiler/CMakeFiles/test_profiler_1.dir/rule
 
 # fast build rule for target.
 test_profiler_1/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_1.dir/build.make tools/profiler/CMakeFiles/test_profiler_1.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_1.dir/build.make tools/profiler/CMakeFiles/test_profiler_1.dir/build
 .PHONY : test_profiler_1/fast
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/test_profiler_2.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_2.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_2.dir/rule
 .PHONY : tools/profiler/CMakeFiles/test_profiler_2.dir/rule
 
 # Convenience name for target.
@@ -245,12 +245,12 @@ test_profiler_2: tools/profiler/CMakeFiles/test_profiler_2.dir/rule
 
 # fast build rule for target.
 test_profiler_2/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_2.dir/build.make tools/profiler/CMakeFiles/test_profiler_2.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_2.dir/build.make tools/profiler/CMakeFiles/test_profiler_2.dir/build
 .PHONY : test_profiler_2/fast
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/test_profiler_0.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_0.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_0.dir/rule
 .PHONY : tools/profiler/CMakeFiles/test_profiler_0.dir/rule
 
 # Convenience name for target.
@@ -259,12 +259,12 @@ test_profiler_0: tools/profiler/CMakeFiles/test_profiler_0.dir/rule
 
 # fast build rule for target.
 test_profiler_0/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_0.dir/build.make tools/profiler/CMakeFiles/test_profiler_0.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_0.dir/build.make tools/profiler/CMakeFiles/test_profiler_0.dir/build
 .PHONY : test_profiler_0/fast
 
 # Convenience name for target.
 tools/profiler/CMakeFiles/test_profiler_3.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_3.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/profiler/CMakeFiles/test_profiler_3.dir/rule
 .PHONY : tools/profiler/CMakeFiles/test_profiler_3.dir/rule
 
 # Convenience name for target.
@@ -273,7 +273,7 @@ test_profiler_3: tools/profiler/CMakeFiles/test_profiler_3.dir/rule
 
 # fast build rule for target.
 test_profiler_3/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_3.dir/build.make tools/profiler/CMakeFiles/test_profiler_3.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/test_profiler_3.dir/build.make tools/profiler/CMakeFiles/test_profiler_3.dir/build
 .PHONY : test_profiler_3/fast
 
 src/conv2d_operation_profiler.o: src/conv2d_operation_profiler.cu.o
@@ -281,7 +281,7 @@ src/conv2d_operation_profiler.o: src/conv2d_operation_profiler.cu.o
 
 # target to build an object file
 src/conv2d_operation_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o
 .PHONY : src/conv2d_operation_profiler.cu.o
 
 src/conv2d_operation_profiler.i: src/conv2d_operation_profiler.cu.i
@@ -289,7 +289,7 @@ src/conv2d_operation_profiler.i: src/conv2d_operation_profiler.cu.i
 
 # target to preprocess a source file
 src/conv2d_operation_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i
 .PHONY : src/conv2d_operation_profiler.cu.i
 
 src/conv2d_operation_profiler.s: src/conv2d_operation_profiler.cu.s
@@ -297,7 +297,7 @@ src/conv2d_operation_profiler.s: src/conv2d_operation_profiler.cu.s
 
 # target to generate assembly for a file
 src/conv2d_operation_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s
 .PHONY : src/conv2d_operation_profiler.cu.s
 
 src/conv3d_operation_profiler.o: src/conv3d_operation_profiler.cu.o
@@ -305,7 +305,7 @@ src/conv3d_operation_profiler.o: src/conv3d_operation_profiler.cu.o
 
 # target to build an object file
 src/conv3d_operation_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o
 .PHONY : src/conv3d_operation_profiler.cu.o
 
 src/conv3d_operation_profiler.i: src/conv3d_operation_profiler.cu.i
@@ -313,7 +313,7 @@ src/conv3d_operation_profiler.i: src/conv3d_operation_profiler.cu.i
 
 # target to preprocess a source file
 src/conv3d_operation_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i
 .PHONY : src/conv3d_operation_profiler.cu.i
 
 src/conv3d_operation_profiler.s: src/conv3d_operation_profiler.cu.s
@@ -321,7 +321,7 @@ src/conv3d_operation_profiler.s: src/conv3d_operation_profiler.cu.s
 
 # target to generate assembly for a file
 src/conv3d_operation_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s
 .PHONY : src/conv3d_operation_profiler.cu.s
 
 src/cublas_helpers.o: src/cublas_helpers.cpp.o
@@ -329,7 +329,7 @@ src/cublas_helpers.o: src/cublas_helpers.cpp.o
 
 # target to build an object file
 src/cublas_helpers.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o
 .PHONY : src/cublas_helpers.cpp.o
 
 src/cublas_helpers.i: src/cublas_helpers.cpp.i
@@ -337,7 +337,7 @@ src/cublas_helpers.i: src/cublas_helpers.cpp.i
 
 # target to preprocess a source file
 src/cublas_helpers.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i
 .PHONY : src/cublas_helpers.cpp.i
 
 src/cublas_helpers.s: src/cublas_helpers.cpp.s
@@ -345,7 +345,7 @@ src/cublas_helpers.s: src/cublas_helpers.cpp.s
 
 # target to generate assembly for a file
 src/cublas_helpers.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s
 .PHONY : src/cublas_helpers.cpp.s
 
 src/cudnn_helpers.o: src/cudnn_helpers.cpp.o
@@ -353,7 +353,7 @@ src/cudnn_helpers.o: src/cudnn_helpers.cpp.o
 
 # target to build an object file
 src/cudnn_helpers.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o
 .PHONY : src/cudnn_helpers.cpp.o
 
 src/cudnn_helpers.i: src/cudnn_helpers.cpp.i
@@ -361,7 +361,7 @@ src/cudnn_helpers.i: src/cudnn_helpers.cpp.i
 
 # target to preprocess a source file
 src/cudnn_helpers.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i
 .PHONY : src/cudnn_helpers.cpp.i
 
 src/cudnn_helpers.s: src/cudnn_helpers.cpp.s
@@ -369,7 +369,7 @@ src/cudnn_helpers.s: src/cudnn_helpers.cpp.s
 
 # target to generate assembly for a file
 src/cudnn_helpers.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s
 .PHONY : src/cudnn_helpers.cpp.s
 
 src/cutlass_profiler.o: src/cutlass_profiler.cu.o
@@ -377,7 +377,7 @@ src/cutlass_profiler.o: src/cutlass_profiler.cu.o
 
 # target to build an object file
 src/cutlass_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o
 .PHONY : src/cutlass_profiler.cu.o
 
 src/cutlass_profiler.i: src/cutlass_profiler.cu.i
@@ -385,7 +385,7 @@ src/cutlass_profiler.i: src/cutlass_profiler.cu.i
 
 # target to preprocess a source file
 src/cutlass_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i
 .PHONY : src/cutlass_profiler.cu.i
 
 src/cutlass_profiler.s: src/cutlass_profiler.cu.s
@@ -393,7 +393,7 @@ src/cutlass_profiler.s: src/cutlass_profiler.cu.s
 
 # target to generate assembly for a file
 src/cutlass_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s
 .PHONY : src/cutlass_profiler.cu.s
 
 src/device_allocation.o: src/device_allocation.cu.o
@@ -401,7 +401,7 @@ src/device_allocation.o: src/device_allocation.cu.o
 
 # target to build an object file
 src/device_allocation.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o
 .PHONY : src/device_allocation.cu.o
 
 src/device_allocation.i: src/device_allocation.cu.i
@@ -409,7 +409,7 @@ src/device_allocation.i: src/device_allocation.cu.i
 
 # target to preprocess a source file
 src/device_allocation.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i
 .PHONY : src/device_allocation.cu.i
 
 src/device_allocation.s: src/device_allocation.cu.s
@@ -417,7 +417,7 @@ src/device_allocation.s: src/device_allocation.cu.s
 
 # target to generate assembly for a file
 src/device_allocation.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s
 .PHONY : src/device_allocation.cu.s
 
 src/device_context.o: src/device_context.cu.o
@@ -425,7 +425,7 @@ src/device_context.o: src/device_context.cu.o
 
 # target to build an object file
 src/device_context.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o
 .PHONY : src/device_context.cu.o
 
 src/device_context.i: src/device_context.cu.i
@@ -433,7 +433,7 @@ src/device_context.i: src/device_context.cu.i
 
 # target to preprocess a source file
 src/device_context.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i
 .PHONY : src/device_context.cu.i
 
 src/device_context.s: src/device_context.cu.s
@@ -441,7 +441,7 @@ src/device_context.s: src/device_context.cu.s
 
 # target to generate assembly for a file
 src/device_context.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s
 .PHONY : src/device_context.cu.s
 
 src/enumerated_types.o: src/enumerated_types.cpp.o
@@ -449,7 +449,7 @@ src/enumerated_types.o: src/enumerated_types.cpp.o
 
 # target to build an object file
 src/enumerated_types.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o
 .PHONY : src/enumerated_types.cpp.o
 
 src/enumerated_types.i: src/enumerated_types.cpp.i
@@ -457,7 +457,7 @@ src/enumerated_types.i: src/enumerated_types.cpp.i
 
 # target to preprocess a source file
 src/enumerated_types.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i
 .PHONY : src/enumerated_types.cpp.i
 
 src/enumerated_types.s: src/enumerated_types.cpp.s
@@ -465,7 +465,7 @@ src/enumerated_types.s: src/enumerated_types.cpp.s
 
 # target to generate assembly for a file
 src/enumerated_types.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s
 .PHONY : src/enumerated_types.cpp.s
 
 src/gemm_operation_profiler.o: src/gemm_operation_profiler.cu.o
@@ -473,7 +473,7 @@ src/gemm_operation_profiler.o: src/gemm_operation_profiler.cu.o
 
 # target to build an object file
 src/gemm_operation_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o
 .PHONY : src/gemm_operation_profiler.cu.o
 
 src/gemm_operation_profiler.i: src/gemm_operation_profiler.cu.i
@@ -481,7 +481,7 @@ src/gemm_operation_profiler.i: src/gemm_operation_profiler.cu.i
 
 # target to preprocess a source file
 src/gemm_operation_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i
 .PHONY : src/gemm_operation_profiler.cu.i
 
 src/gemm_operation_profiler.s: src/gemm_operation_profiler.cu.s
@@ -489,7 +489,7 @@ src/gemm_operation_profiler.s: src/gemm_operation_profiler.cu.s
 
 # target to generate assembly for a file
 src/gemm_operation_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s
 .PHONY : src/gemm_operation_profiler.cu.s
 
 src/gpu_timer.o: src/gpu_timer.cpp.o
@@ -497,7 +497,7 @@ src/gpu_timer.o: src/gpu_timer.cpp.o
 
 # target to build an object file
 src/gpu_timer.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o
 .PHONY : src/gpu_timer.cpp.o
 
 src/gpu_timer.i: src/gpu_timer.cpp.i
@@ -505,7 +505,7 @@ src/gpu_timer.i: src/gpu_timer.cpp.i
 
 # target to preprocess a source file
 src/gpu_timer.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i
 .PHONY : src/gpu_timer.cpp.i
 
 src/gpu_timer.s: src/gpu_timer.cpp.s
@@ -513,7 +513,7 @@ src/gpu_timer.s: src/gpu_timer.cpp.s
 
 # target to generate assembly for a file
 src/gpu_timer.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s
 .PHONY : src/gpu_timer.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -521,7 +521,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -529,7 +529,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -537,7 +537,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/operation_profiler.o: src/operation_profiler.cu.o
@@ -545,7 +545,7 @@ src/operation_profiler.o: src/operation_profiler.cu.o
 
 # target to build an object file
 src/operation_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o
 .PHONY : src/operation_profiler.cu.o
 
 src/operation_profiler.i: src/operation_profiler.cu.i
@@ -553,7 +553,7 @@ src/operation_profiler.i: src/operation_profiler.cu.i
 
 # target to preprocess a source file
 src/operation_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i
 .PHONY : src/operation_profiler.cu.i
 
 src/operation_profiler.s: src/operation_profiler.cu.s
@@ -561,7 +561,7 @@ src/operation_profiler.s: src/operation_profiler.cu.s
 
 # target to generate assembly for a file
 src/operation_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s
 .PHONY : src/operation_profiler.cu.s
 
 src/options.o: src/options.cu.o
@@ -569,7 +569,7 @@ src/options.o: src/options.cu.o
 
 # target to build an object file
 src/options.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o
 .PHONY : src/options.cu.o
 
 src/options.i: src/options.cu.i
@@ -577,7 +577,7 @@ src/options.i: src/options.cu.i
 
 # target to preprocess a source file
 src/options.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.i
 .PHONY : src/options.cu.i
 
 src/options.s: src/options.cu.s
@@ -585,7 +585,7 @@ src/options.s: src/options.cu.s
 
 # target to generate assembly for a file
 src/options.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.s
 .PHONY : src/options.cu.s
 
 src/performance_report.o: src/performance_report.cpp.o
@@ -593,7 +593,7 @@ src/performance_report.o: src/performance_report.cpp.o
 
 # target to build an object file
 src/performance_report.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o
 .PHONY : src/performance_report.cpp.o
 
 src/performance_report.i: src/performance_report.cpp.i
@@ -601,7 +601,7 @@ src/performance_report.i: src/performance_report.cpp.i
 
 # target to preprocess a source file
 src/performance_report.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i
 .PHONY : src/performance_report.cpp.i
 
 src/performance_report.s: src/performance_report.cpp.s
@@ -609,7 +609,7 @@ src/performance_report.s: src/performance_report.cpp.s
 
 # target to generate assembly for a file
 src/performance_report.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s
 .PHONY : src/performance_report.cpp.s
 
 src/problem_space.o: src/problem_space.cpp.o
@@ -617,7 +617,7 @@ src/problem_space.o: src/problem_space.cpp.o
 
 # target to build an object file
 src/problem_space.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o
 .PHONY : src/problem_space.cpp.o
 
 src/problem_space.i: src/problem_space.cpp.i
@@ -625,7 +625,7 @@ src/problem_space.i: src/problem_space.cpp.i
 
 # target to preprocess a source file
 src/problem_space.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i
 .PHONY : src/problem_space.cpp.i
 
 src/problem_space.s: src/problem_space.cpp.s
@@ -633,7 +633,7 @@ src/problem_space.s: src/problem_space.cpp.s
 
 # target to generate assembly for a file
 src/problem_space.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s
 .PHONY : src/problem_space.cpp.s
 
 src/sparse_gemm_operation_profiler.o: src/sparse_gemm_operation_profiler.cu.o
@@ -641,7 +641,7 @@ src/sparse_gemm_operation_profiler.o: src/sparse_gemm_operation_profiler.cu.o
 
 # target to build an object file
 src/sparse_gemm_operation_profiler.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o
 .PHONY : src/sparse_gemm_operation_profiler.cu.o
 
 src/sparse_gemm_operation_profiler.i: src/sparse_gemm_operation_profiler.cu.i
@@ -649,7 +649,7 @@ src/sparse_gemm_operation_profiler.i: src/sparse_gemm_operation_profiler.cu.i
 
 # target to preprocess a source file
 src/sparse_gemm_operation_profiler.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i
 .PHONY : src/sparse_gemm_operation_profiler.cu.i
 
 src/sparse_gemm_operation_profiler.s: src/sparse_gemm_operation_profiler.cu.s
@@ -657,7 +657,7 @@ src/sparse_gemm_operation_profiler.s: src/sparse_gemm_operation_profiler.cu.s
 
 # target to generate assembly for a file
 src/sparse_gemm_operation_profiler.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s
 .PHONY : src/sparse_gemm_operation_profiler.cu.s
 
 # Help Target
@@ -740,7 +740,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

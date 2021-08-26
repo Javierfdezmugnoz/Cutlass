@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/depend.make
@@ -72,30 +72,30 @@ include test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/flags.make
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o: ../test/unit/reduction/device/tensor_reduce_strided.cu
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o -MF CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o.d -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o -c /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_strided.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o -MF CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o.d -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_strided.cu
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_strided.cu > CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_strided.cu > CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.i
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_strided.cu -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_strided.cu -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.s
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/flags.make
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o: ../test/unit/reduction/device/tensor_reduce_contiguous.cu
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o -MF CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o.d -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o -c /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o -MF CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o.d -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o -c /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu > CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu > CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.i
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device/tensor_reduce_contiguous.cu -o CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.s
 
 # Object files for target cutlass_test_unit_reduction_device
 cutlass_test_unit_reduction_device_OBJECTS = \
@@ -104,29 +104,29 @@ cutlass_test_unit_reduction_device_OBJECTS = \
 
 # External object files for target cutlass_test_unit_reduction_device
 cutlass_test_unit_reduction_device_EXTERNAL_OBJECTS = \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
+"/home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
 
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_strided.cu.o
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/tensor_reduce_contiguous.cu.o
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/build.make
-test/unit/reduction/device/cutlass_test_unit_reduction_device: /usr/local/cuda-10.2/lib64/libcudart.so
+test/unit/reduction/device/cutlass_test_unit_reduction_device: /usr/local/cuda-10.0/lib64/libcudart.so
 test/unit/reduction/device/cutlass_test_unit_reduction_device: _deps/googletest-build/googlemock/gtest/libgtestd.a
 test/unit/reduction/device/cutlass_test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cutlass_test_unit_reduction_device"
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_reduction_device.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cutlass_test_unit_reduction_device"
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_reduction_device.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/build: test/unit/reduction/device/cutlass_test_unit_reduction_device
 .PHONY : test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/build
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_reduction_device.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_reduction_device.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/clean
 
 test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/reduction/device /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/reduction/device /home/ubuntu/github/cutlass/build/test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/reduction/device /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/device/CMakeFiles/cutlass_test_unit_reduction_device.dir/depend
 

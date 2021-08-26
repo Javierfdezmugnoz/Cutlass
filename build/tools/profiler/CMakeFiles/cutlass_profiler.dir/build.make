@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include tools/profiler/CMakeFiles/cutlass_profiler.dir/depend.make
@@ -72,226 +72,226 @@ include tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o: ../tools/profiler/src/main.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/main.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/main.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/main.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/main.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/main.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/main.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/main.cpp > CMakeFiles/cutlass_profiler.dir/src/main.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/main.cpp > CMakeFiles/cutlass_profiler.dir/src/main.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/main.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/main.cpp -o CMakeFiles/cutlass_profiler.dir/src/main.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/main.cpp -o CMakeFiles/cutlass_profiler.dir/src/main.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o: ../tools/profiler/src/cutlass_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/cutlass_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cutlass_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/cutlass_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cutlass_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/cutlass_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cutlass_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/cutlass_profiler.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o: ../tools/profiler/src/options.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/options.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/options.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/options.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/options.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/options.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/options.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/options.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/options.cu > CMakeFiles/cutlass_profiler.dir/src/options.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/options.cu > CMakeFiles/cutlass_profiler.dir/src/options.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/options.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/options.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/options.cu -o CMakeFiles/cutlass_profiler.dir/src/options.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/options.cu -o CMakeFiles/cutlass_profiler.dir/src/options.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o: ../tools/profiler/src/performance_report.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/performance_report.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/performance_report.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/performance_report.cpp > CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/performance_report.cpp > CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/performance_report.cpp -o CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/performance_report.cpp -o CMakeFiles/cutlass_profiler.dir/src/performance_report.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o: ../tools/profiler/src/enumerated_types.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/enumerated_types.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/enumerated_types.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/enumerated_types.cpp > CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/enumerated_types.cpp > CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/enumerated_types.cpp -o CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/enumerated_types.cpp -o CMakeFiles/cutlass_profiler.dir/src/enumerated_types.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o: ../tools/profiler/src/gpu_timer.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/gpu_timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gpu_timer.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/gpu_timer.cpp > CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gpu_timer.cpp > CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/gpu_timer.cpp -o CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gpu_timer.cpp -o CMakeFiles/cutlass_profiler.dir/src/gpu_timer.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o: ../tools/profiler/src/device_allocation.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/device_allocation.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_allocation.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/device_allocation.cu > CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_allocation.cu > CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/device_allocation.cu -o CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_allocation.cu -o CMakeFiles/cutlass_profiler.dir/src/device_allocation.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o: ../tools/profiler/src/device_context.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/device_context.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/device_context.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_context.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/device_context.cu > CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_context.cu > CMakeFiles/cutlass_profiler.dir/src/device_context.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/device_context.cu -o CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/device_context.cu -o CMakeFiles/cutlass_profiler.dir/src/device_context.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o: ../tools/profiler/src/cublas_helpers.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/cublas_helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cublas_helpers.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/cublas_helpers.cpp > CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cublas_helpers.cpp > CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/cublas_helpers.cpp -o CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cublas_helpers.cpp -o CMakeFiles/cutlass_profiler.dir/src/cublas_helpers.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o: ../tools/profiler/src/cudnn_helpers.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/cudnn_helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cudnn_helpers.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/cudnn_helpers.cpp > CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cudnn_helpers.cpp > CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/cudnn_helpers.cpp -o CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/cudnn_helpers.cpp -o CMakeFiles/cutlass_profiler.dir/src/cudnn_helpers.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o: ../tools/profiler/src/problem_space.cpp
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o -c /home/ubuntu/github/cutlass/tools/profiler/src/problem_space.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o -MF CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o.d -o CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/problem_space.cpp
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/problem_space.cpp > CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/problem_space.cpp > CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/problem_space.cpp -o CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/problem_space.cpp -o CMakeFiles/cutlass_profiler.dir/src/problem_space.cpp.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o: ../tools/profiler/src/operation_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/operation_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/operation_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/operation_profiler.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o: ../tools/profiler/src/gemm_operation_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/gemm_operation_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gemm_operation_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/gemm_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gemm_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/gemm_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/gemm_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/gemm_operation_profiler.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o: ../tools/profiler/src/conv2d_operation_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/conv2d_operation_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv2d_operation_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/conv2d_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv2d_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/conv2d_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv2d_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/conv2d_operation_profiler.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o: ../tools/profiler/src/conv3d_operation_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/conv3d_operation_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv3d_operation_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/conv3d_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv3d_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/conv3d_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/conv3d_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/conv3d_operation_profiler.cu.s
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/flags.make
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o: ../tools/profiler/src/sparse_gemm_operation_profiler.cu
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o: tools/profiler/CMakeFiles/cutlass_profiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o -c /home/ubuntu/github/cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o -MF CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o.d -o CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o -c /home/javierfdez/github_repository/Cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu > CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.i
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/tools/profiler/src/sparse_gemm_operation_profiler.cu -o CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.s
 
 # Object files for target cutlass_profiler
 cutlass_profiler_OBJECTS = \
@@ -333,20 +333,20 @@ tools/profiler/cutlass_profiler: tools/profiler/CMakeFiles/cutlass_profiler.dir/
 tools/profiler/cutlass_profiler: tools/profiler/CMakeFiles/cutlass_profiler.dir/src/sparse_gemm_operation_profiler.cu.o
 tools/profiler/cutlass_profiler: tools/profiler/CMakeFiles/cutlass_profiler.dir/build.make
 tools/profiler/cutlass_profiler: tools/library/libcutlassd.so
-tools/profiler/cutlass_profiler: /usr/local/cuda-10.2/lib64/libcudart.so
+tools/profiler/cutlass_profiler: /usr/local/cuda-10.0/lib64/libcudart.so
 tools/profiler/cutlass_profiler: tools/profiler/CMakeFiles/cutlass_profiler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable cutlass_profiler"
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_profiler.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable cutlass_profiler"
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_profiler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tools/profiler/CMakeFiles/cutlass_profiler.dir/build: tools/profiler/cutlass_profiler
 .PHONY : tools/profiler/CMakeFiles/cutlass_profiler.dir/build
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_profiler.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_profiler.dir/cmake_clean.cmake
 .PHONY : tools/profiler/CMakeFiles/cutlass_profiler.dir/clean
 
 tools/profiler/CMakeFiles/cutlass_profiler.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/tools/profiler /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/tools/profiler /home/ubuntu/github/cutlass/build/tools/profiler/CMakeFiles/cutlass_profiler.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/tools/profiler /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/tools/profiler /home/javierfdez/github_repository/Cutlass/build/tools/profiler/CMakeFiles/cutlass_profiler.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tools/profiler/CMakeFiles/cutlass_profiler.dir/depend
 

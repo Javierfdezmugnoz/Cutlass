@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/examples/17_fprop_per_channel_bias//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/examples/17_fprop_per_channel_bias//CMakeFiles/progress.marks
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/clean
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/rule
 .PHONY : examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/rule
 
 # fast build rule for target.
 17_fprop_per_channel_bias/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build
 .PHONY : 17_fprop_per_channel_bias/fast
 
 # Convenience name for target.
 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/rule
 .PHONY : examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ test_examples_17_fprop_per_channel_bias: examples/17_fprop_per_channel_bias/CMak
 
 # fast build rule for target.
 test_examples_17_fprop_per_channel_bias/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build
 .PHONY : test_examples_17_fprop_per_channel_bias/fast
 
 fprop_per_channel_bias.o: fprop_per_channel_bias.cu.o
@@ -225,7 +225,7 @@ fprop_per_channel_bias.o: fprop_per_channel_bias.cu.o
 
 # target to build an object file
 fprop_per_channel_bias.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o
 .PHONY : fprop_per_channel_bias.cu.o
 
 fprop_per_channel_bias.i: fprop_per_channel_bias.cu.i
@@ -233,7 +233,7 @@ fprop_per_channel_bias.i: fprop_per_channel_bias.cu.i
 
 # target to preprocess a source file
 fprop_per_channel_bias.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.i
 .PHONY : fprop_per_channel_bias.cu.i
 
 fprop_per_channel_bias.s: fprop_per_channel_bias.cu.s
@@ -241,7 +241,7 @@ fprop_per_channel_bias.s: fprop_per_channel_bias.cu.s
 
 # target to generate assembly for a file
 fprop_per_channel_bias.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/build.make examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.s
 .PHONY : fprop_per_channel_bias.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

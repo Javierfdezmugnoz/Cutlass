@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ubuntu/github/cutlass/build/_deps/googletest-src/googlemock/include -I/home/ubuntu/github/cutlass/build/_deps/googletest-src/googlemock -I/home/ubuntu/github/cutlass/build/_deps/googletest-src/googletest/include -I/home/ubuntu/github/cutlass/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/javierfdez/github_repository/Cutlass/build/_deps/googletest-src/googlemock/include -I/home/javierfdez/github_repository/Cutlass/build/_deps/googletest-src/googlemock -I/home/javierfdez/github_repository/Cutlass/build/_deps/googletest-src/googletest/include -I/home/javierfdez/github_repository/Cutlass/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -g   -DGTEST_HAS_PTHREAD=1   -std=c++11
 

@@ -64,15 +64,15 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
   /usr/include/c++/7.5.0/cstdlib \
   /usr/include/c++/7.5.0/stdlib.h \
-  /usr/local/cuda-10.2/include/cuda.h \
+  /usr/local/cuda-10.0/include/cuda.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/aarch64-linux-gnu/bits/wchar.h \
   /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_builtin_vars.h \
-  /usr/local/cuda-10.2/include/driver_types.h \
-  /usr/local/cuda-10.2/include/crt/host_defines.h \
-  /usr/local/cuda-10.2/include/vector_types.h \
+  /usr/local/cuda-10.0/include/driver_types.h \
+  /usr/local/cuda-10.0/include/crt/host_defines.h \
+  /usr/local/cuda-10.0/include/vector_types.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/limits.h \
   /usr/include/limits.h \
   /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
@@ -82,54 +82,54 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   /usr/include/aarch64-linux-gnu/bits/xopen_lim.h \
   /usr/include/aarch64-linux-gnu/bits/uio_lim.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__stddef_max_align_t.h \
-  /usr/local/cuda-10.2/include/host_config.h \
-  /usr/local/cuda-10.2/include/crt/host_config.h \
-  /usr/local/cuda-10.2/include/host_defines.h \
-  /usr/local/cuda-10.2/include/cuda_runtime.h \
-  /usr/local/cuda-10.2/include/builtin_types.h \
-  /usr/local/cuda-10.2/include/device_types.h \
-  /usr/local/cuda-10.2/include/surface_types.h \
-  /usr/local/cuda-10.2/include/texture_types.h \
-  /usr/local/cuda-10.2/include/library_types.h \
-  /usr/local/cuda-10.2/include/channel_descriptor.h \
-  /usr/local/cuda-10.2/include/cuda_runtime_api.h \
-  /usr/local/cuda-10.2/include/cuda_device_runtime_api.h \
-  /usr/local/cuda-10.2/include/driver_functions.h \
-  /usr/local/cuda-10.2/include/vector_functions.h \
-  /usr/local/cuda-10.2/include/vector_functions.hpp \
-  /usr/local/cuda-10.2/include/crt/common_functions.h \
-  /usr/local/cuda-10.2/include/cuda_surface_types.h \
-  /usr/local/cuda-10.2/include/cuda_texture_types.h \
-  /usr/local/cuda-10.2/include/crt/device_functions.h \
-  /usr/local/cuda-10.2/include/device_launch_parameters.h \
-  /usr/local/cuda-10.2/include/crt/host_runtime.h \
-  /usr/local/cuda-10.2/include/crt/storage_class.h \
+  /usr/local/cuda-10.0/include/host_config.h \
+  /usr/local/cuda-10.0/include/crt/host_config.h \
+  /usr/local/cuda-10.0/include/host_defines.h \
+  /usr/local/cuda-10.0/include/cuda_runtime.h \
+  /usr/local/cuda-10.0/include/builtin_types.h \
+  /usr/local/cuda-10.0/include/device_types.h \
+  /usr/local/cuda-10.0/include/surface_types.h \
+  /usr/local/cuda-10.0/include/texture_types.h \
+  /usr/local/cuda-10.0/include/library_types.h \
+  /usr/local/cuda-10.0/include/channel_descriptor.h \
+  /usr/local/cuda-10.0/include/cuda_runtime_api.h \
+  /usr/local/cuda-10.0/include/cuda_device_runtime_api.h \
+  /usr/local/cuda-10.0/include/driver_functions.h \
+  /usr/local/cuda-10.0/include/vector_functions.h \
+  /usr/local/cuda-10.0/include/vector_functions.hpp \
+  /usr/local/cuda-10.0/include/crt/common_functions.h \
+  /usr/local/cuda-10.0/include/cuda_surface_types.h \
+  /usr/local/cuda-10.0/include/cuda_texture_types.h \
+  /usr/local/cuda-10.0/include/crt/device_functions.h \
+  /usr/local/cuda-10.0/include/device_launch_parameters.h \
+  /usr/local/cuda-10.0/include/crt/host_runtime.h \
+  /usr/local/cuda-10.0/include/crt/storage_class.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_libdevice_declares.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_device_functions.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/local/cuda-10.2/include/crt/math_functions.hpp \
-  /usr/local/cuda-10.2/include/math_constants.h \
-  /usr/local/cuda-10.2/include/crt/func_macro.h \
-  /usr/local/cuda-10.2/include/device_atomic_functions.h \
-  /usr/local/cuda-10.2/include/device_atomic_functions.hpp \
-  /usr/local/cuda-10.2/include/crt/device_functions.hpp \
-  /usr/local/cuda-10.2/include/crt/device_double_functions.hpp \
-  /usr/local/cuda-10.2/include/sm_20_atomic_functions.hpp \
-  /usr/local/cuda-10.2/include/sm_20_intrinsics.hpp \
-  /usr/local/cuda-10.2/include/sm_32_atomic_functions.hpp \
-  /usr/local/cuda-10.2/include/sm_60_atomic_functions.hpp \
-  /usr/local/cuda-10.2/include/sm_61_intrinsics.hpp \
-  /usr/local/cuda-10.2/include/texture_indirect_functions.h \
+  /usr/local/cuda-10.0/include/crt/math_functions.hpp \
+  /usr/local/cuda-10.0/include/math_constants.h \
+  /usr/local/cuda-10.0/include/crt/func_macro.h \
+  /usr/local/cuda-10.0/include/device_atomic_functions.h \
+  /usr/local/cuda-10.0/include/device_atomic_functions.hpp \
+  /usr/local/cuda-10.0/include/crt/device_functions.hpp \
+  /usr/local/cuda-10.0/include/crt/device_double_functions.hpp \
+  /usr/local/cuda-10.0/include/sm_20_atomic_functions.hpp \
+  /usr/local/cuda-10.0/include/sm_20_intrinsics.hpp \
+  /usr/local/cuda-10.0/include/sm_32_atomic_functions.hpp \
+  /usr/local/cuda-10.0/include/sm_60_atomic_functions.hpp \
+  /usr/local/cuda-10.0/include/sm_61_intrinsics.hpp \
+  /usr/local/cuda-10.0/include/texture_indirect_functions.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_cmath.h \
   /usr/include/c++/7.5.0/limits \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_intrinsics.h \
-  /usr/local/cuda-10.2/include/crt/sm_70_rt.hpp \
+  /usr/local/cuda-10.0/include/crt/sm_70_rt.hpp \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_complex_builtins.h \
-  /usr/local/cuda-10.2/include/curand_mtgp32_kernel.h \
+  /usr/local/cuda-10.0/include/curand_mtgp32_kernel.h \
   /usr/include/memory.h \
-  /usr/local/cuda-10.2/include/curand.h \
-  /usr/local/cuda-10.2/include/curand_mtgp32.h \
+  /usr/local/cuda-10.0/include/curand.h \
+  /usr/local/cuda-10.0/include/curand_mtgp32.h \
   /usr/include/c++/7.5.0/iostream \
   /usr/include/c++/7.5.0/ostream \
   /usr/include/c++/7.5.0/ios \
@@ -275,8 +275,8 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   /usr/include/c++/7.5.0/bits/std_function.h \
   /usr/include/c++/7.5.0/bits/refwrap.h \
   ../include/cutlass/half.h \
-  /usr/local/cuda-10.2/include/cuda_fp16.h \
-  /usr/local/cuda-10.2/include/cuda_fp16.hpp \
+  /usr/local/cuda-10.0/include/cuda_fp16.h \
+  /usr/local/cuda-10.0/include/cuda_fp16.hpp \
   ../include/cutlass/bfloat16.h \
   ../include/cutlass/tfloat32.h \
   ../include/cutlass/arch/arch.h \
@@ -303,7 +303,8 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
   ../include/cutlass/tensor_coord.h \
   ../include/cutlass/functional.h \
   ../include/cutlass/complex.h \
-  /usr/local/cuda-10.2/include/cuComplex.h \
+  /usr/local/cuda-10.0/include/cuComplex.h \
+  /usr/include/c++/7.5.0/math.h \
   ../include/cutlass/real.h \
   ../include/cutlass/transform/pitch_linear_thread_map.h \
   ../include/cutlass/predicate_vector.h \
@@ -418,8 +419,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/epilogue/threadblock/default_thread_map_simt.h:
 
-../include/cutlass/epilogue/warp/simt_policy.h:
-
 ../include/cutlass/epilogue/warp/fragment_iterator_simt.h:
 
 ../include/cutlass/epilogue/threadblock/default_epilogue_simt.h:
@@ -456,15 +455,15 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h:
 
+../include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h:
+
 ../include/cutlass/gemm/threadblock/default_mma_core_simt.h:
+
+../include/cutlass/transform/thread/transpose.h:
 
 ../include/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h:
 
 ../include/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h:
-
-../include/cutlass/epilogue/threadblock/default_thread_map_tensor_op.h:
-
-../include/cutlass/transform/threadblock/predicated_tile_iterator.h:
 
 ../include/cutlass/gemm/threadblock/default_mma.h:
 
@@ -484,15 +483,13 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/gemm/warp/mma_simt_policy.h:
 
+../include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm70.h:
+
 ../include/cutlass/gemm/warp/mma_tensor_op_sm70.h:
 
 ../include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h:
 
 ../include/cutlass/layout/tensor_op_multiplicand_sm70.h:
-
-../include/cutlass/epilogue/warp/tile_iterator_simt.h:
-
-../include/cutlass/gemm/threadblock/default_mma_core_sm70.h:
 
 ../include/cutlass/gemm/threadblock/mma_singlestage.h:
 
@@ -516,29 +513,17 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/arch/mma_sm70.h:
 
+/usr/include/c++/7.5.0/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/7.5.0/bits/stl_bvector.h:
+
+../include/cutlass/epilogue/thread/linear_combination_clamp.h:
+
+/usr/include/c++/7.5.0/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/7.5.0/ext/atomicity.h:
+
 /usr/include/c++/7.5.0/ext/numeric_traits.h:
-
-/usr/include/c++/7.5.0/type_traits:
-
-../include/cutlass/arch/mma_sm60.h:
-
-../include/cutlass/gemm/warp/mma_complex_tensor_op.h:
-
-/usr/include/c++/7.5.0/bits/algorithmfwd.h:
-
-/usr/include/c++/7.5.0/bits/nested_exception.h:
-
-../include/cutlass/gemm/threadblock/mma_base.h:
-
-/usr/include/c++/7.5.0/new:
-
-/usr/include/c++/7.5.0/bits/exception.h:
-
-/usr/include/c++/7.5.0/exception:
-
-/usr/include/aarch64-linux-gnu/bits/libio.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -546,11 +531,21 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/epilogue/thread/linear_combination.h:
 
+/usr/include/c++/7.5.0/type_traits:
+
+../include/cutlass/arch/mma_sm60.h:
+
+/usr/include/c++/7.5.0/new:
+
+/usr/local/cuda-10.0/include/cuda_fp16.hpp:
+
+/usr/include/c++/7.5.0/bits/exception.h:
+
+/usr/include/c++/7.5.0/exception:
+
+/usr/include/aarch64-linux-gnu/bits/types/FILE.h:
+
 /usr/include/c++/7.5.0/cwctype:
-
-/usr/local/cuda-10.2/include/cuda_fp16.h:
-
-/usr/include/wchar.h:
 
 /usr/include/c++/7.5.0/bits/postypes.h:
 
@@ -558,133 +553,121 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/ios:
 
+/usr/local/cuda-10.0/include/curand_mtgp32_kernel.h:
+
 ../include/cutlass/integer_subbyte.h:
 
-../include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h:
+/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
 
-/usr/local/cuda-10.2/include/curand_mtgp32.h:
-
-/usr/local/cuda-10.2/include/curand.h:
+/usr/include/c++/7.5.0/bits/std_abs.h:
 
 /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_complex_builtins.h:
 
 /usr/include/asm-generic/errno.h:
 
+/usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/wchar.h:
+
 /usr/include/aarch64-linux-gnu/sys/types.h:
 
-../include/cutlass/epilogue/thread/linear_combination_clamp.h:
-
-/usr/include/c++/7.5.0/bits/stl_iterator_base_funcs.h:
-
-/usr/local/cuda-10.2/include/cuda.h:
-
-/usr/include/c++/7.5.0/ext/atomicity.h:
-
-/usr/local/cuda-10.2/include/sm_61_intrinsics.hpp:
+/usr/include/c++/7.5.0/math.h:
 
 /usr/lib/llvm-10/lib/clang/10.0.0/include/cuda_wrappers/new:
 
 ../examples/common/helper.h:
 
-/usr/local/cuda-10.2/include/sm_20_atomic_functions.hpp:
+../include/cutlass/layout/tensor_op_multiplicand_sm75.h:
 
-/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+/usr/include/stdio.h:
 
-/usr/include/c++/7.5.0/bits/stl_function.h:
+/usr/include/aarch64-linux-gnu/bits/libio.h:
 
-../include/cutlass/epilogue/thread/linear_combination_relu.h:
+/usr/local/cuda-10.0/include/crt/device_double_functions.hpp:
 
-../include/cutlass/matrix_shape.h:
+../include/cutlass/tensor_view.h:
 
-/usr/local/cuda-10.2/include/crt/device_double_functions.hpp:
+../include/cutlass/gemm/threadblock/mma_multistage.h:
 
-/usr/local/cuda-10.2/include/sm_32_atomic_functions.hpp:
+/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/c++locale.h:
 
-/usr/local/cuda-10.2/include/device_atomic_functions.hpp:
+/usr/local/cuda-10.0/include/device_atomic_functions.hpp:
 
-../include/cutlass/uint128.h:
+/usr/local/cuda-10.0/include/crt/math_functions.hpp:
 
-../include/cutlass/tensor_coord.h:
-
-/usr/include/c++/7.5.0/bits/concept_check.h:
-
-/usr/include/c++/7.5.0/bits/hash_bytes.h:
-
-/usr/local/cuda-10.2/include/device_atomic_functions.h:
+/usr/include/strings.h:
 
 /usr/include/string.h:
 
 ../include/cutlass/gemm/threadblock/threadblock_swizzle.h:
 
-/usr/include/c++/7.5.0/bits/stl_iterator_base_types.h:
+/usr/local/cuda-10.0/include/crt/storage_class.h:
 
-/usr/local/cuda-10.2/include/surface_types.h:
+/usr/include/c++/7.5.0/bits/localefwd.h:
 
-/usr/include/c++/7.5.0/bits/stl_bvector.h:
+/usr/local/cuda-10.0/include/crt/device_functions.h:
 
-/usr/local/cuda-10.2/include/crt/storage_class.h:
+/usr/local/cuda-10.0/include/cuda_texture_types.h:
 
-../include/cutlass/arch/memory_sm75.h:
+/usr/include/c++/7.5.0/bits/basic_ios.h:
 
-/usr/local/cuda-10.2/include/cuda_texture_types.h:
+/usr/include/locale.h:
 
-/usr/include/limits.h:
+/usr/local/cuda-10.0/include/device_launch_parameters.h:
 
-../include/cutlass/epilogue/threadblock/predicated_tile_iterator_params.h:
+/usr/local/cuda-10.0/include/crt/common_functions.h:
 
-/usr/local/cuda-10.2/include/cuda_surface_types.h:
+/usr/local/cuda-10.0/include/cuda_runtime_api.h:
 
-/usr/include/aarch64-linux-gnu/bits/setjmp.h:
+/usr/local/cuda-10.0/include/vector_functions.h:
 
-/usr/local/cuda-10.2/include/vector_functions.h:
+/usr/include/c++/7.5.0/bits/nested_exception.h:
 
-../include/cutlass/epilogue/thread/scale_type.h:
+../include/cutlass/gemm/threadblock/mma_base.h:
 
-/usr/local/cuda-10.2/include/crt/device_functions.hpp:
+/usr/local/cuda-10.0/include/cuda_device_runtime_api.h:
 
-/usr/include/c++/7.5.0/string:
+/usr/include/c++/7.5.0/bits/uses_allocator.h:
 
-/usr/include/c++/7.5.0/cerrno:
+/usr/include/c++/7.5.0/bits/locale_classes.tcc:
 
-/usr/local/cuda-10.2/include/cuda_device_runtime_api.h:
+/usr/local/cuda-10.0/include/channel_descriptor.h:
 
-/usr/local/cuda-10.2/include/cuda_runtime_api.h:
+/usr/include/c++/7.5.0/typeinfo:
 
-/usr/include/stdc-predef.h:
+/usr/local/cuda-10.0/include/texture_types.h:
 
-../include/cutlass/gemm/threadblock/default_mma_core_sm75.h:
+/usr/include/c++/7.5.0/functional:
 
-/usr/include/strings.h:
+../include/cutlass/epilogue/warp/simt_policy.h:
 
-/usr/include/memory.h:
+/usr/local/cuda-10.0/include/crt/device_functions.hpp:
 
-/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_libdevice_declares.h:
+/usr/local/cuda-10.0/include/surface_types.h:
 
-/usr/local/cuda-10.2/include/cuda_runtime.h:
+/usr/local/cuda-10.0/include/cuda.h:
 
-../include/cutlass/transform/thread/transpose.h:
+/usr/local/cuda-10.0/include/builtin_types.h:
 
-/usr/local/cuda-10.2/include/host_defines.h:
+/usr/local/cuda-10.0/include/crt/func_macro.h:
 
-/usr/include/c++/7.5.0/ext/alloc_traits.h:
+/usr/local/cuda-10.0/include/crt/host_runtime.h:
+
+/usr/include/pthread.h:
 
 /usr/lib/llvm-10/lib/clang/10.0.0/include/__stddef_max_align_t.h:
-
-../include/cutlass/arch/arch.h:
-
-/usr/include/c++/7.5.0/algorithm:
 
 /usr/include/aarch64-linux-gnu/bits/uio_lim.h:
 
 ../include/cutlass/device_kernel.h:
+
+/usr/local/cuda-10.0/include/cuComplex.h:
 
 /usr/include/aarch64-linux-gnu/bits/xopen_lim.h:
 
 /usr/include/c++/7.5.0/bits/move.h:
 
 /usr/include/aarch64-linux-gnu/bits/local_lim.h:
-
-/usr/include/aarch64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/aarch64-linux-gnu/bits/waitflags.h:
 
@@ -696,13 +679,23 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:
 
-/usr/include/c++/7.5.0/bits/std_abs.h:
-
 /usr/include/aarch64-linux-gnu/bits/types.h:
 
 /usr/include/c++/7.5.0/bits/predefined_ops.h:
 
 /usr/include/aarch64-linux-gnu/bits/iscanonical.h:
+
+/usr/local/cuda-10.0/include/sm_61_intrinsics.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/c++/7.5.0/bits/stl_function.h:
+
+../include/cutlass/epilogue/thread/linear_combination_relu.h:
+
+../include/cutlass/matrix_shape.h:
 
 ../include/cutlass/gemm/warp/default_mma_complex_tensor_op.h:
 
@@ -722,11 +715,15 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
 
+/usr/local/cuda-10.0/include/sm_60_atomic_functions.hpp:
+
 /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/7.5.0/bits/stl_iterator.h:
 
 /usr/include/c++/7.5.0/bits/stl_relops.h:
+
+/usr/local/cuda-10.0/include/driver_functions.h:
 
 /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
 
@@ -734,7 +731,23 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/ostream:
 
+/usr/include/memory.h:
+
+/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_libdevice_declares.h:
+
+/usr/local/cuda-10.0/include/vector_functions.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/byteswap.h:
+
+../include/cutlass/layout/pitch_linear.h:
+
+../include/cutlass/gemm/warp/default_mma_tensor_op.h:
+
+/usr/local/cuda-10.0/include/device_types.h:
+
 ../examples/18_Sim_test/Simt_18.cu:
+
+/usr/local/cuda-10.0/include/crt/host_config.h:
 
 /usr/include/c++/7.5.0/backward/binders.h:
 
@@ -742,13 +755,21 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/types/wint_t.h:
 
-/usr/local/cuda-10.2/include/crt/host_defines.h:
+/usr/local/cuda-10.0/include/library_types.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/c++/7.5.0/bits/streambuf.tcc:
 
 /usr/include/aarch64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/c++/7.5.0/bits/stl_construct.h:
+
+/usr/include/aarch64-linux-gnu/bits/typesizes.h:
+
+/usr/local/cuda-10.0/include/math_constants.h:
+
+/usr/local/cuda-10.0/include/sm_20_intrinsics.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h:
 
@@ -760,25 +781,7 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/arch/memory.h:
 
-/usr/local/cuda-10.2/include/crt/common_functions.h:
-
-/usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
-
 /usr/include/aarch64-linux-gnu/c++/7.5.0/bits/c++config.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/local/cuda-10.2/include/crt/sm_70_rt.hpp:
-
-../include/cutlass/arch/mma_sm50.h:
-
-../include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h:
-
-/usr/include/c++/7.5.0/iostream:
-
-/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_math_forward_declares.h:
-
-../include/cutlass/arch/mma.h:
 
 /usr/include/features.h:
 
@@ -788,11 +791,9 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/fast_math.h:
 
-/usr/local/cuda-10.2/include/crt/host_runtime.h:
+../include/cutlass/uint128.h:
 
-/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_runtime_wrapper.h:
-
-/usr/local/cuda-10.2/include/device_types.h:
+/usr/local/cuda-10.0/include/sm_32_atomic_functions.hpp:
 
 /usr/include/aarch64-linux-gnu/c++/7.5.0/bits/cpu_defines.h:
 
@@ -804,13 +805,15 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/math-vector.h:
 
-/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/os_defines.h:
-
-/usr/include/c++/7.5.0/utility:
-
 /usr/include/c++/7.5.0/cmath:
 
 /usr/include/aarch64-linux-gnu/bits/byteswap-16.h:
+
+/usr/local/cuda-10.0/include/crt/sm_70_rt.hpp:
+
+/usr/include/stdc-predef.h:
+
+../include/cutlass/gemm/threadblock/default_mma_core_sm75.h:
 
 /usr/include/aarch64-linux-gnu/bits/long-double.h:
 
@@ -822,8 +825,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/local/cuda-10.2/include/crt/device_functions.h:
-
 ../include/cutlass/predicate_vector.h:
 
 /usr/include/c++/7.5.0/ext/type_traits.h:
@@ -832,9 +833,9 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/asm/errno.h:
 
-../include/cutlass/epilogue/warp/fragment_iterator_tensor_op.h:
+/usr/local/cuda-10.0/include/host_config.h:
 
-/usr/local/cuda-10.2/include/device_launch_parameters.h:
+../include/cutlass/epilogue/warp/fragment_iterator_tensor_op.h:
 
 /usr/include/aarch64-linux-gnu/bits/sys_errlist.h:
 
@@ -844,43 +845,17 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/time_t.h:
-
 /usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
 
-/usr/include/c++/7.5.0/typeinfo:
+/usr/include/c++/7.5.0/initializer_list:
 
-/usr/local/cuda-10.2/include/texture_types.h:
-
-../include/cutlass/tensor_view.h:
+/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/endian.h:
 
-/usr/include/aarch64-linux-gnu/bits/byteswap.h:
-
-/usr/include/linux/limits.h:
-
-../include/cutlass/layout/pitch_linear.h:
-
-../include/cutlass/gemm/warp/default_mma_tensor_op.h:
-
-../include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm70.h:
-
-/usr/local/cuda-10.2/include/crt/math_functions.hpp:
-
-/usr/local/cuda-10.2/include/sm_60_atomic_functions.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/uintn-identity.h:
-
-/usr/local/cuda-10.2/include/builtin_types.h:
-
-../include/cutlass/epilogue/warp/fragment_iterator_complex_tensor_op.h:
-
-/usr/include/aarch64-linux-gnu/bits/locale.h:
+/usr/include/alloca.h:
 
 /usr/include/aarch64-linux-gnu/sys/select.h:
-
-/usr/include/alloca.h:
 
 /usr/include/aarch64-linux-gnu/bits/select.h:
 
@@ -904,21 +879,39 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/platform/platform.h:
 
-/usr/include/c++/7.5.0/bits/localefwd.h:
-
 /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/local/cuda-10.2/include/host_config.h:
+/usr/include/linux/limits.h:
+
+/usr/local/cuda-10.0/include/cuda_surface_types.h:
+
+/usr/local/cuda-10.0/include/cuda_runtime.h:
+
+../include/cutlass/epilogue/warp/tile_iterator_simt.h:
+
+../include/cutlass/gemm/threadblock/default_mma_core_sm70.h:
+
+/usr/local/cuda-10.0/include/sm_20_atomic_functions.hpp:
+
+../include/cutlass/epilogue/warp/fragment_iterator_complex_tensor_op.h:
+
+/usr/include/aarch64-linux-gnu/bits/locale.h:
+
+/usr/include/limits.h:
+
+../include/cutlass/epilogue/threadblock/predicated_tile_iterator_params.h:
 
 ../include/cutlass/gemm/warp/mma.h:
 
 /usr/include/aarch64-linux-gnu/sys/sysmacros.h:
 
-/usr/local/cuda-10.2/include/crt/host_config.h:
-
 /usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/aarch64-linux-gnu/bits/endian.h:
+
+/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_runtime_wrapper.h:
+
+/usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/lib/llvm-10/lib/clang/10.0.0/include/limits.h:
 
@@ -928,17 +921,25 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/bits/istream.tcc:
 
-/usr/local/cuda-10.2/include/library_types.h:
+/usr/local/cuda-10.0/include/device_atomic_functions.h:
 
-/usr/include/c++/7.5.0/vector:
+../include/cutlass/arch/mma_sm61.h:
 
-/usr/include/c++/7.5.0/initializer_list:
+/usr/include/c++/7.5.0/bits/stl_algo.h:
 
-/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
+/usr/include/c++/7.5.0/bits/exception_defines.h:
 
-/usr/local/cuda-10.2/include/driver_types.h:
+../include/cutlass/epilogue/thread/linear_combination_planar_complex.h:
 
-../include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h:
+/usr/include/stdlib.h:
+
+/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/error_constants.h:
+
+/usr/lib/llvm-10/lib/clang/10.0.0/include/stdint.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
+
+../include/cutlass/gemm/kernel/gemm.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
 
@@ -950,29 +951,25 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/ctype.h:
 
-/usr/local/cuda-10.2/include/vector_types.h:
+/usr/local/cuda-10.0/include/driver_types.h:
 
-/usr/lib/llvm-10/lib/clang/10.0.0/include/stdint.h:
+../include/cutlass/layout/tensor.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
+/usr/local/cuda-10.0/include/crt/host_defines.h:
 
-../include/cutlass/gemm/kernel/gemm.h:
+/usr/include/c++/7.5.0/bits/hash_bytes.h:
 
-/usr/local/cuda-10.2/include/sm_20_intrinsics.hpp:
+/usr/include/c++/7.5.0/bits/concept_check.h:
 
-../include/cutlass/bfloat16.h:
+../include/cutlass/gemm/warp/mma_complex_tensor_op.h:
 
-/usr/include/aarch64-linux-gnu/bits/typesizes.h:
+/usr/include/c++/7.5.0/bits/algorithmfwd.h:
 
-/usr/include/c++/7.5.0/bits/exception_defines.h:
+../include/cutlass/epilogue/threadblock/default_thread_map_tensor_op.h:
 
-../include/cutlass/epilogue/thread/linear_combination_planar_complex.h:
+../include/cutlass/transform/threadblock/predicated_tile_iterator.h:
 
-/usr/include/stdlib.h:
-
-/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/error_constants.h:
-
-/usr/local/cuda-10.2/include/vector_functions.hpp:
+/usr/local/cuda-10.0/include/vector_types.h:
 
 /usr/include/c++/7.5.0/clocale:
 
@@ -988,14 +985,6 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/cstdint:
 
-../include/cutlass/gemm/threadblock/mma_multistage.h:
-
-/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/c++locale.h:
-
-/usr/include/c++/7.5.0/bits/basic_ios.h:
-
-/usr/include/locale.h:
-
 /usr/include/c++/7.5.0/cctype:
 
 /usr/include/c++/7.5.0/bits/ios_base.h:
@@ -1004,11 +993,7 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/real.h:
 
-/usr/include/pthread.h:
-
 /usr/include/sched.h:
-
-/usr/local/cuda-10.2/include/crt/func_macro.h:
 
 /usr/include/aarch64-linux-gnu/bits/sched.h:
 
@@ -1030,17 +1015,25 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/istream:
 
+/usr/include/aarch64-linux-gnu/bits/setjmp.h:
+
 /usr/include/aarch64-linux-gnu/c++/7.5.0/bits/atomic_word.h:
+
+/usr/local/cuda-10.0/include/curand_mtgp32.h:
 
 /usr/include/c++/7.5.0/bits/locale_classes.h:
 
+/usr/include/c++/7.5.0/string:
+
 /usr/include/c++/7.5.0/bits/allocator.h:
 
-/usr/include/c++/7.5.0/bits/ostream_insert.h:
+/usr/include/c++/7.5.0/bits/basic_string.h:
 
 /usr/include/aarch64-linux-gnu/c++/7.5.0/bits/c++allocator.h:
 
-/usr/include/c++/7.5.0/bits/basic_string.h:
+/usr/include/c++/7.5.0/bits/ostream_insert.h:
+
+/usr/include/c++/7.5.0/ext/alloc_traits.h:
 
 ../include/cutlass/layout/matrix.h:
 
@@ -1048,15 +1041,11 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/subbyte_reference.h:
 
-../include/cutlass/layout/tensor_op_multiplicand_sm75.h:
-
 /usr/include/c++/7.5.0/cstdio:
 
 /usr/include/stdint.h:
 
 /usr/include/errno.h:
-
-/usr/include/stdio.h:
 
 /usr/include/aarch64-linux-gnu/c++/7.5.0/bits/gthr-default.h:
 
@@ -1064,11 +1053,13 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 
+/usr/local/cuda-10.0/include/host_defines.h:
+
 /usr/include/c++/7.5.0/bits/cpp_type_traits.h:
 
-/usr/local/cuda-10.2/include/texture_indirect_functions.h:
-
 ../include/cutlass/epilogue/threadblock/output_tile_thread_map.h:
+
+/usr/include/c++/7.5.0/cerrno:
 
 /usr/include/aarch64-linux-gnu/bits/mathcalls.h:
 
@@ -1080,17 +1071,11 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/bits/basic_string.tcc:
 
-/usr/include/c++/7.5.0/bits/uses_allocator.h:
-
-/usr/include/c++/7.5.0/bits/locale_classes.tcc:
-
 ../include/cutlass/arch/memory_sm80.h:
 
 ../include/cutlass/epilogue/thread/activation.h:
 
 /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/local/cuda-10.2/include/channel_descriptor.h:
 
 /usr/include/c++/7.5.0/streambuf:
 
@@ -1114,13 +1099,19 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/include/c++/7.5.0/sstream:
 
+/usr/local/cuda-10.0/include/texture_indirect_functions.h:
+
 /usr/include/assert.h:
 
 /usr/include/c++/7.5.0/bits/sstream.tcc:
 
 ../include/cutlass/gemm/warp/mma_complex_tensor_op_tile_iterator_sm80.h:
 
+/usr/local/cuda-10.0/include/curand.h:
+
 ../include/cutlass/semaphore.h:
+
+/usr/include/c++/7.5.0/vector:
 
 /usr/include/c++/7.5.0/bits/stl_uninitialized.h:
 
@@ -1138,17 +1129,21 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 /usr/lib/llvm-10/lib/clang/10.0.0/include/cuda_wrappers/algorithm:
 
-/usr/include/c++/7.5.0/bits/stl_heap.h:
+/usr/include/aarch64-linux-gnu/c++/7.5.0/bits/os_defines.h:
 
-/usr/local/cuda-10.2/include/math_constants.h:
+/usr/include/c++/7.5.0/utility:
+
+../include/cutlass/tensor_coord.h:
+
+/usr/local/cuda-10.0/include/cuda_fp16.h:
+
+/usr/include/c++/7.5.0/bits/stl_heap.h:
 
 /usr/include/c++/7.5.0/bits/stl_tempbuf.h:
 
 /usr/include/c++/7.5.0/bits/uniform_int_dist.h:
 
 /usr/include/c++/7.5.0/cstddef:
-
-/usr/include/c++/7.5.0/functional:
 
 ../include/cutlass/gemm/threadblock/default_mma_core_sm80.h:
 
@@ -1166,13 +1161,17 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/half.h:
 
-/usr/local/cuda-10.2/include/cuda_fp16.hpp:
+../include/cutlass/bfloat16.h:
 
 ../include/cutlass/gemm/device/gemm.h:
 
 ../include/cutlass/tfloat32.h:
 
 ../include/cutlass/aligned_buffer.h:
+
+/usr/include/c++/7.5.0/algorithm:
+
+../include/cutlass/arch/arch.h:
 
 ../include/cutlass/coord.h:
 
@@ -1188,21 +1187,15 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/epilogue/threadblock/epilogue.h:
 
-/usr/local/cuda-10.2/include/driver_functions.h:
-
 /usr/include/c++/7.5.0/bits/char_traits.h:
 
 ../include/cutlass/layout/vector.h:
-
-../include/cutlass/layout/tensor.h:
 
 ../include/cutlass/functional.h:
 
 /usr/include/time.h:
 
 ../include/cutlass/complex.h:
-
-/usr/local/cuda-10.2/include/cuComplex.h:
 
 ../include/cutlass/epilogue/warp/volta_tensor_op_policy.h:
 
@@ -1214,11 +1207,25 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 
 ../include/cutlass/tensor_ref.h:
 
+../include/cutlass/arch/memory_sm75.h:
+
 ../include/cutlass/arch/cache_operation.h:
+
+../include/cutlass/epilogue/thread/scale_type.h:
 
 ../include/cutlass/gemm/kernel/gemm_pipelined.h:
 
-/usr/local/cuda-10.2/include/curand_mtgp32_kernel.h:
+../include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h:
+
+../include/cutlass/arch/mma_sm50.h:
+
+../include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h:
+
+/usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_math_forward_declares.h:
+
+/usr/include/c++/7.5.0/iostream:
+
+../include/cutlass/arch/mma.h:
 
 ../include/cutlass/transform/threadblock/regular_tile_access_iterator.h:
 
@@ -1231,7 +1238,3 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: ../examples/18_Sim_tes
 /usr/include/c++/7.5.0/system_error:
 
 ../include/cutlass/gemm/threadblock/mma_pipelined.h:
-
-/usr/include/c++/7.5.0/bits/stl_algo.h:
-
-../include/cutlass/arch/mma_sm61.h:

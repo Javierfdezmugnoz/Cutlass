@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for cutlass_test_unit_reduction.
 
@@ -79,10 +79,10 @@ test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/build: cutlass_te
 .PHONY : test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/build
 
 test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/reduction && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_reduction.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_reduction.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/clean
 
 test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/reduction /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/reduction /home/ubuntu/github/cutlass/build/test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/reduction /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/CMakeFiles/cutlass_test_unit_reduction.dir/depend
 

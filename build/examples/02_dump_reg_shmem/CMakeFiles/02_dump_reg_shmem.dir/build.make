@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/depend.make
@@ -72,16 +72,16 @@ include examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/flags.make
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o: examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/flags.make
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o: ../examples/02_dump_reg_shmem/dump_reg_shmem.cu
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o: examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o"
-	cd /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o -MF CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o.d -o CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o -c /home/ubuntu/github/cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o"
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o -MF CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o.d -o CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o -c /home/javierfdez/github_repository/Cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu
 
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i"
-	cd /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu > CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu > CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i
 
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s"
-	cd /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu -o CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/examples/02_dump_reg_shmem/dump_reg_shmem.cu -o CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s
 
 # Object files for target 02_dump_reg_shmem
 02_dump_reg_shmem_OBJECTS = \
@@ -92,20 +92,20 @@ examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s:
 
 examples/02_dump_reg_shmem/02_dump_reg_shmem: examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o
 examples/02_dump_reg_shmem/02_dump_reg_shmem: examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make
-examples/02_dump_reg_shmem/02_dump_reg_shmem: /usr/local/cuda-10.2/lib64/libcudart.so
+examples/02_dump_reg_shmem/02_dump_reg_shmem: /usr/local/cuda-10.0/lib64/libcudart.so
 examples/02_dump_reg_shmem/02_dump_reg_shmem: examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 02_dump_reg_shmem"
-	cd /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/02_dump_reg_shmem.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 02_dump_reg_shmem"
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/02_dump_reg_shmem.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build: examples/02_dump_reg_shmem/02_dump_reg_shmem
 .PHONY : examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build
 
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem && $(CMAKE_COMMAND) -P CMakeFiles/02_dump_reg_shmem.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem && $(CMAKE_COMMAND) -P CMakeFiles/02_dump_reg_shmem.dir/cmake_clean.cmake
 .PHONY : examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/clean
 
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/02_dump_reg_shmem /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/02_dump_reg_shmem /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/depend
 

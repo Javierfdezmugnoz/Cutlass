@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_examples_01_cutlass_utilities.
 
@@ -67,7 +67,7 @@ include examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilit
 include examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/progress.make
 
 examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities: examples/01_cutlass_utilities/01_cutlass_utilities
-	cd /home/ubuntu/github/cutlass/build/examples/01_cutlass_utilities && ./01_cutlass_utilities
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/01_cutlass_utilities && ./01_cutlass_utilities
 
 test_examples_01_cutlass_utilities: examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities
 test_examples_01_cutlass_utilities: examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/build.make
@@ -78,10 +78,10 @@ examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/
 .PHONY : examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/build
 
 examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/01_cutlass_utilities && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_01_cutlass_utilities.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/01_cutlass_utilities && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_01_cutlass_utilities.dir/cmake_clean.cmake
 .PHONY : examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/clean
 
 examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/01_cutlass_utilities /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/01_cutlass_utilities /home/ubuntu/github/cutlass/build/examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/01_cutlass_utilities /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/01_cutlass_utilities /home/javierfdez/github_repository/Cutlass/build/examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/01_cutlass_utilities/CMakeFiles/test_examples_01_cutlass_utilities.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_profiler_0.
 
@@ -67,7 +67,7 @@ include tools/profiler/CMakeFiles/test_profiler_0.dir/compiler_depend.make
 include tools/profiler/CMakeFiles/test_profiler_0.dir/progress.make
 
 tools/profiler/CMakeFiles/test_profiler_0: tools/profiler/cutlass_profiler
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && ./cutlass_profiler --operation=Gemm --providers=cutlass --verification-providers=cublas,device --junit-output=test_cutlass_profiler_gemm
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && ./cutlass_profiler --operation=Gemm --providers=cutlass --verification-providers=cublas,device --junit-output=test_cutlass_profiler_gemm
 
 test_profiler_0: tools/profiler/CMakeFiles/test_profiler_0
 test_profiler_0: tools/profiler/CMakeFiles/test_profiler_0.dir/build.make
@@ -78,10 +78,10 @@ tools/profiler/CMakeFiles/test_profiler_0.dir/build: test_profiler_0
 .PHONY : tools/profiler/CMakeFiles/test_profiler_0.dir/build
 
 tools/profiler/CMakeFiles/test_profiler_0.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/test_profiler_0.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/test_profiler_0.dir/cmake_clean.cmake
 .PHONY : tools/profiler/CMakeFiles/test_profiler_0.dir/clean
 
 tools/profiler/CMakeFiles/test_profiler_0.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/tools/profiler /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/tools/profiler /home/ubuntu/github/cutlass/build/tools/profiler/CMakeFiles/test_profiler_0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/tools/profiler /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/tools/profiler /home/javierfdez/github_repository/Cutlass/build/tools/profiler/CMakeFiles/test_profiler_0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tools/profiler/CMakeFiles/test_profiler_0.dir/depend
 

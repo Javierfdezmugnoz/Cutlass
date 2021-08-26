@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/core//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/core//CMakeFiles/progress.marks
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/clean
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/core/CMakeFiles/test_unit_core.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/CMakeFiles/test_unit_core.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/CMakeFiles/test_unit_core.dir/rule
 .PHONY : test/unit/core/CMakeFiles/test_unit_core.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_core: test/unit/core/CMakeFiles/test_unit_core.dir/rule
 
 # fast build rule for target.
 test_unit_core/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/test_unit_core.dir/build.make test/unit/core/CMakeFiles/test_unit_core.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/test_unit_core.dir/build.make test/unit/core/CMakeFiles/test_unit_core.dir/build
 .PHONY : test_unit_core/fast
 
 # Convenience name for target.
 test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/rule
 .PHONY : test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_core: test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/rul
 
 # fast build rule for target.
 cutlass_test_unit_core/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build
 .PHONY : cutlass_test_unit_core/fast
 
 array.o: array.cu.o
@@ -225,7 +225,7 @@ array.o: array.cu.o
 
 # target to build an object file
 array.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.o
 .PHONY : array.cu.o
 
 array.i: array.cu.i
@@ -233,7 +233,7 @@ array.i: array.cu.i
 
 # target to preprocess a source file
 array.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.i
 .PHONY : array.cu.i
 
 array.s: array.cu.s
@@ -241,7 +241,7 @@ array.s: array.cu.s
 
 # target to generate assembly for a file
 array.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/array.cu.s
 .PHONY : array.cu.s
 
 bfloat16.o: bfloat16.cu.o
@@ -249,7 +249,7 @@ bfloat16.o: bfloat16.cu.o
 
 # target to build an object file
 bfloat16.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.o
 .PHONY : bfloat16.cu.o
 
 bfloat16.i: bfloat16.cu.i
@@ -257,7 +257,7 @@ bfloat16.i: bfloat16.cu.i
 
 # target to preprocess a source file
 bfloat16.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.i
 .PHONY : bfloat16.cu.i
 
 bfloat16.s: bfloat16.cu.s
@@ -265,7 +265,7 @@ bfloat16.s: bfloat16.cu.s
 
 # target to generate assembly for a file
 bfloat16.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/bfloat16.cu.s
 .PHONY : bfloat16.cu.s
 
 complex.o: complex.cu.o
@@ -273,7 +273,7 @@ complex.o: complex.cu.o
 
 # target to build an object file
 complex.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.o
 .PHONY : complex.cu.o
 
 complex.i: complex.cu.i
@@ -281,7 +281,7 @@ complex.i: complex.cu.i
 
 # target to preprocess a source file
 complex.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.i
 .PHONY : complex.cu.i
 
 complex.s: complex.cu.s
@@ -289,7 +289,7 @@ complex.s: complex.cu.s
 
 # target to generate assembly for a file
 complex.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/complex.cu.s
 .PHONY : complex.cu.s
 
 functional.o: functional.cu.o
@@ -297,7 +297,7 @@ functional.o: functional.cu.o
 
 # target to build an object file
 functional.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.o
 .PHONY : functional.cu.o
 
 functional.i: functional.cu.i
@@ -305,7 +305,7 @@ functional.i: functional.cu.i
 
 # target to preprocess a source file
 functional.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.i
 .PHONY : functional.cu.i
 
 functional.s: functional.cu.s
@@ -313,7 +313,7 @@ functional.s: functional.cu.s
 
 # target to generate assembly for a file
 functional.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/functional.cu.s
 .PHONY : functional.cu.s
 
 half.o: half.cu.o
@@ -321,7 +321,7 @@ half.o: half.cu.o
 
 # target to build an object file
 half.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.o
 .PHONY : half.cu.o
 
 half.i: half.cu.i
@@ -329,7 +329,7 @@ half.i: half.cu.i
 
 # target to preprocess a source file
 half.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.i
 .PHONY : half.cu.i
 
 half.s: half.cu.s
@@ -337,7 +337,7 @@ half.s: half.cu.s
 
 # target to generate assembly for a file
 half.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/half.cu.s
 .PHONY : half.cu.s
 
 matrix.o: matrix.cu.o
@@ -345,7 +345,7 @@ matrix.o: matrix.cu.o
 
 # target to build an object file
 matrix.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.o
 .PHONY : matrix.cu.o
 
 matrix.i: matrix.cu.i
@@ -353,7 +353,7 @@ matrix.i: matrix.cu.i
 
 # target to preprocess a source file
 matrix.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.i
 .PHONY : matrix.cu.i
 
 matrix.s: matrix.cu.s
@@ -361,7 +361,7 @@ matrix.s: matrix.cu.s
 
 # target to generate assembly for a file
 matrix.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix.cu.s
 .PHONY : matrix.cu.s
 
 matrix_coord.o: matrix_coord.cu.o
@@ -369,7 +369,7 @@ matrix_coord.o: matrix_coord.cu.o
 
 # target to build an object file
 matrix_coord.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.o
 .PHONY : matrix_coord.cu.o
 
 matrix_coord.i: matrix_coord.cu.i
@@ -377,7 +377,7 @@ matrix_coord.i: matrix_coord.cu.i
 
 # target to preprocess a source file
 matrix_coord.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.i
 .PHONY : matrix_coord.cu.i
 
 matrix_coord.s: matrix_coord.cu.s
@@ -385,7 +385,7 @@ matrix_coord.s: matrix_coord.cu.s
 
 # target to generate assembly for a file
 matrix_coord.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/matrix_coord.cu.s
 .PHONY : matrix_coord.cu.s
 
 numeric_conversion.o: numeric_conversion.cu.o
@@ -393,7 +393,7 @@ numeric_conversion.o: numeric_conversion.cu.o
 
 # target to build an object file
 numeric_conversion.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.o
 .PHONY : numeric_conversion.cu.o
 
 numeric_conversion.i: numeric_conversion.cu.i
@@ -401,7 +401,7 @@ numeric_conversion.i: numeric_conversion.cu.i
 
 # target to preprocess a source file
 numeric_conversion.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.i
 .PHONY : numeric_conversion.cu.i
 
 numeric_conversion.s: numeric_conversion.cu.s
@@ -409,7 +409,7 @@ numeric_conversion.s: numeric_conversion.cu.s
 
 # target to generate assembly for a file
 numeric_conversion.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/numeric_conversion.cu.s
 .PHONY : numeric_conversion.cu.s
 
 predicate_vector.o: predicate_vector.cu.o
@@ -417,7 +417,7 @@ predicate_vector.o: predicate_vector.cu.o
 
 # target to build an object file
 predicate_vector.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.o
 .PHONY : predicate_vector.cu.o
 
 predicate_vector.i: predicate_vector.cu.i
@@ -425,7 +425,7 @@ predicate_vector.i: predicate_vector.cu.i
 
 # target to preprocess a source file
 predicate_vector.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.i
 .PHONY : predicate_vector.cu.i
 
 predicate_vector.s: predicate_vector.cu.s
@@ -433,7 +433,7 @@ predicate_vector.s: predicate_vector.cu.s
 
 # target to generate assembly for a file
 predicate_vector.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/predicate_vector.cu.s
 .PHONY : predicate_vector.cu.s
 
 quaternion.o: quaternion.cu.o
@@ -441,7 +441,7 @@ quaternion.o: quaternion.cu.o
 
 # target to build an object file
 quaternion.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.o
 .PHONY : quaternion.cu.o
 
 quaternion.i: quaternion.cu.i
@@ -449,7 +449,7 @@ quaternion.i: quaternion.cu.i
 
 # target to preprocess a source file
 quaternion.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.i
 .PHONY : quaternion.cu.i
 
 quaternion.s: quaternion.cu.s
@@ -457,7 +457,7 @@ quaternion.s: quaternion.cu.s
 
 # target to generate assembly for a file
 quaternion.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/quaternion.cu.s
 .PHONY : quaternion.cu.s
 
 tensor_ref.o: tensor_ref.cu.o
@@ -465,7 +465,7 @@ tensor_ref.o: tensor_ref.cu.o
 
 # target to build an object file
 tensor_ref.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.o
 .PHONY : tensor_ref.cu.o
 
 tensor_ref.i: tensor_ref.cu.i
@@ -473,7 +473,7 @@ tensor_ref.i: tensor_ref.cu.i
 
 # target to preprocess a source file
 tensor_ref.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.i
 .PHONY : tensor_ref.cu.i
 
 tensor_ref.s: tensor_ref.cu.s
@@ -481,7 +481,7 @@ tensor_ref.s: tensor_ref.cu.s
 
 # target to generate assembly for a file
 tensor_ref.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_ref.cu.s
 .PHONY : tensor_ref.cu.s
 
 tensor_view.o: tensor_view.cu.o
@@ -489,7 +489,7 @@ tensor_view.o: tensor_view.cu.o
 
 # target to build an object file
 tensor_view.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.o
 .PHONY : tensor_view.cu.o
 
 tensor_view.i: tensor_view.cu.i
@@ -497,7 +497,7 @@ tensor_view.i: tensor_view.cu.i
 
 # target to preprocess a source file
 tensor_view.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.i
 .PHONY : tensor_view.cu.i
 
 tensor_view.s: tensor_view.cu.s
@@ -505,7 +505,7 @@ tensor_view.s: tensor_view.cu.s
 
 # target to generate assembly for a file
 tensor_view.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tensor_view.cu.s
 .PHONY : tensor_view.cu.s
 
 tfloat32.o: tfloat32.cu.o
@@ -513,7 +513,7 @@ tfloat32.o: tfloat32.cu.o
 
 # target to build an object file
 tfloat32.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.o
 .PHONY : tfloat32.cu.o
 
 tfloat32.i: tfloat32.cu.i
@@ -521,7 +521,7 @@ tfloat32.i: tfloat32.cu.i
 
 # target to preprocess a source file
 tfloat32.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.i
 .PHONY : tfloat32.cu.i
 
 tfloat32.s: tfloat32.cu.s
@@ -529,7 +529,7 @@ tfloat32.s: tfloat32.cu.s
 
 # target to generate assembly for a file
 tfloat32.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/build.make test/unit/core/CMakeFiles/cutlass_test_unit_core.dir/tfloat32.cu.s
 .PHONY : tfloat32.cu.s
 
 # Help Target
@@ -599,7 +599,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

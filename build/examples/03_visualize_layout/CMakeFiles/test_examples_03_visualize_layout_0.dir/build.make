@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 # Utility rule file for test_examples_03_visualize_layout_0.
 
@@ -67,7 +67,7 @@ include examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layou
 include examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/progress.make
 
 examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0: examples/03_visualize_layout/03_visualize_layout
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && ./03_visualize_layout RowMajor --extent=16,16
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && ./03_visualize_layout RowMajor --extent=16,16
 
 test_examples_03_visualize_layout_0: examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0
 test_examples_03_visualize_layout_0: examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/build.make
@@ -78,10 +78,10 @@ examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/
 .PHONY : examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/build
 
 examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_03_visualize_layout_0.dir/cmake_clean.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_03_visualize_layout_0.dir/cmake_clean.cmake
 .PHONY : examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/clean
 
 examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/03_visualize_layout /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/03_visualize_layout /home/ubuntu/github/cutlass/build/examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/03_visualize_layout /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout /home/javierfdez/github_repository/Cutlass/build/examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/03_visualize_layout/CMakeFiles/test_examples_03_visualize_layout_0.dir/depend
 

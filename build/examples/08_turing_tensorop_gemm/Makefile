@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -121,7 +121,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -131,7 +131,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/examples/08_turing_tensorop_gemm//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/examples/08_turing_tensorop_gemm//CMakeFiles/progress.marks
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/clean
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/rule
 .PHONY : examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_08_turing_tensorop_gemm: examples/08_turing_tensorop_gemm/CMakeFil
 
 # fast build rule for target.
 test_examples_08_turing_tensorop_gemm/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build
 .PHONY : test_examples_08_turing_tensorop_gemm/fast
 
 # Convenience name for target.
 examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/rule
 .PHONY : examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/rule:
 
 # fast build rule for target.
 08_turing_tensorop_gemm/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build
 .PHONY : 08_turing_tensorop_gemm/fast
 
 turing_tensorop_gemm.o: turing_tensorop_gemm.cu.o
@@ -225,7 +225,7 @@ turing_tensorop_gemm.o: turing_tensorop_gemm.cu.o
 
 # target to build an object file
 turing_tensorop_gemm.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.o
 .PHONY : turing_tensorop_gemm.cu.o
 
 turing_tensorop_gemm.i: turing_tensorop_gemm.cu.i
@@ -233,7 +233,7 @@ turing_tensorop_gemm.i: turing_tensorop_gemm.cu.i
 
 # target to preprocess a source file
 turing_tensorop_gemm.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.i
 .PHONY : turing_tensorop_gemm.cu.i
 
 turing_tensorop_gemm.s: turing_tensorop_gemm.cu.s
@@ -241,7 +241,7 @@ turing_tensorop_gemm.s: turing_tensorop_gemm.cu.s
 
 # target to generate assembly for a file
 turing_tensorop_gemm.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/build.make examples/08_turing_tensorop_gemm/CMakeFiles/08_turing_tensorop_gemm.dir/turing_tensorop_gemm.cu.s
 .PHONY : turing_tensorop_gemm.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

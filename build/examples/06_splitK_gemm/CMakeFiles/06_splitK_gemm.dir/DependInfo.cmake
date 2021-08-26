@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/github/cutlass/examples/06_splitK_gemm/splitk_gemm.cu" "examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o" "gcc" "examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o.d"
+  "/home/javierfdez/github_repository/Cutlass/examples/06_splitK_gemm/splitk_gemm.cu" "examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o" "gcc" "examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o.d"
   )
 
 # Targets to which this target links.

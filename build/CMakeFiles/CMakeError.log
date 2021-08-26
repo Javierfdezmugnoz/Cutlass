@@ -1,65 +1,25 @@
-Checking whether the CUDA compiler is NVIDIA using "" did not match "nvcc: NVIDIA \(R\) Cuda compiler driver":
-Checking whether the CUDA compiler is Clang using "" did not match "(clang version)":
-Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
-Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
-Build flags: -O0
-Id flags:  -v
-
-The output was:
-No such file or directory
-
-
-Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
-Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  -v
-
-The output was:
-No such file or directory
-
-
-Checking whether the CUDA compiler is NVIDIA using "" did not match "nvcc: NVIDIA \(R\) Cuda compiler driver":
-Checking whether the CUDA compiler is Clang using "" did not match "(clang version)":
-Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
-Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
-Build flags: -O0
-Id flags:  -v
-
-The output was:
-No such file or directory
-
-
-Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
-Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
-Build flags: 
-Id flags:  -v
-
-The output was:
-No such file or directory
-
-
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp
+Change Dir: /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_05a11/fast && /usr/bin/make  -f CMakeFiles/cmTC_05a11.dir/build.make CMakeFiles/cmTC_05a11.dir/build
-make[1]: Entering directory '/home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_05a11.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_05a11.dir/src.c.o -c /home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_05a11
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05a11.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_05a11.dir/src.c.o -o cmTC_05a11 
-CMakeFiles/cmTC_05a11.dir/src.c.o: In function `main':
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_84d90/fast && /usr/bin/make  -f CMakeFiles/cmTC_84d90.dir/build.make CMakeFiles/cmTC_84d90.dir/build
+make[1]: Entering directory '/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84d90.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_84d90.dir/src.c.o -c /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_84d90
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84d90.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_84d90.dir/src.c.o -o cmTC_84d90 
+CMakeFiles/cmTC_84d90.dir/src.c.o: In function `main':
 src.c:(.text+0x48): undefined reference to `pthread_create'
 src.c:(.text+0x50): undefined reference to `pthread_detach'
 src.c:(.text+0x58): undefined reference to `pthread_cancel'
 src.c:(.text+0x64): undefined reference to `pthread_join'
 src.c:(.text+0x74): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_05a11.dir/build.make:98: recipe for target 'cmTC_05a11' failed
-make[1]: *** [cmTC_05a11] Error 1
-make[1]: Leaving directory '/home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp'
-Makefile:127: recipe for target 'cmTC_05a11/fast' failed
-make: *** [cmTC_05a11/fast] Error 2
+CMakeFiles/cmTC_84d90.dir/build.make:98: recipe for target 'cmTC_84d90' failed
+make[1]: *** [cmTC_84d90] Error 1
+make[1]: Leaving directory '/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_84d90/fast' failed
+make: *** [cmTC_84d90/fast] Error 2
 
 
 Source file was:

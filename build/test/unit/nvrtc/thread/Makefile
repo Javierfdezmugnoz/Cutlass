@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -133,7 +133,7 @@ test/fast: test
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -143,7 +143,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/nvrtc/thread//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/nvrtc/thread//CMakeFiles/progress.marks
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/clean
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/preinstall
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/rule
 .PHONY : test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_nvrtc_thread: test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread
 
 # fast build rule for target.
 test_unit_nvrtc_thread/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/test_unit_nvrtc_thread.dir/build
 .PHONY : test_unit_nvrtc_thread/fast
 
 # Convenience name for target.
 test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/rule
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/rule
 .PHONY : test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_nvrtc_thread: test/unit/nvrtc/thread/CMakeFiles/cutlass_test_u
 
 # fast build rule for target.
 cutlass_test_unit_nvrtc_thread/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build
 .PHONY : cutlass_test_unit_nvrtc_thread/fast
 
 gemm_nvrtc.o: gemm_nvrtc.cu.o
@@ -225,7 +225,7 @@ gemm_nvrtc.o: gemm_nvrtc.cu.o
 
 # target to build an object file
 gemm_nvrtc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.o
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.o
 .PHONY : gemm_nvrtc.cu.o
 
 gemm_nvrtc.i: gemm_nvrtc.cu.i
@@ -233,7 +233,7 @@ gemm_nvrtc.i: gemm_nvrtc.cu.i
 
 # target to preprocess a source file
 gemm_nvrtc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.i
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.i
 .PHONY : gemm_nvrtc.cu.i
 
 gemm_nvrtc.s: gemm_nvrtc.cu.s
@@ -241,7 +241,7 @@ gemm_nvrtc.s: gemm_nvrtc.cu.s
 
 # target to generate assembly for a file
 gemm_nvrtc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.s
+	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/build.make test/unit/nvrtc/thread/CMakeFiles/cutlass_test_unit_nvrtc_thread.dir/gemm_nvrtc.cu.s
 .PHONY : gemm_nvrtc.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
