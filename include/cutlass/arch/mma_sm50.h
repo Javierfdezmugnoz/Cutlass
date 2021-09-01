@@ -36,6 +36,48 @@
 
 // Included by JFdez
 #include "cutlass/gemm/threadblock/mma_pipelined.h"
+
+/* ==========================================================================
+  Descritption: Addition of two values using PTX (parallel thread execution) 
+  and ISA (parallel thread execution with instruction set architecture) adding
+  the carry bit. After that, one's complement is implemented (bit negation). 
+  Additional info:
+  url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
+  https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf 
+=============================================================================*/
+__device__ uint32_t __a1c (uint32_t a, uint32_t b)
+{
+    uint32_t acc;
+    asm ("add.cc.u32      %0, %1, %2;\n\t"
+         "addc.u32        %0, %0, 0;\n\t"
+         "not.b32         %0, %0;\n\t"
+         : "=r"(acc)
+         : "r"(a), "r"(b));
+    return acc;
+}
+
+/* ==========================================================================
+  Description: Addition of two values using PTX (parallel thread execution) 
+  and ISA (parallel thread execution with instruction set architecture) with
+  not carry-bit addition. This operation is followed by the two's complement
+  implementation (bit negation and then, addition of 1)
+  Additional info:
+  url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
+  https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf
+=============================================================================*/
+__device__ uint32_t __a2c (uint32_t a, uint32_t b)
+{
+    uint32_t acc = 0;
+    asm ("add.u32     %0, %1, %2;\n\t"
+         "not.b32     %0, %0;\n\t"
+         "add.u32     %0, %0, 1;\n\t"
+         : "=r"(acc)
+         : "r"(a), "r"(b));
+    return acc;
+}
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -71,21 +113,72 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
   ) {
     //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
-    // ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]); // this is working
-//    printf("value of threadIdx: %i\n",lane_idx);
-    //printf("Value of *ES_a: %p",ES_a);
-    ES_a[0] =  atomicXor((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
-    ES_b[0] =  atomicXor((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-    printf("value of ES_c : %u \n",(uint32_t) *((uint32_t*) &c[0]));
-    ES_c[0] =  atomicXor((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
-    //printf("Before: %4.1f \t ES_b[%i]=%u \n", b[0], lane_idx, ES_b[0]);
-    // Added by JFdez
-    //printf("%4.1f \t %4.1f \t %4.1f \t %4.1f\n",a[0],b[0],c[0],d[0]);
-   /* printf("Before: %4.1f \t %u \n", b[0], ES_b[0]);
-    ES_b[0] =  atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-    printf("After: %4.1f \t %u \n", b[0], ES_b[0]);
-    ES_b[0] ^=  (uint32_t) *((uint32_t*) &b[0]);
-    printf("After2: %4.1f \t %u \n", b[0], ES_b[0]);*/
+
+    // Uncomment the desired Checksum in the internal loop
+    /* // XOR checksum
+    atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    atomicXor(&ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+    */
+
+    
+    // One's complement
+    /* Option 1:
+    ES_a[0] = __a1c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    ES_b[0] = __a1c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    ES_c[0] = __a1c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+    
+    // Option 2:
+    atomicAdd((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    atomicAdd((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    atomicAdd((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &d[0]));  
+
+    ES_a[0] =  ~ES_a[0];
+    ES_b[0] =  ~ES_b[0];
+    ES_c[0] =  ~ES_c[0];
+    */
+    
+
+
+    // Two's complement 
+    /* Option 1:
+    ES_a[0] =  __a2c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    ES_b[0] =  __a2c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    ES_c[0] =  __a2c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+    
+    // Option 2
+    // Two's complement (negation of all values and addition of one)
+    atomicAdd((uint32_t*) &ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+    atomicAdd((uint32_t*) &ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+    atomicAdd((uint32_t*) &ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+
+    ES_a[0] =  ~ES_a[0];
+    ES_b[0] =  ~ES_b[0];
+    ES_c[0] =  ~ES_c[0]
+
+    atomicAdd((uint32_t*) &ES_a[0], 1u);
+    atomicAdd((uint32_t*) &ES_b[0], 1u);
+    atomicAdd((uint32_t*) &ES_c[0], 1u);  
+    */
+
+/*
+    if(threadIdx.x == 0){
+    printf("previous_ES_c:%x \tcurrent_ES_c:%x \tb_value:%x \n", prev_ES_c, ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
+//    printf("thread.x:%d \ty:%d \tz:%d \t previous_ES_b:%u \tES_b:%p \tval:%x \tb_value:%x \n",threadIdx.x, threadIdx.y, threadIdx.z, prev_ES_b, ES_b, (uint32_t) *((uint32_t*) &ES_b[0]), (uint32_t) *((uint32_t*) &b[0]));
+      //printf("Previous ES_c : %x \t Ones_addition: %x \t d_value=%x \n", prev_ES_c,  ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+    }
+*/
+
+
+/* Code Included to test the function __add32
+    uint32_t val_a = 4294967295;
+    uint32_t val_b = 1;
+    uint32_t val_c;
+    val_c = 0;
+    printf("Before a: %u b: %u c: %u\n",val_a,val_b,val_c);
+    val_c = __add32( val_a, val_b);
+    printf("Ones a: %u b: %u c: %u\n",val_a,val_b,val_c);
+*/
   }
 };
 

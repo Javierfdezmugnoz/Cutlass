@@ -289,7 +289,7 @@ class Gemm {
     // Methods
     //
 
-    /// Default ctor
+    /// Default ctor  
     CUTLASS_HOST_DEVICE
     Arguments(): problem_size(0, 0, 0), split_k_slices(1) {
 
@@ -459,7 +459,8 @@ public:
 
     dim3 grid = threadblock_swizzle.get_grid_shape(params_.grid_tiled_shape);
     dim3 block(GemmKernel::kThreadCount, 1, 1);
-
+    
+    printf("\n\nBlock:%i, %i, %i \t grid:%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
     cudaError_t result;
 
 
@@ -692,9 +693,7 @@ public:
 
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
-  // JFdez
-  printf("gemm.h Second constructor \n");
-
+ 
     return UnderlyingOperator::can_implement(to_underlying_arguments(args));
   }
 

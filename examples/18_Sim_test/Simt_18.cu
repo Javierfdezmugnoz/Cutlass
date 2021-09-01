@@ -51,10 +51,32 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-typedef float    float32_t;
-#define PUT_IN_REGISTER								 /* dummy definition  for Windows 32 */
 // Helper methods to check for errors
 #include "helper.h"
+
+
+
+#define PUT_IN_REGISTER								 /* dummy definition  for Windows 32 */
+
+typedef float    float32_t;
+typedef union ui64_to_ui32 {
+	uint64_t ui64;
+	uint32_t ui32[2];
+} ui64_to_ui32_t;
+
+typedef float    float32_t;
+typedef double   float64_t;
+typedef void     void_t;
+
+static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint32_t ui32_max_columns)
+{
+	uint32_t ui32_idx;
+
+	for (ui32_idx = 0u; ui32_idx < (ui32_max_rows * ui32_max_columns); ui32_idx++)
+	{
+		*paf32_matrix++ = (float32_t)rand();
+	}
+}
 
 //
 // CUTLASS includes needed for single-precision GEMM kernel
@@ -128,6 +150,102 @@ typedef float    float32_t;
 	return ES;
 }
 
+
+/*==============================================================================================================
+**									Name: smm_ones_internal
+==============================================================================================================*/
+/*!
+** @brief Matrix-matrix multiplication (MMM) with One's checksum in the internal loop
+**
+** @param[in] ui32_m 		Number of matrix A rows 								[0…ui32_m]
+** @param[in] ui32_n 		Number of matrix B columns 								[0…ui32_n]
+** @param[in] ui32_k 		Number of matrix A columns / Number of matrix B rows 	[0…ui32_k]
+** @param[in] f32_alpha Correction factor
+** @param[in] paf32_ma 	Pointer to the first position of an array of floats (A matrix direction)
+** @param[in] paf32_mb 	Pointer to the first position of an array of floats (B matrix direction)
+** @param[in] paf32_mc 	Pointer to the first position of an array of floats (B matrix direction)
+**
+** @return uint32_t  	ui32_xor	Return the Execution signature of the MMM
+==============================================================================================================*/
+ESs smm_ones_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t*  paf32_mc)
+{
+	uint32_t ui32_idx_i = 0u,
+		ui32_idx_j = 0u,
+		ui32_idx_k = 0u,
+		ui32_idx_a = 0u,
+		ui32_idx_b = 0u,
+		ui32_idx_c = 0u,
+		ui32_idx_b_ref = 0u,
+		ui32_idx_c_ref = 0u;
+
+	float32_t f32_a_part = 0.0f,
+		f32_b = 0.0f,
+		f32_c = 0.0f;
+
+	/* One's complement checksum */
+	ui64_to_ui32_t Ones_Checksum_a,
+		Ones_Checksum_b,
+		Ones_Checksum_c,
+		Ones_Checksum;
+
+	Ones_Checksum_a.ui64 = 0u;
+	Ones_Checksum_b.ui64 = 0u;
+	Ones_Checksum_c.ui64 = 0u;
+
+
+	// Verification of the input values
+	assert(paf32_ma != NULL);
+	assert(paf32_mb != NULL);
+	assert(paf32_mc != NULL);
+
+	for (ui32_idx_i = 0u; ui32_idx_i < ui32_m; ui32_idx_i++)
+	{
+		ui32_idx_b_ref = 0u;
+		for (ui32_idx_k = 0u; ui32_idx_k < ui32_k; ui32_idx_k++, ui32_idx_a++)
+		{
+			PUT_IN_REGISTER f32_a_part = f32_alpha * paf32_ma[ui32_idx_a];
+			Ones_Checksum_a.ui64 += (uint64_t) * ((uint32_t*)&f32_a_part);
+			Ones_Checksum_a.ui32[0] += Ones_Checksum_a.ui32[1];
+			Ones_Checksum_a.ui32[0] = ~Ones_Checksum_a.ui32[0];
+      Ones_Checksum_a.ui32[1] = 0;
+
+			for (ui32_idx_j = 0u, ui32_idx_b = ui32_idx_b_ref, ui32_idx_c = ui32_idx_c_ref; ui32_idx_j < ui32_n;
+				ui32_idx_j++, ui32_idx_b++, ui32_idx_c++)
+			{
+				f32_b = paf32_mb[ui32_idx_b];
+				paf32_mc[ui32_idx_c] += f32_a_part * f32_b;
+				f32_c = paf32_mc[ui32_idx_c];
+				/* One's complement checksum */
+				Ones_Checksum_b.ui64 += (uint64_t) * ((uint32_t*)&f32_b);
+				Ones_Checksum_b.ui32[0] += Ones_Checksum_b.ui32[1];
+				Ones_Checksum_b.ui32[0] = ~Ones_Checksum_b.ui32[0];
+
+				Ones_Checksum_c.ui64 += (uint64_t) * ((uint32_t*)&f32_c);
+				Ones_Checksum_c.ui32[0] += Ones_Checksum_c.ui32[1];
+				Ones_Checksum_c.ui32[0] = ~Ones_Checksum_c.ui32[0];
+
+        Ones_Checksum_b.ui32[1] = 0;
+        Ones_Checksum_c.ui32[1] = 0;
+			}
+			ui32_idx_b_ref += ui32_n;
+		}
+		ui32_idx_c_ref += ui32_n;
+	}
+  /*
+	Ones_Checksum.ui64 = (Ones_Checksum_a.ui64 + Ones_Checksum_b.ui64);
+	Ones_Checksum.ui32[0] += Ones_Checksum.ui32[1];
+	Ones_Checksum.ui32[0] = ~Ones_Checksum.ui32[0];
+	Ones_Checksum.ui64 += Ones_Checksum_c.ui64;
+	Ones_Checksum.ui32[0] += Ones_Checksum.ui32[1];
+	Ones_Checksum.ui32[0] = ~Ones_Checksum.ui32[0];
+  */
+   struct ESs ES;
+  ES.A = Ones_Checksum_a.ui32[0];
+  ES.B = Ones_Checksum_b.ui32[0];
+  ES.C = Ones_Checksum_c.ui32[0];
+
+	return ES;
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -243,7 +361,8 @@ __global__ void InitializeMatrix_kernel(
     /*if(((offset+1)%columns)==0){
       printf("\n");
     }
-    printf("Matrix[%d]=%f \t",offset,value);*/
+    printf("Matrix[%d]=%f \t",offset,value);
+    */
     matrix[offset] = value;
   }
 }
@@ -394,7 +513,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   struct ESs d_ES;
 
   // Define the number of elements of the ES 
-  uint32_t nElem_ES = 32;
+  uint32_t nElem_ES = 256;
   size_t nBytes_ES = nElem_ES * sizeof(uint32_t);
 
   // Define pointers to ES_a, ES_b and ES_c in CPU (host)
@@ -439,6 +558,112 @@ for(int i=0;i<nElem_ES;i++){
   cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
   cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
 
+  /* ==============================================================================
+  Brief: Initialization of A, B, C_reference and C_cutlass. 
+  Hypothesis: the values of A and B follow a pattern in the initialization if it 
+  is done in with the GPU. This sequential implementation aid to avoid this.
+  ==============================================================================*/
+  uint32_t nBytes_a = M * K * sizeof(float);
+  uint32_t nBytes_b = K * N * sizeof(float);
+  uint32_t nBytes_c = M * N * sizeof(float);
+
+  // Define pointers to h_a, h_b and h_c in CPU (host)
+  float *h_a;
+  float *h_b;
+  float *h_c;
+
+  // Allocate h_a, h_b and h_c in CPU 
+  h_a     = (float *) malloc(nBytes_a);
+  h_b     = (float *) malloc(nBytes_b);
+  h_c     = (float *) malloc(nBytes_c);
+
+  // Allocate memory on GPU
+  result =  cudaMalloc(&A, nBytes_a);
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to allocate A: "
+      << cudaGetErrorString(result) << std::endl;}
+
+  result =  cudaMalloc(&B, nBytes_b);
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to allocate B: "
+      << cudaGetErrorString(result) << std::endl;}
+
+  result =  cudaMalloc(&C_cutlass, nBytes_c);
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to allocate C_cutlass: "
+      << cudaGetErrorString(result) << std::endl;}
+
+  result =  cudaMalloc(&C_reference, nBytes_c);
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to allocate C_reference: "
+      << cudaGetErrorString(result) << std::endl;}
+  
+
+  // Initialice to 0 all values of h_c and h_c_reference
+  memset(h_c,0,nBytes_c);
+  
+  // Initialization of the values of h_a and h_b
+  matrix2rand(h_a,M,K);
+  matrix2rand(h_b,K,N);
+
+  // Copy the values initialized and stored in host to the device (h_a -> A, h_b -> B ...)
+  result = cudaMemcpy (A,h_a,nBytes_a,cudaMemcpyHostToDevice);
+ if (result != cudaSuccess) {
+    std::cerr << "Failed to copy h_a matrix to A: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+  result = cudaMemcpy (B,h_b,nBytes_b,cudaMemcpyHostToDevice);
+ if (result != cudaSuccess) {
+    std::cerr << "Failed to copy h_b matrix to B: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+  result = cudaMemcpy (C_reference,h_c,nBytes_c,cudaMemcpyHostToDevice);
+ if (result != cudaSuccess) {
+    std::cerr << "Failed to copy h_c matrix to C_reference: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+  result = cudaMemcpy (C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
+
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to copy C_cutlass matrix to C_reference: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+
+
+
+/*
   //
   // Allocate matrices in GPU device memory with arbitrary seeds.
   //
@@ -509,6 +734,8 @@ for(int i=0;i<nElem_ES;i++){
 
     return result;
   }
+*/
+
 
   //
   // Launch CUTLASS GEMM.
@@ -517,26 +744,6 @@ for(int i=0;i<nElem_ES;i++){
   //result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc);
   result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
 
-  // Copy to host the values of the ES of A, B and C performed and stored in the GPU device
-  result = cudaMemcpy(h_ES_a, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
-  result = cudaMemcpy(h_ES_b, d_ES_b, nBytes_ES, cudaMemcpyDeviceToHost);
-  result = cudaMemcpy(h_ES_c, d_ES_c, nBytes_ES, cudaMemcpyDeviceToHost);
-
-   d_ES.A = 0;
-   d_ES.B = 0;
-   d_ES.C = 0;
-
-  for(int i=0;i<nElem_ES;i++){
-    printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u\n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
-    d_ES.A ^= h_ES_a[i];
-    d_ES.B ^= h_ES_b[i];
-    d_ES.C ^= h_ES_c[i];
-  }
-printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
- 
-// Verify that with a sequential implementation we obtain the same value
-h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_A, h_B, C_reference_sequential);
-printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.A, h_ES.B, h_ES.C);
 
   if (result != cudaSuccess) {
     std::cerr << "CUTLASS GEMM kernel failed: "
@@ -549,6 +756,78 @@ printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.A, h_ES.B, 
 
     return result;
   }
+
+  // Copy to host the values of the ES of A, B and C performed and stored in the GPU device
+  result = cudaMemcpy(h_ES_a, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
+  result = cudaMemcpy(h_ES_b, d_ES_b, nBytes_ES, cudaMemcpyDeviceToHost);
+  result = cudaMemcpy(h_ES_c, d_ES_c, nBytes_ES, cudaMemcpyDeviceToHost);
+
+  if (result != cudaSuccess) {
+    std::cerr << "CUTLASS GEMM kernel 2 failed: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+   d_ES.A = 0;
+   d_ES.B = 0;
+   d_ES.C = 0;
+
+/* To use with XOR
+  for(int i=0;i<nElem_ES;i++){
+    printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u\n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
+    d_ES.A ^= h_ES_a[i];
+    d_ES.B ^= h_ES_b[i];
+    d_ES.C ^= h_ES_c[i];
+  }
+printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
+*/
+
+	/* One's complement checksum */
+	ui64_to_ui32_t Ones_Checksum_a,
+		Ones_Checksum_b,
+		Ones_Checksum_c,
+		Ones_Checksum;
+
+	Ones_Checksum_a.ui64 = 0u;
+	Ones_Checksum_b.ui64 = 0u;
+	Ones_Checksum_c.ui64 = 0u;
+  
+  printf("Initial values a=%u, b=%u, c=%u\n",Ones_Checksum_a.ui32[0],Ones_Checksum_b.ui32[0], Ones_Checksum_c.ui32[0]);
+  for(int i=0;i<nElem_ES;i++){
+    Ones_Checksum_a.ui64 += (uint64_t) h_ES_a[i];
+		Ones_Checksum_a.ui32[0] += Ones_Checksum_a.ui32[1];
+		Ones_Checksum_a.ui32[0] = ~Ones_Checksum_a.ui32[0];
+    Ones_Checksum_a.ui32[1] = 0;
+    Ones_Checksum_b.ui64 += (uint64_t) h_ES_b[i];
+		Ones_Checksum_b.ui32[0] += Ones_Checksum_b.ui32[1];
+		Ones_Checksum_b.ui32[0] = ~Ones_Checksum_b.ui32[0];
+    Ones_Checksum_b.ui32[1] = 0;
+    Ones_Checksum_c.ui64 += (uint64_t) h_ES_c[i];
+		Ones_Checksum_c.ui32[0] += Ones_Checksum_c.ui32[1];
+		Ones_Checksum_c.ui32[0] = ~Ones_Checksum_c.ui32[0];
+    Ones_Checksum_c.ui32[1] = 0;
+    printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u \n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
+  }
+    d_ES.A = Ones_Checksum_a.ui32[0];
+    d_ES.B = Ones_Checksum_b.ui32[0];
+    d_ES.C = Ones_Checksum_c.ui32[0];
+printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
+
+
+// Verify that with a sequential implementation we obtain the same value
+//h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_a, h_b, h_c);
+printf(" Value of &B[0]=%p\n", d_ES_a);
+h_ES = smm_ones_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_a, h_b, h_c);
+
+printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.A, h_ES.B, h_ES.C);
+
+
 
   //
   // Verify.
@@ -634,12 +913,12 @@ printf("Final ES_b(CPU)\n Es_a =%u \t Es_b =%u \t Es_c =%u \n", h_ES.A, h_ES.B, 
 //
 int main(int argc, const char *arg[]) {
 
-  //
+  //F
   // Parse the command line to obtain GEMM dimensions and scalar values.
   //
 
   // GEMM problem dimensions.
-  int problem[3] = { 128, 130, 128  };
+  int problem[3] = { 128, 128, 128  };
 
   for (int i = 1; i < argc && i < 4; ++i) {
     std::stringstream ss(arg[i]);

@@ -250,6 +250,8 @@ public:
     //                Mainloop
     // =================================================
 
+
+    //printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
     CUTLASS_GEMM_LOOP
     for (; gemm_k_iterations > 0; --gemm_k_iterations) {

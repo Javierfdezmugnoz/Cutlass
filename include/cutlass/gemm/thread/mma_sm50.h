@@ -140,6 +140,9 @@ struct MmaGeneric {
 //uint32_t *d_ES_0;
 //*d_ES_0 = 20;
     // Compute matrix product
+
+    //printf("%i, %i, %i\n", Shape::kK, Shape::kN, Shape::kM);
+    
     CUTLASS_PRAGMA_UNROLL
     for (int k = 0; k < Shape::kK; ++k) {
 
@@ -162,6 +165,7 @@ struct MmaGeneric {
           d[0] = d_ref.at(mn);
           a[0] = a_ref.at(mk);
           b[0] = b_ref.at(kn);
+          //printf("m_serpentine: %x, %x, %x\n", (uint32_t) d_ref.at(mn),(uint32_t) a_ref.at(mk),(uint32_t) b_ref.at(kn));
           //mma_op(d, a, b, d);
           
           mma_op(d, a, b, d, d_ES_a, d_ES_b, d_ES_c);

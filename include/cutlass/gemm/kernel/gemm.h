@@ -253,6 +253,7 @@ struct Gemm {
     // Main loop
     //
 
+
     // Construct thread-scoped matrix multiply
     // Comment added by Javi Fdez:
     //printf("thread:%d \twarp:%d \tlane%d \tAux:%d\n",thread_idx, warp_idx, lane_idx,lane_idx+(32*(warp_idx%2)));
@@ -264,7 +265,7 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx], &params.d_ES_b[lane_idx], &params.d_ES_c[lane_idx]);
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[thread_idx], &params.d_ES_b[thread_idx], &params.d_ES_c[thread_idx]);
       // The following code is expected to be used with 2 SMP
       //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx+(32*(warp_idx%2))], &params.d_ES_b[lane_idx+(32*(warp_idx%2))], &params.d_ES_c[lane_idx+(32*(warp_idx%2))]);
     }
@@ -346,7 +347,6 @@ struct Gemm {
     //
     // Release the semaphore
     //
-
     if (kSplitKSerial && params.grid_tiled_shape.k() > 1) {
       
       int lock = 0;
