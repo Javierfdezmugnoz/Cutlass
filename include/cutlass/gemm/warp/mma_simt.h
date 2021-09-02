@@ -225,6 +225,7 @@ public:
     uint32_t *d_ES_a = nullptr,
     uint32_t *d_ES_b = nullptr,
     uint32_t *d_ES_c = nullptr,
+    uint32_t *d_CRC_table = nullptr,
     int group_idx = 0) const {
 
     ThreadMma mma;
@@ -239,7 +240,7 @@ public:
       b = conj_b(b);
     }
  // Included by JFdez
-    mma(d, a, b, c, d_ES_a, d_ES_b, d_ES_c);
+    mma(d, a, b, c, d_ES_a, d_ES_b, d_ES_c, d_CRC_table);
   }
 
   /// Transform the mma operands to the required types

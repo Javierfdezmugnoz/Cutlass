@@ -76,6 +76,40 @@ __device__ uint32_t __a2c (uint32_t a, uint32_t b)
     return acc;
 }
 
+typedef union ui32_to_ui8 {
+	uint32_t ui32;
+	uint8_t ui8[4];
+} ui32_to_ui8_t;
+
+/*
+#define SINGLETABLE_CRC32_UI32(ui32_crc, ui32_data, u) \
+    u.ui32 = ui32_data; \
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
+*/
+__device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_data, uint32_t *d_CRC_table)
+{
+	ui32_to_ui8_t u;
+	u.ui32 = ui32_data;
+
+	/* 4 bytes*/
+  uint32_t prev_ui32_crc = ui32_crc;
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+  /*printf("prev_ui32_c = %x prev_ui32_c >> 8u = %x value of d_CRC_table[%x & 0x00ffu = %x]: %x \t ui32_crc = %x \n",
+                prev_ui32_crc,
+                prev_ui32_crc >> 8,
+                (prev_ui32_crc ^ u.ui8[0u]), 
+                (prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu, 
+                d_CRC_table[(prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu],
+                d_CRC_table[(prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (prev_ui32_crc >> 8u));*/
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+
+	return ui32_crc;
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,10 +143,15 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     // Included by JFdez
     uint32_t *ES_a =nullptr,
     uint32_t *ES_b =nullptr,
-    uint32_t *ES_c =nullptr
+    uint32_t *ES_c =nullptr,
+    uint32_t *d_CRC_table = nullptr
   ) {
     //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
+
+    ES_a[0] = singletable_crc32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]), d_CRC_table);
+    ES_b[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]), d_CRC_table);
+    ES_c[0] = singletable_crc32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]), d_CRC_table);
 
     // Uncomment the desired Checksum in the internal loop
     /* // XOR checksum
