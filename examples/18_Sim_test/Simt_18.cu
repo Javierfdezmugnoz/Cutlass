@@ -95,11 +95,20 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
     uint32_t C;
   };
 
+#include <time.h>
+#define DEF_TIME_VAR(t) clock_t t;
+#define GET_TIME(t) t = clock();
+#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (fabs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
+
+#define TIME_MEASUREMENT_LOOPS 10
+#define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
+
+
 #define CRC_table_elements 256u
 /* ==============================================================================================================
  * 										CONSTS
  * ============================================================================================================== */
-uint32_t kaui32_crc_table[CRC_table_elements] = /*! CRC Look-Up Table; See: web.mit.edu � freebsd � head � sys � libkern � crc32*/
+uint32_t kaui32_crc_table[CRC_table_elements] = 
 {
 	0x00000000L, 0xF26B8303L, 0xE13B70F7L, 0x1350F3F4L,
 	0xC79A971FL, 0x35F1141CL, 0x26A1E7E8L, 0xD4CA64EBL,
@@ -167,15 +176,10 @@ uint32_t kaui32_crc_table[CRC_table_elements] = /*! CRC Look-Up Table; See: web.
 	0xBE2DA0A5L, 0x4C4623A6L, 0x5F16D052L, 0xAD7D5351L
 };
 
+__constant__ uint32_t d_CRC_table[CRC_table_elements];
+//__shared__ uint32_t d_CRC_table_shared[CRC_table_elements];
 
-#include <time.h>
-#define DEF_TIME_VAR(t) clock_t t;
-#define GET_TIME(t) t = clock();
-#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (fabs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
-
-#define TIME_MEASUREMENT_LOOPS 10
-#define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
-
+// Definition of the sequential MMM (not required. It belongs to a test that try to compare sequential ES and parallel ES)
  ESs smm_xor_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t *paf32_mc)
 {
 	uint32_t ui32_idx_i = 0u,
@@ -351,8 +355,7 @@ cudaError_t CutlassSgemmNN(
   int ldc,
   uint32_t *d_ES_a,
   uint32_t *d_ES_b,
-  uint32_t *d_ES_c,
-  uint32_t *d_CRC_table) {
+  uint32_t *d_ES_c) {
 
   // Define type definition for single-precision CUTLASS GEMM with column-major
   // input matrices and 128x128x8 threadblock tile size (chosen by default).
@@ -394,8 +397,8 @@ cudaError_t CutlassSgemmNN(
                               {alpha, beta},// Scalars used in the Epilogue
                               d_ES_a,   // Pointer to d_ES_a
                               d_ES_b,   // Pointer to d_ES_b
-                              d_ES_c,   // Pointer to d_ES_c
-                              d_CRC_table);  // Pointer to d_CRC_table
+                              d_ES_c);   // Pointer to d_ES_c
+                             
 
   // Code included by JFdez: I have to include in args variable this: d_ES_0 and d_ES_1
 
@@ -518,7 +521,6 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   h_ES_a = (uint32_t *) malloc(nBytes_ES);
   h_ES_b = (uint32_t *) malloc(nBytes_ES);
   h_ES_c = (uint32_t *) malloc(nBytes_ES);
-  h_CRC_table = &kaui32_crc_table[0];
 
   // Initialice to 0 all values of ES_a, ES_b and ES_c
   memset(h_ES_a,0,nBytes_ES);
@@ -530,20 +532,23 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   uint32_t *d_ES_a;
   uint32_t *d_ES_b;
   uint32_t *d_ES_c;
-  uint32_t *d_CRC_table;
 
   // Allocate ES_0 y ES_1 in GPU
   cudaMalloc((uint32_t **) &d_ES_a, nBytes_ES);
   cudaMalloc((uint32_t **) &d_ES_b, nBytes_ES);
   cudaMalloc((uint32_t **) &d_ES_c, nBytes_ES);
-  cudaMalloc((uint32_t **) &d_CRC_table, CRC_table_elements *sizeof(uint32_t) );
 
   // Transfer data from host to device (first time it has no sense, it could
   // be directly initilized in GPU, but it will not be always initially zero)
   cudaMemcpy(d_ES_a, h_ES_a, nBytes_ES, cudaMemcpyHostToDevice);
   cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
   cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
-  cudaMemcpy(d_CRC_table, h_CRC_table, CRC_table_elements *sizeof(uint32_t), cudaMemcpyHostToDevice);
+
+  // Copy the CRC lookup table from host to device
+  result = cudaMemcpyToSymbol(d_CRC_table, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t),0, cudaMemcpyHostToDevice);
+  if (result != cudaSuccess) {
+    std::cerr << "Failed to allocate Constant Memory: "
+      << cudaGetErrorString(result) << std::endl;}
 
   /* ==============================================================================
   Brief: Initialization of A, B, C_reference and C_cutlass. 
@@ -643,7 +648,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
     struct tm *time_info;
 	time_info = localtime(&time_now);
-	strftime(str_file_name, sizeof(str_file_name), "Global_%m_%d_%A_%H_%M_%S.xlsx", time_info);
+	strftime(str_file_name, sizeof(str_file_name), "Global_%m_%d_%H_%M_%S.xlsx", time_info);
 	if ((p_file = fopen(str_file_name, "w+")) == NULL)
 	{
 		fprintf(stderr, "cannot open file '%s'\n", str_file_name);
@@ -723,7 +728,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
 
         GET_TIME(tmr_start);
-        result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c, d_CRC_table);
+        result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
         GET_TIME(tmr_end);
         GET_TIME_DIFF(tmr_start, tmr_end, time_interval);
         time_interval *= ((float64_t)TIME_SEC2USEC) / (float64_t)TIME_MEASUREMENT_LOOPS;
@@ -744,10 +749,6 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     }
     fclose(p_file);
 
-
-
-
- 
 
   result = cudaMemcpy (C_reference,h_c,nBytes_c,cudaMemcpyHostToDevice);
  if (result != cudaSuccess) {

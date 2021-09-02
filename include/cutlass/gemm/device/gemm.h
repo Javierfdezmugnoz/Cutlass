@@ -284,7 +284,6 @@ class Gemm {
     uint32_t *d_ES_a;
     uint32_t *d_ES_b;
     uint32_t *d_ES_c;
-    uint32_t *d_CRC_table;
     //
     // Methods
     //
@@ -304,11 +303,10 @@ class Gemm {
       TensorRef<ElementC const, LayoutC> ref_C_,
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
-        typename EpilogueOutputOp::Params(),
+      typename EpilogueOutputOp::Params(),
       uint32_t *d_ES_a_ = nullptr,
       uint32_t *d_ES_b_ = nullptr,
       uint32_t *d_ES_c_ = nullptr,
-      uint32_t *d_CRC_table_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -320,7 +318,6 @@ class Gemm {
       d_ES_a(d_ES_a_),
       d_ES_b(d_ES_b_),
       d_ES_c(d_ES_c_),
-      d_CRC_table(d_CRC_table_),
       split_k_slices(split_k_slices) {
       
     }
@@ -426,7 +423,6 @@ public:
       args.d_ES_a,
       args.d_ES_b,
       args.d_ES_c,
-      args.d_CRC_table,
       static_cast<int *>(workspace)      
     };
 
@@ -452,7 +448,6 @@ public:
     params_.d_ES_a = args.d_ES_a;
     params_.d_ES_b = args.d_ES_b;
     params_.d_ES_c = args.d_ES_c;
-    params_.d_CRC_table = args.d_CRC_table;
     return Status::kSuccess;
   }
 
@@ -464,7 +459,7 @@ public:
     dim3 grid = threadblock_swizzle.get_grid_shape(params_.grid_tiled_shape);
     dim3 block(GemmKernel::kThreadCount, 1, 1);
     
-    printf("\n\nBlock:%i, %i, %i \t grid:%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
+    // printf("\n\nBlock:%i, %i, %i \t grid:%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
     cudaError_t result;
 
 
@@ -633,7 +628,6 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
     uint32_t *d_ES_a;
     uint32_t *d_ES_b;
     uint32_t *d_ES_c;
-    uint32_t *d_CRC_table;
 
     //
     // Methods
@@ -656,7 +650,6 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       uint32_t *d_ES_a_ = nullptr,
       uint32_t *d_ES_b_ = nullptr,
       uint32_t *d_ES_c_ = nullptr,
-      uint32_t *d_CRC_table_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -668,7 +661,6 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       d_ES_a(d_ES_a_),
       d_ES_b(d_ES_b_),
       d_ES_c(d_ES_c_),
-      d_CRC_table(d_CRC_table_),
       split_k_slices(split_k_slices){
       }
   };
@@ -694,7 +686,6 @@ public:
       args.d_ES_a,
       args.d_ES_b,
       args.d_ES_c,
-      args.d_CRC_table,
       args.split_k_slices    
     );
   }

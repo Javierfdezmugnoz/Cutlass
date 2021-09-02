@@ -35,6 +35,11 @@
 #include "cutlass/matrix_coord.h"
 #include "cutlass/semaphore.h"
 
+
+//extern CRC_table_elements;
+//extern uint32_t d_CRC_table_constant[];
+//extern uint32_t d_CRC_table_shared[];
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -81,7 +86,6 @@ struct Gemm {
     uint32_t *d_ES_a;
     uint32_t *d_ES_b;
     uint32_t *d_ES_c;
-    uint32_t *d_CRC_table;
 
     //
     // Methods
@@ -102,7 +106,6 @@ struct Gemm {
       uint32_t *d_ES_a_ = nullptr,
       uint32_t *d_ES_b_ = nullptr,
       uint32_t *d_ES_c_ = nullptr,
-      uint32_t *d_CRC_table_ = nullptr,
       int *workspace = nullptr
     ):
       problem_size(problem_size),
@@ -118,7 +121,6 @@ struct Gemm {
       d_ES_a(d_ES_a_),
       d_ES_b(d_ES_b_),
       d_ES_c(d_ES_c_),
-      d_CRC_table(d_CRC_table_),
       output_op(output_op) {
 
       int total_gemm_k_iterations = (problem_size.k() + Mma::Shape::kK - 1) / Mma::Shape::kK;
@@ -261,7 +263,20 @@ struct Gemm {
     // Comment added by Javi Fdez:
     //printf("thread:%d \twarp:%d \tlane%d \tAux:%d\n",thread_idx, warp_idx, lane_idx,lane_idx+(32*(warp_idx%2)));
 
-    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c,params.d_CRC_table);
+
+
+
+    /* ==========================================================================================================
+        Shared Memory copy from Host
+    ========================================================================================================== */
+    //if (threadIdx.x < 256)
+    //  {
+    //    d_CRC_table_shared[threadIdx.x] = d_CRC_table[threadIdx.x];
+    //  }
+    // __syncthreads();
+ 
+
+    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c);
 
     typename Mma::FragmentC accumulators;
 
@@ -269,7 +284,7 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[thread_idx], &params.d_ES_b[thread_idx], &params.d_ES_c[thread_idx], &params.d_CRC_table[0]);
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[thread_idx], &params.d_ES_b[thread_idx], &params.d_ES_c[thread_idx]);
       // The following code is expected to be used with 2 SMP
       //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx+(32*(warp_idx%2))], &params.d_ES_b[lane_idx+(32*(warp_idx%2))], &params.d_ES_c[lane_idx+(32*(warp_idx%2))]);
     }

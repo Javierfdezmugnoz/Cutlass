@@ -120,8 +120,7 @@ struct MmaGeneric {
     FragmentC const & C,
     uint32_t *d_ES_a =nullptr,
     uint32_t *d_ES_b =nullptr,
-    uint32_t *d_ES_c =nullptr,
-    uint32_t *d_CRC_table = nullptr
+    uint32_t *d_ES_c =nullptr
     ) {
     TensorRef<ElementA const, LayoutA> a_ref(
       reinterpret_cast<ElementA const *>(&A), LayoutA::packed({Shape::kM, Shape::kK}));
@@ -169,7 +168,7 @@ struct MmaGeneric {
           //printf("m_serpentine: %x, %x, %x\n", (uint32_t) d_ref.at(mn),(uint32_t) a_ref.at(mk),(uint32_t) b_ref.at(kn));
           //mma_op(d, a, b, d);
           
-          mma_op(d, a, b, d, d_ES_a, d_ES_b, d_ES_c, d_CRC_table);
+          mma_op(d, a, b, d, d_ES_a, d_ES_b, d_ES_c);
 
           d_ref.at(mn) = d[0];
         }
@@ -265,8 +264,7 @@ struct Mma<
     FragmentC const & C,
     uint32_t *d_ES_a =nullptr,
     uint32_t *d_ES_b =nullptr,
-    uint32_t *d_ES_c =nullptr,
-    uint32_t *d_CRC_table =nullptr
+    uint32_t *d_ES_c =nullptr
     ) {
 
     MmaGeneric<
@@ -279,7 +277,7 @@ struct Mma<
       LayoutC,
       Operator> mma;
 
-    mma(D, A, B, C,  d_ES_a, d_ES_b, d_ES_c, d_CRC_table);
+    mma(D, A, B, C,  d_ES_a, d_ES_b, d_ES_c);
   }
 };
 
