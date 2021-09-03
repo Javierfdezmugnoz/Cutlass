@@ -93,7 +93,8 @@ typedef union ui32_to_ui8 {
 	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
 	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u); \
 */
-extern __constant__ uint32_t d_CRC_table[];
+// extern __constant__ uint32_t d_CRC_table[];
+extern __shared__ uint32_t d_CRC_table_shared[];
 __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_data)
 {
 	ui32_to_ui8_t u;
@@ -101,7 +102,7 @@ __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_da
 
 	/* 4 bytes*/
   uint32_t prev_ui32_crc = ui32_crc;
-	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
   /*printf("prev_ui32_c = %x prev_ui32_c >> 8u = %x value of d_CRC_table[%x & 0x00ffu = %x]: %x \t ui32_crc = %x \n",
                 prev_ui32_crc,
                 prev_ui32_crc >> 8,
@@ -109,10 +110,11 @@ __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_da
                 (prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu, 
                 d_CRC_table[(prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu],
                 d_CRC_table[(prev_ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (prev_ui32_crc >> 8u));*/
-	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	ui32_crc = d_CRC_table[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-  uint32_t Global_mem, Constant_mem, Shared_mem = 0u;
+	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+  //printf("Shared_Mem[1]= %u\n",d_CRC_table_shared[1]);
+  //uint32_t Global_mem, Constant_mem, Shared_mem = 0u;
   //Global_mem = __isGlobal(d_CRC_table);
   //printf(" Global: %3s \n", (Global_mem ? "yes" : "nou"));
   //Shared_mem = __isShared(d_CRC_table);

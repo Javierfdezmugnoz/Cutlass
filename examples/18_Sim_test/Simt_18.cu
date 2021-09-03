@@ -176,8 +176,8 @@ uint32_t kaui32_crc_table[CRC_table_elements] =
 	0xBE2DA0A5L, 0x4C4623A6L, 0x5F16D052L, 0xAD7D5351L
 };
 
-__constant__ uint32_t d_CRC_table[CRC_table_elements];
-//__shared__ uint32_t d_CRC_table_shared[CRC_table_elements];
+__constant__ uint32_t d_CRC_table_constant[CRC_table_elements];
+__shared__ uint32_t d_CRC_table_shared[CRC_table_elements];
 
 // Definition of the sequential MMM (not required. It belongs to a test that try to compare sequential ES and parallel ES)
  ESs smm_xor_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t *paf32_mc)
@@ -545,7 +545,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
 
   // Copy the CRC lookup table from host to device
-  result = cudaMemcpyToSymbol(d_CRC_table, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t),0, cudaMemcpyHostToDevice);
+  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t),0, cudaMemcpyHostToDevice);
   if (result != cudaSuccess) {
     std::cerr << "Failed to allocate Constant Memory: "
       << cudaGetErrorString(result) << std::endl;}

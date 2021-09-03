@@ -35,10 +35,9 @@
 #include "cutlass/matrix_coord.h"
 #include "cutlass/semaphore.h"
 
-
-//extern CRC_table_elements;
-//extern uint32_t d_CRC_table_constant[];
-//extern uint32_t d_CRC_table_shared[];
+// Take a look to CRC_table_element (How to do reference to a #define from Simt_18.cu? HOWWWW?)
+extern __constant__ uint32_t d_CRC_table_constant[];
+extern __shared__ uint32_t d_CRC_table_shared[];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -269,11 +268,11 @@ struct Gemm {
     /* ==========================================================================================================
         Shared Memory copy from Host
     ========================================================================================================== */
-    //if (threadIdx.x < 256)
-    //  {
-    //    d_CRC_table_shared[threadIdx.x] = d_CRC_table[threadIdx.x];
-    //  }
-    // __syncthreads();
+    if (threadIdx.x < 256) //CRC_table_elements
+      {
+        d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
+      }
+    __syncthreads();
  
 
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c);
