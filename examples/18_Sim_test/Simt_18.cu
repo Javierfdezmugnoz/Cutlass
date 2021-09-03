@@ -100,7 +100,7 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
 #define GET_TIME(t) t = clock();
 #define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (fabs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
 
-#define TIME_MEASUREMENT_LOOPS 10
+#define TIME_MEASUREMENT_LOOPS 1
 #define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
 
 
@@ -798,7 +798,8 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
 */
 
-	/* One's complement checksum */
+/* To use with One's complement checksum
+	// One's complement checksum 
 	ui64_to_ui32_t Ones_Checksum_a,
 		Ones_Checksum_b,
 		Ones_Checksum_c,
@@ -822,13 +823,17 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
 		Ones_Checksum_c.ui32[0] += Ones_Checksum_c.ui32[1];
 		Ones_Checksum_c.ui32[0] = ~Ones_Checksum_c.ui32[0];
     Ones_Checksum_c.ui32[1] = 0;
-    printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u \n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
+    //printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u \n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
   }
     d_ES.A = Ones_Checksum_a.ui32[0];
     d_ES.B = Ones_Checksum_b.ui32[0];
     d_ES.C = Ones_Checksum_c.ui32[0];
 printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
+*/
 
+/* To use with Fletcher
+
+*/
 
 // Verify that with a sequential implementation we obtain the same value
 //h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_a, h_b, h_c);

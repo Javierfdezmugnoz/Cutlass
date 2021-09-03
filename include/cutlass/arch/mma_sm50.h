@@ -76,10 +76,18 @@ __device__ uint32_t __a2c (uint32_t a, uint32_t b)
     return acc;
 }
 
+/* ==============================================================================================================
+ * 										TYPEDEFS
+ * ============================================================================================================== */
 typedef union ui32_to_ui8 {
 	uint32_t ui32;
 	uint8_t ui8[4];
 } ui32_to_ui8_t;
+
+typedef union ui32_to_ui16 {
+	uint32_t ui32;
+	uint16_t ui16[2];
+} ui32_to_ui16_t;
 
 
 /* ==========================================================================
@@ -124,6 +132,26 @@ __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_da
 }
 
 
+/*==============================================================================================================
+* 							Fletcher
+* ============================================================================================================== */
+__device__ uint32_t Fletcher32c_ui32(uint32_t Prev_Fletcher, uint32_t ui32_data)
+{
+	ui32_to_ui16_t v;
+  ui32_to_ui16_t Fletcher;
+	v.ui32        = ui32_data;
+  Fletcher.ui32 = Prev_Fletcher;
+
+	Fletcher.ui16[0] += v.ui16[0];
+	Fletcher.ui16[1] += Fletcher.ui16[0];
+	Fletcher.ui16[0] += v.ui16[1];
+	Fletcher.ui16[1] += Fletcher.ui16[0];
+	Fletcher.ui16[0] %= 255;
+	Fletcher.ui16[1] %= 255;
+
+	return Fletcher.ui32;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -161,9 +189,9 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
 
-    ES_a[0] = singletable_crc32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
-    ES_b[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
-    ES_c[0] = singletable_crc32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
+    ES_a[0] = Fletcher32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
+    ES_b[0] = Fletcher32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
+    ES_c[0] = Fletcher32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
 
     // Uncomment the desired Checksum in the internal loop
     /* // XOR checksum

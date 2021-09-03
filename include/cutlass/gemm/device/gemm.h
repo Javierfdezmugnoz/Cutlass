@@ -336,7 +336,7 @@ public:
   /// Determines whether the GEMM can execute the given problem.
   static Status can_implement(Arguments const &args) {
   // JFdez
-  printf("\n gemm.h First constructor \n");
+  //printf("\n gemm.h First constructor \n");
     if (!kSplitKSerial && args.split_k_slices > 1) {
       return Status::kErrorInvalidProblem;
     }
