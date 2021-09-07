@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javierfdez/github_repository/Cutlass/examples/07_volta_tensorop_gemm/volta_tensorop_gemm.cu" "examples/07_volta_tensorop_gemm/CMakeFiles/07_volta_tensorop_gemm.dir/volta_tensorop_gemm.cu.o" "gcc" "examples/07_volta_tensorop_gemm/CMakeFiles/07_volta_tensorop_gemm.dir/volta_tensorop_gemm.cu.o.d"
+  "/home/ubuntu/github/cutlass/examples/07_volta_tensorop_gemm/volta_tensorop_gemm.cu" "examples/07_volta_tensorop_gemm/CMakeFiles/07_volta_tensorop_gemm.dir/volta_tensorop_gemm.cu.o" "gcc" "examples/07_volta_tensorop_gemm/CMakeFiles/07_volta_tensorop_gemm.dir/volta_tensorop_gemm.cu.o.d"
   )
 
 # Targets to which this target links.

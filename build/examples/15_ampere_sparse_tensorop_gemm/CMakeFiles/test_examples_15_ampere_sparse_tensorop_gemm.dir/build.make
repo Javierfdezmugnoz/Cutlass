@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_examples_15_ampere_sparse_tensorop_gemm.
 
@@ -67,7 +67,7 @@ include examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampe
 include examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/progress.make
 
 examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm: examples/15_ampere_sparse_tensorop_gemm/15_ampere_sparse_tensorop_gemm
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/15_ampere_sparse_tensorop_gemm && ./15_ampere_sparse_tensorop_gemm
+	cd /home/ubuntu/github/cutlass/build/examples/15_ampere_sparse_tensorop_gemm && ./15_ampere_sparse_tensorop_gemm
 
 test_examples_15_ampere_sparse_tensorop_gemm: examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm
 test_examples_15_ampere_sparse_tensorop_gemm: examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/build.make
@@ -78,10 +78,10 @@ examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_spars
 .PHONY : examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/build
 
 examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/15_ampere_sparse_tensorop_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/examples/15_ampere_sparse_tensorop_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/cmake_clean.cmake
 .PHONY : examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/clean
 
 examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/15_ampere_sparse_tensorop_gemm /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/15_ampere_sparse_tensorop_gemm /home/javierfdez/github_repository/Cutlass/build/examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/15_ampere_sparse_tensorop_gemm /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/15_ampere_sparse_tensorop_gemm /home/ubuntu/github/cutlass/build/examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/test_examples_15_ampere_sparse_tensorop_gemm.dir/depend
 

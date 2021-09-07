@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = -Dcutlass_lib_EXPORTS
 
-CXX_INCLUDES = -I/home/javierfdez/github_repository/Cutlass/include -I/home/javierfdez/github_repository/Cutlass/tools/library/include -I/home/javierfdez/github_repository/Cutlass/build/include -I/usr/local/cuda-10.0/include -I/home/javierfdez/github_repository/Cutlass/tools/util/include
+CXX_INCLUDES = -I/home/ubuntu/github/cutlass/include -I/home/ubuntu/github/cutlass/tools/library/include -I/home/ubuntu/github/cutlass/build/include -I/usr/local/cuda-10.2/include -I/home/ubuntu/github/cutlass/tools/util/include
 
-CXX_FLAGS = -g -fPIC -DCUTLASS_TEST_LEVEL=0 --cuda-include-ptx=all -gmlt --cuda-path=/usr/local/cuda-10.0 -mllvm -pragma-unroll-threshold=100000 -unroll-threshold=5000 -Wno-unused-command-line-argument -D__CUDACC_VER_MAJOR__=10 -D__CUDACC_VER_MINOR__=0 -Wl,--disable-new-dtags --cuda-gpu-arch=sm_53 -std=c++11
+CXX_FLAGS = -g -fPIC -DCUTLASS_ENABLE_TENSOR_CORE_MMA=1 -DEXTERNAL_ES=0 -DINTERMEDIATE_ES=1 -DINTERNAL_ES=0 -DNAME=\"1_TECH_XOR_INTERMEDIATE\" -DCUTLASS_TEST_LEVEL=0 --cuda-include-ptx=all -gmlt --cuda-path=/usr/local/cuda-10.2 -mllvm -pragma-unroll-threshold=100000 -unroll-threshold=5000 -Wno-unused-command-line-argument -D__CUDACC_VER_MAJOR__=10 -D__CUDACC_VER_MINOR__=2 -Wl,--disable-new-dtags --cuda-gpu-arch=sm_72 -std=c++11
 

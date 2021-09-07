@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_examples_05_batched_gemm.
 
@@ -67,7 +67,7 @@ include examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/co
 include examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/progress.make
 
 examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm: examples/05_batched_gemm/05_batched_gemm
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/05_batched_gemm && ./05_batched_gemm
+	cd /home/ubuntu/github/cutlass/build/examples/05_batched_gemm && ./05_batched_gemm
 
 test_examples_05_batched_gemm: examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm
 test_examples_05_batched_gemm: examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/build.make
@@ -78,10 +78,10 @@ examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/build: tes
 .PHONY : examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/build
 
 examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_05_batched_gemm.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_05_batched_gemm.dir/cmake_clean.cmake
 .PHONY : examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/clean
 
 examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/05_batched_gemm /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/05_batched_gemm /home/javierfdez/github_repository/Cutlass/build/examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/05_batched_gemm /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/05_batched_gemm /home/ubuntu/github/cutlass/build/examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/05_batched_gemm/CMakeFiles/test_examples_05_batched_gemm.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_examples.
 
@@ -74,10 +74,10 @@ examples/CMakeFiles/test_examples.dir/build: test_examples
 .PHONY : examples/CMakeFiles/test_examples.dir/build
 
 examples/CMakeFiles/test_examples.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/test_examples.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/examples && $(CMAKE_COMMAND) -P CMakeFiles/test_examples.dir/cmake_clean.cmake
 .PHONY : examples/CMakeFiles/test_examples.dir/clean
 
 examples/CMakeFiles/test_examples.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples /home/javierfdez/github_repository/Cutlass/build/examples/CMakeFiles/test_examples.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples /home/ubuntu/github/cutlass/build/examples/CMakeFiles/test_examples.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/CMakeFiles/test_examples.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_unit_reduction_kernel.
 
@@ -67,7 +67,7 @@ include test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/com
 include test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/progress.make
 
 test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel: test/unit/reduction/kernel/cutlass_test_unit_reduction_kernel
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/kernel && ./cutlass_test_unit_reduction_kernel --gtest_output=xml:test_unit_reduction_kernel.gtest.xml
+	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/kernel && ./cutlass_test_unit_reduction_kernel --gtest_output=xml:test_unit_reduction_kernel.gtest.xml
 
 test_unit_reduction_kernel: test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel
 test_unit_reduction_kernel: test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/build.make
@@ -78,10 +78,10 @@ test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/build: test
 .PHONY : test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/build
 
 test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/kernel && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_kernel.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/reduction/kernel && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_kernel.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/clean
 
 test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/reduction/kernel /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/kernel /home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/reduction/kernel /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/reduction/kernel /home/ubuntu/github/cutlass/build/test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/kernel/CMakeFiles/test_unit_reduction_kernel.dir/depend
 

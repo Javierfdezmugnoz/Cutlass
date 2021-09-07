@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/examples/02_dump_reg_shmem//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/rule
 .PHONY : examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_02_dump_reg_shmem: examples/02_dump_reg_shmem/CMakeFiles/test_exam
 
 # fast build rule for target.
 test_examples_02_dump_reg_shmem/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/test_examples_02_dump_reg_shmem.dir/build
 .PHONY : test_examples_02_dump_reg_shmem/fast
 
 # Convenience name for target.
 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/rule
 .PHONY : examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/rule:
 
 # fast build rule for target.
 02_dump_reg_shmem/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build
 .PHONY : 02_dump_reg_shmem/fast
 
 dump_reg_shmem.o: dump_reg_shmem.cu.o
@@ -225,7 +225,7 @@ dump_reg_shmem.o: dump_reg_shmem.cu.o
 
 # target to build an object file
 dump_reg_shmem.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.o
 .PHONY : dump_reg_shmem.cu.o
 
 dump_reg_shmem.i: dump_reg_shmem.cu.i
@@ -233,7 +233,7 @@ dump_reg_shmem.i: dump_reg_shmem.cu.i
 
 # target to preprocess a source file
 dump_reg_shmem.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.i
 .PHONY : dump_reg_shmem.cu.i
 
 dump_reg_shmem.s: dump_reg_shmem.cu.s
@@ -241,7 +241,7 @@ dump_reg_shmem.s: dump_reg_shmem.cu.s
 
 # target to generate assembly for a file
 dump_reg_shmem.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/build.make examples/02_dump_reg_shmem/CMakeFiles/02_dump_reg_shmem.dir/dump_reg_shmem.cu.s
 .PHONY : dump_reg_shmem.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

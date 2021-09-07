@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_unit_gemm_device_tensorop_planar_complex.
 
@@ -67,7 +67,7 @@ include test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_c
 include test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/progress.make
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex: test/unit/gemm/device/cutlass_test_unit_gemm_device_tensorop_planar_complex
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/device && ./cutlass_test_unit_gemm_device_tensorop_planar_complex --gtest_output=xml:test_unit_gemm_device_tensorop_planar_complex.gtest.xml
+	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/device && ./cutlass_test_unit_gemm_device_tensorop_planar_complex --gtest_output=xml:test_unit_gemm_device_tensorop_planar_complex.gtest.xml
 
 test_unit_gemm_device_tensorop_planar_complex: test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex
 test_unit_gemm_device_tensorop_planar_complex: test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build.make
@@ -78,10 +78,10 @@ test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.d
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/cmake_clean.cmake
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/clean
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/gemm/device /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/device /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/gemm/device /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/gemm/device /home/ubuntu/github/cutlass/build/test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/javierfdez/github_repository/Cutlass/examples/10_planar_complex
+# Install script for directory: /home/ubuntu/github/cutlass/examples/10_planar_complex
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/10_planar_complex"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/javierfdez/github_repository/Cutlass/build/examples/10_planar_complex/10_planar_complex")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/examples/10_planar_complex/10_planar_complex")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/10_planar_complex" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/10_planar_complex")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/10_planar_complex"
-         OLD_RPATH "/usr/local/cuda-10.0/lib64/stubs:/home/javierfdez/github_repository/Cutlass/build/tools/library:/usr/local/cuda-10.0/lib64:"
+         OLD_RPATH "/usr/local/cuda-10.2/lib64/stubs:/home/ubuntu/github/cutlass/build/tools/library:/usr/local/cuda-10.2/lib64:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/10_planar_complex")
@@ -63,6 +63,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javierfdez/github_repository/Cutlass/build/examples/10_planar_complex/CTestTestfile.ctest_examples_10_planar_complex.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/examples/10_planar_complex/CTestTestfile.ctest_examples_10_planar_complex.cmake")
 endif()
 

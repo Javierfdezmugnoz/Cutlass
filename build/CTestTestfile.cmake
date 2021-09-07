@@ -1,10 +1,11 @@
 # CMake generated Testfile for 
-# Source directory: /home/javierfdez/github_repository/Cutlass
-# Build directory: /home/javierfdez/github_repository/Cutlass/build
+# Source directory: /home/ubuntu/github/cutlass
+# Build directory: /home/ubuntu/github/cutlass/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("_deps/googletest-build")
+subdirs("examples/ES_protection")
 subdirs("tools")
 subdirs("examples")
 subdirs("test")

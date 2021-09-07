@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for cutlass_test_unit_epilogue.
 
@@ -79,10 +79,10 @@ test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build: cutlass_test
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build
 
 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/epilogue && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue.dir/cmake_clean.cmake
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/clean
 
 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/epilogue /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/epilogue /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/epilogue /home/ubuntu/github/cutlass/build/test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/depend
 

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javierfdez/github_repository/Cutlass/examples/04_tile_iterator/tile_iterator.cu" "examples/04_tile_iterator/CMakeFiles/04_tile_iterator.dir/tile_iterator.cu.o" "gcc" "examples/04_tile_iterator/CMakeFiles/04_tile_iterator.dir/tile_iterator.cu.o.d"
+  "/home/ubuntu/github/cutlass/examples/04_tile_iterator/tile_iterator.cu" "examples/04_tile_iterator/CMakeFiles/04_tile_iterator.dir/tile_iterator.cu.o" "gcc" "examples/04_tile_iterator/CMakeFiles/04_tile_iterator.dir/tile_iterator.cu.o.d"
   )
 
 # Targets to which this target links.

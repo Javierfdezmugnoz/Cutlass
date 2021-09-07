@@ -51,6 +51,17 @@ else()
   list(APPEND CUTLASS_CUDA_NVCC_FLAGS --std=c++11)
 endif()
 
+
+set(EXTERNAL_ES "${EXTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+set(INTERMEDIATE_ES "${INTERMEDIATE_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+set(INTERNAL_ES "${INTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+set(NAME "${NAME}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DEXTERNAL_ES=${EXTERNAL_ES})
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DINTERMEDIATE_ES=${INTERMEDIATE_ES})
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DINTERNAL_ES=${INTERNAL_ES})
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DNAME="${NAME}")
+
+
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX install CACHE PATH "Default installation location." FORCE)
 endif()
@@ -280,6 +291,11 @@ if(CUDA_COMPILER MATCHES "[Cc]lang")
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -mllvm -unroll-threshold=5000)
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -Wno-unused-command-line-argument)
 
+
+
+
+
+
   string(REPLACE "." ";" CUDA_VERSION_PARTS ${CMAKE_CUDA_COMPILER_VERSION})
   list(GET CUDA_VERSION_PARTS 0 CUDA_VERSION_MAJOR)
   list(GET CUDA_VERSION_PARTS 1 CUDA_VERSION_MINOR)
@@ -375,6 +391,7 @@ endfunction()
 
 # GLOB for CUTLASS header files. Should we use a static list instead?
 file(GLOB_RECURSE CUTLASS_INCLUDE RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} include/cutlass/*.h)
+file(GLOB_RECURSE CUTLASS_INCLUDE RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/*.h)
 file(GLOB_RECURSE CUTLASS_CUTLASS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/include include/cutlass/*.h)
 file(GLOB_RECURSE CUTLASS_NVRTC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/test test/unit/nvrtc/kernel/*.h)
 
@@ -383,6 +400,10 @@ file(GLOB_RECURSE CUTLASS_NVRTC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/test test/u
 # Define build targets
 #
 ###################################################################################################
+# Included by Jfdez
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/examples/ES_protection)
+target_include_directories(checksum_alg PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/include REGULAR_EXPRESSION ".*\.h")
 

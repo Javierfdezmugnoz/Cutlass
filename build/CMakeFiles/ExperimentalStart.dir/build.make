@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for ExperimentalStart.
 
@@ -82,6 +82,6 @@ CMakeFiles/ExperimentalStart.dir/clean:
 .PHONY : CMakeFiles/ExperimentalStart.dir/clean
 
 CMakeFiles/ExperimentalStart.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalStart.dir/depend
 

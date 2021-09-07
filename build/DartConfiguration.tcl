@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/javierfdez/github_repository/Cutlass
-BuildDirectory: /home/javierfdez/github_repository/Cutlass/build
+SourceDirectory: /home/ubuntu/github/cutlass
+BuildDirectory: /home/ubuntu/github/cutlass/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: Nano-Test
+Site: ubuntu
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-clang++
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/local/bin/cmake" "/home/javierfdez/github_repository/Cutlass"
+ConfigureCommand: "/usr/local/bin/cmake" "/home/ubuntu/github/cutlass"
 MakeCommand: /usr/local/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -75,7 +75,7 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: /usr/local/cuda-10.0/bin/cuda-memcheck
+MemoryCheckCommand: /usr/local/cuda-10.2/bin/cuda-memcheck
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_unit_gemm_thread.
 
@@ -67,7 +67,7 @@ include test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/compiler_depe
 include test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/progress.make
 
 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread: test/unit/gemm/thread/cutlass_test_unit_gemm_thread
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread && ./cutlass_test_unit_gemm_thread --gtest_output=xml:test_unit_gemm_thread.gtest.xml
+	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread && ./cutlass_test_unit_gemm_thread --gtest_output=xml:test_unit_gemm_thread.gtest.xml
 
 test_unit_gemm_thread: test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread
 test_unit_gemm_thread: test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build.make
@@ -78,10 +78,10 @@ test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build: test_unit_gemm
 .PHONY : test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build
 
 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_thread.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_thread.dir/cmake_clean.cmake
 .PHONY : test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/clean
 
 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/gemm/thread /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/gemm/thread /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/gemm/thread /home/ubuntu/github/cutlass/build/test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/depend
 

@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/threadblock//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/epilogue/threadblock//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/rule
 .PHONY : test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_epilogue_threadblock: test/unit/epilogue/threadblock/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_epilogue_threadblock/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/test_unit_epilogue_threadblock.dir/build
 .PHONY : test_unit_epilogue_threadblock/fast
 
 # Convenience name for target.
 test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/rule
 .PHONY : test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_epilogue_threadblock: test/unit/epilogue/threadblock/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_epilogue_threadblock/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build
 .PHONY : cutlass_test_unit_epilogue_threadblock/fast
 
 epilogue_planar_complex.o: epilogue_planar_complex.cu.o
@@ -225,7 +225,7 @@ epilogue_planar_complex.o: epilogue_planar_complex.cu.o
 
 # target to build an object file
 epilogue_planar_complex.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.o
 .PHONY : epilogue_planar_complex.cu.o
 
 epilogue_planar_complex.i: epilogue_planar_complex.cu.i
@@ -233,7 +233,7 @@ epilogue_planar_complex.i: epilogue_planar_complex.cu.i
 
 # target to preprocess a source file
 epilogue_planar_complex.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.i
 .PHONY : epilogue_planar_complex.cu.i
 
 epilogue_planar_complex.s: epilogue_planar_complex.cu.s
@@ -241,7 +241,7 @@ epilogue_planar_complex.s: epilogue_planar_complex.cu.s
 
 # target to generate assembly for a file
 epilogue_planar_complex.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_planar_complex.cu.s
 .PHONY : epilogue_planar_complex.cu.s
 
 epilogue_simt.o: epilogue_simt.cu.o
@@ -249,7 +249,7 @@ epilogue_simt.o: epilogue_simt.cu.o
 
 # target to build an object file
 epilogue_simt.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.o
 .PHONY : epilogue_simt.cu.o
 
 epilogue_simt.i: epilogue_simt.cu.i
@@ -257,7 +257,7 @@ epilogue_simt.i: epilogue_simt.cu.i
 
 # target to preprocess a source file
 epilogue_simt.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.i
 .PHONY : epilogue_simt.cu.i
 
 epilogue_simt.s: epilogue_simt.cu.s
@@ -265,7 +265,7 @@ epilogue_simt.s: epilogue_simt.cu.s
 
 # target to generate assembly for a file
 epilogue_simt.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt.cu.s
 .PHONY : epilogue_simt.cu.s
 
 epilogue_simt_sm60.o: epilogue_simt_sm60.cu.o
@@ -273,7 +273,7 @@ epilogue_simt_sm60.o: epilogue_simt_sm60.cu.o
 
 # target to build an object file
 epilogue_simt_sm60.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.o
 .PHONY : epilogue_simt_sm60.cu.o
 
 epilogue_simt_sm60.i: epilogue_simt_sm60.cu.i
@@ -281,7 +281,7 @@ epilogue_simt_sm60.i: epilogue_simt_sm60.cu.i
 
 # target to preprocess a source file
 epilogue_simt_sm60.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.i
 .PHONY : epilogue_simt_sm60.cu.i
 
 epilogue_simt_sm60.s: epilogue_simt_sm60.cu.s
@@ -289,7 +289,7 @@ epilogue_simt_sm60.s: epilogue_simt_sm60.cu.s
 
 # target to generate assembly for a file
 epilogue_simt_sm60.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm60.cu.s
 .PHONY : epilogue_simt_sm60.cu.s
 
 epilogue_simt_sm61.o: epilogue_simt_sm61.cu.o
@@ -297,7 +297,7 @@ epilogue_simt_sm61.o: epilogue_simt_sm61.cu.o
 
 # target to build an object file
 epilogue_simt_sm61.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.o
 .PHONY : epilogue_simt_sm61.cu.o
 
 epilogue_simt_sm61.i: epilogue_simt_sm61.cu.i
@@ -305,7 +305,7 @@ epilogue_simt_sm61.i: epilogue_simt_sm61.cu.i
 
 # target to preprocess a source file
 epilogue_simt_sm61.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.i
 .PHONY : epilogue_simt_sm61.cu.i
 
 epilogue_simt_sm61.s: epilogue_simt_sm61.cu.s
@@ -313,7 +313,7 @@ epilogue_simt_sm61.s: epilogue_simt_sm61.cu.s
 
 # target to generate assembly for a file
 epilogue_simt_sm61.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_simt_sm61.cu.s
 .PHONY : epilogue_simt_sm61.cu.s
 
 epilogue_tensor_op.o: epilogue_tensor_op.cu.o
@@ -321,7 +321,7 @@ epilogue_tensor_op.o: epilogue_tensor_op.cu.o
 
 # target to build an object file
 epilogue_tensor_op.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.o
 .PHONY : epilogue_tensor_op.cu.o
 
 epilogue_tensor_op.i: epilogue_tensor_op.cu.i
@@ -329,7 +329,7 @@ epilogue_tensor_op.i: epilogue_tensor_op.cu.i
 
 # target to preprocess a source file
 epilogue_tensor_op.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.i
 .PHONY : epilogue_tensor_op.cu.i
 
 epilogue_tensor_op.s: epilogue_tensor_op.cu.s
@@ -337,7 +337,7 @@ epilogue_tensor_op.s: epilogue_tensor_op.cu.s
 
 # target to generate assembly for a file
 epilogue_tensor_op.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_tensor_op.cu.s
 .PHONY : epilogue_tensor_op.cu.s
 
 epilogue_volta_tensor_op.o: epilogue_volta_tensor_op.cu.o
@@ -345,7 +345,7 @@ epilogue_volta_tensor_op.o: epilogue_volta_tensor_op.cu.o
 
 # target to build an object file
 epilogue_volta_tensor_op.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.o
 .PHONY : epilogue_volta_tensor_op.cu.o
 
 epilogue_volta_tensor_op.i: epilogue_volta_tensor_op.cu.i
@@ -353,7 +353,7 @@ epilogue_volta_tensor_op.i: epilogue_volta_tensor_op.cu.i
 
 # target to preprocess a source file
 epilogue_volta_tensor_op.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.i
 .PHONY : epilogue_volta_tensor_op.cu.i
 
 epilogue_volta_tensor_op.s: epilogue_volta_tensor_op.cu.s
@@ -361,7 +361,7 @@ epilogue_volta_tensor_op.s: epilogue_volta_tensor_op.cu.s
 
 # target to generate assembly for a file
 epilogue_volta_tensor_op.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_volta_tensor_op.cu.s
 .PHONY : epilogue_volta_tensor_op.cu.s
 
 epilogue_wmma_tensor_op_sm70.o: epilogue_wmma_tensor_op_sm70.cu.o
@@ -369,7 +369,7 @@ epilogue_wmma_tensor_op_sm70.o: epilogue_wmma_tensor_op_sm70.cu.o
 
 # target to build an object file
 epilogue_wmma_tensor_op_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.o
 .PHONY : epilogue_wmma_tensor_op_sm70.cu.o
 
 epilogue_wmma_tensor_op_sm70.i: epilogue_wmma_tensor_op_sm70.cu.i
@@ -377,7 +377,7 @@ epilogue_wmma_tensor_op_sm70.i: epilogue_wmma_tensor_op_sm70.cu.i
 
 # target to preprocess a source file
 epilogue_wmma_tensor_op_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.i
 .PHONY : epilogue_wmma_tensor_op_sm70.cu.i
 
 epilogue_wmma_tensor_op_sm70.s: epilogue_wmma_tensor_op_sm70.cu.s
@@ -385,7 +385,7 @@ epilogue_wmma_tensor_op_sm70.s: epilogue_wmma_tensor_op_sm70.cu.s
 
 # target to generate assembly for a file
 epilogue_wmma_tensor_op_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/epilogue_wmma_tensor_op_sm70.cu.s
 .PHONY : epilogue_wmma_tensor_op_sm70.cu.s
 
 output_tile_threadmap.o: output_tile_threadmap.cu.o
@@ -393,7 +393,7 @@ output_tile_threadmap.o: output_tile_threadmap.cu.o
 
 # target to build an object file
 output_tile_threadmap.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.o
 .PHONY : output_tile_threadmap.cu.o
 
 output_tile_threadmap.i: output_tile_threadmap.cu.i
@@ -401,7 +401,7 @@ output_tile_threadmap.i: output_tile_threadmap.cu.i
 
 # target to preprocess a source file
 output_tile_threadmap.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.i
 .PHONY : output_tile_threadmap.cu.i
 
 output_tile_threadmap.s: output_tile_threadmap.cu.s
@@ -409,7 +409,7 @@ output_tile_threadmap.s: output_tile_threadmap.cu.s
 
 # target to generate assembly for a file
 output_tile_threadmap.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/output_tile_threadmap.cu.s
 .PHONY : output_tile_threadmap.cu.s
 
 predicated_tile_iterator.o: predicated_tile_iterator.cu.o
@@ -417,7 +417,7 @@ predicated_tile_iterator.o: predicated_tile_iterator.cu.o
 
 # target to build an object file
 predicated_tile_iterator.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.o
 .PHONY : predicated_tile_iterator.cu.o
 
 predicated_tile_iterator.i: predicated_tile_iterator.cu.i
@@ -425,7 +425,7 @@ predicated_tile_iterator.i: predicated_tile_iterator.cu.i
 
 # target to preprocess a source file
 predicated_tile_iterator.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.i
 .PHONY : predicated_tile_iterator.cu.i
 
 predicated_tile_iterator.s: predicated_tile_iterator.cu.s
@@ -433,7 +433,7 @@ predicated_tile_iterator.s: predicated_tile_iterator.cu.s
 
 # target to generate assembly for a file
 predicated_tile_iterator.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/build.make test/unit/epilogue/threadblock/CMakeFiles/cutlass_test_unit_epilogue_threadblock.dir/predicated_tile_iterator.cu.s
 .PHONY : predicated_tile_iterator.cu.s
 
 # Help Target
@@ -491,7 +491,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

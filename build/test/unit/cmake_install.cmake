@@ -1,4 +1,4 @@
-# Install script for directory: /home/javierfdez/github_repository/Cutlass/test/unit
+# Install script for directory: /home/ubuntu/github/cutlass/test/unit
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,15 +44,15 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/core/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/conv/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/layout/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/transform/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/reduction/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/util/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/nvrtc/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/core/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/gemm/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/conv/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/layout/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/transform/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/epilogue/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/reduction/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/util/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/nvrtc/cmake_install.cmake")
 
 endif()
 

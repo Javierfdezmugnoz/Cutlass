@@ -70,7 +70,7 @@ add_library(nvidia::cutlass::library SHARED IMPORTED)
 
 set_target_properties(nvidia::cutlass::library PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_11"
-  INTERFACE_LINK_LIBRARIES "cudart;-Wl,-rpath,'\$ORIGIN';-Wl,-rpath,'\$ORIGIN/../lib64';-Wl,-rpath,'\$ORIGIN/../lib';-Wl,-rpath,'/usr/local/cuda-10.0/lib64';-Wl,-rpath,'/usr/local/cuda-10.0/lib';nvidia::cutlass::library::includes"
+  INTERFACE_LINK_LIBRARIES "cudart;-Wl,-rpath,'\$ORIGIN';-Wl,-rpath,'\$ORIGIN/../lib64';-Wl,-rpath,'\$ORIGIN/../lib';-Wl,-rpath,'/usr/local/cuda-10.2/lib64';-Wl,-rpath,'/usr/local/cuda-10.2/lib';nvidia::cutlass::library::includes"
 )
 
 # Create imported target nvidia::cutlass::library_static
@@ -78,7 +78,7 @@ add_library(nvidia::cutlass::library_static STATIC IMPORTED)
 
 set_target_properties(nvidia::cutlass::library_static PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_11"
-  INTERFACE_LINK_LIBRARIES "cudart;-Wl,-rpath,'\$ORIGIN';-Wl,-rpath,'\$ORIGIN/../lib64';-Wl,-rpath,'\$ORIGIN/../lib';-Wl,-rpath,'/usr/local/cuda-10.0/lib64';-Wl,-rpath,'/usr/local/cuda-10.0/lib';nvidia::cutlass::library::includes"
+  INTERFACE_LINK_LIBRARIES "cudart;-Wl,-rpath,'\$ORIGIN';-Wl,-rpath,'\$ORIGIN/../lib64';-Wl,-rpath,'\$ORIGIN/../lib';-Wl,-rpath,'/usr/local/cuda-10.2/lib64';-Wl,-rpath,'/usr/local/cuda-10.2/lib';nvidia::cutlass::library::includes"
 )
 
 # Create imported target nvidia::cutlass::library::includes

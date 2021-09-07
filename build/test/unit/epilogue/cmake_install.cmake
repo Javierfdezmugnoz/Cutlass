@@ -1,4 +1,4 @@
-# Install script for directory: /home/javierfdez/github_repository/Cutlass/test/unit/epilogue
+# Install script for directory: /home/ubuntu/github/cutlass/test/unit/epilogue
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/thread/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/warp/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue/threadblock/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/epilogue/thread/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/epilogue/warp/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/epilogue/threadblock/cmake_install.cmake")
 
 endif()
 

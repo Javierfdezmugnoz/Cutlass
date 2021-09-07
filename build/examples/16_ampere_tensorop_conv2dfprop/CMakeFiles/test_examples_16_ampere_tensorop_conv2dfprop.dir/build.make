@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_examples_16_ampere_tensorop_conv2dfprop.
 
@@ -67,7 +67,7 @@ include examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampe
 include examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/progress.make
 
 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop: examples/16_ampere_tensorop_conv2dfprop/16_ampere_tensorop_conv2dfprop
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop && ./16_ampere_tensorop_conv2dfprop
+	cd /home/ubuntu/github/cutlass/build/examples/16_ampere_tensorop_conv2dfprop && ./16_ampere_tensorop_conv2dfprop
 
 test_examples_16_ampere_tensorop_conv2dfprop: examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop
 test_examples_16_ampere_tensorop_conv2dfprop: examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build.make
@@ -78,10 +78,10 @@ examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tenso
 .PHONY : examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build
 
 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/examples/16_ampere_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/cmake_clean.cmake
 .PHONY : examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/clean
 
 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/16_ampere_tensorop_conv2dfprop /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop /home/javierfdez/github_repository/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/16_ampere_tensorop_conv2dfprop /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/16_ampere_tensorop_conv2dfprop /home/ubuntu/github/cutlass/build/examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/depend
 

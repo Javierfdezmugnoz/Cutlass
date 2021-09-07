@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/depend.make
@@ -72,16 +72,16 @@ include examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/flags.make
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o: examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/flags.make
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o: ../examples/12_gemm_bias_relu/gemm_bias_relu.cu
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o: examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o"
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o -MF CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o.d -o CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o -c /home/javierfdez/github_repository/Cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o"
+	cd /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o -MF CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o.d -o CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o -c /home/ubuntu/github/cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu
 
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.i"
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu > CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.i
+	cd /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu > CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.i
 
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.s"
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu -o CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.s
+	cd /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu -o CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.s
 
 # Object files for target 12_gemm_bias_relu
 12_gemm_bias_relu_OBJECTS = \
@@ -92,20 +92,20 @@ examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.s:
 
 examples/12_gemm_bias_relu/12_gemm_bias_relu: examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/gemm_bias_relu.cu.o
 examples/12_gemm_bias_relu/12_gemm_bias_relu: examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/build.make
-examples/12_gemm_bias_relu/12_gemm_bias_relu: /usr/local/cuda-10.0/lib64/libcudart.so
+examples/12_gemm_bias_relu/12_gemm_bias_relu: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/12_gemm_bias_relu/12_gemm_bias_relu: examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 12_gemm_bias_relu"
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/12_gemm_bias_relu.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 12_gemm_bias_relu"
+	cd /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/12_gemm_bias_relu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/build: examples/12_gemm_bias_relu/12_gemm_bias_relu
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/build
 
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -P CMakeFiles/12_gemm_bias_relu.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -P CMakeFiles/12_gemm_bias_relu.dir/cmake_clean.cmake
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/clean
 
 examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/examples/12_gemm_bias_relu /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu /home/javierfdez/github_repository/Cutlass/build/examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/12_gemm_bias_relu /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/12_gemm_bias_relu.dir/depend
 

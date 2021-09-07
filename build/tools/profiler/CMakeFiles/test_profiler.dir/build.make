@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_profiler.
 
@@ -77,10 +77,10 @@ tools/profiler/CMakeFiles/test_profiler.dir/build: test_profiler
 .PHONY : tools/profiler/CMakeFiles/test_profiler.dir/build
 
 tools/profiler/CMakeFiles/test_profiler.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/test_profiler.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/tools/profiler && $(CMAKE_COMMAND) -P CMakeFiles/test_profiler.dir/cmake_clean.cmake
 .PHONY : tools/profiler/CMakeFiles/test_profiler.dir/clean
 
 tools/profiler/CMakeFiles/test_profiler.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/tools/profiler /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/tools/profiler /home/javierfdez/github_repository/Cutlass/build/tools/profiler/CMakeFiles/test_profiler.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/tools/profiler /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/tools/profiler /home/ubuntu/github/cutlass/build/tools/profiler/CMakeFiles/test_profiler.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tools/profiler/CMakeFiles/test_profiler.dir/depend
 

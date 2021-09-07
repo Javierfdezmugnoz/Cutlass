@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javierfdez/github_repository/Cutlass/test/unit/common/filter_architecture.cpp" "test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" "gcc" "test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o.d"
+  "/home/ubuntu/github/cutlass/test/unit/common/filter_architecture.cpp" "test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" "gcc" "test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o.d"
   )
 
 # Targets to which this target links.

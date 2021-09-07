@@ -1,5 +1,5 @@
 examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
-  /home/javierfdez/github_repository/Cutlass/examples/18_Sim_test/Simt_18.cu \
+  /home/ubuntu/github/cutlass/examples/18_Sim_test/Simt_18.cu \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_runtime_wrapper.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_math_forward_declares.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/cmath \
@@ -60,14 +60,14 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/cstdlib \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/stdlib.h \
-  /usr/local/cuda-10.0/include/cuda.h \
+  /usr/local/cuda-10.2/include/cuda.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/stdint.h \
   /usr/include/stdint.h /usr/include/aarch64-linux-gnu/bits/wchar.h \
   /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_builtin_vars.h \
-  /usr/local/cuda-10.0/include/driver_types.h \
-  /usr/local/cuda-10.0/include/crt/host_defines.h \
-  /usr/local/cuda-10.0/include/vector_types.h \
+  /usr/local/cuda-10.2/include/driver_types.h \
+  /usr/local/cuda-10.2/include/crt/host_defines.h \
+  /usr/local/cuda-10.2/include/vector_types.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/limits.h \
   /usr/include/limits.h /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
   /usr/include/aarch64-linux-gnu/bits/local_lim.h \
@@ -76,52 +76,52 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /usr/include/aarch64-linux-gnu/bits/xopen_lim.h \
   /usr/include/aarch64-linux-gnu/bits/uio_lim.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__stddef_max_align_t.h \
-  /usr/local/cuda-10.0/include/host_config.h \
-  /usr/local/cuda-10.0/include/crt/host_config.h \
-  /usr/local/cuda-10.0/include/host_defines.h \
-  /usr/local/cuda-10.0/include/cuda_runtime.h \
-  /usr/local/cuda-10.0/include/builtin_types.h \
-  /usr/local/cuda-10.0/include/device_types.h \
-  /usr/local/cuda-10.0/include/surface_types.h \
-  /usr/local/cuda-10.0/include/texture_types.h \
-  /usr/local/cuda-10.0/include/library_types.h \
-  /usr/local/cuda-10.0/include/channel_descriptor.h \
-  /usr/local/cuda-10.0/include/cuda_runtime_api.h \
-  /usr/local/cuda-10.0/include/cuda_device_runtime_api.h \
-  /usr/local/cuda-10.0/include/driver_functions.h \
-  /usr/local/cuda-10.0/include/vector_functions.h \
-  /usr/local/cuda-10.0/include/vector_functions.hpp \
-  /usr/local/cuda-10.0/include/crt/common_functions.h \
-  /usr/local/cuda-10.0/include/cuda_surface_types.h \
-  /usr/local/cuda-10.0/include/cuda_texture_types.h \
-  /usr/local/cuda-10.0/include/crt/device_functions.h \
-  /usr/local/cuda-10.0/include/device_launch_parameters.h \
-  /usr/local/cuda-10.0/include/crt/host_runtime.h \
-  /usr/local/cuda-10.0/include/crt/storage_class.h \
+  /usr/local/cuda-10.2/include/host_config.h \
+  /usr/local/cuda-10.2/include/crt/host_config.h \
+  /usr/local/cuda-10.2/include/host_defines.h \
+  /usr/local/cuda-10.2/include/cuda_runtime.h \
+  /usr/local/cuda-10.2/include/builtin_types.h \
+  /usr/local/cuda-10.2/include/device_types.h \
+  /usr/local/cuda-10.2/include/surface_types.h \
+  /usr/local/cuda-10.2/include/texture_types.h \
+  /usr/local/cuda-10.2/include/library_types.h \
+  /usr/local/cuda-10.2/include/channel_descriptor.h \
+  /usr/local/cuda-10.2/include/cuda_runtime_api.h \
+  /usr/local/cuda-10.2/include/cuda_device_runtime_api.h \
+  /usr/local/cuda-10.2/include/driver_functions.h \
+  /usr/local/cuda-10.2/include/vector_functions.h \
+  /usr/local/cuda-10.2/include/vector_functions.hpp \
+  /usr/local/cuda-10.2/include/crt/common_functions.h \
+  /usr/local/cuda-10.2/include/cuda_surface_types.h \
+  /usr/local/cuda-10.2/include/cuda_texture_types.h \
+  /usr/local/cuda-10.2/include/crt/device_functions.h \
+  /usr/local/cuda-10.2/include/device_launch_parameters.h \
+  /usr/local/cuda-10.2/include/crt/host_runtime.h \
+  /usr/local/cuda-10.2/include/crt/storage_class.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_libdevice_declares.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_device_functions.h \
   /usr/include/string.h /usr/include/strings.h \
-  /usr/local/cuda-10.0/include/crt/math_functions.hpp \
-  /usr/local/cuda-10.0/include/math_constants.h \
-  /usr/local/cuda-10.0/include/crt/func_macro.h \
-  /usr/local/cuda-10.0/include/device_atomic_functions.h \
-  /usr/local/cuda-10.0/include/device_atomic_functions.hpp \
-  /usr/local/cuda-10.0/include/crt/device_functions.hpp \
-  /usr/local/cuda-10.0/include/crt/device_double_functions.hpp \
-  /usr/local/cuda-10.0/include/sm_20_atomic_functions.hpp \
-  /usr/local/cuda-10.0/include/sm_20_intrinsics.hpp \
-  /usr/local/cuda-10.0/include/sm_32_atomic_functions.hpp \
-  /usr/local/cuda-10.0/include/sm_60_atomic_functions.hpp \
-  /usr/local/cuda-10.0/include/sm_61_intrinsics.hpp \
-  /usr/local/cuda-10.0/include/texture_indirect_functions.h \
+  /usr/local/cuda-10.2/include/crt/math_functions.hpp \
+  /usr/local/cuda-10.2/include/math_constants.h \
+  /usr/local/cuda-10.2/include/crt/func_macro.h \
+  /usr/local/cuda-10.2/include/device_atomic_functions.h \
+  /usr/local/cuda-10.2/include/device_atomic_functions.hpp \
+  /usr/local/cuda-10.2/include/crt/device_functions.hpp \
+  /usr/local/cuda-10.2/include/crt/device_double_functions.hpp \
+  /usr/local/cuda-10.2/include/sm_20_atomic_functions.hpp \
+  /usr/local/cuda-10.2/include/sm_20_intrinsics.hpp \
+  /usr/local/cuda-10.2/include/sm_32_atomic_functions.hpp \
+  /usr/local/cuda-10.2/include/sm_60_atomic_functions.hpp \
+  /usr/local/cuda-10.2/include/sm_61_intrinsics.hpp \
+  /usr/local/cuda-10.2/include/texture_indirect_functions.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_cmath.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/limits \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_intrinsics.h \
-  /usr/local/cuda-10.0/include/crt/sm_70_rt.hpp \
+  /usr/local/cuda-10.2/include/crt/sm_70_rt.hpp \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/__clang_cuda_complex_builtins.h \
-  /usr/local/cuda-10.0/include/curand_mtgp32_kernel.h \
-  /usr/include/memory.h /usr/local/cuda-10.0/include/curand.h \
-  /usr/local/cuda-10.0/include/curand_mtgp32.h \
+  /usr/local/cuda-10.2/include/curand_mtgp32_kernel.h \
+  /usr/include/memory.h /usr/local/cuda-10.2/include/curand.h \
+  /usr/local/cuda-10.2/include/curand_mtgp32.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/iostream \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/ostream \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/ios \
@@ -235,13 +235,13 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/stl_vector.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/stl_bvector.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/vector.tcc \
-  /home/javierfdez/github_repository/Cutlass/examples/common/helper.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/device/gemm.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/cutlass.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/numeric_types.h \
+  /home/ubuntu/github/cutlass/examples/common/helper.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/device/gemm.h \
+  /home/ubuntu/github/cutlass/include/cutlass/cutlass.h \
+  /home/ubuntu/github/cutlass/include/cutlass/numeric_types.h \
   /usr/include/assert.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/integer_subbyte.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/platform/platform.h \
+  /home/ubuntu/github/cutlass/include/cutlass/integer_subbyte.h \
+  /home/ubuntu/github/cutlass/include/cutlass/platform/platform.h \
   /usr/lib/llvm-10/lib/clang/10.0.0/include/cuda_wrappers/algorithm \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/algorithm \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/utility \
@@ -259,142 +259,141 @@ examples/18_Sim_test/CMakeFiles/18_Simt.dir/Simt_18.cu.o: \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/invoke.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/std_function.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/refwrap.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/half.h \
-  /usr/local/cuda-10.0/include/cuda_fp16.h \
-  /usr/local/cuda-10.0/include/cuda_fp16.hpp \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/bfloat16.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/tfloat32.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/arch.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/device_kernel.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/threadblock_swizzle.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/matrix.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/matrix_coord.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/coord.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/gemm.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/kernel/gemm.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/semaphore.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/aligned_buffer.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/array.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/array_subbyte.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/matrix_shape.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/kernel/default_gemm.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/wmma.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/epilogue.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/vector.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/tensor.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/fast_math.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/uint128.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/pitch_linear.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/tensor_coord.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/functional.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/complex.h \
-  /usr/local/cuda-10.0/include/cuComplex.h \
-  /usr/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/math.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/real.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/pitch_linear_thread_map.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/predicate_vector.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/tensor_ref.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/subbyte_reference.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/tensor_view.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/epilogue_base.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/predicated_tile_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/output_tile_thread_map.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/memory.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/memory_sm75.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/memory_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/cache_operation.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/predicated_tile_iterator_params.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/numeric_conversion.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/scale_type.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/kernel/gemm_pipelined.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm75.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/tensor_op_multiplicand_sm75.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/default_mma_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm75.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm50.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/mma_pipelined.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/mma_base.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm60.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm61.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/arch/mma_sparse_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op_policy.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/tensor_op_multiplicand_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/default_mma_tensor_op_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_complex_tensor_op_tile_iterator_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma_core.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/mma_singlestage.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/layout/tensor_op_multiplicand_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm70.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_simt_policy.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/thread/mma.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/thread/mma_sm50.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/thread/mma_sm60.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/reduction/thread/reduce.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/thread/mma_sm61.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_simt_tile_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_multistage_mma_complex_core.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_multistage_mma_complex_core_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/default_mma_complex_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_complex_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_gaussian_complex_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/warp/mma_gaussian_complex_tensor_op_tile_iterator_sm80.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/mma_multistage.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/thread/transpose.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/threadblock/default_mma_core_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_epilogue_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination_clamp.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination_relu.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/activation.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/constants.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination_gelu.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination_sigmoid.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/linear_combination_planar_complex.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/array_planar_complex.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/conversion_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/thread/reduction_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/fragment_iterator_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/tensor_op_policy.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/fragment_iterator_complex_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/tile_iterator_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/tile_iterator_tensor_op_mixed.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_thread_map_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/shared_load_iterator.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/shared_load_iterator_mixed.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/interleaved_epilogue.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_epilogue_volta_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/fragment_iterator_volta_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/volta_tensor_op_policy.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/tile_iterator_volta_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_thread_map_volta_tensor_op.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_epilogue_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/fragment_iterator_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/simt_policy.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/warp/tile_iterator_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/epilogue/threadblock/default_thread_map_simt.h \
-  /home/javierfdez/github_repository/Cutlass/include/cutlass/gemm/device/default_gemm_configuration.h
+  /home/ubuntu/github/cutlass/include/cutlass/half.h \
+  /usr/local/cuda-10.2/include/cuda_fp16.h \
+  /usr/local/cuda-10.2/include/cuda_fp16.hpp \
+  /home/ubuntu/github/cutlass/include/cutlass/bfloat16.h \
+  /home/ubuntu/github/cutlass/include/cutlass/tfloat32.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/arch.h \
+  /home/ubuntu/github/cutlass/include/cutlass/device_kernel.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/threadblock_swizzle.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/matrix.h \
+  /home/ubuntu/github/cutlass/include/cutlass/matrix_coord.h \
+  /home/ubuntu/github/cutlass/include/cutlass/coord.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/gemm.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/kernel/gemm.h \
+  /home/ubuntu/github/cutlass/include/cutlass/semaphore.h \
+  /home/ubuntu/github/cutlass/include/cutlass/aligned_buffer.h \
+  /home/ubuntu/github/cutlass/include/cutlass/array.h \
+  /home/ubuntu/github/cutlass/include/cutlass/array_subbyte.h \
+  /home/ubuntu/github/cutlass/include/cutlass/matrix_shape.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/kernel/default_gemm.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/wmma.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/epilogue.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/vector.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/tensor.h \
+  /home/ubuntu/github/cutlass/include/cutlass/fast_math.h \
+  /home/ubuntu/github/cutlass/include/cutlass/uint128.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/pitch_linear.h \
+  /home/ubuntu/github/cutlass/include/cutlass/tensor_coord.h \
+  /home/ubuntu/github/cutlass/include/cutlass/functional.h \
+  /home/ubuntu/github/cutlass/include/cutlass/complex.h \
+  /usr/local/cuda-10.2/include/cuComplex.h \
+  /home/ubuntu/github/cutlass/include/cutlass/real.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/pitch_linear_thread_map.h \
+  /home/ubuntu/github/cutlass/include/cutlass/predicate_vector.h \
+  /home/ubuntu/github/cutlass/include/cutlass/tensor_ref.h \
+  /home/ubuntu/github/cutlass/include/cutlass/subbyte_reference.h \
+  /home/ubuntu/github/cutlass/include/cutlass/tensor_view.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/epilogue_base.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/predicated_tile_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/output_tile_thread_map.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/memory.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/memory_sm75.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/memory_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/cache_operation.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/predicated_tile_iterator_params.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination.h \
+  /home/ubuntu/github/cutlass/include/cutlass/numeric_conversion.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/scale_type.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/kernel/gemm_pipelined.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm75.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/tensor_op_multiplicand_sm75.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/default_mma_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm75.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm50.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_pipelined.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_base.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm60.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm61.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/arch/mma_sparse_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op_policy.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/tensor_op_multiplicand_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/default_mma_tensor_op_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_complex_tensor_op_tile_iterator_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_singlestage.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/layout/tensor_op_multiplicand_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_tensor_op_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_tensor_op_tile_iterator_sm70.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_simt_policy.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/thread/mma.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/thread/mma_sm50.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/thread/mma_sm60.h \
+  /home/ubuntu/github/cutlass/include/cutlass/reduction/thread/reduce.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/thread/mma_sm61.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_simt_tile_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_multistage_mma_complex_core.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_pitch_linear.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_access_iterator_tensor_op_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_multistage_mma_complex_core_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/default_mma_complex_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_complex_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_gaussian_complex_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/warp/mma_gaussian_complex_tensor_op_tile_iterator_sm80.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/mma_multistage.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_iterator_2dthreadtile.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/predicated_tile_access_iterator_2dthreadtile.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/thread/transpose.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/threadblock/default_mma_core_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear.h \
+  /home/ubuntu/github/cutlass/include/cutlass/transform/threadblock/regular_tile_iterator_pitch_linear_2dthreadtile.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_epilogue_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination_clamp.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination_relu.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/activation.h \
+  /home/ubuntu/github/cutlass/include/cutlass/constants.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination_gelu.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination_sigmoid.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/linear_combination_planar_complex.h \
+  /home/ubuntu/github/cutlass/include/cutlass/array_planar_complex.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/conversion_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/thread/reduction_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/fragment_iterator_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/tensor_op_policy.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/fragment_iterator_complex_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/tile_iterator_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/tile_iterator_tensor_op_mixed.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_thread_map_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/shared_load_iterator.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/shared_load_iterator_mixed.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/interleaved_epilogue.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_epilogue_volta_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/fragment_iterator_volta_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/volta_tensor_op_policy.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/tile_iterator_volta_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_thread_map_volta_tensor_op.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_epilogue_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/fragment_iterator_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/simt_policy.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/warp/tile_iterator_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/epilogue/threadblock/default_thread_map_simt.h \
+  /home/ubuntu/github/cutlass/include/cutlass/gemm/device/default_gemm_configuration.h

@@ -1,25 +1,25 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_84d90/fast && /usr/bin/make  -f CMakeFiles/cmTC_84d90.dir/build.make CMakeFiles/cmTC_84d90.dir/build
-make[1]: Entering directory '/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_84d90.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_84d90.dir/src.c.o -c /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_84d90
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84d90.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_84d90.dir/src.c.o -o cmTC_84d90 
-CMakeFiles/cmTC_84d90.dir/src.c.o: In function `main':
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ccb97/fast && /usr/bin/make  -f CMakeFiles/cmTC_ccb97.dir/build.make CMakeFiles/cmTC_ccb97.dir/build
+make[1]: Entering directory '/home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ccb97.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ccb97.dir/src.c.o -c /home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ccb97
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccb97.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_ccb97.dir/src.c.o -o cmTC_ccb97 
+CMakeFiles/cmTC_ccb97.dir/src.c.o: In function `main':
 src.c:(.text+0x48): undefined reference to `pthread_create'
 src.c:(.text+0x50): undefined reference to `pthread_detach'
 src.c:(.text+0x58): undefined reference to `pthread_cancel'
 src.c:(.text+0x64): undefined reference to `pthread_join'
 src.c:(.text+0x74): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_84d90.dir/build.make:98: recipe for target 'cmTC_84d90' failed
-make[1]: *** [cmTC_84d90] Error 1
-make[1]: Leaving directory '/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/CMakeTmp'
-Makefile:127: recipe for target 'cmTC_84d90/fast' failed
-make: *** [cmTC_84d90/fast] Error 2
+CMakeFiles/cmTC_ccb97.dir/build.make:98: recipe for target 'cmTC_ccb97' failed
+make[1]: *** [cmTC_ccb97] Error 1
+make[1]: Leaving directory '/home/ubuntu/github/cutlass/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_ccb97/fast' failed
+make: *** [cmTC_ccb97/fast] Error 2
 
 
 Source file was:

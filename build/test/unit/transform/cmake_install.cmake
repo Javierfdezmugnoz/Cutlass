@@ -1,4 +1,4 @@
-# Install script for directory: /home/javierfdez/github_repository/Cutlass/test/unit/transform
+# Install script for directory: /home/ubuntu/github/cutlass/test/unit/transform
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/javierfdez/github_repository/Cutlass/build/test/unit/transform/threadblock/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/unit/transform/threadblock/cmake_install.cmake")
 
 endif()
 

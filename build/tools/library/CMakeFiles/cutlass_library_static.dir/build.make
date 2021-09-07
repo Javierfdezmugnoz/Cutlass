@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Include any dependencies generated for this target.
 include tools/library/CMakeFiles/cutlass_library_static.dir/depend.make
@@ -74,44 +74,86 @@ cutlass_library_static_OBJECTS =
 
 # External object files for target cutlass_library_static
 cutlass_library_static_EXTERNAL_OBJECTS = \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o" \
-"/home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o"
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o" \
+"/home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o"
 
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.o
@@ -138,6 +180,30 @@ tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/g
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o
@@ -151,21 +217,39 @@ tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/g
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o
+tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_static.dir/build.make
 tools/library/libcutlassd.a: tools/library/CMakeFiles/cutlass_library_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcutlassd.a"
-	cd /home/javierfdez/github_repository/Cutlass/build/tools/library && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_library_static.dir/cmake_clean_target.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build/tools/library && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_library_static.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcutlassd.a"
+	cd /home/ubuntu/github/cutlass/build/tools/library && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_library_static.dir/cmake_clean_target.cmake
+	cd /home/ubuntu/github/cutlass/build/tools/library && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_library_static.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tools/library/CMakeFiles/cutlass_library_static.dir/build: tools/library/libcutlassd.a
 .PHONY : tools/library/CMakeFiles/cutlass_library_static.dir/build
 
 tools/library/CMakeFiles/cutlass_library_static.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/tools/library && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_library_static.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/tools/library && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_library_static.dir/cmake_clean.cmake
 .PHONY : tools/library/CMakeFiles/cutlass_library_static.dir/clean
 
 tools/library/CMakeFiles/cutlass_library_static.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/tools/library /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/tools/library /home/javierfdez/github_repository/Cutlass/build/tools/library/CMakeFiles/cutlass_library_static.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/tools/library /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/tools/library /home/ubuntu/github/cutlass/build/tools/library/CMakeFiles/cutlass_library_static.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tools/library/CMakeFiles/cutlass_library_static.dir/depend
 

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javierfdez/github_repository/Cutlass/examples/13_two_tensor_op_fusion/fused_gemm.cu" "examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o" "gcc" "examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o.d"
+  "/home/ubuntu/github/cutlass/examples/13_two_tensor_op_fusion/fused_gemm.cu" "examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o" "gcc" "examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o.d"
   )
 
 # Targets to which this target links.

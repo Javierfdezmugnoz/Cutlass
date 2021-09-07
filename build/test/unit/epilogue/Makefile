@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -121,7 +121,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -131,7 +131,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/epilogue//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/epilogue//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/rule
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ cutlass_test_unit_epilogue: test/unit/epilogue/CMakeFiles/cutlass_test_unit_epil
 
 # fast build rule for target.
 cutlass_test_unit_epilogue/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build.make test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build.make test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build
 .PHONY : cutlass_test_unit_epilogue/fast
 
 # Convenience name for target.
 test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/rule
 .PHONY : test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ test_unit_epilogue: test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/rule
 
 # fast build rule for target.
 test_unit_epilogue/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/build.make test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/build.make test/unit/epilogue/CMakeFiles/test_unit_epilogue.dir/build
 .PHONY : test_unit_epilogue/fast
 
 # Help Target
@@ -248,7 +248,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

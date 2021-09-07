@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ install/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/gemm/warp//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/gemm/warp//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/rule
 .PHONY : test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_gemm_warp: test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/rule
 
 # fast build rule for target.
 test_unit_gemm_warp/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/test_unit_gemm_warp.dir/build
 .PHONY : test_unit_gemm_warp/fast
 
 # Convenience name for target.
 test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/rule
 .PHONY : test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_gemm_warp: test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_ge
 
 # fast build rule for target.
 cutlass_test_unit_gemm_warp/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build
 .PHONY : cutlass_test_unit_gemm_warp/fast
 
 gemm_complex_sm80.o: gemm_complex_sm80.cu.o
@@ -225,7 +225,7 @@ gemm_complex_sm80.o: gemm_complex_sm80.cu.o
 
 # target to build an object file
 gemm_complex_sm80.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.o
 .PHONY : gemm_complex_sm80.cu.o
 
 gemm_complex_sm80.i: gemm_complex_sm80.cu.i
@@ -233,7 +233,7 @@ gemm_complex_sm80.i: gemm_complex_sm80.cu.i
 
 # target to preprocess a source file
 gemm_complex_sm80.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.i
 .PHONY : gemm_complex_sm80.cu.i
 
 gemm_complex_sm80.s: gemm_complex_sm80.cu.s
@@ -241,7 +241,7 @@ gemm_complex_sm80.s: gemm_complex_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_complex_sm80.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_complex_sm80.cu.s
 .PHONY : gemm_complex_sm80.cu.s
 
 gemm_gaussian_complex_sm80.o: gemm_gaussian_complex_sm80.cu.o
@@ -249,7 +249,7 @@ gemm_gaussian_complex_sm80.o: gemm_gaussian_complex_sm80.cu.o
 
 # target to build an object file
 gemm_gaussian_complex_sm80.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.o
 .PHONY : gemm_gaussian_complex_sm80.cu.o
 
 gemm_gaussian_complex_sm80.i: gemm_gaussian_complex_sm80.cu.i
@@ -257,7 +257,7 @@ gemm_gaussian_complex_sm80.i: gemm_gaussian_complex_sm80.cu.i
 
 # target to preprocess a source file
 gemm_gaussian_complex_sm80.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.i
 .PHONY : gemm_gaussian_complex_sm80.cu.i
 
 gemm_gaussian_complex_sm80.s: gemm_gaussian_complex_sm80.cu.s
@@ -265,7 +265,7 @@ gemm_gaussian_complex_sm80.s: gemm_gaussian_complex_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_gaussian_complex_sm80.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_gaussian_complex_sm80.cu.s
 .PHONY : gemm_gaussian_complex_sm80.cu.s
 
 gemm_sm50.o: gemm_sm50.cu.o
@@ -273,7 +273,7 @@ gemm_sm50.o: gemm_sm50.cu.o
 
 # target to build an object file
 gemm_sm50.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.o
 .PHONY : gemm_sm50.cu.o
 
 gemm_sm50.i: gemm_sm50.cu.i
@@ -281,7 +281,7 @@ gemm_sm50.i: gemm_sm50.cu.i
 
 # target to preprocess a source file
 gemm_sm50.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.i
 .PHONY : gemm_sm50.cu.i
 
 gemm_sm50.s: gemm_sm50.cu.s
@@ -289,7 +289,7 @@ gemm_sm50.s: gemm_sm50.cu.s
 
 # target to generate assembly for a file
 gemm_sm50.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm50.cu.s
 .PHONY : gemm_sm50.cu.s
 
 gemm_sm60.o: gemm_sm60.cu.o
@@ -297,7 +297,7 @@ gemm_sm60.o: gemm_sm60.cu.o
 
 # target to build an object file
 gemm_sm60.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.o
 .PHONY : gemm_sm60.cu.o
 
 gemm_sm60.i: gemm_sm60.cu.i
@@ -305,7 +305,7 @@ gemm_sm60.i: gemm_sm60.cu.i
 
 # target to preprocess a source file
 gemm_sm60.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.i
 .PHONY : gemm_sm60.cu.i
 
 gemm_sm60.s: gemm_sm60.cu.s
@@ -313,7 +313,7 @@ gemm_sm60.s: gemm_sm60.cu.s
 
 # target to generate assembly for a file
 gemm_sm60.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm60.cu.s
 .PHONY : gemm_sm60.cu.s
 
 gemm_sm61.o: gemm_sm61.cu.o
@@ -321,7 +321,7 @@ gemm_sm61.o: gemm_sm61.cu.o
 
 # target to build an object file
 gemm_sm61.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.o
 .PHONY : gemm_sm61.cu.o
 
 gemm_sm61.i: gemm_sm61.cu.i
@@ -329,7 +329,7 @@ gemm_sm61.i: gemm_sm61.cu.i
 
 # target to preprocess a source file
 gemm_sm61.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.i
 .PHONY : gemm_sm61.cu.i
 
 gemm_sm61.s: gemm_sm61.cu.s
@@ -337,7 +337,7 @@ gemm_sm61.s: gemm_sm61.cu.s
 
 # target to generate assembly for a file
 gemm_sm61.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm61.cu.s
 .PHONY : gemm_sm61.cu.s
 
 gemm_sm70.o: gemm_sm70.cu.o
@@ -345,7 +345,7 @@ gemm_sm70.o: gemm_sm70.cu.o
 
 # target to build an object file
 gemm_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.o
 .PHONY : gemm_sm70.cu.o
 
 gemm_sm70.i: gemm_sm70.cu.i
@@ -353,7 +353,7 @@ gemm_sm70.i: gemm_sm70.cu.i
 
 # target to preprocess a source file
 gemm_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.i
 .PHONY : gemm_sm70.cu.i
 
 gemm_sm70.s: gemm_sm70.cu.s
@@ -361,7 +361,7 @@ gemm_sm70.s: gemm_sm70.cu.s
 
 # target to generate assembly for a file
 gemm_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm70.cu.s
 .PHONY : gemm_sm70.cu.s
 
 gemm_sm75.o: gemm_sm75.cu.o
@@ -369,7 +369,7 @@ gemm_sm75.o: gemm_sm75.cu.o
 
 # target to build an object file
 gemm_sm75.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.o
 .PHONY : gemm_sm75.cu.o
 
 gemm_sm75.i: gemm_sm75.cu.i
@@ -377,7 +377,7 @@ gemm_sm75.i: gemm_sm75.cu.i
 
 # target to preprocess a source file
 gemm_sm75.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.i
 .PHONY : gemm_sm75.cu.i
 
 gemm_sm75.s: gemm_sm75.cu.s
@@ -385,7 +385,7 @@ gemm_sm75.s: gemm_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_sm75.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm75.cu.s
 .PHONY : gemm_sm75.cu.s
 
 gemm_sm80.o: gemm_sm80.cu.o
@@ -393,7 +393,7 @@ gemm_sm80.o: gemm_sm80.cu.o
 
 # target to build an object file
 gemm_sm80.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.o
 .PHONY : gemm_sm80.cu.o
 
 gemm_sm80.i: gemm_sm80.cu.i
@@ -401,7 +401,7 @@ gemm_sm80.i: gemm_sm80.cu.i
 
 # target to preprocess a source file
 gemm_sm80.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.i
 .PHONY : gemm_sm80.cu.i
 
 gemm_sm80.s: gemm_sm80.cu.s
@@ -409,7 +409,7 @@ gemm_sm80.s: gemm_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_sm80.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sm80.cu.s
 .PHONY : gemm_sm80.cu.s
 
 gemm_sparse_sm80.o: gemm_sparse_sm80.cu.o
@@ -417,7 +417,7 @@ gemm_sparse_sm80.o: gemm_sparse_sm80.cu.o
 
 # target to build an object file
 gemm_sparse_sm80.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.o
 .PHONY : gemm_sparse_sm80.cu.o
 
 gemm_sparse_sm80.i: gemm_sparse_sm80.cu.i
@@ -425,7 +425,7 @@ gemm_sparse_sm80.i: gemm_sparse_sm80.cu.i
 
 # target to preprocess a source file
 gemm_sparse_sm80.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.i
 .PHONY : gemm_sparse_sm80.cu.i
 
 gemm_sparse_sm80.s: gemm_sparse_sm80.cu.s
@@ -433,7 +433,7 @@ gemm_sparse_sm80.s: gemm_sparse_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_sparse_sm80.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/gemm_sparse_sm80.cu.s
 .PHONY : gemm_sparse_sm80.cu.s
 
 wmma_sm70.o: wmma_sm70.cu.o
@@ -441,7 +441,7 @@ wmma_sm70.o: wmma_sm70.cu.o
 
 # target to build an object file
 wmma_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.o
 .PHONY : wmma_sm70.cu.o
 
 wmma_sm70.i: wmma_sm70.cu.i
@@ -449,7 +449,7 @@ wmma_sm70.i: wmma_sm70.cu.i
 
 # target to preprocess a source file
 wmma_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.i
 .PHONY : wmma_sm70.cu.i
 
 wmma_sm70.s: wmma_sm70.cu.s
@@ -457,7 +457,7 @@ wmma_sm70.s: wmma_sm70.cu.s
 
 # target to generate assembly for a file
 wmma_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm70.cu.s
 .PHONY : wmma_sm70.cu.s
 
 wmma_sm72.o: wmma_sm72.cu.o
@@ -465,7 +465,7 @@ wmma_sm72.o: wmma_sm72.cu.o
 
 # target to build an object file
 wmma_sm72.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.o
 .PHONY : wmma_sm72.cu.o
 
 wmma_sm72.i: wmma_sm72.cu.i
@@ -473,7 +473,7 @@ wmma_sm72.i: wmma_sm72.cu.i
 
 # target to preprocess a source file
 wmma_sm72.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.i
 .PHONY : wmma_sm72.cu.i
 
 wmma_sm72.s: wmma_sm72.cu.s
@@ -481,7 +481,7 @@ wmma_sm72.s: wmma_sm72.cu.s
 
 # target to generate assembly for a file
 wmma_sm72.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm72.cu.s
 .PHONY : wmma_sm72.cu.s
 
 wmma_sm75.o: wmma_sm75.cu.o
@@ -489,7 +489,7 @@ wmma_sm75.o: wmma_sm75.cu.o
 
 # target to build an object file
 wmma_sm75.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.o
 .PHONY : wmma_sm75.cu.o
 
 wmma_sm75.i: wmma_sm75.cu.i
@@ -497,7 +497,7 @@ wmma_sm75.i: wmma_sm75.cu.i
 
 # target to preprocess a source file
 wmma_sm75.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.i
 .PHONY : wmma_sm75.cu.i
 
 wmma_sm75.s: wmma_sm75.cu.s
@@ -505,7 +505,7 @@ wmma_sm75.s: wmma_sm75.cu.s
 
 # target to generate assembly for a file
 wmma_sm75.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/build.make test/unit/gemm/warp/CMakeFiles/cutlass_test_unit_gemm_warp.dir/wmma_sm75.cu.s
 .PHONY : wmma_sm75.cu.s
 
 # Help Target
@@ -572,7 +572,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

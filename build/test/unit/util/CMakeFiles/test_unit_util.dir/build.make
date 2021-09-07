@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for test_unit_util.
 
@@ -67,7 +67,7 @@ include test/unit/util/CMakeFiles/test_unit_util.dir/compiler_depend.make
 include test/unit/util/CMakeFiles/test_unit_util.dir/progress.make
 
 test/unit/util/CMakeFiles/test_unit_util: test/unit/util/cutlass_test_unit_util
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/util && ./cutlass_test_unit_util --gtest_output=xml:test_unit_util.gtest.xml
+	cd /home/ubuntu/github/cutlass/build/test/unit/util && ./cutlass_test_unit_util --gtest_output=xml:test_unit_util.gtest.xml
 
 test_unit_util: test/unit/util/CMakeFiles/test_unit_util
 test_unit_util: test/unit/util/CMakeFiles/test_unit_util.dir/build.make
@@ -78,10 +78,10 @@ test/unit/util/CMakeFiles/test_unit_util.dir/build: test_unit_util
 .PHONY : test/unit/util/CMakeFiles/test_unit_util.dir/build
 
 test/unit/util/CMakeFiles/test_unit_util.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/util && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_util.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/util && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_util.dir/cmake_clean.cmake
 .PHONY : test/unit/util/CMakeFiles/test_unit_util.dir/clean
 
 test/unit/util/CMakeFiles/test_unit_util.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/util /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/util /home/javierfdez/github_repository/Cutlass/build/test/unit/util/CMakeFiles/test_unit_util.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/util /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/util /home/ubuntu/github/cutlass/build/test/unit/util/CMakeFiles/test_unit_util.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/util/CMakeFiles/test_unit_util.dir/depend
 

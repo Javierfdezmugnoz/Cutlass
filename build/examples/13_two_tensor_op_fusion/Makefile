@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -143,7 +143,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -153,7 +153,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/examples/13_two_tensor_op_fusion//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/examples/13_two_tensor_op_fusion//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/rule
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_13_fused_two_gemms: examples/13_two_tensor_op_fusion/CMakeFiles/te
 
 # fast build rule for target.
 test_examples_13_fused_two_gemms/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_gemms.dir/build
 .PHONY : test_examples_13_fused_two_gemms/fast
 
 # Convenience name for target.
 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/rule
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/rule:
 
 # fast build rule for target.
 13_fused_two_convs/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build
 .PHONY : 13_fused_two_convs/fast
 
 # Convenience name for target.
 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/rule
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/rule
 
 # Convenience name for target.
@@ -231,12 +231,12 @@ examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/rule:
 
 # fast build rule for target.
 13_fused_two_gemms/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build
 .PHONY : 13_fused_two_gemms/fast
 
 # Convenience name for target.
 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/rule
 .PHONY : examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/rule
 
 # Convenience name for target.
@@ -245,7 +245,7 @@ test_examples_13_fused_two_convs: examples/13_two_tensor_op_fusion/CMakeFiles/te
 
 # fast build rule for target.
 test_examples_13_fused_two_convs/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/test_examples_13_fused_two_convs.dir/build
 .PHONY : test_examples_13_fused_two_convs/fast
 
 fused_conv2d.o: fused_conv2d.cu.o
@@ -253,7 +253,7 @@ fused_conv2d.o: fused_conv2d.cu.o
 
 # target to build an object file
 fused_conv2d.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.o
 .PHONY : fused_conv2d.cu.o
 
 fused_conv2d.i: fused_conv2d.cu.i
@@ -261,7 +261,7 @@ fused_conv2d.i: fused_conv2d.cu.i
 
 # target to preprocess a source file
 fused_conv2d.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.i
 .PHONY : fused_conv2d.cu.i
 
 fused_conv2d.s: fused_conv2d.cu.s
@@ -269,7 +269,7 @@ fused_conv2d.s: fused_conv2d.cu.s
 
 # target to generate assembly for a file
 fused_conv2d.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_convs.dir/fused_conv2d.cu.s
 .PHONY : fused_conv2d.cu.s
 
 fused_gemm.o: fused_gemm.cu.o
@@ -277,7 +277,7 @@ fused_gemm.o: fused_gemm.cu.o
 
 # target to build an object file
 fused_gemm.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.o
 .PHONY : fused_gemm.cu.o
 
 fused_gemm.i: fused_gemm.cu.i
@@ -285,7 +285,7 @@ fused_gemm.i: fused_gemm.cu.i
 
 # target to preprocess a source file
 fused_gemm.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.i
 .PHONY : fused_gemm.cu.i
 
 fused_gemm.s: fused_gemm.cu.s
@@ -293,7 +293,7 @@ fused_gemm.s: fused_gemm.cu.s
 
 # target to generate assembly for a file
 fused_gemm.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/build.make examples/13_two_tensor_op_fusion/CMakeFiles/13_fused_two_gemms.dir/fused_gemm.cu.s
 .PHONY : fused_gemm.cu.s
 
 # Help Target
@@ -332,7 +332,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

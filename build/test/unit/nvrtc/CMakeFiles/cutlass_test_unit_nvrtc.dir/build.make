@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Utility rule file for cutlass_test_unit_nvrtc.
 
@@ -77,10 +77,10 @@ test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/build: cutlass_test_unit_
 .PHONY : test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/build
 
 test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit/nvrtc && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_nvrtc.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit/nvrtc && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_nvrtc.dir/cmake_clean.cmake
 .PHONY : test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/clean
 
 test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit/nvrtc /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit/nvrtc /home/javierfdez/github_repository/Cutlass/build/test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/nvrtc /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/nvrtc /home/ubuntu/github/cutlass/build/test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/nvrtc/CMakeFiles/cutlass_test_unit_nvrtc.dir/depend
 

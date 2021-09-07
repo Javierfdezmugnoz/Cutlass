@@ -53,8 +53,16 @@
 #include <vector>
 // Helper methods to check for errors
 #include "helper.h"
+//
+#include <sched.h>
 
 
+#ifndef NAME
+  #define NAME "NO_NAME"
+#endif
+
+#define xstr(s) str(s)
+#define str(s) #s
 
 #define PUT_IN_REGISTER								 /* dummy definition  for Windows 32 */
 
@@ -63,6 +71,7 @@ typedef union ui64_to_ui32 {
 	uint64_t ui64;
 	uint32_t ui32[2];
 } ui64_to_ui32_t;
+
 
 typedef float    float32_t;
 typedef double   float64_t;
@@ -98,9 +107,9 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
 #include <time.h>
 #define DEF_TIME_VAR(t) clock_t t;
 #define GET_TIME(t) t = clock();
-#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (fabs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
+#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (std::abs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
 
-#define TIME_MEASUREMENT_LOOPS 1
+#define TIME_MEASUREMENT_LOOPS 10
 #define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
 
 
@@ -175,9 +184,27 @@ uint32_t kaui32_crc_table[CRC_table_elements] =
 	0x79B737BAL, 0x8BDCB4B9L, 0x988C474DL, 0x6AE7C44EL,
 	0xBE2DA0A5L, 0x4C4623A6L, 0x5F16D052L, 0xAD7D5351L
 };
-
 __constant__ uint32_t d_CRC_table_constant[CRC_table_elements];
 __shared__ uint32_t d_CRC_table_shared[CRC_table_elements];
+
+/* ==========================================================================
+  Description: CRC function
+=============================================================================*/
+__host__ uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_data)
+{
+	ui32_to_ui8_t u;
+	u.ui32 = ui32_data;
+
+	/* 4 bytes*/
+  uint32_t prev_ui32_crc = ui32_crc;
+	ui32_crc = kaui32_crc_table[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = kaui32_crc_table[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = kaui32_crc_table[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+	ui32_crc = kaui32_crc_table[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+  return ui32_crc;
+}
+
+
 
 // Definition of the sequential MMM (not required. It belongs to a test that try to compare sequential ES and parallel ES)
  ESs smm_xor_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32_t f32_alpha,  float32_t*  paf32_ma,  float32_t*  paf32_mb, float32_t *paf32_mc)
@@ -643,12 +670,15 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   Brief: Timing measurements. The values are stored in a xlsx file
   ==============================================================================*/
     FILE *p_file;
-	char str_file_name[100u];
+	char str_file_name[100u] = NAME"_";
+  char str_file_time[100u];
 	time_t time_now = time(NULL);
 
     struct tm *time_info;
 	time_info = localtime(&time_now);
-	strftime(str_file_name, sizeof(str_file_name), "Global_%m_%d_%H_%M_%S.xlsx", time_info);
+	strftime(str_file_time, sizeof(str_file_time), "%m_%d_%H_%M_%S.xlsx",time_info);
+  strcat(str_file_name,str_file_time);
+
 	if ((p_file = fopen(str_file_name, "w+")) == NULL)
 	{
 		fprintf(stderr, "cannot open file '%s'\n", str_file_name);
@@ -663,9 +693,43 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	fprintf(p_file, "Global memory, Timing measurements\n");
 
 
-    DEF_TIME_VAR(tmr_start);
+
+
+  /*==============================================================================
+  // CPU affinity
+	==============================================================================*/
+	cpu_set_t mask;
+	CPU_ZERO(&mask);
+	CPU_SET(3, &mask);
+	if(sched_setaffinity(0, sizeof(cpu_set_t), &mask) < 0)
+	{
+		perror("sched_setaffinity failed");
+		exit(-1);
+	}
+  
+  /*==============================================================================
+	// Real-time priority
+  ==============================================================================*/
+	/*struct sched_param param;
+	param.sched_priority = 98;
+	if(sched_setscheduler(0, SCHED_FIFO, &param) < 0)
+	{
+		perror("sched_setscheduler failed");
+		exit(-1);
+	}
+  */
+  /*==============================================================================
+	//  Timing variables
+  ==============================================================================*/
+  struct timespec begin, end;
+	uint64_t time_max_ns = 0;
+	long long iteration_max_time = 0;
+  uint64_t time_ns;
+
+  DEF_TIME_VAR(tmr_start);
 	DEF_TIME_VAR(tmr_end);
-    float64_t time_interval;
+  float64_t time_interval;
+  
 
     for (size_t i = 0; i < TIME_MEASUREMENT_LOOPS; i++)
     {
@@ -727,12 +791,18 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         }
 
 
-        GET_TIME(tmr_start);
+        //GET_TIME(tmr_start);
+        clock_gettime(CLOCK_MONOTONIC, &begin);
         result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
-        GET_TIME(tmr_end);
-        GET_TIME_DIFF(tmr_start, tmr_end, time_interval);
-        time_interval *= ((float64_t)TIME_SEC2USEC) / (float64_t)TIME_MEASUREMENT_LOOPS;
-        fprintf(p_file, "%15.4f,", time_interval);
+        clock_gettime(CLOCK_MONOTONIC, &end);
+        time_ns = 1e9 * (end.tv_sec - begin.tv_sec) + (end.tv_nsec - begin.tv_nsec);
+        fprintf(p_file, "%f,", time_ns);
+
+        //GET_TIME(tmr_end);
+        //GET_TIME_DIFF(tmr_start, tmr_end, time_interval);
+        //time_interval *= ((float64_t)TIME_SEC2USEC);
+        // fprintf(p_file, "%f,", time_interval);
+        
 
         if (result != cudaSuccess) 
         {
@@ -834,6 +904,16 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
 /* To use with Fletcher
 
 */
+
+// To use with CRC
+  for(int uint32_i=0;uint32_i<nElem_ES;uint32_i++){
+     //printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u \n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
+    d_ES.A = singletable_crc32c_ui32(d_ES.A, h_ES_a[uint32_i]);
+    d_ES.B = singletable_crc32c_ui32(d_ES.B, h_ES_b[uint32_i]);
+    d_ES.C = singletable_crc32c_ui32(d_ES.C, h_ES_c[uint32_i]);
+  }
+printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_ES.B, d_ES.C);
+
 
 // Verify that with a sequential implementation we obtain the same value
 //h_ES = smm_xor_internal((uint32_t) M,(uint32_t) N,(uint32_t) K, (float32_t) 1.0f, h_a, h_b, h_c);

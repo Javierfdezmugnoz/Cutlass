@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 # Include any dependencies generated for this target.
 include test/unit/CMakeFiles/cutlass_test_unit_infra.dir/depend.make
@@ -72,16 +72,16 @@ include test/unit/CMakeFiles/cutlass_test_unit_infra.dir/flags.make
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/flags.make
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o: ../test/unit/common/filter_architecture.cpp
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javierfdez/github_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o"
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o -MF CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o.d -o CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o -c /home/javierfdez/github_repository/Cutlass/test/unit/common/filter_architecture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o"
+	cd /home/ubuntu/github/cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o -MF CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o.d -o CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o -c /home/ubuntu/github/cutlass/test/unit/common/filter_architecture.cpp
 
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.i"
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javierfdez/github_repository/Cutlass/test/unit/common/filter_architecture.cpp > CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.i
+	cd /home/ubuntu/github/cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/common/filter_architecture.cpp > CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.i
 
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.s"
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javierfdez/github_repository/Cutlass/test/unit/common/filter_architecture.cpp -o CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.s
+	cd /home/ubuntu/github/cutlass/build/test/unit && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/common/filter_architecture.cpp -o CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.s
 
 cutlass_test_unit_infra: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o
 cutlass_test_unit_infra: test/unit/CMakeFiles/cutlass_test_unit_infra.dir/build.make
@@ -92,10 +92,10 @@ test/unit/CMakeFiles/cutlass_test_unit_infra.dir/build: cutlass_test_unit_infra
 .PHONY : test/unit/CMakeFiles/cutlass_test_unit_infra.dir/build
 
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/clean:
-	cd /home/javierfdez/github_repository/Cutlass/build/test/unit && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_infra.dir/cmake_clean.cmake
+	cd /home/ubuntu/github/cutlass/build/test/unit && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_infra.dir/cmake_clean.cmake
 .PHONY : test/unit/CMakeFiles/cutlass_test_unit_infra.dir/clean
 
 test/unit/CMakeFiles/cutlass_test_unit_infra.dir/depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javierfdez/github_repository/Cutlass /home/javierfdez/github_repository/Cutlass/test/unit /home/javierfdez/github_repository/Cutlass/build /home/javierfdez/github_repository/Cutlass/build/test/unit /home/javierfdez/github_repository/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit /home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/CMakeFiles/cutlass_test_unit_infra.dir/depend
 

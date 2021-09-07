@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -133,7 +133,7 @@ test/fast: test
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -143,7 +143,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/examples/10_planar_complex//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/examples/10_planar_complex//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/rule
 .PHONY : examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_10_planar_complex: examples/10_planar_complex/CMakeFiles/test_exam
 
 # fast build rule for target.
 test_examples_10_planar_complex/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build
 .PHONY : test_examples_10_planar_complex/fast
 
 # Convenience name for target.
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/rule
 .PHONY : examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/rule:
 
 # fast build rule for target.
 10_planar_complex/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build
 .PHONY : 10_planar_complex/fast
 
 planar_complex.o: planar_complex.cu.o
@@ -225,7 +225,7 @@ planar_complex.o: planar_complex.cu.o
 
 # target to build an object file
 planar_complex.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o
 .PHONY : planar_complex.cu.o
 
 planar_complex.i: planar_complex.cu.i
@@ -233,7 +233,7 @@ planar_complex.i: planar_complex.cu.i
 
 # target to preprocess a source file
 planar_complex.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.i
 .PHONY : planar_complex.cu.i
 
 planar_complex.s: planar_complex.cu.s
@@ -241,7 +241,7 @@ planar_complex.s: planar_complex.cu.s
 
 # target to generate assembly for a file
 planar_complex.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build.make examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.s
 .PHONY : planar_complex.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

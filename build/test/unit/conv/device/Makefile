@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javierfdez/github_repository/Cutlass
+CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javierfdez/github_repository/Cutlass/build
+CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,7 +99,7 @@ install/strip/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -109,7 +109,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javierfdez/github_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javierfdez/github_repository/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles /home/javierfdez/github_repository/Cutlass/build/test/unit/conv/device//CMakeFiles/progress.marks
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javierfdez/github_repository/Cutlass/build/CMakeFiles 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/conv/device//CMakeFiles/progress.marks
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/clean
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/preinstall
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ cutlass_test_unit_conv_device: test/unit/conv/device/CMakeFiles/cutlass_test_uni
 
 # fast build rule for target.
 cutlass_test_unit_conv_device/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device.dir/build
 .PHONY : cutlass_test_unit_conv_device/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ test_unit_conv_device_tensorop_f32_sm75: test/unit/conv/device/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_conv_device_tensorop_f32_sm75/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm75.dir/build
 .PHONY : test_unit_conv_device_tensorop_f32_sm75/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/rule
 
 # Convenience name for target.
@@ -231,12 +231,12 @@ test_unit_conv_device_tensorop_f32_sm70: test/unit/conv/device/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_conv_device_tensorop_f32_sm70/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_tensorop_f32_sm70.dir/build
 .PHONY : test_unit_conv_device_tensorop_f32_sm70/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/rule
 
 # Convenience name for target.
@@ -245,12 +245,12 @@ test_unit_conv_device_simt: test/unit/conv/device/CMakeFiles/test_unit_conv_devi
 
 # fast build rule for target.
 test_unit_conv_device_simt/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device_simt.dir/build
 .PHONY : test_unit_conv_device_simt/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/rule
 
 # Convenience name for target.
@@ -259,12 +259,12 @@ test_unit_conv_device: test/unit/conv/device/CMakeFiles/test_unit_conv_device.di
 
 # fast build rule for target.
 test_unit_conv_device/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/build.make test/unit/conv/device/CMakeFiles/test_unit_conv_device.dir/build
 .PHONY : test_unit_conv_device/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/rule
 
 # Convenience name for target.
@@ -273,12 +273,12 @@ cutlass_test_unit_conv_device_simt: test/unit/conv/device/CMakeFiles/cutlass_tes
 
 # fast build rule for target.
 cutlass_test_unit_conv_device_simt/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build
 .PHONY : cutlass_test_unit_conv_device_simt/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/rule
 
 # Convenience name for target.
@@ -287,12 +287,12 @@ cutlass_test_unit_conv_device_tensorop_f32_sm70: test/unit/conv/device/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_conv_device_tensorop_f32_sm70/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build
 .PHONY : cutlass_test_unit_conv_device_tensorop_f32_sm70/fast
 
 # Convenience name for target.
 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/rule:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/rule
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/rule
 .PHONY : test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/rule
 
 # Convenience name for target.
@@ -301,7 +301,7 @@ cutlass_test_unit_conv_device_tensorop_f32_sm75: test/unit/conv/device/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_conv_device_tensorop_f32_sm75/fast:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build
 .PHONY : cutlass_test_unit_conv_device_tensorop_f32_sm75/fast
 
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
@@ -309,7 +309,7 @@ conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_dg
 
 # target to build an object file
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 .PHONY : conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
@@ -317,7 +317,7 @@ conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_dg
 
 # target to preprocess a source file
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 .PHONY : conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
@@ -325,7 +325,7 @@ conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_dg
 
 # target to generate assembly for a file
 conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 .PHONY : conv2d_dgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
@@ -333,7 +333,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_
 
 # target to build an object file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
@@ -341,7 +341,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_
 
 # target to preprocess a source file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
@@ -349,7 +349,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
@@ -357,7 +357,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_
 
 # target to build an object file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
@@ -365,7 +365,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_
 
 # target to preprocess a source file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
@@ -373,7 +373,7 @@ conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 .PHONY : conv2d_dgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
@@ -381,7 +381,7 @@ conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_fp
 
 # target to build an object file
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 .PHONY : conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
@@ -389,7 +389,7 @@ conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_fp
 
 # target to preprocess a source file
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 .PHONY : conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
@@ -397,7 +397,7 @@ conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_fp
 
 # target to generate assembly for a file
 conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 .PHONY : conv2d_fprop_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.o: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.o
@@ -405,7 +405,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.o: conv2d_fprop
 
 # target to build an object file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.o
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.o
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.i: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.i
@@ -413,7 +413,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.i: conv2d_fprop
 
 # target to preprocess a source file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.i
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.i
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.s: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.s
@@ -421,7 +421,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.s: conv2d_fprop
 
 # target to generate assembly for a file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.s
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f16nhwc_simt_f16_sm60.cu.s
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
@@ -429,7 +429,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_
 
 # target to build an object file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
@@ -437,7 +437,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_
 
 # target to preprocess a source file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
@@ -445,7 +445,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
@@ -453,7 +453,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_
 
 # target to build an object file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
@@ -461,7 +461,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_
 
 # target to preprocess a source file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
@@ -469,7 +469,7 @@ conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 .PHONY : conv2d_fprop_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.o: conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.o
@@ -477,7 +477,7 @@ conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.o: conv2d_fprop
 
 # target to build an object file
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.o
 .PHONY : conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.o
 
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.i: conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.i
@@ -485,7 +485,7 @@ conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.i: conv2d_fprop
 
 # target to preprocess a source file
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.i
 .PHONY : conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.i
 
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.s: conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.s
@@ -493,7 +493,7 @@ conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.s: conv2d_fprop
 
 # target to generate assembly for a file
 conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.s
 .PHONY : conv2d_fprop_implicit_gemm_f32nhwc_f32nhwc_f32nhwc_simt_f32_sm50.cu.s
 
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
@@ -501,7 +501,7 @@ conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.o: conv2d_wg
 
 # target to build an object file
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 .PHONY : conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.o
 
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
@@ -509,7 +509,7 @@ conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.i: conv2d_wg
 
 # target to preprocess a source file
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 .PHONY : conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.i
 
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
@@ -517,7 +517,7 @@ conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.s: conv2d_wg
 
 # target to generate assembly for a file
 conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_simt.dir/conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 .PHONY : conv2d_wgrad_implicit_gemm_cf32nhwc_cf32nhwc_cf32nhwc_simt_f32_sm50.cu.s
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
@@ -525,7 +525,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.o: conv2d_
 
 # target to build an object file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.o
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
@@ -533,7 +533,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.i: conv2d_
 
 # target to preprocess a source file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.i
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
@@ -541,7 +541,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm70.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm70.cu.s
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
@@ -549,7 +549,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.o: conv2d_
 
 # target to build an object file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.o
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
@@ -557,7 +557,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.i: conv2d_
 
 # target to preprocess a source file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.i
 
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
@@ -565,7 +565,7 @@ conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.s: conv2d_
 
 # target to generate assembly for a file
 conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
+	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/build.make test/unit/conv/device/CMakeFiles/cutlass_test_unit_conv_device_tensorop_f32_sm75.dir/conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 .PHONY : conv2d_wgrad_implicit_gemm_f16nhwc_f16nhwc_f32nhwc_tensor_op_f32_sm75.cu.s
 
 # Help Target
@@ -635,7 +635,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javierfdez/github_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javierfdez/github_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/javierfdez/github_repository/Cutlass
+# Install script for directory: /home/ubuntu/github/cutlass
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES
-    "/home/javierfdez/github_repository/Cutlass/include/"
-    "/home/javierfdez/github_repository/Cutlass/build/include/"
+    "/home/ubuntu/github/cutlass/include/"
+    "/home/ubuntu/github/cutlass/build/include/"
     )
 endif()
 
@@ -66,18 +66,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass" TYPE FILE FILES "/home/javierfdez/github_repository/Cutlass/build/cmake/CTestTestfile.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/cmake/CTestTestfile.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/javierfdez/github_repository/Cutlass/cmake/NvidiaCutlassConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/ubuntu/github/cutlass/cmake/NvidiaCutlassConfig.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/NvidiaCutlassTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/NvidiaCutlassTargets.cmake"
-         "/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets.cmake")
+         "/home/ubuntu/github/cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/NvidiaCutlassTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -86,17 +86,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/javierfdez/github_repository/Cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/CMakeFiles/Export/lib/cmake/NvidiaCutlassTargets-debug.cmake")
   endif()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/javierfdez/github_repository/Cutlass/build/tools/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/examples/cmake_install.cmake")
-  include("/home/javierfdez/github_repository/Cutlass/build/test/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/examples/ES_protection/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/tools/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/examples/cmake_install.cmake")
+  include("/home/ubuntu/github/cutlass/build/test/cmake_install.cmake")
 
 endif()
 
@@ -108,5 +109,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/javierfdez/github_repository/Cutlass/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/github/cutlass/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

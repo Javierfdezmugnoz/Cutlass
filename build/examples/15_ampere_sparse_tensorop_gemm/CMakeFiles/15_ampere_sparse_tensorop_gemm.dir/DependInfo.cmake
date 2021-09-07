@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javierfdez/github_repository/Cutlass/examples/15_ampere_sparse_tensorop_gemm/ampere_sparse_tensorop_gemm.cu" "examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/15_ampere_sparse_tensorop_gemm.dir/ampere_sparse_tensorop_gemm.cu.o" "gcc" "examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/15_ampere_sparse_tensorop_gemm.dir/ampere_sparse_tensorop_gemm.cu.o.d"
+  "/home/ubuntu/github/cutlass/examples/15_ampere_sparse_tensorop_gemm/ampere_sparse_tensorop_gemm.cu" "examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/15_ampere_sparse_tensorop_gemm.dir/ampere_sparse_tensorop_gemm.cu.o" "gcc" "examples/15_ampere_sparse_tensorop_gemm/CMakeFiles/15_ampere_sparse_tensorop_gemm.dir/ampere_sparse_tensorop_gemm.cu.o.d"
   )
 
 # Targets to which this target links.
