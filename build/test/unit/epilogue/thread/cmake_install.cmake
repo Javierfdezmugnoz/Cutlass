@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/test/unit/epilogue/thread
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/test/unit/epilogue/thread
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_epilogue_thread"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/test/unit/epilogue/thread/cutlass_test_unit_epilogue_thread")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/test/unit/epilogue/thread/cutlass_test_unit_epilogue_thread")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_epilogue_thread" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_epilogue_thread")
     file(RPATH_CHANGE
@@ -63,6 +63,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/test/unit/epilogue/thread/CTestTestfile.ctest_unit_epilogue_thread.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/test/unit/epilogue/thread/CTestTestfile.ctest_unit_epilogue_thread.cmake")
 endif()
 

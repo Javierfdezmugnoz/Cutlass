@@ -1,0 +1,2 @@
+/usr/bin/ar qc libchecksum_algd.a CMakeFiles/checksum_alg.dir/checksum.cu.o
+/usr/bin/ranlib libchecksum_algd.a

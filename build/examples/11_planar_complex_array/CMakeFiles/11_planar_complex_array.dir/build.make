@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/depend.make
@@ -72,16 +72,16 @@ include examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o: examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/flags.make
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o: ../examples/11_planar_complex_array/planar_complex_array.cu
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o: examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o"
-	cd /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o -MF CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o.d -o CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o -c /home/ubuntu/github/cutlass/examples/11_planar_complex_array/planar_complex_array.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o"
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o -MF CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o.d -o CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.o -c /home/javifdez/git_repositories/Cutlass/examples/11_planar_complex_array/planar_complex_array.cu
 
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.i"
-	cd /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/11_planar_complex_array/planar_complex_array.cu > CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/examples/11_planar_complex_array/planar_complex_array.cu > CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.i
 
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.s"
-	cd /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/11_planar_complex_array/planar_complex_array.cu -o CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/examples/11_planar_complex_array/planar_complex_array.cu -o CMakeFiles/11_planar_complex_array.dir/planar_complex_array.cu.s
 
 # Object files for target 11_planar_complex_array
 11_planar_complex_array_OBJECTS = \
@@ -95,18 +95,18 @@ examples/11_planar_complex_array/11_planar_complex_array: examples/11_planar_com
 examples/11_planar_complex_array/11_planar_complex_array: tools/library/libcutlassd.so
 examples/11_planar_complex_array/11_planar_complex_array: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/11_planar_complex_array/11_planar_complex_array: examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 11_planar_complex_array"
-	cd /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/11_planar_complex_array.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 11_planar_complex_array"
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/11_planar_complex_array.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/build: examples/11_planar_complex_array/11_planar_complex_array
 .PHONY : examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/build
 
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array && $(CMAKE_COMMAND) -P CMakeFiles/11_planar_complex_array.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array && $(CMAKE_COMMAND) -P CMakeFiles/11_planar_complex_array.dir/cmake_clean.cmake
 .PHONY : examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/clean
 
 examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/11_planar_complex_array /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array /home/ubuntu/github/cutlass/build/examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/11_planar_complex_array /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array /home/javifdez/git_repositories/Cutlass/build/examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/11_planar_complex_array/CMakeFiles/11_planar_complex_array.dir/depend
 

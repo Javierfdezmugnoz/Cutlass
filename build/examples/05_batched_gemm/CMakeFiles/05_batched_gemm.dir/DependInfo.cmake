@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/github/cutlass/examples/05_batched_gemm/batched_gemm.cu" "examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o" "gcc" "examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o.d"
+  "/home/javifdez/git_repositories/Cutlass/examples/05_batched_gemm/batched_gemm.cu" "examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o" "gcc" "examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o.d"
   )
 
 # Targets to which this target links.

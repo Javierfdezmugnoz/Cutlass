@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -143,7 +143,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -153,7 +153,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/tools/library//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/tools/library//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/clean
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tools/library/CMakeFiles/cutlass_library_static.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_library_static.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_library_static.dir/rule
 .PHONY : tools/library/CMakeFiles/cutlass_library_static.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ cutlass_library_static: tools/library/CMakeFiles/cutlass_library_static.dir/rule
 
 # fast build rule for target.
 cutlass_library_static/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_static.dir/build.make tools/library/CMakeFiles/cutlass_library_static.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_static.dir/build.make tools/library/CMakeFiles/cutlass_library_static.dir/build
 .PHONY : cutlass_library_static/fast
 
 # Convenience name for target.
 tools/library/CMakeFiles/cutlass_lib.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_lib.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_lib.dir/rule
 .PHONY : tools/library/CMakeFiles/cutlass_lib.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ cutlass_lib: tools/library/CMakeFiles/cutlass_lib.dir/rule
 
 # fast build rule for target.
 cutlass_lib/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_lib.dir/build.make tools/library/CMakeFiles/cutlass_lib.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_lib.dir/build.make tools/library/CMakeFiles/cutlass_lib.dir/build
 .PHONY : cutlass_lib/fast
 
 # Convenience name for target.
 tools/library/CMakeFiles/cutlass_library_objs.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_library_objs.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/library/CMakeFiles/cutlass_library_objs.dir/rule
 .PHONY : tools/library/CMakeFiles/cutlass_library_objs.dir/rule
 
 # Convenience name for target.
@@ -231,7 +231,7 @@ cutlass_library_objs: tools/library/CMakeFiles/cutlass_library_objs.dir/rule
 
 # fast build rule for target.
 cutlass_library_objs/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/build
 .PHONY : cutlass_library_objs/fast
 
 generated/conv2d/all_conv2d_operations.o: generated/conv2d/all_conv2d_operations.cu.o
@@ -239,7 +239,7 @@ generated/conv2d/all_conv2d_operations.o: generated/conv2d/all_conv2d_operations
 
 # target to build an object file
 generated/conv2d/all_conv2d_operations.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.o
 .PHONY : generated/conv2d/all_conv2d_operations.cu.o
 
 generated/conv2d/all_conv2d_operations.i: generated/conv2d/all_conv2d_operations.cu.i
@@ -247,7 +247,7 @@ generated/conv2d/all_conv2d_operations.i: generated/conv2d/all_conv2d_operations
 
 # target to preprocess a source file
 generated/conv2d/all_conv2d_operations.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.i
 .PHONY : generated/conv2d/all_conv2d_operations.cu.i
 
 generated/conv2d/all_conv2d_operations.s: generated/conv2d/all_conv2d_operations.cu.s
@@ -255,7 +255,7 @@ generated/conv2d/all_conv2d_operations.s: generated/conv2d/all_conv2d_operations
 
 # target to generate assembly for a file
 generated/conv2d/all_conv2d_operations.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/all_conv2d_operations.cu.s
 .PHONY : generated/conv2d/all_conv2d_operations.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
@@ -263,7 +263,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.o: gene
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
@@ -271,7 +271,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.i: gene
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
@@ -279,7 +279,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.s: gene
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.o: generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o
@@ -287,7 +287,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.i: generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.i
@@ -295,7 +295,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.s: generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.s
@@ -303,7 +303,7 @@ generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cdgrad_optimized_cf32_128x128_8x2_nhwc_unity_stride.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o
@@ -311,7 +311,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.o: gene
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.i
@@ -319,7 +319,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.i: gene
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.s
@@ -327,7 +327,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.s: gene
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_analytic_cf32_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o
@@ -335,7 +335,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.o: gen
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.i
@@ -343,7 +343,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.i: gen
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.s
@@ -351,7 +351,7 @@ generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.s: gen
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cfprop_optimized_cf32_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
@@ -359,7 +359,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.o: gene
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
@@ -367,7 +367,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.i: gene
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
@@ -375,7 +375,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.s: gene
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_analytic_cf32_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o
@@ -383,7 +383,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.o: gen
 
 # target to build an object file
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.i
@@ -391,7 +391,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.i: gen
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.s
@@ -399,7 +399,7 @@ generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.s: gen
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_cf32_cwgrad_optimized_cf32_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o
@@ -407,7 +407,7 @@ generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.o: generated/conv
 
 # target to build an object file
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.i
@@ -415,7 +415,7 @@ generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.i: generated/conv
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.s
@@ -423,7 +423,7 @@ generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.s: generated/conv
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_analytic_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.o: generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o
@@ -431,7 +431,7 @@ generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.o: 
 
 # target to build an object file
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.o
 
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.i: generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.i
@@ -439,7 +439,7 @@ generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.i: 
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.i
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.i
 
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.s: generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.s
@@ -447,7 +447,7 @@ generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.s: 
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.s
 .PHONY : generated/conv2d/cutlass_simt_sdgrad_optimized_128x128_8x2_nhwc_unity_stride.cu.s
 
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o
@@ -455,7 +455,7 @@ generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.o: generated/conv
 
 # target to build an object file
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.i
@@ -463,7 +463,7 @@ generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.i: generated/conv
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.s
@@ -471,7 +471,7 @@ generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.s: generated/conv
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_sfprop_analytic_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o
@@ -479,7 +479,7 @@ generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.o: generated/con
 
 # target to build an object file
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.i
@@ -487,7 +487,7 @@ generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.i: generated/con
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.s
@@ -495,7 +495,7 @@ generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.s: generated/con
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_sfprop_optimized_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o
@@ -503,7 +503,7 @@ generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.o: generated/conv
 
 # target to build an object file
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.i
@@ -511,7 +511,7 @@ generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.i: generated/conv
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.s
@@ -519,7 +519,7 @@ generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.s: generated/conv
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_swgrad_analytic_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.o: generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o
@@ -527,7 +527,7 @@ generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.o: generated/con
 
 # target to build an object file
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.o
 
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.i: generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.i
@@ -535,7 +535,7 @@ generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.i: generated/con
 
 # target to preprocess a source file
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.i
 
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.s: generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.s
@@ -543,7 +543,7 @@ generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.s: generated/con
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_simt_swgrad_optimized_128x128_8x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -551,7 +551,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.o
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -559,7 +559,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.i
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -567,7 +567,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.s
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.o: generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
@@ -575,7 +575,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.i: generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
@@ -583,7 +583,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.s: generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
@@ -591,7 +591,7 @@ generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -599,7 +599,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.o
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -607,7 +607,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.i
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -615,7 +615,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.s
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
@@ -623,7 +623,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
@@ -631,7 +631,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
@@ -639,7 +639,7 @@ generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -647,7 +647,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.o
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -655,7 +655,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.i
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -663,7 +663,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.s
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
@@ -671,7 +671,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
@@ -679,7 +679,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
@@ -687,7 +687,7 @@ generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_f16_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o
@@ -695,7 +695,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.o: genera
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.i
@@ -703,7 +703,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.i: genera
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.s
@@ -711,7 +711,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.s: genera
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_analytic_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.o: generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o
@@ -719,7 +719,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_st
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.o
 
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.i: generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.i
@@ -727,7 +727,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_st
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.i
 
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.s: generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.s
@@ -735,7 +735,7 @@ generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_st
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884dgrad_optimized_256x128_32x2_nhwc_unity_stride.cu.s
 
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o
@@ -743,7 +743,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.o: genera
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.i
@@ -751,7 +751,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.i: genera
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.s
@@ -759,7 +759,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.s: genera
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_analytic_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o
@@ -767,7 +767,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.o: gener
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.i
@@ -775,7 +775,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.i: gener
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.s
@@ -783,7 +783,7 @@ generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.s: gener
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884fprop_optimized_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o
@@ -791,7 +791,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.o: genera
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.i
@@ -799,7 +799,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.i: genera
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.s
@@ -807,7 +807,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.s: genera
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_analytic_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o
@@ -815,7 +815,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.o: gener
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.i
@@ -823,7 +823,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.i: gener
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.s
@@ -831,7 +831,7 @@ generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.s: gener
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_h884wgrad_optimized_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -839,7 +839,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.o: ge
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -847,7 +847,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.i: ge
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -855,7 +855,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.s: ge
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.o: generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
@@ -863,7 +863,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unit
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.o
 
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.i: generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
@@ -871,7 +871,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unit
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.i
 
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.s: generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
@@ -879,7 +879,7 @@ generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unit
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884dgrad_optimized_f16_256x128_32x2_nhwc_unity_stride.cu.s
 
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -887,7 +887,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.o: ge
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -895,7 +895,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.i: ge
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -903,7 +903,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.s: ge
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
@@ -911,7 +911,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.o: g
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
@@ -919,7 +919,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.i: g
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
@@ -927,7 +927,7 @@ generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.s: g
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884fprop_optimized_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
@@ -935,7 +935,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.o: ge
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
@@ -943,7 +943,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.i: ge
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
@@ -951,7 +951,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.s: ge
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_analytic_f16_256x128_32x2_nhwc.cu.s
 
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.o: generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
@@ -959,7 +959,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.o: g
 
 # target to build an object file
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.o
 
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.i: generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
@@ -967,7 +967,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.i: g
 
 # target to preprocess a source file
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.i
 
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.s: generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
@@ -975,7 +975,7 @@ generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.s: g
 
 # target to generate assembly for a file
 generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
 .PHONY : generated/conv2d/cutlass_tensorop_s884wgrad_optimized_f16_256x128_32x2_nhwc.cu.s
 
 generated/gemm/all_gemm_operations.o: generated/gemm/all_gemm_operations.cu.o
@@ -983,7 +983,7 @@ generated/gemm/all_gemm_operations.o: generated/gemm/all_gemm_operations.cu.o
 
 # target to build an object file
 generated/gemm/all_gemm_operations.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.o
 .PHONY : generated/gemm/all_gemm_operations.cu.o
 
 generated/gemm/all_gemm_operations.i: generated/gemm/all_gemm_operations.cu.i
@@ -991,7 +991,7 @@ generated/gemm/all_gemm_operations.i: generated/gemm/all_gemm_operations.cu.i
 
 # target to preprocess a source file
 generated/gemm/all_gemm_operations.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.i
 .PHONY : generated/gemm/all_gemm_operations.cu.i
 
 generated/gemm/all_gemm_operations.s: generated/gemm/all_gemm_operations.cu.s
@@ -999,7 +999,7 @@ generated/gemm/all_gemm_operations.s: generated/gemm/all_gemm_operations.cu.s
 
 # target to generate assembly for a file
 generated/gemm/all_gemm_operations.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/all_gemm_operations.cu.s
 .PHONY : generated/gemm/all_gemm_operations.cu.s
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o
@@ -1007,7 +1007,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.i
@@ -1015,7 +1015,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.s
@@ -1023,7 +1023,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o
@@ -1031,7 +1031,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.i
@@ -1039,7 +1039,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.s
@@ -1047,7 +1047,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o
@@ -1055,7 +1055,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.i
@@ -1063,7 +1063,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.s
@@ -1071,7 +1071,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o
@@ -1079,7 +1079,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.i
@@ -1087,7 +1087,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.s
@@ -1095,7 +1095,7 @@ generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_cgemm_128x128_8x2_tt_align1.cu.s
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o
@@ -1103,7 +1103,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.i
@@ -1111,7 +1111,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.s
@@ -1119,7 +1119,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o
@@ -1127,7 +1127,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.i
@@ -1135,7 +1135,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.s
@@ -1143,7 +1143,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o
@@ -1151,7 +1151,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.i
@@ -1159,7 +1159,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.s
@@ -1167,7 +1167,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o
@@ -1175,7 +1175,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.i
@@ -1183,7 +1183,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.s
@@ -1191,7 +1191,7 @@ generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_dgemm_128x128_8x2_tt_align1.cu.s
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.o: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o
@@ -1199,7 +1199,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.i: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.i
@@ -1207,7 +1207,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.s: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.s
@@ -1215,7 +1215,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.o: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o
@@ -1223,7 +1223,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.i: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.i
@@ -1231,7 +1231,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.s: generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.s
@@ -1239,7 +1239,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.o: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o
@@ -1247,7 +1247,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.i: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.i
@@ -1255,7 +1255,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.s: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.s
@@ -1263,7 +1263,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.o: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o
@@ -1271,7 +1271,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.i: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.i
@@ -1279,7 +1279,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.s: generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.s
@@ -1287,7 +1287,7 @@ generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_hgemm_256x128_8x2_tt_align1.cu.s
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.o: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o
@@ -1295,7 +1295,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.o: generated/gemm/cu
 
 # target to build an object file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.i: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.i
@@ -1303,7 +1303,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.i: generated/gemm/cu
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.s: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.s
@@ -1311,7 +1311,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.s: generated/gemm/cu
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.o: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o
@@ -1319,7 +1319,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.o: generated/gemm/cu
 
 # target to build an object file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.i: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.i
@@ -1327,7 +1327,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.i: generated/gemm/cu
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.s: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.s
@@ -1335,7 +1335,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.s: generated/gemm/cu
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.o: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o
@@ -1343,7 +1343,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.o: generated/gemm/cu
 
 # target to build an object file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.i: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.i
@@ -1351,7 +1351,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.i: generated/gemm/cu
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.s: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.s
@@ -1359,7 +1359,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.s: generated/gemm/cu
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.o: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o
@@ -1367,7 +1367,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.o: generated/gemm/cu
 
 # target to build an object file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.i: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.i
@@ -1375,7 +1375,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.i: generated/gemm/cu
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.s: generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.s
@@ -1383,7 +1383,7 @@ generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.s: generated/gemm/cu
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_igemm_s8_128x128_32x2_tt_align1.cu.s
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.o: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o
@@ -1391,7 +1391,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.o: generated/gemm
 
 # target to build an object file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.i: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.i
@@ -1399,7 +1399,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.i: generated/gemm
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.s: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.s
@@ -1407,7 +1407,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.s: generated/gemm
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.o: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o
@@ -1415,7 +1415,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.o: generated/gemm
 
 # target to build an object file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.i: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.i
@@ -1423,7 +1423,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.i: generated/gemm
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.s: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.s
@@ -1431,7 +1431,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.s: generated/gemm
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.o: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o
@@ -1439,7 +1439,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.o: generated/gemm
 
 # target to build an object file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.i: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.i
@@ -1447,7 +1447,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.i: generated/gemm
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.s: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.s
@@ -1455,7 +1455,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.s: generated/gemm
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.o: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o
@@ -1463,7 +1463,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.o: generated/gemm
 
 # target to build an object file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.i: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.i
@@ -1471,7 +1471,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.i: generated/gemm
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.s: generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.s
@@ -1479,7 +1479,7 @@ generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.s: generated/gemm
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1.cu.s
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o
@@ -1487,7 +1487,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.o
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.i
@@ -1495,7 +1495,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.i
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.s
@@ -1503,7 +1503,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nn_align1.cu.s
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o
@@ -1511,7 +1511,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.o
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.i
@@ -1519,7 +1519,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.i
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.s
@@ -1527,7 +1527,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_nt_align1.cu.s
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o
@@ -1535,7 +1535,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.o
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.i
@@ -1543,7 +1543,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.i
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.s
@@ -1551,7 +1551,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tn_align1.cu.s
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o
@@ -1559,7 +1559,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.o: generated/gemm/cutlas
 
 # target to build an object file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.o
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.i
@@ -1567,7 +1567,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.i: generated/gemm/cutlas
 
 # target to preprocess a source file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.i
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.i
 
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.s
@@ -1575,7 +1575,7 @@ generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.s: generated/gemm/cutlas
 
 # target to generate assembly for a file
 generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.s
 .PHONY : generated/gemm/cutlass_simt_sgemm_128x128_8x2_tt_align1.cu.s
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.o: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o
@@ -1583,7 +1583,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.o: gener
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.i: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.i
@@ -1591,7 +1591,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.i: gener
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.s: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.s
@@ -1599,7 +1599,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.s: gener
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.o: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o
@@ -1607,7 +1607,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.o: gener
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.i: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.i
@@ -1615,7 +1615,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.i: gener
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.s: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.s
@@ -1623,7 +1623,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.s: gener
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8.cu.s
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.o: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o
@@ -1631,7 +1631,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.o: gener
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.i: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.i
@@ -1639,7 +1639,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.i: gener
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.s: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.s
@@ -1647,7 +1647,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.s: gener
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.o: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o
@@ -1655,7 +1655,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.o: gener
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.i: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.i
@@ -1663,7 +1663,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.i: gener
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.s: generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.s
@@ -1671,7 +1671,7 @@ generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.s: gener
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8.cu.s
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.o: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o
@@ -1679,7 +1679,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.o: generated/gem
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.i: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.i
@@ -1687,7 +1687,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.i: generated/gem
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.s: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.s
@@ -1695,7 +1695,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.s: generated/gem
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.o: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o
@@ -1703,7 +1703,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.o: generated/gem
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.i: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.i
@@ -1711,7 +1711,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.i: generated/gem
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.s: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.s
@@ -1719,7 +1719,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.s: generated/gem
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_nt_align8.cu.s
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.o: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o
@@ -1727,7 +1727,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.o: generated/gem
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.i: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.i
@@ -1735,7 +1735,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.i: generated/gem
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.s: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.s
@@ -1743,7 +1743,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.s: generated/gem
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.o: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o
@@ -1751,7 +1751,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.o: generated/gem
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.i: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.i
@@ -1759,7 +1759,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.i: generated/gem
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.s: generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.s
@@ -1767,7 +1767,7 @@ generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.s: generated/gem
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_h884gemm_256x128_32x2_tt_align8.cu.s
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.o: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o
@@ -1775,7 +1775,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.o: generated
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.i: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.i
@@ -1783,7 +1783,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.i: generated
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.s: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.s
@@ -1791,7 +1791,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.s: generated
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.o: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o
@@ -1799,7 +1799,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.o: generated
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.i: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.i
@@ -1807,7 +1807,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.i: generated
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.s: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.s
@@ -1815,7 +1815,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.s: generated
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8.cu.s
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.o: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o
@@ -1823,7 +1823,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.o: generated
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.o
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.i: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.i
@@ -1831,7 +1831,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.i: generated
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.i
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.s: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.s
@@ -1839,7 +1839,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.s: generated
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8.cu.s
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.o: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o
@@ -1847,7 +1847,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.o: generated
 
 # target to build an object file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.o
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.i: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.i
@@ -1855,7 +1855,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.i: generated
 
 # target to preprocess a source file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.i
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.i
 
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.s: generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.s
@@ -1863,7 +1863,7 @@ generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.s: generated
 
 # target to generate assembly for a file
 generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.s
 .PHONY : generated/gemm/cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8.cu.s
 
 generated/initialize_all.o: generated/initialize_all.cpp.o
@@ -1871,7 +1871,7 @@ generated/initialize_all.o: generated/initialize_all.cpp.o
 
 # target to build an object file
 generated/initialize_all.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.o
 .PHONY : generated/initialize_all.cpp.o
 
 generated/initialize_all.i: generated/initialize_all.cpp.i
@@ -1879,7 +1879,7 @@ generated/initialize_all.i: generated/initialize_all.cpp.i
 
 # target to preprocess a source file
 generated/initialize_all.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.i
 .PHONY : generated/initialize_all.cpp.i
 
 generated/initialize_all.s: generated/initialize_all.cpp.s
@@ -1887,7 +1887,7 @@ generated/initialize_all.s: generated/initialize_all.cpp.s
 
 # target to generate assembly for a file
 generated/initialize_all.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/generated/initialize_all.cpp.s
 .PHONY : generated/initialize_all.cpp.s
 
 src/handle.o: src/handle.cu.o
@@ -1895,7 +1895,7 @@ src/handle.o: src/handle.cu.o
 
 # target to build an object file
 src/handle.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.o
 .PHONY : src/handle.cu.o
 
 src/handle.i: src/handle.cu.i
@@ -1903,7 +1903,7 @@ src/handle.i: src/handle.cu.i
 
 # target to preprocess a source file
 src/handle.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.i
 .PHONY : src/handle.cu.i
 
 src/handle.s: src/handle.cu.s
@@ -1911,7 +1911,7 @@ src/handle.s: src/handle.cu.s
 
 # target to generate assembly for a file
 src/handle.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/handle.cu.s
 .PHONY : src/handle.cu.s
 
 src/manifest.o: src/manifest.cpp.o
@@ -1919,7 +1919,7 @@ src/manifest.o: src/manifest.cpp.o
 
 # target to build an object file
 src/manifest.cpp.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.o
 .PHONY : src/manifest.cpp.o
 
 src/manifest.i: src/manifest.cpp.i
@@ -1927,7 +1927,7 @@ src/manifest.i: src/manifest.cpp.i
 
 # target to preprocess a source file
 src/manifest.cpp.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.i
 .PHONY : src/manifest.cpp.i
 
 src/manifest.s: src/manifest.cpp.s
@@ -1935,7 +1935,7 @@ src/manifest.s: src/manifest.cpp.s
 
 # target to generate assembly for a file
 src/manifest.cpp.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/manifest.cpp.s
 .PHONY : src/manifest.cpp.s
 
 src/operation_table.o: src/operation_table.cu.o
@@ -1943,7 +1943,7 @@ src/operation_table.o: src/operation_table.cu.o
 
 # target to build an object file
 src/operation_table.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.o
 .PHONY : src/operation_table.cu.o
 
 src/operation_table.i: src/operation_table.cu.i
@@ -1951,7 +1951,7 @@ src/operation_table.i: src/operation_table.cu.i
 
 # target to preprocess a source file
 src/operation_table.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.i
 .PHONY : src/operation_table.cu.i
 
 src/operation_table.s: src/operation_table.cu.s
@@ -1959,7 +1959,7 @@ src/operation_table.s: src/operation_table.cu.s
 
 # target to generate assembly for a file
 src/operation_table.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/operation_table.cu.s
 .PHONY : src/operation_table.cu.s
 
 src/reduction/init_reduction_operations.o: src/reduction/init_reduction_operations.cu.o
@@ -1967,7 +1967,7 @@ src/reduction/init_reduction_operations.o: src/reduction/init_reduction_operatio
 
 # target to build an object file
 src/reduction/init_reduction_operations.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.o
 .PHONY : src/reduction/init_reduction_operations.cu.o
 
 src/reduction/init_reduction_operations.i: src/reduction/init_reduction_operations.cu.i
@@ -1975,7 +1975,7 @@ src/reduction/init_reduction_operations.i: src/reduction/init_reduction_operatio
 
 # target to preprocess a source file
 src/reduction/init_reduction_operations.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.i
 .PHONY : src/reduction/init_reduction_operations.cu.i
 
 src/reduction/init_reduction_operations.s: src/reduction/init_reduction_operations.cu.s
@@ -1983,7 +1983,7 @@ src/reduction/init_reduction_operations.s: src/reduction/init_reduction_operatio
 
 # target to generate assembly for a file
 src/reduction/init_reduction_operations.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/init_reduction_operations.cu.s
 .PHONY : src/reduction/init_reduction_operations.cu.s
 
 src/reduction/reduction_device.o: src/reduction/reduction_device.cu.o
@@ -1991,7 +1991,7 @@ src/reduction/reduction_device.o: src/reduction/reduction_device.cu.o
 
 # target to build an object file
 src/reduction/reduction_device.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.o
 .PHONY : src/reduction/reduction_device.cu.o
 
 src/reduction/reduction_device.i: src/reduction/reduction_device.cu.i
@@ -1999,7 +1999,7 @@ src/reduction/reduction_device.i: src/reduction/reduction_device.cu.i
 
 # target to preprocess a source file
 src/reduction/reduction_device.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.i
 .PHONY : src/reduction/reduction_device.cu.i
 
 src/reduction/reduction_device.s: src/reduction/reduction_device.cu.s
@@ -2007,7 +2007,7 @@ src/reduction/reduction_device.s: src/reduction/reduction_device.cu.s
 
 # target to generate assembly for a file
 src/reduction/reduction_device.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reduction/reduction_device.cu.s
 .PHONY : src/reduction/reduction_device.cu.s
 
 src/reference/conv2d.o: src/reference/conv2d.cu.o
@@ -2015,7 +2015,7 @@ src/reference/conv2d.o: src/reference/conv2d.cu.o
 
 # target to build an object file
 src/reference/conv2d.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.o
 .PHONY : src/reference/conv2d.cu.o
 
 src/reference/conv2d.i: src/reference/conv2d.cu.i
@@ -2023,7 +2023,7 @@ src/reference/conv2d.i: src/reference/conv2d.cu.i
 
 # target to preprocess a source file
 src/reference/conv2d.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.i
 .PHONY : src/reference/conv2d.cu.i
 
 src/reference/conv2d.s: src/reference/conv2d.cu.s
@@ -2031,7 +2031,7 @@ src/reference/conv2d.s: src/reference/conv2d.cu.s
 
 # target to generate assembly for a file
 src/reference/conv2d.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv2d.cu.s
 .PHONY : src/reference/conv2d.cu.s
 
 src/reference/conv3d.o: src/reference/conv3d.cu.o
@@ -2039,7 +2039,7 @@ src/reference/conv3d.o: src/reference/conv3d.cu.o
 
 # target to build an object file
 src/reference/conv3d.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.o
 .PHONY : src/reference/conv3d.cu.o
 
 src/reference/conv3d.i: src/reference/conv3d.cu.i
@@ -2047,7 +2047,7 @@ src/reference/conv3d.i: src/reference/conv3d.cu.i
 
 # target to preprocess a source file
 src/reference/conv3d.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.i
 .PHONY : src/reference/conv3d.cu.i
 
 src/reference/conv3d.s: src/reference/conv3d.cu.s
@@ -2055,7 +2055,7 @@ src/reference/conv3d.s: src/reference/conv3d.cu.s
 
 # target to generate assembly for a file
 src/reference/conv3d.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/conv3d.cu.s
 .PHONY : src/reference/conv3d.cu.s
 
 src/reference/gemm.o: src/reference/gemm.cu.o
@@ -2063,7 +2063,7 @@ src/reference/gemm.o: src/reference/gemm.cu.o
 
 # target to build an object file
 src/reference/gemm.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.o
 .PHONY : src/reference/gemm.cu.o
 
 src/reference/gemm.i: src/reference/gemm.cu.i
@@ -2071,7 +2071,7 @@ src/reference/gemm.i: src/reference/gemm.cu.i
 
 # target to preprocess a source file
 src/reference/gemm.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.i
 .PHONY : src/reference/gemm.cu.i
 
 src/reference/gemm.s: src/reference/gemm.cu.s
@@ -2079,7 +2079,7 @@ src/reference/gemm.s: src/reference/gemm.cu.s
 
 # target to generate assembly for a file
 src/reference/gemm.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/gemm.cu.s
 .PHONY : src/reference/gemm.cu.s
 
 src/reference/initialize_reference_operations.o: src/reference/initialize_reference_operations.cu.o
@@ -2087,7 +2087,7 @@ src/reference/initialize_reference_operations.o: src/reference/initialize_refere
 
 # target to build an object file
 src/reference/initialize_reference_operations.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.o
 .PHONY : src/reference/initialize_reference_operations.cu.o
 
 src/reference/initialize_reference_operations.i: src/reference/initialize_reference_operations.cu.i
@@ -2095,7 +2095,7 @@ src/reference/initialize_reference_operations.i: src/reference/initialize_refere
 
 # target to preprocess a source file
 src/reference/initialize_reference_operations.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.i
 .PHONY : src/reference/initialize_reference_operations.cu.i
 
 src/reference/initialize_reference_operations.s: src/reference/initialize_reference_operations.cu.s
@@ -2103,7 +2103,7 @@ src/reference/initialize_reference_operations.s: src/reference/initialize_refere
 
 # target to generate assembly for a file
 src/reference/initialize_reference_operations.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/reference/initialize_reference_operations.cu.s
 .PHONY : src/reference/initialize_reference_operations.cu.s
 
 src/singleton.o: src/singleton.cu.o
@@ -2111,7 +2111,7 @@ src/singleton.o: src/singleton.cu.o
 
 # target to build an object file
 src/singleton.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.o
 .PHONY : src/singleton.cu.o
 
 src/singleton.i: src/singleton.cu.i
@@ -2119,7 +2119,7 @@ src/singleton.i: src/singleton.cu.i
 
 # target to preprocess a source file
 src/singleton.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.i
 .PHONY : src/singleton.cu.i
 
 src/singleton.s: src/singleton.cu.s
@@ -2127,7 +2127,7 @@ src/singleton.s: src/singleton.cu.s
 
 # target to generate assembly for a file
 src/singleton.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/singleton.cu.s
 .PHONY : src/singleton.cu.s
 
 src/util.o: src/util.cu.o
@@ -2135,7 +2135,7 @@ src/util.o: src/util.cu.o
 
 # target to build an object file
 src/util.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.o
 .PHONY : src/util.cu.o
 
 src/util.i: src/util.cu.i
@@ -2143,7 +2143,7 @@ src/util.i: src/util.cu.i
 
 # target to preprocess a source file
 src/util.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.i
 .PHONY : src/util.cu.i
 
 src/util.s: src/util.cu.s
@@ -2151,7 +2151,7 @@ src/util.s: src/util.cu.s
 
 # target to generate assembly for a file
 src/util.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f tools/library/CMakeFiles/cutlass_library_objs.dir/build.make tools/library/CMakeFiles/cutlass_library_objs.dir/src/util.cu.s
 .PHONY : src/util.cu.s
 
 # Help Target
@@ -2423,7 +2423,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

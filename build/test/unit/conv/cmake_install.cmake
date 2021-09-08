@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/test/unit/conv
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/test/unit/conv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/github/cutlass/build/test/unit/conv/device/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/conv/device/cmake_install.cmake")
 
 endif()
 

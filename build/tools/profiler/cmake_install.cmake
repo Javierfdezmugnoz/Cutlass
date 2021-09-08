@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/tools/profiler
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/tools/profiler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cutlass_profiler"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/tools/profiler/cutlass_profiler")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/tools/profiler/cutlass_profiler")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cutlass_profiler" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cutlass_profiler")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cutlass_profiler"
-         OLD_RPATH "/usr/local/cuda-10.2/lib64/stubs:/home/ubuntu/github/cutlass/build/tools/library:/usr/local/cuda-10.2/lib64:"
+         OLD_RPATH "/usr/local/cuda-10.2/lib64/stubs:/home/javifdez/git_repositories/Cutlass/build/tools/library:/usr/local/cuda-10.2/lib64:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cutlass_profiler")
@@ -63,18 +63,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_0.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_0.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_1.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_1.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_2.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_2.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_3.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/tools/profiler/CTestTestfile.ctest_profiler_3.cmake")
 endif()
 

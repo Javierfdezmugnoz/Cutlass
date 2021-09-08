@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/examples/03_visualize_layout
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/examples/03_visualize_layout
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/03_visualize_layout"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/examples/03_visualize_layout/03_visualize_layout")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/03_visualize_layout/03_visualize_layout")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/03_visualize_layout" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/03_visualize_layout")
     file(RPATH_CHANGE
@@ -63,10 +63,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/examples/03_visualize_layout/CTestTestfile.ctest_examples_03_visualize_layout_0.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/03_visualize_layout/CTestTestfile.ctest_examples_03_visualize_layout_0.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/examples/03_visualize_layout/CTestTestfile.ctest_examples_03_visualize_layout_1.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/03_visualize_layout/CTestTestfile.ctest_examples_03_visualize_layout_1.cmake")
 endif()
 

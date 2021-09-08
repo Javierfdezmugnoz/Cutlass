@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Utility rule file for test_unit_gemm_threadblock.
 
@@ -67,7 +67,7 @@ include test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/com
 include test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/progress.make
 
 test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock: test/unit/gemm/threadblock/cutlass_test_unit_gemm_threadblock
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/threadblock && ./cutlass_test_unit_gemm_threadblock --gtest_output=xml:test_unit_gemm_threadblock.gtest.xml
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/threadblock && ./cutlass_test_unit_gemm_threadblock --gtest_output=xml:test_unit_gemm_threadblock.gtest.xml
 
 test_unit_gemm_threadblock: test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock
 test_unit_gemm_threadblock: test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/build.make
@@ -78,10 +78,10 @@ test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/build: test
 .PHONY : test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/build
 
 test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/threadblock && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_threadblock.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/threadblock && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_threadblock.dir/cmake_clean.cmake
 .PHONY : test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/clean
 
 test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/gemm/threadblock /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/gemm/threadblock /home/ubuntu/github/cutlass/build/test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/gemm/threadblock /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/threadblock /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/gemm/threadblock/CMakeFiles/test_unit_gemm_threadblock.dir/depend
 

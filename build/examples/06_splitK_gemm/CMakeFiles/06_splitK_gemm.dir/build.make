@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/depend.make
@@ -72,16 +72,16 @@ include examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/flags.make
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o: examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/flags.make
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o: ../examples/06_splitK_gemm/splitk_gemm.cu
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o: examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o"
-	cd /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o -MF CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o.d -o CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o -c /home/ubuntu/github/cutlass/examples/06_splitK_gemm/splitk_gemm.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o"
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o -MF CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o.d -o CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.o -c /home/javifdez/git_repositories/Cutlass/examples/06_splitK_gemm/splitk_gemm.cu
 
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.i"
-	cd /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/examples/06_splitK_gemm/splitk_gemm.cu > CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/examples/06_splitK_gemm/splitk_gemm.cu > CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.i
 
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.s"
-	cd /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/examples/06_splitK_gemm/splitk_gemm.cu -o CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/examples/06_splitK_gemm/splitk_gemm.cu -o CMakeFiles/06_splitK_gemm.dir/splitk_gemm.cu.s
 
 # Object files for target 06_splitK_gemm
 06_splitK_gemm_OBJECTS = \
@@ -94,18 +94,18 @@ examples/06_splitK_gemm/06_splitK_gemm: examples/06_splitK_gemm/CMakeFiles/06_sp
 examples/06_splitK_gemm/06_splitK_gemm: examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/build.make
 examples/06_splitK_gemm/06_splitK_gemm: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/06_splitK_gemm/06_splitK_gemm: examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 06_splitK_gemm"
-	cd /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/06_splitK_gemm.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 06_splitK_gemm"
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/06_splitK_gemm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/build: examples/06_splitK_gemm/06_splitK_gemm
 .PHONY : examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/build
 
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm && $(CMAKE_COMMAND) -P CMakeFiles/06_splitK_gemm.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm && $(CMAKE_COMMAND) -P CMakeFiles/06_splitK_gemm.dir/cmake_clean.cmake
 .PHONY : examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/clean
 
 examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/06_splitK_gemm /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm /home/ubuntu/github/cutlass/build/examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/06_splitK_gemm /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm /home/javifdez/git_repositories/Cutlass/build/examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/06_splitK_gemm/CMakeFiles/06_splitK_gemm.dir/depend
 

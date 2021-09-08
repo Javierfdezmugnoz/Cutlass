@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/examples/09_turing_tensorop_conv2dfprop
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/09_turing_tensorop_conv2dfprop"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/09_turing_tensorop_conv2dfprop" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/09_turing_tensorop_conv2dfprop")
     file(RPATH_CHANGE
@@ -63,6 +63,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop/CTestTestfile.ctest_examples_09_turing_tensorop_conv2dfprop.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop/CTestTestfile.ctest_examples_09_turing_tensorop_conv2dfprop.cmake")
 endif()
 

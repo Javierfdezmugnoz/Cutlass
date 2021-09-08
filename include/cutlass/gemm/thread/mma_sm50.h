@@ -172,7 +172,7 @@ struct MmaGeneric {
       // ==============================================================================
       //    Implementation of the execution signature in the Intermediate loop
       // ==============================================================================
-        #if INTERMEDIATE_ES ==  XOR_CHECKSUM
+        #if INTERMEDIATE_ES==XOR_CHECKSUM
           atomicXor(&d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
           atomicXor(&d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
           atomicXor(&d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));

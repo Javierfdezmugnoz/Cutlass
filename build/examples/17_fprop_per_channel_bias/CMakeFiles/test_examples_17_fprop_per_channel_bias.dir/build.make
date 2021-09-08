@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Utility rule file for test_examples_17_fprop_per_channel_bias.
 
@@ -67,7 +67,7 @@ include examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per
 include examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/progress.make
 
 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias: examples/17_fprop_per_channel_bias/17_fprop_per_channel_bias
-	cd /home/ubuntu/github/cutlass/build/examples/17_fprop_per_channel_bias && ./17_fprop_per_channel_bias
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/17_fprop_per_channel_bias && ./17_fprop_per_channel_bias
 
 test_examples_17_fprop_per_channel_bias: examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias
 test_examples_17_fprop_per_channel_bias: examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build.make
@@ -78,10 +78,10 @@ examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel
 .PHONY : examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/build
 
 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/17_fprop_per_channel_bias && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/17_fprop_per_channel_bias && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/cmake_clean.cmake
 .PHONY : examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/clean
 
 examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/17_fprop_per_channel_bias /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/17_fprop_per_channel_bias /home/ubuntu/github/cutlass/build/examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/17_fprop_per_channel_bias /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/17_fprop_per_channel_bias /home/javifdez/git_repositories/Cutlass/build/examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/17_fprop_per_channel_bias/CMakeFiles/test_examples_17_fprop_per_channel_bias.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/test/unit/gemm
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/test/unit/gemm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,10 +44,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/github/cutlass/build/test/unit/gemm/thread/cmake_install.cmake")
-  include("/home/ubuntu/github/cutlass/build/test/unit/gemm/warp/cmake_install.cmake")
-  include("/home/ubuntu/github/cutlass/build/test/unit/gemm/threadblock/cmake_install.cmake")
-  include("/home/ubuntu/github/cutlass/build/test/unit/gemm/device/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/thread/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/warp/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/threadblock/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device/cmake_install.cmake")
 
 endif()
 

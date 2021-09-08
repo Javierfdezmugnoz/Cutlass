@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -121,7 +121,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -131,7 +131,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/gemm/thread//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/thread//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/clean
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/rule
 .PHONY : test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_gemm_thread: test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.di
 
 # fast build rule for target.
 test_unit_gemm_thread/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/test_unit_gemm_thread.dir/build
 .PHONY : test_unit_gemm_thread/fast
 
 # Convenience name for target.
 test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/rule
 .PHONY : test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_gemm_thread: test/unit/gemm/thread/CMakeFiles/cutlass_test_uni
 
 # fast build rule for target.
 cutlass_test_unit_gemm_thread/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build
 .PHONY : cutlass_test_unit_gemm_thread/fast
 
 gemm_sm50.o: gemm_sm50.cu.o
@@ -225,7 +225,7 @@ gemm_sm50.o: gemm_sm50.cu.o
 
 # target to build an object file
 gemm_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.o
 .PHONY : gemm_sm50.cu.o
 
 gemm_sm50.i: gemm_sm50.cu.i
@@ -233,7 +233,7 @@ gemm_sm50.i: gemm_sm50.cu.i
 
 # target to preprocess a source file
 gemm_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.i
 .PHONY : gemm_sm50.cu.i
 
 gemm_sm50.s: gemm_sm50.cu.s
@@ -241,7 +241,7 @@ gemm_sm50.s: gemm_sm50.cu.s
 
 # target to generate assembly for a file
 gemm_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm50.cu.s
 .PHONY : gemm_sm50.cu.s
 
 gemm_sm60.o: gemm_sm60.cu.o
@@ -249,7 +249,7 @@ gemm_sm60.o: gemm_sm60.cu.o
 
 # target to build an object file
 gemm_sm60.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.o
 .PHONY : gemm_sm60.cu.o
 
 gemm_sm60.i: gemm_sm60.cu.i
@@ -257,7 +257,7 @@ gemm_sm60.i: gemm_sm60.cu.i
 
 # target to preprocess a source file
 gemm_sm60.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.i
 .PHONY : gemm_sm60.cu.i
 
 gemm_sm60.s: gemm_sm60.cu.s
@@ -265,7 +265,7 @@ gemm_sm60.s: gemm_sm60.cu.s
 
 # target to generate assembly for a file
 gemm_sm60.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm60.cu.s
 .PHONY : gemm_sm60.cu.s
 
 gemm_sm61.o: gemm_sm61.cu.o
@@ -273,7 +273,7 @@ gemm_sm61.o: gemm_sm61.cu.o
 
 # target to build an object file
 gemm_sm61.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.o
 .PHONY : gemm_sm61.cu.o
 
 gemm_sm61.i: gemm_sm61.cu.i
@@ -281,7 +281,7 @@ gemm_sm61.i: gemm_sm61.cu.i
 
 # target to preprocess a source file
 gemm_sm61.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.i
 .PHONY : gemm_sm61.cu.i
 
 gemm_sm61.s: gemm_sm61.cu.s
@@ -289,7 +289,7 @@ gemm_sm61.s: gemm_sm61.cu.s
 
 # target to generate assembly for a file
 gemm_sm61.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/build.make test/unit/gemm/thread/CMakeFiles/cutlass_test_unit_gemm_thread.dir/gemm_sm61.cu.s
 .PHONY : gemm_sm61.cu.s
 
 # Help Target
@@ -329,7 +329,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

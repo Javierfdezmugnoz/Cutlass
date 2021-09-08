@@ -51,16 +51,28 @@ else()
   list(APPEND CUTLASS_CUDA_NVCC_FLAGS --std=c++11)
 endif()
 
+# Included by Jfdez
 
-set(EXTERNAL_ES "${EXTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
-set(INTERMEDIATE_ES "${INTERMEDIATE_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
-set(INTERNAL_ES "${INTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
-set(NAME "${NAME}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+#if(NOT DIM_M)
+#  set(DIM_M 128)
+#endif()
+
+# Default values
+#set(DIM_M ${DIM_M} CACHE STRING "Dimension M of the input matrix" FORCE)
+#set(DIM_N ${DIM_N} CACHE STRING "Dimension N of the input matrix" FORCE)
+#set(DIM_K ${DIM_K} CACHE STRING "Dimension K of the input matrix" FORCE)
+#set(EXTERNAL_ES "${EXTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+#set(INTERMEDIATE_ES "${INTERMEDIATE_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+#set(INTERNAL_ES "${INTERNAL_ES}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+#set(NAME "${NAME}" CACHE STRING "The checksum implemented in the external loop" FORCE)
+
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DEXTERNAL_ES=${EXTERNAL_ES})
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DINTERMEDIATE_ES=${INTERMEDIATE_ES})
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DINTERNAL_ES=${INTERNAL_ES})
   list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DNAME="${NAME}")
-
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DDIM_M=${DIM_M})
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DDIM_N=${DIM_N})
+  list(APPEND CUTLASS_CUDA_CLANG_FLAGS -DDIM_K=${DIM_K})
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX install CACHE PATH "Default installation location." FORCE)

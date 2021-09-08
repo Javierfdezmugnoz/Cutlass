@@ -1,8 +1,8 @@
 # CMake generated Testfile for 
-# Source directory: /home/ubuntu/github/cutlass/examples/12_gemm_bias_relu
-# Build directory: /home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu
+# Source directory: /home/javifdez/git_repositories/Cutlass/examples/12_gemm_bias_relu
+# Build directory: /home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(ctest_examples_12_gemm_bias_relu "/home/ubuntu/github/cutlass/build/examples/12_gemm_bias_relu/12_gemm_bias_relu")
-set_tests_properties(ctest_examples_12_gemm_bias_relu PROPERTIES  _BACKTRACE_TRIPLES "/home/ubuntu/github/cutlass/CMakeLists.txt;629;add_test;/home/ubuntu/github/cutlass/examples/CMakeLists.txt;57;cutlass_add_executable_tests;/home/ubuntu/github/cutlass/examples/12_gemm_bias_relu/CMakeLists.txt;23;cutlass_example_add_executable;/home/ubuntu/github/cutlass/examples/12_gemm_bias_relu/CMakeLists.txt;0;")
+add_test(ctest_examples_12_gemm_bias_relu "/home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu/12_gemm_bias_relu")
+set_tests_properties(ctest_examples_12_gemm_bias_relu PROPERTIES  _BACKTRACE_TRIPLES "/home/javifdez/git_repositories/Cutlass/CMakeLists.txt;641;add_test;/home/javifdez/git_repositories/Cutlass/examples/CMakeLists.txt;57;cutlass_add_executable_tests;/home/javifdez/git_repositories/Cutlass/examples/12_gemm_bias_relu/CMakeLists.txt;23;cutlass_example_add_executable;/home/javifdez/git_repositories/Cutlass/examples/12_gemm_bias_relu/CMakeLists.txt;0;")

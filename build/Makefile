@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -114,7 +114,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	/usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,9 +162,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -188,7 +188,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -2542,7 +2542,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

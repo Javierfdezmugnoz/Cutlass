@@ -11,6 +11,7 @@
 #define TWOS_CHECKSUM 3
 #define FLETCHER_CHECKSUM 4
 #define CRC_CHECKSUM 5
+#define DEFAULT_DIM 128
 
 #ifndef EXTERNAL_ES
   #define EXTERNAL_ES UNPROTECTED
@@ -23,6 +24,19 @@
 #ifndef INTERNAL_ES
   #define INTERNAL_ES XOR_CHECKSUM
 #endif
+
+#ifndef DIM_M
+  #define DIM_M DEFAULT_DIM
+#endif
+
+#ifndef DIM_N
+  #define DIM_N DEFAULT_DIM
+#endif
+
+#ifndef DIM_K
+  #define DIM_K DEFAULT_DIM
+#endif
+
 
 extern __shared__ uint32_t d_CRC_table_shared[];
 // extern __constant__ uint32_t d_CRC_table[];

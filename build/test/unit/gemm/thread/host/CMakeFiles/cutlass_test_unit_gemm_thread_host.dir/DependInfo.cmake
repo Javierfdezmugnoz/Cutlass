@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/github/cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu" "test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o" "gcc" "test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o.d"
+  "/home/javifdez/git_repositories/Cutlass/test/unit/gemm/thread/host/gemm_sm60_host.cu" "test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o" "gcc" "test/unit/gemm/thread/host/CMakeFiles/cutlass_test_unit_gemm_thread_host.dir/gemm_sm60_host.cu.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ubuntu/github/cutlass/build/_deps/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/javifdez/git_repositories/Cutlass/build/_deps/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

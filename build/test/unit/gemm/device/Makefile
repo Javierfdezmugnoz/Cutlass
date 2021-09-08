@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -123,7 +123,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/ubuntu/github/cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -153,7 +153,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/ubuntu/github/cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -162,14 +162,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles /home/ubuntu/github/cutlass/build/test/unit/gemm/device//CMakeFiles/progress.marks
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/github/cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/clean
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/preinstall
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ cutlass_test_unit_gemm_device_sparse_tensorop_sm80: test/unit/gemm/device/CMakeF
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_sparse_tensorop_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build
 .PHONY : cutlass_test_unit_gemm_device_sparse_tensorop_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ test_unit_gemm_device_wmma: test/unit/gemm/device/CMakeFiles/test_unit_gemm_devi
 
 # fast build rule for target.
 test_unit_gemm_device_wmma/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_wmma.dir/build
 .PHONY : test_unit_gemm_device_wmma/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/rule
 
 # Convenience name for target.
@@ -231,12 +231,12 @@ cutlass_test_unit_gemm_device_wmma: test/unit/gemm/device/CMakeFiles/cutlass_tes
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_wmma/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build
 .PHONY : cutlass_test_unit_gemm_device_wmma/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/rule
 
 # Convenience name for target.
@@ -245,12 +245,12 @@ cutlass_test_unit_gemm_device_tensorop_s32_sm80: test/unit/gemm/device/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_s32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_s32_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/rule
 
 # Convenience name for target.
@@ -259,12 +259,12 @@ test_unit_gemm_device_tensorop_sm70: test/unit/gemm/device/CMakeFiles/test_unit_
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_sm70/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm70.dir/build
 .PHONY : test_unit_gemm_device_tensorop_sm70/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/rule
 
 # Convenience name for target.
@@ -273,12 +273,12 @@ test_unit_gemm_device_sparse_tensorop_sm80: test/unit/gemm/device/CMakeFiles/tes
 
 # fast build rule for target.
 test_unit_gemm_device_sparse_tensorop_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_sparse_tensorop_sm80.dir/build
 .PHONY : test_unit_gemm_device_sparse_tensorop_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/rule
 
 # Convenience name for target.
@@ -287,12 +287,12 @@ cutlass_test_unit_gemm_device_tensorop_f64: test/unit/gemm/device/CMakeFiles/cut
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_f64/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_f64/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/rule
 
 # Convenience name for target.
@@ -301,12 +301,12 @@ cutlass_test_unit_gemm_device_tensorop_f32_sm80: test/unit/gemm/device/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_f32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_f32_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/rule
 
 # Convenience name for target.
@@ -315,12 +315,12 @@ test_unit_gemm_device_tensorop_f64: test/unit/gemm/device/CMakeFiles/test_unit_g
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_f64/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build
 .PHONY : test_unit_gemm_device_tensorop_f64/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/rule
 
 # Convenience name for target.
@@ -329,12 +329,12 @@ cutlass_test_unit_gemm_device_simt: test/unit/gemm/device/CMakeFiles/cutlass_tes
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_simt/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build
 .PHONY : cutlass_test_unit_gemm_device_simt/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/rule
 
 # Convenience name for target.
@@ -343,12 +343,12 @@ test_unit_gemm_device_tensorop_planar_complex: test/unit/gemm/device/CMakeFiles/
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_planar_complex/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_planar_complex.dir/build
 .PHONY : test_unit_gemm_device_tensorop_planar_complex/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ cutlass_test_unit_gemm_device: test/unit/gemm/device/CMakeFiles/cutlass_test_uni
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device.dir/build
 .PHONY : cutlass_test_unit_gemm_device/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/rule
 
 # Convenience name for target.
@@ -371,12 +371,12 @@ cutlass_test_unit_gemm_device_tensorop_planar_complex: test/unit/gemm/device/CMa
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_planar_complex/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_planar_complex/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/rule
 
 # Convenience name for target.
@@ -385,12 +385,12 @@ test_unit_gemm_device_tensorop_s32_sm80: test/unit/gemm/device/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_s32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_s32_sm80.dir/build
 .PHONY : test_unit_gemm_device_tensorop_s32_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/rule
 
 # Convenience name for target.
@@ -399,12 +399,12 @@ cutlass_test_unit_gemm_device_tensorop_sm70: test/unit/gemm/device/CMakeFiles/cu
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_sm70/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_sm70/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/rule
 
 # Convenience name for target.
@@ -413,12 +413,12 @@ cutlass_test_unit_gemm_device_tensorop_sm75: test/unit/gemm/device/CMakeFiles/cu
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_sm75/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_sm75/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/rule
 
 # Convenience name for target.
@@ -427,12 +427,12 @@ test_unit_gemm_device_tensorop_sm75: test/unit/gemm/device/CMakeFiles/test_unit_
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_sm75/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_sm75.dir/build
 .PHONY : test_unit_gemm_device_tensorop_sm75/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
 
 # Convenience name for target.
@@ -441,12 +441,12 @@ test_unit_gemm_device_tensorop_f32_tf32_sm80: test/unit/gemm/device/CMakeFiles/t
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_f32_tf32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build
 .PHONY : test_unit_gemm_device_tensorop_f32_tf32_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/rule
 
 # Convenience name for target.
@@ -455,12 +455,12 @@ cutlass_test_unit_gemm_device_tensorop_f16_sm80: test/unit/gemm/device/CMakeFile
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_f16_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_f16_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/rule
 
 # Convenience name for target.
@@ -469,12 +469,12 @@ test_unit_gemm_device_simt: test/unit/gemm/device/CMakeFiles/test_unit_gemm_devi
 
 # fast build rule for target.
 test_unit_gemm_device_simt/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_simt.dir/build
 .PHONY : test_unit_gemm_device_simt/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/rule
 
 # Convenience name for target.
@@ -483,12 +483,12 @@ test_unit_gemm_device: test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.di
 
 # fast build rule for target.
 test_unit_gemm_device/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device.dir/build
 .PHONY : test_unit_gemm_device/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/rule
 
 # Convenience name for target.
@@ -497,12 +497,12 @@ test_unit_gemm_device_tensorop_f16_sm80: test/unit/gemm/device/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_f16_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f16_sm80.dir/build
 .PHONY : test_unit_gemm_device_tensorop_f16_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/rule
 
 # Convenience name for target.
@@ -511,12 +511,12 @@ test_unit_gemm_device_tensorop_f32_sm80: test/unit/gemm/device/CMakeFiles/test_u
 
 # fast build rule for target.
 test_unit_gemm_device_tensorop_f32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f32_sm80.dir/build
 .PHONY : test_unit_gemm_device_tensorop_f32_sm80/fast
 
 # Convenience name for target.
 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
 .PHONY : test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/rule
 
 # Convenience name for target.
@@ -525,7 +525,7 @@ cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80: test/unit/gemm/device/CMak
 
 # fast build rule for target.
 cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80/fast:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build
 .PHONY : cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80/fast
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.o
@@ -533,7 +533,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.o
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.i
@@ -541,7 +541,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.i
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.s
@@ -549,7 +549,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm75.cu.s
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.o: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.o
@@ -557,7 +557,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm80.o: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.o
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.i: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.i
@@ -565,7 +565,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm80.i: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.i
 
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.s: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.s
@@ -573,7 +573,7 @@ gemm_b1t_b1n_s32n_tensor_op_s32_sm80.s: gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_b1t_b1n_s32n_tensor_op_s32_sm80.cu.s
 
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.o
@@ -581,7 +581,7 @@ gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32n_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.o
 
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.i
@@ -589,7 +589,7 @@ gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32n_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.i
 
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.s
@@ -597,7 +597,7 @@ gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32n_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_b1t_b1n_s32n_wmma_tensor_op_s32_sm75.cu.s
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.o
@@ -605,7 +605,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.o
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.i
@@ -613,7 +613,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.i
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.s
@@ -621,7 +621,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm75.cu.s
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.o: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.o
@@ -629,7 +629,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm80.o: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.o
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.i: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.i
@@ -637,7 +637,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm80.i: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.i
 
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.s: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.s
@@ -645,7 +645,7 @@ gemm_b1t_b1n_s32t_tensor_op_s32_sm80.s: gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_b1t_b1n_s32t_tensor_op_s32_sm80.cu.s
 
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.o
@@ -653,7 +653,7 @@ gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.o: gemm_b1t_b1n_s32t_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.o
 
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.i
@@ -661,7 +661,7 @@ gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.i: gemm_b1t_b1n_s32t_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.i
 
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.s
@@ -669,7 +669,7 @@ gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.s: gemm_b1t_b1n_s32t_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_b1t_b1n_s32t_wmma_tensor_op_s32_sm75.cu.s
 
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.o: gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.o
@@ -677,7 +677,7 @@ gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.o: gemm_bf16n_bf16n_f32t_tensor_op_f32_
 
 # target to build an object file
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.i: gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.i
@@ -685,7 +685,7 @@ gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.i: gemm_bf16n_bf16n_f32t_tensor_op_f32_
 
 # target to preprocess a source file
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.s: gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.s
@@ -693,7 +693,7 @@ gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.s: gemm_bf16n_bf16n_f32t_tensor_op_f32_
 
 # target to generate assembly for a file
 gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_bf16n_bf16n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.o: gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.o
@@ -701,7 +701,7 @@ gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.o: gemm_bf16t_bf16t_bf16t_tensor_op_f3
 
 # target to build an object file
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.o
 
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.i: gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.i
@@ -709,7 +709,7 @@ gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.i: gemm_bf16t_bf16t_bf16t_tensor_op_f3
 
 # target to preprocess a source file
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.i
 
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.s: gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.s
@@ -717,7 +717,7 @@ gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.s: gemm_bf16t_bf16t_bf16t_tensor_op_f3
 
 # target to generate assembly for a file
 gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_bf16t_bf16t_bf16t_tensor_op_f32_sm80.cu.s
 
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.o: gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.o
@@ -725,7 +725,7 @@ gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.o: gemm_cf32n_cf32t_cf32t_tensor_
 
 # target to build an object file
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.o
 .PHONY : gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.o
 
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.i: gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.i
@@ -733,7 +733,7 @@ gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.i: gemm_cf32n_cf32t_cf32t_tensor_
 
 # target to preprocess a source file
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.i
 .PHONY : gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.i
 
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.s: gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.s
@@ -741,7 +741,7 @@ gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.s: gemm_cf32n_cf32t_cf32t_tensor_
 
 # target to generate assembly for a file
 gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.s
 .PHONY : gemm_cf32n_cf32t_cf32t_tensor_op_tf32_f32_sm80.cu.s
 
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.o: gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.o
@@ -749,7 +749,7 @@ gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.o: gemm_cf32t_cf32n_cf32t_tensor_
 
 # target to build an object file
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.o
 .PHONY : gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.o
 
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.i: gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.i
@@ -757,7 +757,7 @@ gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.i: gemm_cf32t_cf32n_cf32t_tensor_
 
 # target to preprocess a source file
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.i
 .PHONY : gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.i
 
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.s: gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.s
@@ -765,7 +765,7 @@ gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.s: gemm_cf32t_cf32n_cf32t_tensor_
 
 # target to generate assembly for a file
 gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.s
 .PHONY : gemm_cf32t_cf32n_cf32t_tensor_op_tf32_f32_sm80.cu.s
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
@@ -773,7 +773,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_cf64n_cf64t_cf64t_ten
 
 # target to build an object file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
@@ -781,7 +781,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_cf64n_cf64t_cf64t_ten
 
 # target to preprocess a source file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
@@ -789,7 +789,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_cf64n_cf64t_cf64t_ten
 
 # target to generate assembly for a file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.o: gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
@@ -797,7 +797,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.o: gemm_cf64n_cf64t_cf64t_tensor_op_f6
 
 # target to build an object file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.i: gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
@@ -805,7 +805,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.i: gemm_cf64n_cf64t_cf64t_tensor_op_f6
 
 # target to preprocess a source file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
 
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.s: gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
@@ -813,7 +813,7 @@ gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.s: gemm_cf64n_cf64t_cf64t_tensor_op_f6
 
 # target to generate assembly for a file
 gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
 .PHONY : gemm_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.o
@@ -821,7 +821,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_cf64t_cf64n_cf64t_ten
 
 # target to build an object file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.i
@@ -829,7 +829,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_cf64t_cf64n_cf64t_ten
 
 # target to preprocess a source file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.s
@@ -837,7 +837,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_cf64t_cf64n_cf64t_ten
 
 # target to generate assembly for a file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.o: gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.o
@@ -845,7 +845,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.o: gemm_cf64t_cf64n_cf64t_tensor_op_f6
 
 # target to build an object file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.o
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.o
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.i: gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.i
@@ -853,7 +853,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.i: gemm_cf64t_cf64n_cf64t_tensor_op_f6
 
 # target to preprocess a source file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.i
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.i
 
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.s: gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.s
@@ -861,7 +861,7 @@ gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.s: gemm_cf64t_cf64n_cf64t_tensor_op_f6
 
 # target to generate assembly for a file
 gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.s
 .PHONY : gemm_cf64t_cf64n_cf64t_tensor_op_f64_sm80.cu.s
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
@@ -869,7 +869,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
@@ -877,7 +877,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
@@ -885,7 +885,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
@@ -893,7 +893,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
@@ -901,7 +901,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
@@ -909,7 +909,7 @@ gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.o: gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.o
@@ -917,7 +917,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm75.o: gemm_f16n_f16n_f16t_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.o
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.i: gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.i
@@ -925,7 +925,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm75.i: gemm_f16n_f16n_f16t_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.i
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.s: gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.s
@@ -933,7 +933,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm75.s: gemm_f16n_f16n_f16t_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm75.cu.s
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.o: gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.o
@@ -941,7 +941,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm80.o: gemm_f16n_f16n_f16t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.o
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.i: gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.i
@@ -949,7 +949,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm80.i: gemm_f16n_f16n_f16t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.i
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.s: gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.s
@@ -957,7 +957,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sm80.s: gemm_f16n_f16n_f16t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sm80.cu.s
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.o
@@ -965,7 +965,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16n_f16t_tensor_op_f
 
 # target to build an object file
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.i
@@ -973,7 +973,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16n_f16t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.s
@@ -981,7 +981,7 @@ gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16n_f16t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f16n_f16n_f16t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.o
@@ -989,7 +989,7 @@ gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16t_volta_tensor
 
 # target to build an object file
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.i
@@ -997,7 +997,7 @@ gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.s
@@ -1005,7 +1005,7 @@ gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f16t_volta_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
@@ -1013,7 +1013,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
@@ -1021,7 +1021,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
@@ -1029,7 +1029,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
@@ -1037,7 +1037,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
@@ -1045,7 +1045,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
@@ -1053,7 +1053,7 @@ gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.o: gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.o
@@ -1061,7 +1061,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm75.o: gemm_f16n_f16n_f32n_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.o
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.i: gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.i
@@ -1069,7 +1069,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm75.i: gemm_f16n_f16n_f32n_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.i
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.s: gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.s
@@ -1077,7 +1077,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm75.s: gemm_f16n_f16n_f32n_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm75.cu.s
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.o: gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.o
@@ -1085,7 +1085,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm80.o: gemm_f16n_f16n_f32n_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.o
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.i: gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.i
@@ -1093,7 +1093,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm80.i: gemm_f16n_f16n_f32n_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.i
 
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.s: gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.s
@@ -1101,7 +1101,7 @@ gemm_f16n_f16n_f32n_tensor_op_f32_sm80.s: gemm_f16n_f16n_f32n_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16n_f16n_f32n_tensor_op_f32_sm80.cu.s
 
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
@@ -1109,7 +1109,7 @@ gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
@@ -1117,7 +1117,7 @@ gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
@@ -1125,7 +1125,7 @@ gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.o: gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.o
@@ -1133,7 +1133,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm75.o: gemm_f16n_f16n_f32t_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.o
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.i: gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.i
@@ -1141,7 +1141,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm75.i: gemm_f16n_f16n_f32t_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.i
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.s: gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.s
@@ -1149,7 +1149,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm75.s: gemm_f16n_f16n_f32t_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm75.cu.s
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.o: gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.o
@@ -1157,7 +1157,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm80.o: gemm_f16n_f16n_f32t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.i: gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.i
@@ -1165,7 +1165,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm80.i: gemm_f16n_f16n_f32t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.s: gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.s
@@ -1173,7 +1173,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sm80.s: gemm_f16n_f16n_f32t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -1181,7 +1181,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16n_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -1189,7 +1189,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16n_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -1197,7 +1197,7 @@ gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16n_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f16n_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
@@ -1205,7 +1205,7 @@ gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32t_volta_tensor
 
 # target to build an object file
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
@@ -1213,7 +1213,7 @@ gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
@@ -1221,7 +1221,7 @@ gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
@@ -1229,7 +1229,7 @@ gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16n_f32t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
@@ -1237,7 +1237,7 @@ gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16n_f32t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
@@ -1245,7 +1245,7 @@ gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16n_f32t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
@@ -1253,7 +1253,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
@@ -1261,7 +1261,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
@@ -1269,7 +1269,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
@@ -1277,7 +1277,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
@@ -1285,7 +1285,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
@@ -1293,7 +1293,7 @@ gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.o: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.o
@@ -1301,7 +1301,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.o: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to build an object file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.o
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.o
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.i: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.i
@@ -1309,7 +1309,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.i: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.i
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.i
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.s: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.s
@@ -1317,7 +1317,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.s: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.s
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm75.cu.s
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.o: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.o
@@ -1325,7 +1325,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.o: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to build an object file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.o
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.o
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.i: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.i
@@ -1333,7 +1333,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.i: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.i
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.i
 
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.s: gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.s
@@ -1341,7 +1341,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.s: gemm_f16n_f16t_f16t_tensor_op_
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.s
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_slicedk_sm80.cu.s
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.o: gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.o
@@ -1349,7 +1349,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm75.o: gemm_f16n_f16t_f16t_tensor_op_f16_sm75
 
 # target to build an object file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.o
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.o
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.i: gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.i
@@ -1357,7 +1357,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm75.i: gemm_f16n_f16t_f16t_tensor_op_f16_sm75
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.i
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.i
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.s: gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.s
@@ -1365,7 +1365,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm75.s: gemm_f16n_f16t_f16t_tensor_op_f16_sm75
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.s
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm75.cu.s
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.o: gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.o
@@ -1373,7 +1373,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm80.o: gemm_f16n_f16t_f16t_tensor_op_f16_sm80
 
 # target to build an object file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.o
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.o
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.i: gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.i
@@ -1381,7 +1381,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm80.i: gemm_f16n_f16t_f16t_tensor_op_f16_sm80
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.i
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.i
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.s: gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.s
@@ -1389,7 +1389,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sm80.s: gemm_f16n_f16t_f16t_tensor_op_f16_sm80
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.s
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sm80.cu.s
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.o: gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.o
@@ -1397,7 +1397,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.o: gemm_f16n_f16t_f16t_tensor_op_f
 
 # target to build an object file
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.o
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.o
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.i: gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.i
@@ -1405,7 +1405,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.i: gemm_f16n_f16t_f16t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.i
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.i
 
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.s: gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.s
@@ -1413,7 +1413,7 @@ gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.s: gemm_f16n_f16t_f16t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.s
 .PHONY : gemm_f16n_f16t_f16t_tensor_op_f16_sparse_sm80.cu.s
 
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.o
@@ -1421,7 +1421,7 @@ gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16t_volta_tensor
 
 # target to build an object file
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.o
 
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.i
@@ -1429,7 +1429,7 @@ gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.i
 
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.s
@@ -1437,7 +1437,7 @@ gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f16t_volta_tensor_op_f16_sm70.cu.s
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
@@ -1445,7 +1445,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
@@ -1453,7 +1453,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
@@ -1461,7 +1461,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
@@ -1469,7 +1469,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
@@ -1477,7 +1477,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
@@ -1485,7 +1485,7 @@ gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
@@ -1493,7 +1493,7 @@ gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
@@ -1501,7 +1501,7 @@ gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
@@ -1509,7 +1509,7 @@ gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.o: gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
@@ -1517,7 +1517,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm75.o: gemm_f16n_f16t_f32t_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.i: gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
@@ -1525,7 +1525,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm75.i: gemm_f16n_f16t_f32t_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.s: gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
@@ -1533,7 +1533,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm75.s: gemm_f16n_f16t_f32t_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.o: gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.o
@@ -1541,7 +1541,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm80.o: gemm_f16n_f16t_f32t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.i: gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.i
@@ -1549,7 +1549,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm80.i: gemm_f16n_f16t_f32t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.s: gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.s
@@ -1557,7 +1557,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sm80.s: gemm_f16n_f16t_f32t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -1565,7 +1565,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16n_f16t_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -1573,7 +1573,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16n_f16t_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -1581,7 +1581,7 @@ gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16n_f16t_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f16n_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
@@ -1589,7 +1589,7 @@ gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32t_volta_tensor
 
 # target to build an object file
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
@@ -1597,7 +1597,7 @@ gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
@@ -1605,7 +1605,7 @@ gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
 
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
@@ -1613,7 +1613,7 @@ gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16n_f16t_f32t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
@@ -1621,7 +1621,7 @@ gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16n_f16t_f32t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
@@ -1629,7 +1629,7 @@ gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16n_f16t_f32t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16n_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.o
@@ -1637,7 +1637,7 @@ gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16n_s
 
 # target to build an object file
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.i
@@ -1645,7 +1645,7 @@ gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16n_s
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.s
@@ -1653,7 +1653,7 @@ gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16n_s
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16n_singlestage_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
@@ -1661,7 +1661,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
@@ -1669,7 +1669,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
@@ -1677,7 +1677,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
@@ -1685,7 +1685,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
@@ -1693,7 +1693,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
@@ -1701,7 +1701,7 @@ gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.o
@@ -1709,7 +1709,7 @@ gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_s
 
 # target to build an object file
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.i
@@ -1717,7 +1717,7 @@ gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_s
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.s
@@ -1725,7 +1725,7 @@ gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_s
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16t_singlestage_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.o: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.o
@@ -1733,7 +1733,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.o: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to build an object file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.o
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.o
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.i: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.i
@@ -1741,7 +1741,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.i: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.i
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.i
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.s: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.s
@@ -1749,7 +1749,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.s: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.s
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm75.cu.s
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.o: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.o
@@ -1757,7 +1757,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.o: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to build an object file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.o
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.o
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.i: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.i
@@ -1765,7 +1765,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.i: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.i
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.i
 
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.s: gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.s
@@ -1773,7 +1773,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.s: gemm_f16t_f16n_f16t_tensor_op_
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f16_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.s
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_slicedk_sm80.cu.s
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.o: gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.o
@@ -1781,7 +1781,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm75.o: gemm_f16t_f16n_f16t_tensor_op_f16_sm75
 
 # target to build an object file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.o
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.o
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.i: gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.i
@@ -1789,7 +1789,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm75.i: gemm_f16t_f16n_f16t_tensor_op_f16_sm75
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.i
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.i
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.s: gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.s
@@ -1797,7 +1797,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm75.s: gemm_f16t_f16n_f16t_tensor_op_f16_sm75
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.s
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm75.cu.s
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.o: gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.o
@@ -1805,7 +1805,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm80.o: gemm_f16t_f16n_f16t_tensor_op_f16_sm80
 
 # target to build an object file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.o
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.o
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.i: gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.i
@@ -1813,7 +1813,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm80.i: gemm_f16t_f16n_f16t_tensor_op_f16_sm80
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.i
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.i
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.s: gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.s
@@ -1821,7 +1821,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sm80.s: gemm_f16t_f16n_f16t_tensor_op_f16_sm80
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.s
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sm80.cu.s
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.o: gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.o
@@ -1829,7 +1829,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.o: gemm_f16t_f16n_f16t_tensor_op_f
 
 # target to build an object file
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.o
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.o
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.i: gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.i
@@ -1837,7 +1837,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.i: gemm_f16t_f16n_f16t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.i
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.i
 
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.s: gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.s
@@ -1845,7 +1845,7 @@ gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.s: gemm_f16t_f16n_f16t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.s
 .PHONY : gemm_f16t_f16n_f16t_tensor_op_f16_sparse_sm80.cu.s
 
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.o
@@ -1853,7 +1853,7 @@ gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_volta_tensor
 
 # target to build an object file
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.i
@@ -1861,7 +1861,7 @@ gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.s
@@ -1869,7 +1869,7 @@ gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16t_volta_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
@@ -1877,7 +1877,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
@@ -1885,7 +1885,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
@@ -1893,7 +1893,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
@@ -1901,7 +1901,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
@@ -1909,7 +1909,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
@@ -1917,7 +1917,7 @@ gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f16t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
@@ -1925,7 +1925,7 @@ gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
@@ -1933,7 +1933,7 @@ gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
@@ -1941,7 +1941,7 @@ gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f32n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.o
@@ -1949,7 +1949,7 @@ gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_s
 
 # target to build an object file
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.i
@@ -1957,7 +1957,7 @@ gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_s
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.s
@@ -1965,7 +1965,7 @@ gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_s
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f32t_singlestage_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.o: gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.o
@@ -1973,7 +1973,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm75.o: gemm_f16t_f16n_f32t_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.o
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.i: gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.i
@@ -1981,7 +1981,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm75.i: gemm_f16t_f16n_f32t_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.i
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.s: gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.s
@@ -1989,7 +1989,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm75.s: gemm_f16t_f16n_f32t_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm75.cu.s
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.o: gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.o
@@ -1997,7 +1997,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm80.o: gemm_f16t_f16n_f32t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.i: gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.i
@@ -2005,7 +2005,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm80.i: gemm_f16t_f16n_f32t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.s: gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.s
@@ -2013,7 +2013,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sm80.s: gemm_f16t_f16n_f32t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2021,7 +2021,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16t_f16n_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2029,7 +2029,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16t_f16n_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2037,7 +2037,7 @@ gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16t_f16n_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f16t_f16n_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
@@ -2045,7 +2045,7 @@ gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_volta_tensor
 
 # target to build an object file
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
@@ -2053,7 +2053,7 @@ gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
@@ -2061,7 +2061,7 @@ gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f32t_volta_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
@@ -2069,7 +2069,7 @@ gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16n_f32t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
@@ -2077,7 +2077,7 @@ gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16n_f32t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
@@ -2085,7 +2085,7 @@ gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16n_f32t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16n_f32t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
@@ -2093,7 +2093,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
@@ -2101,7 +2101,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
@@ -2109,7 +2109,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
@@ -2117,7 +2117,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
@@ -2125,7 +2125,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
@@ -2133,7 +2133,7 @@ gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f16n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f16n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
@@ -2141,7 +2141,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.o: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.o
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
@@ -2149,7 +2149,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.i: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.i
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
@@ -2157,7 +2157,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.s: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f16_sm70.cu.s
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
@@ -2165,7 +2165,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
@@ -2173,7 +2173,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
@@ -2181,7 +2181,7 @@ gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f16t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f16t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.o: gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.o
@@ -2189,7 +2189,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm75.o: gemm_f16t_f16t_f32n_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.o
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.i: gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.i
@@ -2197,7 +2197,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm75.i: gemm_f16t_f16t_f32n_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.i
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.s: gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.s
@@ -2205,7 +2205,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm75.s: gemm_f16t_f16t_f32n_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm75.cu.s
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.o: gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.o
@@ -2213,7 +2213,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm80.o: gemm_f16t_f16t_f32n_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.o
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.i: gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.i
@@ -2221,7 +2221,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm80.i: gemm_f16t_f16t_f32n_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.i
 
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.s: gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.s
@@ -2229,7 +2229,7 @@ gemm_f16t_f16t_f32n_tensor_op_f32_sm80.s: gemm_f16t_f16t_f32n_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16t_f16t_f32n_tensor_op_f32_sm80.cu.s
 
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
@@ -2237,7 +2237,7 @@ gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32n_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
@@ -2245,7 +2245,7 @@ gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32n_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
@@ -2253,7 +2253,7 @@ gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32n_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f32n_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.o: gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.o
@@ -2261,7 +2261,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm75.o: gemm_f16t_f16t_f32t_tensor_op_f32_sm75
 
 # target to build an object file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.o
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.i: gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.i
@@ -2269,7 +2269,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm75.i: gemm_f16t_f16t_f32t_tensor_op_f32_sm75
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.i
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.s: gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.s
@@ -2277,7 +2277,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm75.s: gemm_f16t_f16t_f32t_tensor_op_f32_sm75
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm75.cu.s
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.o: gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.o
@@ -2285,7 +2285,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm80.o: gemm_f16t_f16t_f32t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.i: gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.i
@@ -2293,7 +2293,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm80.i: gemm_f16t_f16t_f32t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.s: gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.s
@@ -2301,7 +2301,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sm80.s: gemm_f16t_f16t_f32t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2309,7 +2309,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f16t_f16t_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2317,7 +2317,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f16t_f16t_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2325,7 +2325,7 @@ gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f16t_f16t_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f16t_f16t_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
@@ -2333,7 +2333,7 @@ gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32t_volta_tensor
 
 # target to build an object file
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
@@ -2341,7 +2341,7 @@ gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32t_volta_tensor
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
@@ -2349,7 +2349,7 @@ gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32t_volta_tensor
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f32t_volta_tensor_op_f32_sm70.cu.s
 
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
@@ -2357,7 +2357,7 @@ gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.o: gemm_f16t_f16t_f32t_wmma_tensor_o
 
 # target to build an object file
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
 .PHONY : gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.o
 
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
@@ -2365,7 +2365,7 @@ gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.i: gemm_f16t_f16t_f32t_wmma_tensor_o
 
 # target to preprocess a source file
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
 .PHONY : gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.i
 
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
@@ -2373,7 +2373,7 @@ gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.s: gemm_f16t_f16t_f32t_wmma_tensor_o
 
 # target to generate assembly for a file
 gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
 .PHONY : gemm_f16t_f16t_f32t_wmma_tensor_op_f32_sm70.cu.s
 
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.o: gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.o
@@ -2381,7 +2381,7 @@ gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.o: gemm_f32n_f32n_f32t_tensor_op_bf1
 
 # target to build an object file
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.o
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.o
 
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.i: gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.i
@@ -2389,7 +2389,7 @@ gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.i: gemm_f32n_f32n_f32t_tensor_op_bf1
 
 # target to preprocess a source file
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.i
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.i
 
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.s: gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.s
@@ -2397,7 +2397,7 @@ gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.s: gemm_f32n_f32n_f32t_tensor_op_bf1
 
 # target to generate assembly for a file
 gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.s
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_bf16_f32_sm80.cu.s
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.o: gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.o
@@ -2405,7 +2405,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sm80.o: gemm_f32n_f32n_f32t_tensor_op_f32_sm80
 
 # target to build an object file
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.i: gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.i
@@ -2413,7 +2413,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sm80.i: gemm_f32n_f32n_f32t_tensor_op_f32_sm80
 
 # target to preprocess a source file
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.s: gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.s
@@ -2421,7 +2421,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sm80.s: gemm_f32n_f32n_f32t_tensor_op_f32_sm80
 
 # target to generate assembly for a file
 gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2429,7 +2429,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32n_f32n_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2437,7 +2437,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32n_f32n_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2445,7 +2445,7 @@ gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32n_f32n_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f32n_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2453,7 +2453,7 @@ gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32n_f32t_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2461,7 +2461,7 @@ gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32n_f32t_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2469,7 +2469,7 @@ gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32n_f32t_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f32n_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2477,7 +2477,7 @@ gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32t_f32n_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2485,7 +2485,7 @@ gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32t_f32n_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2493,7 +2493,7 @@ gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32t_f32n_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f32t_f32n_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
@@ -2501,7 +2501,7 @@ gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.o: gemm_f32t_f32t_f32t_tensor_op_f
 
 # target to build an object file
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
 .PHONY : gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.o
 
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
@@ -2509,7 +2509,7 @@ gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.i: gemm_f32t_f32t_f32t_tensor_op_f
 
 # target to preprocess a source file
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
 .PHONY : gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.i
 
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
@@ -2517,7 +2517,7 @@ gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.s: gemm_f32t_f32t_f32t_tensor_op_f
 
 # target to generate assembly for a file
 gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
 .PHONY : gemm_f32t_f32t_f32t_tensor_op_f32_sparse_sm80.cu.s
 
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.o: gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.o
@@ -2525,7 +2525,7 @@ gemm_f64n_f64t_f64t_tensor_op_f64_sm80.o: gemm_f64n_f64t_f64t_tensor_op_f64_sm80
 
 # target to build an object file
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.o
 .PHONY : gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.o
 
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.i: gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.i
@@ -2533,7 +2533,7 @@ gemm_f64n_f64t_f64t_tensor_op_f64_sm80.i: gemm_f64n_f64t_f64t_tensor_op_f64_sm80
 
 # target to preprocess a source file
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.i
 .PHONY : gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.i
 
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.s: gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.s
@@ -2541,7 +2541,7 @@ gemm_f64n_f64t_f64t_tensor_op_f64_sm80.s: gemm_f64n_f64t_f64t_tensor_op_f64_sm80
 
 # target to generate assembly for a file
 gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.s
 .PHONY : gemm_f64n_f64t_f64t_tensor_op_f64_sm80.cu.s
 
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.o: gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.o
@@ -2549,7 +2549,7 @@ gemm_f64t_f64n_f64t_tensor_op_f64_sm80.o: gemm_f64t_f64n_f64t_tensor_op_f64_sm80
 
 # target to build an object file
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.o
 .PHONY : gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.o
 
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.i: gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.i
@@ -2557,7 +2557,7 @@ gemm_f64t_f64n_f64t_tensor_op_f64_sm80.i: gemm_f64t_f64n_f64t_tensor_op_f64_sm80
 
 # target to preprocess a source file
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.i
 .PHONY : gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.i
 
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.s: gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.s
@@ -2565,7 +2565,7 @@ gemm_f64t_f64n_f64t_tensor_op_f64_sm80.s: gemm_f64t_f64n_f64t_tensor_op_f64_sm80
 
 # target to generate assembly for a file
 gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.s
 .PHONY : gemm_f64t_f64n_f64t_tensor_op_f64_sm80.cu.s
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.o: gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.o
@@ -2573,7 +2573,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm70.o: gemm_planar_complex_f16_f16_f3
 
 # target to build an object file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.o
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.o
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.i: gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.i
@@ -2581,7 +2581,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm70.i: gemm_planar_complex_f16_f16_f3
 
 # target to preprocess a source file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.i
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.i
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.s: gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.s
@@ -2589,7 +2589,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm70.s: gemm_planar_complex_f16_f16_f3
 
 # target to generate assembly for a file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.s
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm70.cu.s
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.o: gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.o
@@ -2597,7 +2597,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm75.o: gemm_planar_complex_f16_f16_f3
 
 # target to build an object file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.o
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.o
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.i: gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.i
@@ -2605,7 +2605,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm75.i: gemm_planar_complex_f16_f16_f3
 
 # target to preprocess a source file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.i
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.i
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.s: gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.s
@@ -2613,7 +2613,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm75.s: gemm_planar_complex_f16_f16_f3
 
 # target to generate assembly for a file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.s
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm75.cu.s
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.o: gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.o
@@ -2621,7 +2621,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm80.o: gemm_planar_complex_f16_f16_f3
 
 # target to build an object file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.o
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.o
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.i: gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.i
@@ -2629,7 +2629,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm80.i: gemm_planar_complex_f16_f16_f3
 
 # target to preprocess a source file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.i
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.i
 
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.s: gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.s
@@ -2637,7 +2637,7 @@ gemm_planar_complex_f16_f16_f32_tensor_op_sm80.s: gemm_planar_complex_f16_f16_f3
 
 # target to generate assembly for a file
 gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_planar_complex.dir/gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.s
 .PHONY : gemm_planar_complex_f16_f16_f32_tensor_op_sm80.cu.s
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.o: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o
@@ -2645,7 +2645,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm75.o: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o
 
 # target to build an object file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.o
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.i: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i
@@ -2653,7 +2653,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm75.i: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i
 
 # target to preprocess a source file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.i
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.s: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s
@@ -2661,7 +2661,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm75.s: gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm75.cu.s
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.o: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o
@@ -2669,7 +2669,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm80.o: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o
 
 # target to build an object file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.o
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.i: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i
@@ -2677,7 +2677,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm80.i: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i
 
 # target to preprocess a source file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.i
 
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.s: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s
@@ -2685,7 +2685,7 @@ gemm_s4n_s4t_s4n_tensor_op_s32_sm80.s: gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s4n_s4t_s4n_tensor_op_s32_sm80.cu.s
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.o
@@ -2693,7 +2693,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.o
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.i
@@ -2701,7 +2701,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.i
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.s
@@ -2709,7 +2709,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm75.cu.s
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.o: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.o
@@ -2717,7 +2717,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm80.o: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.o
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.i: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.i
@@ -2725,7 +2725,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm80.i: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.i
 
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.s: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.s
@@ -2733,7 +2733,7 @@ gemm_s4t_s4n_s32n_tensor_op_s32_sm80.s: gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s4t_s4n_s32n_tensor_op_s32_sm80.cu.s
 
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.o
@@ -2741,7 +2741,7 @@ gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32n_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.o
 
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.i
@@ -2749,7 +2749,7 @@ gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32n_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.i
 
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.s
@@ -2757,7 +2757,7 @@ gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32n_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s4t_s4n_s32n_wmma_tensor_op_s32_sm75.cu.s
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.o
@@ -2765,7 +2765,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.o
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.i
@@ -2773,7 +2773,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.i
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.s
@@ -2781,7 +2781,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm75.cu.s
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.o: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.o
@@ -2789,7 +2789,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm80.o: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.o
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.i: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.i
@@ -2797,7 +2797,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm80.i: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.i
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.s: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.s
@@ -2805,7 +2805,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sm80.s: gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sm80.cu.s
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.o: gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.o
@@ -2813,7 +2813,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.o: gemm_s4t_s4n_s32t_tensor_op_s32_s
 
 # target to build an object file
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.o
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.o
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.i: gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.i
@@ -2821,7 +2821,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.i: gemm_s4t_s4n_s32t_tensor_op_s32_s
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.i
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.i
 
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.s: gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.s
@@ -2829,7 +2829,7 @@ gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.s: gemm_s4t_s4n_s32t_tensor_op_s32_s
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.s
 .PHONY : gemm_s4t_s4n_s32t_tensor_op_s32_sparse_sm80.cu.s
 
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.o
@@ -2837,7 +2837,7 @@ gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.o: gemm_s4t_s4n_s32t_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.o
 
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.i
@@ -2845,7 +2845,7 @@ gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.i: gemm_s4t_s4n_s32t_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.i
 
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.s
@@ -2853,7 +2853,7 @@ gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.s: gemm_s4t_s4n_s32t_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s4t_s4n_s32t_wmma_tensor_op_s32_sm75.cu.s
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.o: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o
@@ -2861,7 +2861,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm75.o: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o
 
 # target to build an object file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.o
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.i: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i
@@ -2869,7 +2869,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm75.i: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i
 
 # target to preprocess a source file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.i
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.s: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s
@@ -2877,7 +2877,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm75.s: gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm75.cu.s
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.o: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o
@@ -2885,7 +2885,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm80.o: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o
 
 # target to build an object file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.o
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.i: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i
@@ -2893,7 +2893,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm80.i: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i
 
 # target to preprocess a source file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.i
 
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.s: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s
@@ -2901,7 +2901,7 @@ gemm_s8n_s8t_s8n_tensor_op_s32_sm80.s: gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s8n_s8t_s8n_tensor_op_s32_sm80.cu.s
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.o: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.o
@@ -2909,7 +2909,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm75.o: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.o
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.i: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.i
@@ -2917,7 +2917,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm75.i: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.i
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.s: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.s
@@ -2925,7 +2925,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm75.s: gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm75.cu.s
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.o: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.o
@@ -2933,7 +2933,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm80.o: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.o
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.i: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.i
@@ -2941,7 +2941,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm80.i: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.i
 
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.s: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.s
@@ -2949,7 +2949,7 @@ gemm_s8t_s8n_s32n_tensor_op_s32_sm80.s: gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s8t_s8n_s32n_tensor_op_s32_sm80.cu.s
 
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.o
@@ -2957,7 +2957,7 @@ gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s32n_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.o
 .PHONY : gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.o
 
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.i
@@ -2965,7 +2965,7 @@ gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s32n_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.i
 .PHONY : gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.i
 
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.s
@@ -2973,7 +2973,7 @@ gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s32n_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.s
 .PHONY : gemm_s8t_s8n_s32n_wmma_tensor_op_s32_sm72.cu.s
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.o: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.o
@@ -2981,7 +2981,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm75.o: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.
 
 # target to build an object file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.o
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.i: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.i
@@ -2989,7 +2989,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm75.i: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.i
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.s: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.s
@@ -2997,7 +2997,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm75.s: gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm75.cu.s
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.o: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.o
@@ -3005,7 +3005,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm80.o: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.
 
 # target to build an object file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.o
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.i: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.i
@@ -3013,7 +3013,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm80.i: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.i
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.s: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.s
@@ -3021,7 +3021,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sm80.s: gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sm80.cu.s
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.o: gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.o
@@ -3029,7 +3029,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.o: gemm_s8t_s8n_s32t_tensor_op_s32_s
 
 # target to build an object file
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.o
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.o
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.i: gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.i
@@ -3037,7 +3037,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.i: gemm_s8t_s8n_s32t_tensor_op_s32_s
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.i
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.i
 
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.s: gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.s
@@ -3045,7 +3045,7 @@ gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.s: gemm_s8t_s8n_s32t_tensor_op_s32_s
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_sparse_tensorop_sm80.dir/gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.s
 .PHONY : gemm_s8t_s8n_s32t_tensor_op_s32_sparse_sm80.cu.s
 
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.o
@@ -3053,7 +3053,7 @@ gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s32t_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.o
 .PHONY : gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.o
 
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.i
@@ -3061,7 +3061,7 @@ gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s32t_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.i
 .PHONY : gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.i
 
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.s
@@ -3069,7 +3069,7 @@ gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s32t_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.s
 .PHONY : gemm_s8t_s8n_s32t_wmma_tensor_op_s32_sm72.cu.s
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.o: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o
@@ -3077,7 +3077,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm75.o: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o
 
 # target to build an object file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.o
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.i: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i
@@ -3085,7 +3085,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm75.i: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.i
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.s: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s
@@ -3093,7 +3093,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm75.s: gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm75.cu.s
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.o: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o
@@ -3101,7 +3101,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm80.o: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o
 
 # target to build an object file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.o
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.i: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i
@@ -3109,7 +3109,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm80.i: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.i
 
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.s: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s
@@ -3117,7 +3117,7 @@ gemm_s8t_s8n_s8n_tensor_op_s32_sm80.s: gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s8t_s8n_s8n_tensor_op_s32_sm80.cu.s
 
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.o
@@ -3125,7 +3125,7 @@ gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_
 
 # target to build an object file
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.o
 .PHONY : gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.o
 
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.i
@@ -3133,7 +3133,7 @@ gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.i
 .PHONY : gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.i
 
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.s
@@ -3141,7 +3141,7 @@ gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s8n_wmma_tensor_op_s32_
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.s
 .PHONY : gemm_s8t_s8n_s8n_wmma_tensor_op_s32_sm72.cu.s
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.o: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o
@@ -3149,7 +3149,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm75.o: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o
 
 # target to build an object file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.o
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.i: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i
@@ -3157,7 +3157,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm75.i: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.i
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.s: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s
@@ -3165,7 +3165,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm75.s: gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm75.cu.s
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.o: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o
@@ -3173,7 +3173,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm80.o: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o
 
 # target to build an object file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.o
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.i: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i
@@ -3181,7 +3181,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm80.i: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.i
 
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.s: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s
@@ -3189,7 +3189,7 @@ gemm_s8t_s8n_s8t_tensor_op_s32_sm80.s: gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_s32_sm80.dir/gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s
 .PHONY : gemm_s8t_s8n_s8t_tensor_op_s32_sm80.cu.s
 
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.o
@@ -3197,7 +3197,7 @@ gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.o: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_
 
 # target to build an object file
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.o
 .PHONY : gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.o
 
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.i
@@ -3205,7 +3205,7 @@ gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.i: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_
 
 # target to preprocess a source file
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.i
 .PHONY : gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.i
 
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.s
@@ -3213,7 +3213,7 @@ gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.s: gemm_s8t_s8n_s8t_wmma_tensor_op_s32_
 
 # target to generate assembly for a file
 gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.s
 .PHONY : gemm_s8t_s8n_s8t_wmma_tensor_op_s32_sm72.cu.s
 
 gemm_splitk_serial_tensor_op_sm75.o: gemm_splitk_serial_tensor_op_sm75.cu.o
@@ -3221,7 +3221,7 @@ gemm_splitk_serial_tensor_op_sm75.o: gemm_splitk_serial_tensor_op_sm75.cu.o
 
 # target to build an object file
 gemm_splitk_serial_tensor_op_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.o
 .PHONY : gemm_splitk_serial_tensor_op_sm75.cu.o
 
 gemm_splitk_serial_tensor_op_sm75.i: gemm_splitk_serial_tensor_op_sm75.cu.i
@@ -3229,7 +3229,7 @@ gemm_splitk_serial_tensor_op_sm75.i: gemm_splitk_serial_tensor_op_sm75.cu.i
 
 # target to preprocess a source file
 gemm_splitk_serial_tensor_op_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.i
 .PHONY : gemm_splitk_serial_tensor_op_sm75.cu.i
 
 gemm_splitk_serial_tensor_op_sm75.s: gemm_splitk_serial_tensor_op_sm75.cu.s
@@ -3237,7 +3237,7 @@ gemm_splitk_serial_tensor_op_sm75.s: gemm_splitk_serial_tensor_op_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_splitk_serial_tensor_op_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_serial_tensor_op_sm75.cu.s
 .PHONY : gemm_splitk_serial_tensor_op_sm75.cu.s
 
 gemm_splitk_simt_sm50.o: gemm_splitk_simt_sm50.cu.o
@@ -3245,7 +3245,7 @@ gemm_splitk_simt_sm50.o: gemm_splitk_simt_sm50.cu.o
 
 # target to build an object file
 gemm_splitk_simt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.o
 .PHONY : gemm_splitk_simt_sm50.cu.o
 
 gemm_splitk_simt_sm50.i: gemm_splitk_simt_sm50.cu.i
@@ -3253,7 +3253,7 @@ gemm_splitk_simt_sm50.i: gemm_splitk_simt_sm50.cu.i
 
 # target to preprocess a source file
 gemm_splitk_simt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.i
 .PHONY : gemm_splitk_simt_sm50.cu.i
 
 gemm_splitk_simt_sm50.s: gemm_splitk_simt_sm50.cu.s
@@ -3261,7 +3261,7 @@ gemm_splitk_simt_sm50.s: gemm_splitk_simt_sm50.cu.s
 
 # target to generate assembly for a file
 gemm_splitk_simt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/gemm_splitk_simt_sm50.cu.s
 .PHONY : gemm_splitk_simt_sm50.cu.s
 
 gemm_splitk_tensor_op_sm70.o: gemm_splitk_tensor_op_sm70.cu.o
@@ -3269,7 +3269,7 @@ gemm_splitk_tensor_op_sm70.o: gemm_splitk_tensor_op_sm70.cu.o
 
 # target to build an object file
 gemm_splitk_tensor_op_sm70.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.o
 .PHONY : gemm_splitk_tensor_op_sm70.cu.o
 
 gemm_splitk_tensor_op_sm70.i: gemm_splitk_tensor_op_sm70.cu.i
@@ -3277,7 +3277,7 @@ gemm_splitk_tensor_op_sm70.i: gemm_splitk_tensor_op_sm70.cu.i
 
 # target to preprocess a source file
 gemm_splitk_tensor_op_sm70.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.i
 .PHONY : gemm_splitk_tensor_op_sm70.cu.i
 
 gemm_splitk_tensor_op_sm70.s: gemm_splitk_tensor_op_sm70.cu.s
@@ -3285,7 +3285,7 @@ gemm_splitk_tensor_op_sm70.s: gemm_splitk_tensor_op_sm70.cu.s
 
 # target to generate assembly for a file
 gemm_splitk_tensor_op_sm70.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm70.dir/gemm_splitk_tensor_op_sm70.cu.s
 .PHONY : gemm_splitk_tensor_op_sm70.cu.s
 
 gemm_splitk_tensor_op_sm75.o: gemm_splitk_tensor_op_sm75.cu.o
@@ -3293,7 +3293,7 @@ gemm_splitk_tensor_op_sm75.o: gemm_splitk_tensor_op_sm75.cu.o
 
 # target to build an object file
 gemm_splitk_tensor_op_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.o
 .PHONY : gemm_splitk_tensor_op_sm75.cu.o
 
 gemm_splitk_tensor_op_sm75.i: gemm_splitk_tensor_op_sm75.cu.i
@@ -3301,7 +3301,7 @@ gemm_splitk_tensor_op_sm75.i: gemm_splitk_tensor_op_sm75.cu.i
 
 # target to preprocess a source file
 gemm_splitk_tensor_op_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.i
 .PHONY : gemm_splitk_tensor_op_sm75.cu.i
 
 gemm_splitk_tensor_op_sm75.s: gemm_splitk_tensor_op_sm75.cu.s
@@ -3309,7 +3309,7 @@ gemm_splitk_tensor_op_sm75.s: gemm_splitk_tensor_op_sm75.cu.s
 
 # target to generate assembly for a file
 gemm_splitk_tensor_op_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_splitk_tensor_op_sm75.cu.s
 .PHONY : gemm_splitk_tensor_op_sm75.cu.s
 
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.o: gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.o
@@ -3317,7 +3317,7 @@ gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.o: gemm_tf32n_tf32n_f32t_tensor_op_f32_
 
 # target to build an object file
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.i: gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.i
@@ -3325,7 +3325,7 @@ gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.i: gemm_tf32n_tf32n_f32t_tensor_op_f32_
 
 # target to preprocess a source file
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.s: gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.s
@@ -3333,7 +3333,7 @@ gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.s: gemm_tf32n_tf32n_f32t_tensor_op_f32_
 
 # target to generate assembly for a file
 gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_tf32n_tf32n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.o: gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.o
@@ -3341,7 +3341,7 @@ gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.o: gemm_tf32n_tf32t_f32t_tensor_op_f32_
 
 # target to build an object file
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.i: gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.i
@@ -3349,7 +3349,7 @@ gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.i: gemm_tf32n_tf32t_f32t_tensor_op_f32_
 
 # target to preprocess a source file
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.s: gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.s
@@ -3357,7 +3357,7 @@ gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.s: gemm_tf32n_tf32t_f32t_tensor_op_f32_
 
 # target to generate assembly for a file
 gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_tf32n_tf32t_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.o: gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.o
@@ -3365,7 +3365,7 @@ gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.o: gemm_tf32t_tf32n_f32t_tensor_op_f32_
 
 # target to build an object file
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.i: gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.i
@@ -3373,7 +3373,7 @@ gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.i: gemm_tf32t_tf32n_f32t_tensor_op_f32_
 
 # target to preprocess a source file
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.s: gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.s
@@ -3381,7 +3381,7 @@ gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.s: gemm_tf32t_tf32n_f32t_tensor_op_f32_
 
 # target to generate assembly for a file
 gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_tf32t_tf32n_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.o: gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.o
@@ -3389,7 +3389,7 @@ gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.o: gemm_tf32t_tf32t_f32t_tensor_op_f32_
 
 # target to build an object file
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.o
 
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.i: gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.i
@@ -3397,7 +3397,7 @@ gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.i: gemm_tf32t_tf32t_f32t_tensor_op_f32_
 
 # target to preprocess a source file
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.i
 
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.s: gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.s
@@ -3405,7 +3405,7 @@ gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.s: gemm_tf32t_tf32t_f32t_tensor_op_f32_
 
 # target to generate assembly for a file
 gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_tf32t_tf32t_f32t_tensor_op_f32_sm80.cu.s
 
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.o: gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.o
@@ -3413,7 +3413,7 @@ gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.o: gemm_u8t_u8n_s32t_wmma_tensor_op_s3
 
 # target to build an object file
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.o
 .PHONY : gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.o
 
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.i: gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.i
@@ -3421,7 +3421,7 @@ gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.i: gemm_u8t_u8n_s32t_wmma_tensor_op_s3
 
 # target to preprocess a source file
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.i
 .PHONY : gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.i
 
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.s: gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.s
@@ -3429,7 +3429,7 @@ gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.s: gemm_u8t_u8n_s32t_wmma_tensor_op_s3
 
 # target to generate assembly for a file
 gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_wmma.dir/gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.s
 .PHONY : gemm_u8t_u8n_s32t_wmma_tensor_op_s32_sm72.cu.s
 
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.o: gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.o
@@ -3437,7 +3437,7 @@ gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.o: gemm_universal_cf32n_cf32
 
 # target to build an object file
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.o
 .PHONY : gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.o
 
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.i: gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.i
@@ -3445,7 +3445,7 @@ gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.i: gemm_universal_cf32n_cf32
 
 # target to preprocess a source file
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.i
 .PHONY : gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.i
 
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.s: gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.s
@@ -3453,7 +3453,7 @@ gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.s: gemm_universal_cf32n_cf32
 
 # target to generate assembly for a file
 gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f32_tf32_sm80.dir/gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.s
 .PHONY : gemm_universal_cf32n_cf32n_cf32n_tensor_op_f32_sm80.cu.s
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
@@ -3461,7 +3461,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.o: gemm_universal_c
 
 # target to build an object file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.o
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
@@ -3469,7 +3469,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.i: gemm_universal_c
 
 # target to preprocess a source file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.i
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
@@ -3477,7 +3477,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.s: gemm_universal_c
 
 # target to generate assembly for a file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_gaussian_sm80.cu.s
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.o: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
@@ -3485,7 +3485,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.o: gemm_universal_cf64n_cf64
 
 # target to build an object file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.o
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.i: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
@@ -3493,7 +3493,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.i: gemm_universal_cf64n_cf64
 
 # target to preprocess a source file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.i
 
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.s: gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
@@ -3501,7 +3501,7 @@ gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.s: gemm_universal_cf64n_cf64
 
 # target to generate assembly for a file
 gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_f64.dir/gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
 .PHONY : gemm_universal_cf64n_cf64t_cf64t_tensor_op_f64_sm80.cu.s
 
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.o: gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
@@ -3509,7 +3509,7 @@ gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.o: gemm_universal_f16n_f16t_f32
 
 # target to build an object file
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
 .PHONY : gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.o
 
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.i: gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
@@ -3517,7 +3517,7 @@ gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.i: gemm_universal_f16n_f16t_f32
 
 # target to preprocess a source file
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
 .PHONY : gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.i
 
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.s: gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
@@ -3525,7 +3525,7 @@ gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.s: gemm_universal_f16n_f16t_f32
 
 # target to generate assembly for a file
 gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_tensorop_sm75.dir/gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
 .PHONY : gemm_universal_f16n_f16t_f32t_tensor_op_f32_sm75.cu.s
 
 simt_cgemm_nn_sm50.o: simt_cgemm_nn_sm50.cu.o
@@ -3533,7 +3533,7 @@ simt_cgemm_nn_sm50.o: simt_cgemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_cgemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.o
 .PHONY : simt_cgemm_nn_sm50.cu.o
 
 simt_cgemm_nn_sm50.i: simt_cgemm_nn_sm50.cu.i
@@ -3541,7 +3541,7 @@ simt_cgemm_nn_sm50.i: simt_cgemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_cgemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.i
 .PHONY : simt_cgemm_nn_sm50.cu.i
 
 simt_cgemm_nn_sm50.s: simt_cgemm_nn_sm50.cu.s
@@ -3549,7 +3549,7 @@ simt_cgemm_nn_sm50.s: simt_cgemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_cgemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nn_sm50.cu.s
 .PHONY : simt_cgemm_nn_sm50.cu.s
 
 simt_cgemm_nt_sm50.o: simt_cgemm_nt_sm50.cu.o
@@ -3557,7 +3557,7 @@ simt_cgemm_nt_sm50.o: simt_cgemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_cgemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.o
 .PHONY : simt_cgemm_nt_sm50.cu.o
 
 simt_cgemm_nt_sm50.i: simt_cgemm_nt_sm50.cu.i
@@ -3565,7 +3565,7 @@ simt_cgemm_nt_sm50.i: simt_cgemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_cgemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.i
 .PHONY : simt_cgemm_nt_sm50.cu.i
 
 simt_cgemm_nt_sm50.s: simt_cgemm_nt_sm50.cu.s
@@ -3573,7 +3573,7 @@ simt_cgemm_nt_sm50.s: simt_cgemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_cgemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_nt_sm50.cu.s
 .PHONY : simt_cgemm_nt_sm50.cu.s
 
 simt_cgemm_tn_sm50.o: simt_cgemm_tn_sm50.cu.o
@@ -3581,7 +3581,7 @@ simt_cgemm_tn_sm50.o: simt_cgemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_cgemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.o
 .PHONY : simt_cgemm_tn_sm50.cu.o
 
 simt_cgemm_tn_sm50.i: simt_cgemm_tn_sm50.cu.i
@@ -3589,7 +3589,7 @@ simt_cgemm_tn_sm50.i: simt_cgemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_cgemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.i
 .PHONY : simt_cgemm_tn_sm50.cu.i
 
 simt_cgemm_tn_sm50.s: simt_cgemm_tn_sm50.cu.s
@@ -3597,7 +3597,7 @@ simt_cgemm_tn_sm50.s: simt_cgemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_cgemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tn_sm50.cu.s
 .PHONY : simt_cgemm_tn_sm50.cu.s
 
 simt_cgemm_tt_sm50.o: simt_cgemm_tt_sm50.cu.o
@@ -3605,7 +3605,7 @@ simt_cgemm_tt_sm50.o: simt_cgemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_cgemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.o
 .PHONY : simt_cgemm_tt_sm50.cu.o
 
 simt_cgemm_tt_sm50.i: simt_cgemm_tt_sm50.cu.i
@@ -3613,7 +3613,7 @@ simt_cgemm_tt_sm50.i: simt_cgemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_cgemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.i
 .PHONY : simt_cgemm_tt_sm50.cu.i
 
 simt_cgemm_tt_sm50.s: simt_cgemm_tt_sm50.cu.s
@@ -3621,7 +3621,7 @@ simt_cgemm_tt_sm50.s: simt_cgemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_cgemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_cgemm_tt_sm50.cu.s
 .PHONY : simt_cgemm_tt_sm50.cu.s
 
 simt_dgemm_nn_sm50.o: simt_dgemm_nn_sm50.cu.o
@@ -3629,7 +3629,7 @@ simt_dgemm_nn_sm50.o: simt_dgemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_dgemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.o
 .PHONY : simt_dgemm_nn_sm50.cu.o
 
 simt_dgemm_nn_sm50.i: simt_dgemm_nn_sm50.cu.i
@@ -3637,7 +3637,7 @@ simt_dgemm_nn_sm50.i: simt_dgemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_dgemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.i
 .PHONY : simt_dgemm_nn_sm50.cu.i
 
 simt_dgemm_nn_sm50.s: simt_dgemm_nn_sm50.cu.s
@@ -3645,7 +3645,7 @@ simt_dgemm_nn_sm50.s: simt_dgemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_dgemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nn_sm50.cu.s
 .PHONY : simt_dgemm_nn_sm50.cu.s
 
 simt_dgemm_nt_sm50.o: simt_dgemm_nt_sm50.cu.o
@@ -3653,7 +3653,7 @@ simt_dgemm_nt_sm50.o: simt_dgemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_dgemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.o
 .PHONY : simt_dgemm_nt_sm50.cu.o
 
 simt_dgemm_nt_sm50.i: simt_dgemm_nt_sm50.cu.i
@@ -3661,7 +3661,7 @@ simt_dgemm_nt_sm50.i: simt_dgemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_dgemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.i
 .PHONY : simt_dgemm_nt_sm50.cu.i
 
 simt_dgemm_nt_sm50.s: simt_dgemm_nt_sm50.cu.s
@@ -3669,7 +3669,7 @@ simt_dgemm_nt_sm50.s: simt_dgemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_dgemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_nt_sm50.cu.s
 .PHONY : simt_dgemm_nt_sm50.cu.s
 
 simt_dgemm_tn_sm50.o: simt_dgemm_tn_sm50.cu.o
@@ -3677,7 +3677,7 @@ simt_dgemm_tn_sm50.o: simt_dgemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_dgemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.o
 .PHONY : simt_dgemm_tn_sm50.cu.o
 
 simt_dgemm_tn_sm50.i: simt_dgemm_tn_sm50.cu.i
@@ -3685,7 +3685,7 @@ simt_dgemm_tn_sm50.i: simt_dgemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_dgemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.i
 .PHONY : simt_dgemm_tn_sm50.cu.i
 
 simt_dgemm_tn_sm50.s: simt_dgemm_tn_sm50.cu.s
@@ -3693,7 +3693,7 @@ simt_dgemm_tn_sm50.s: simt_dgemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_dgemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tn_sm50.cu.s
 .PHONY : simt_dgemm_tn_sm50.cu.s
 
 simt_dgemm_tt_sm50.o: simt_dgemm_tt_sm50.cu.o
@@ -3701,7 +3701,7 @@ simt_dgemm_tt_sm50.o: simt_dgemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_dgemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.o
 .PHONY : simt_dgemm_tt_sm50.cu.o
 
 simt_dgemm_tt_sm50.i: simt_dgemm_tt_sm50.cu.i
@@ -3709,7 +3709,7 @@ simt_dgemm_tt_sm50.i: simt_dgemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_dgemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.i
 .PHONY : simt_dgemm_tt_sm50.cu.i
 
 simt_dgemm_tt_sm50.s: simt_dgemm_tt_sm50.cu.s
@@ -3717,7 +3717,7 @@ simt_dgemm_tt_sm50.s: simt_dgemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_dgemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_dgemm_tt_sm50.cu.s
 .PHONY : simt_dgemm_tt_sm50.cu.s
 
 simt_hgemm_nn_sm50.o: simt_hgemm_nn_sm50.cu.o
@@ -3725,7 +3725,7 @@ simt_hgemm_nn_sm50.o: simt_hgemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_hgemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.o
 .PHONY : simt_hgemm_nn_sm50.cu.o
 
 simt_hgemm_nn_sm50.i: simt_hgemm_nn_sm50.cu.i
@@ -3733,7 +3733,7 @@ simt_hgemm_nn_sm50.i: simt_hgemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_hgemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.i
 .PHONY : simt_hgemm_nn_sm50.cu.i
 
 simt_hgemm_nn_sm50.s: simt_hgemm_nn_sm50.cu.s
@@ -3741,7 +3741,7 @@ simt_hgemm_nn_sm50.s: simt_hgemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_hgemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nn_sm50.cu.s
 .PHONY : simt_hgemm_nn_sm50.cu.s
 
 simt_hgemm_nt_sm50.o: simt_hgemm_nt_sm50.cu.o
@@ -3749,7 +3749,7 @@ simt_hgemm_nt_sm50.o: simt_hgemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_hgemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.o
 .PHONY : simt_hgemm_nt_sm50.cu.o
 
 simt_hgemm_nt_sm50.i: simt_hgemm_nt_sm50.cu.i
@@ -3757,7 +3757,7 @@ simt_hgemm_nt_sm50.i: simt_hgemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_hgemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.i
 .PHONY : simt_hgemm_nt_sm50.cu.i
 
 simt_hgemm_nt_sm50.s: simt_hgemm_nt_sm50.cu.s
@@ -3765,7 +3765,7 @@ simt_hgemm_nt_sm50.s: simt_hgemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_hgemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_nt_sm50.cu.s
 .PHONY : simt_hgemm_nt_sm50.cu.s
 
 simt_hgemm_tn_sm50.o: simt_hgemm_tn_sm50.cu.o
@@ -3773,7 +3773,7 @@ simt_hgemm_tn_sm50.o: simt_hgemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_hgemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.o
 .PHONY : simt_hgemm_tn_sm50.cu.o
 
 simt_hgemm_tn_sm50.i: simt_hgemm_tn_sm50.cu.i
@@ -3781,7 +3781,7 @@ simt_hgemm_tn_sm50.i: simt_hgemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_hgemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.i
 .PHONY : simt_hgemm_tn_sm50.cu.i
 
 simt_hgemm_tn_sm50.s: simt_hgemm_tn_sm50.cu.s
@@ -3789,7 +3789,7 @@ simt_hgemm_tn_sm50.s: simt_hgemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_hgemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tn_sm50.cu.s
 .PHONY : simt_hgemm_tn_sm50.cu.s
 
 simt_hgemm_tt_sm50.o: simt_hgemm_tt_sm50.cu.o
@@ -3797,7 +3797,7 @@ simt_hgemm_tt_sm50.o: simt_hgemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_hgemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.o
 .PHONY : simt_hgemm_tt_sm50.cu.o
 
 simt_hgemm_tt_sm50.i: simt_hgemm_tt_sm50.cu.i
@@ -3805,7 +3805,7 @@ simt_hgemm_tt_sm50.i: simt_hgemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_hgemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.i
 .PHONY : simt_hgemm_tt_sm50.cu.i
 
 simt_hgemm_tt_sm50.s: simt_hgemm_tt_sm50.cu.s
@@ -3813,7 +3813,7 @@ simt_hgemm_tt_sm50.s: simt_hgemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_hgemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_hgemm_tt_sm50.cu.s
 .PHONY : simt_hgemm_tt_sm50.cu.s
 
 simt_igemm_nn_sm50.o: simt_igemm_nn_sm50.cu.o
@@ -3821,7 +3821,7 @@ simt_igemm_nn_sm50.o: simt_igemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_igemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.o
 .PHONY : simt_igemm_nn_sm50.cu.o
 
 simt_igemm_nn_sm50.i: simt_igemm_nn_sm50.cu.i
@@ -3829,7 +3829,7 @@ simt_igemm_nn_sm50.i: simt_igemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_igemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.i
 .PHONY : simt_igemm_nn_sm50.cu.i
 
 simt_igemm_nn_sm50.s: simt_igemm_nn_sm50.cu.s
@@ -3837,7 +3837,7 @@ simt_igemm_nn_sm50.s: simt_igemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_igemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nn_sm50.cu.s
 .PHONY : simt_igemm_nn_sm50.cu.s
 
 simt_igemm_nt_sm50.o: simt_igemm_nt_sm50.cu.o
@@ -3845,7 +3845,7 @@ simt_igemm_nt_sm50.o: simt_igemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_igemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.o
 .PHONY : simt_igemm_nt_sm50.cu.o
 
 simt_igemm_nt_sm50.i: simt_igemm_nt_sm50.cu.i
@@ -3853,7 +3853,7 @@ simt_igemm_nt_sm50.i: simt_igemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_igemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.i
 .PHONY : simt_igemm_nt_sm50.cu.i
 
 simt_igemm_nt_sm50.s: simt_igemm_nt_sm50.cu.s
@@ -3861,7 +3861,7 @@ simt_igemm_nt_sm50.s: simt_igemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_igemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_nt_sm50.cu.s
 .PHONY : simt_igemm_nt_sm50.cu.s
 
 simt_igemm_tn_sm50.o: simt_igemm_tn_sm50.cu.o
@@ -3869,7 +3869,7 @@ simt_igemm_tn_sm50.o: simt_igemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_igemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.o
 .PHONY : simt_igemm_tn_sm50.cu.o
 
 simt_igemm_tn_sm50.i: simt_igemm_tn_sm50.cu.i
@@ -3877,7 +3877,7 @@ simt_igemm_tn_sm50.i: simt_igemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_igemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.i
 .PHONY : simt_igemm_tn_sm50.cu.i
 
 simt_igemm_tn_sm50.s: simt_igemm_tn_sm50.cu.s
@@ -3885,7 +3885,7 @@ simt_igemm_tn_sm50.s: simt_igemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_igemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tn_sm50.cu.s
 .PHONY : simt_igemm_tn_sm50.cu.s
 
 simt_igemm_tt_sm50.o: simt_igemm_tt_sm50.cu.o
@@ -3893,7 +3893,7 @@ simt_igemm_tt_sm50.o: simt_igemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_igemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.o
 .PHONY : simt_igemm_tt_sm50.cu.o
 
 simt_igemm_tt_sm50.i: simt_igemm_tt_sm50.cu.i
@@ -3901,7 +3901,7 @@ simt_igemm_tt_sm50.i: simt_igemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_igemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.i
 .PHONY : simt_igemm_tt_sm50.cu.i
 
 simt_igemm_tt_sm50.s: simt_igemm_tt_sm50.cu.s
@@ -3909,7 +3909,7 @@ simt_igemm_tt_sm50.s: simt_igemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_igemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_igemm_tt_sm50.cu.s
 .PHONY : simt_igemm_tt_sm50.cu.s
 
 simt_int8_igemm_sm61.o: simt_int8_igemm_sm61.cu.o
@@ -3917,7 +3917,7 @@ simt_int8_igemm_sm61.o: simt_int8_igemm_sm61.cu.o
 
 # target to build an object file
 simt_int8_igemm_sm61.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.o
 .PHONY : simt_int8_igemm_sm61.cu.o
 
 simt_int8_igemm_sm61.i: simt_int8_igemm_sm61.cu.i
@@ -3925,7 +3925,7 @@ simt_int8_igemm_sm61.i: simt_int8_igemm_sm61.cu.i
 
 # target to preprocess a source file
 simt_int8_igemm_sm61.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.i
 .PHONY : simt_int8_igemm_sm61.cu.i
 
 simt_int8_igemm_sm61.s: simt_int8_igemm_sm61.cu.s
@@ -3933,7 +3933,7 @@ simt_int8_igemm_sm61.s: simt_int8_igemm_sm61.cu.s
 
 # target to generate assembly for a file
 simt_int8_igemm_sm61.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61.cu.s
 .PHONY : simt_int8_igemm_sm61.cu.s
 
 simt_int8_igemm_sm61_sliced_k.o: simt_int8_igemm_sm61_sliced_k.cu.o
@@ -3941,7 +3941,7 @@ simt_int8_igemm_sm61_sliced_k.o: simt_int8_igemm_sm61_sliced_k.cu.o
 
 # target to build an object file
 simt_int8_igemm_sm61_sliced_k.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.o
 .PHONY : simt_int8_igemm_sm61_sliced_k.cu.o
 
 simt_int8_igemm_sm61_sliced_k.i: simt_int8_igemm_sm61_sliced_k.cu.i
@@ -3949,7 +3949,7 @@ simt_int8_igemm_sm61_sliced_k.i: simt_int8_igemm_sm61_sliced_k.cu.i
 
 # target to preprocess a source file
 simt_int8_igemm_sm61_sliced_k.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.i
 .PHONY : simt_int8_igemm_sm61_sliced_k.cu.i
 
 simt_int8_igemm_sm61_sliced_k.s: simt_int8_igemm_sm61_sliced_k.cu.s
@@ -3957,7 +3957,7 @@ simt_int8_igemm_sm61_sliced_k.s: simt_int8_igemm_sm61_sliced_k.cu.s
 
 # target to generate assembly for a file
 simt_int8_igemm_sm61_sliced_k.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_int8_igemm_sm61_sliced_k.cu.s
 .PHONY : simt_int8_igemm_sm61_sliced_k.cu.s
 
 simt_sgemm_nn_sm50.o: simt_sgemm_nn_sm50.cu.o
@@ -3965,7 +3965,7 @@ simt_sgemm_nn_sm50.o: simt_sgemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_sgemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.o
 .PHONY : simt_sgemm_nn_sm50.cu.o
 
 simt_sgemm_nn_sm50.i: simt_sgemm_nn_sm50.cu.i
@@ -3973,7 +3973,7 @@ simt_sgemm_nn_sm50.i: simt_sgemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_sgemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.i
 .PHONY : simt_sgemm_nn_sm50.cu.i
 
 simt_sgemm_nn_sm50.s: simt_sgemm_nn_sm50.cu.s
@@ -3981,7 +3981,7 @@ simt_sgemm_nn_sm50.s: simt_sgemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nn_sm50.cu.s
 .PHONY : simt_sgemm_nn_sm50.cu.s
 
 simt_sgemm_nt_sm50.o: simt_sgemm_nt_sm50.cu.o
@@ -3989,7 +3989,7 @@ simt_sgemm_nt_sm50.o: simt_sgemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_sgemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.o
 .PHONY : simt_sgemm_nt_sm50.cu.o
 
 simt_sgemm_nt_sm50.i: simt_sgemm_nt_sm50.cu.i
@@ -3997,7 +3997,7 @@ simt_sgemm_nt_sm50.i: simt_sgemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_sgemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.i
 .PHONY : simt_sgemm_nt_sm50.cu.i
 
 simt_sgemm_nt_sm50.s: simt_sgemm_nt_sm50.cu.s
@@ -4005,7 +4005,7 @@ simt_sgemm_nt_sm50.s: simt_sgemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm50.cu.s
 .PHONY : simt_sgemm_nt_sm50.cu.s
 
 simt_sgemm_nt_sm80.o: simt_sgemm_nt_sm80.cu.o
@@ -4013,7 +4013,7 @@ simt_sgemm_nt_sm80.o: simt_sgemm_nt_sm80.cu.o
 
 # target to build an object file
 simt_sgemm_nt_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.o
 .PHONY : simt_sgemm_nt_sm80.cu.o
 
 simt_sgemm_nt_sm80.i: simt_sgemm_nt_sm80.cu.i
@@ -4021,7 +4021,7 @@ simt_sgemm_nt_sm80.i: simt_sgemm_nt_sm80.cu.i
 
 # target to preprocess a source file
 simt_sgemm_nt_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.i
 .PHONY : simt_sgemm_nt_sm80.cu.i
 
 simt_sgemm_nt_sm80.s: simt_sgemm_nt_sm80.cu.s
@@ -4029,7 +4029,7 @@ simt_sgemm_nt_sm80.s: simt_sgemm_nt_sm80.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_nt_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_nt_sm80.cu.s
 .PHONY : simt_sgemm_nt_sm80.cu.s
 
 simt_sgemm_tn_sm50.o: simt_sgemm_tn_sm50.cu.o
@@ -4037,7 +4037,7 @@ simt_sgemm_tn_sm50.o: simt_sgemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_sgemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.o
 .PHONY : simt_sgemm_tn_sm50.cu.o
 
 simt_sgemm_tn_sm50.i: simt_sgemm_tn_sm50.cu.i
@@ -4045,7 +4045,7 @@ simt_sgemm_tn_sm50.i: simt_sgemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_sgemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.i
 .PHONY : simt_sgemm_tn_sm50.cu.i
 
 simt_sgemm_tn_sm50.s: simt_sgemm_tn_sm50.cu.s
@@ -4053,7 +4053,7 @@ simt_sgemm_tn_sm50.s: simt_sgemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm50.cu.s
 .PHONY : simt_sgemm_tn_sm50.cu.s
 
 simt_sgemm_tn_sm80.o: simt_sgemm_tn_sm80.cu.o
@@ -4061,7 +4061,7 @@ simt_sgemm_tn_sm80.o: simt_sgemm_tn_sm80.cu.o
 
 # target to build an object file
 simt_sgemm_tn_sm80.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.o
 .PHONY : simt_sgemm_tn_sm80.cu.o
 
 simt_sgemm_tn_sm80.i: simt_sgemm_tn_sm80.cu.i
@@ -4069,7 +4069,7 @@ simt_sgemm_tn_sm80.i: simt_sgemm_tn_sm80.cu.i
 
 # target to preprocess a source file
 simt_sgemm_tn_sm80.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.i
 .PHONY : simt_sgemm_tn_sm80.cu.i
 
 simt_sgemm_tn_sm80.s: simt_sgemm_tn_sm80.cu.s
@@ -4077,7 +4077,7 @@ simt_sgemm_tn_sm80.s: simt_sgemm_tn_sm80.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_tn_sm80.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tn_sm80.cu.s
 .PHONY : simt_sgemm_tn_sm80.cu.s
 
 simt_sgemm_tt_sm50.o: simt_sgemm_tt_sm50.cu.o
@@ -4085,7 +4085,7 @@ simt_sgemm_tt_sm50.o: simt_sgemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_sgemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.o
 .PHONY : simt_sgemm_tt_sm50.cu.o
 
 simt_sgemm_tt_sm50.i: simt_sgemm_tt_sm50.cu.i
@@ -4093,7 +4093,7 @@ simt_sgemm_tt_sm50.i: simt_sgemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_sgemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.i
 .PHONY : simt_sgemm_tt_sm50.cu.i
 
 simt_sgemm_tt_sm50.s: simt_sgemm_tt_sm50.cu.s
@@ -4101,7 +4101,7 @@ simt_sgemm_tt_sm50.s: simt_sgemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_sgemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_sgemm_tt_sm50.cu.s
 .PHONY : simt_sgemm_tt_sm50.cu.s
 
 simt_zgemm_nn_sm50.o: simt_zgemm_nn_sm50.cu.o
@@ -4109,7 +4109,7 @@ simt_zgemm_nn_sm50.o: simt_zgemm_nn_sm50.cu.o
 
 # target to build an object file
 simt_zgemm_nn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.o
 .PHONY : simt_zgemm_nn_sm50.cu.o
 
 simt_zgemm_nn_sm50.i: simt_zgemm_nn_sm50.cu.i
@@ -4117,7 +4117,7 @@ simt_zgemm_nn_sm50.i: simt_zgemm_nn_sm50.cu.i
 
 # target to preprocess a source file
 simt_zgemm_nn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.i
 .PHONY : simt_zgemm_nn_sm50.cu.i
 
 simt_zgemm_nn_sm50.s: simt_zgemm_nn_sm50.cu.s
@@ -4125,7 +4125,7 @@ simt_zgemm_nn_sm50.s: simt_zgemm_nn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_zgemm_nn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nn_sm50.cu.s
 .PHONY : simt_zgemm_nn_sm50.cu.s
 
 simt_zgemm_nt_sm50.o: simt_zgemm_nt_sm50.cu.o
@@ -4133,7 +4133,7 @@ simt_zgemm_nt_sm50.o: simt_zgemm_nt_sm50.cu.o
 
 # target to build an object file
 simt_zgemm_nt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.o
 .PHONY : simt_zgemm_nt_sm50.cu.o
 
 simt_zgemm_nt_sm50.i: simt_zgemm_nt_sm50.cu.i
@@ -4141,7 +4141,7 @@ simt_zgemm_nt_sm50.i: simt_zgemm_nt_sm50.cu.i
 
 # target to preprocess a source file
 simt_zgemm_nt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.i
 .PHONY : simt_zgemm_nt_sm50.cu.i
 
 simt_zgemm_nt_sm50.s: simt_zgemm_nt_sm50.cu.s
@@ -4149,7 +4149,7 @@ simt_zgemm_nt_sm50.s: simt_zgemm_nt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_zgemm_nt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_nt_sm50.cu.s
 .PHONY : simt_zgemm_nt_sm50.cu.s
 
 simt_zgemm_tn_sm50.o: simt_zgemm_tn_sm50.cu.o
@@ -4157,7 +4157,7 @@ simt_zgemm_tn_sm50.o: simt_zgemm_tn_sm50.cu.o
 
 # target to build an object file
 simt_zgemm_tn_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.o
 .PHONY : simt_zgemm_tn_sm50.cu.o
 
 simt_zgemm_tn_sm50.i: simt_zgemm_tn_sm50.cu.i
@@ -4165,7 +4165,7 @@ simt_zgemm_tn_sm50.i: simt_zgemm_tn_sm50.cu.i
 
 # target to preprocess a source file
 simt_zgemm_tn_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.i
 .PHONY : simt_zgemm_tn_sm50.cu.i
 
 simt_zgemm_tn_sm50.s: simt_zgemm_tn_sm50.cu.s
@@ -4173,7 +4173,7 @@ simt_zgemm_tn_sm50.s: simt_zgemm_tn_sm50.cu.s
 
 # target to generate assembly for a file
 simt_zgemm_tn_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tn_sm50.cu.s
 .PHONY : simt_zgemm_tn_sm50.cu.s
 
 simt_zgemm_tt_sm50.o: simt_zgemm_tt_sm50.cu.o
@@ -4181,7 +4181,7 @@ simt_zgemm_tt_sm50.o: simt_zgemm_tt_sm50.cu.o
 
 # target to build an object file
 simt_zgemm_tt_sm50.cu.o:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.o
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.o
 .PHONY : simt_zgemm_tt_sm50.cu.o
 
 simt_zgemm_tt_sm50.i: simt_zgemm_tt_sm50.cu.i
@@ -4189,7 +4189,7 @@ simt_zgemm_tt_sm50.i: simt_zgemm_tt_sm50.cu.i
 
 # target to preprocess a source file
 simt_zgemm_tt_sm50.cu.i:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.i
 .PHONY : simt_zgemm_tt_sm50.cu.i
 
 simt_zgemm_tt_sm50.s: simt_zgemm_tt_sm50.cu.s
@@ -4197,7 +4197,7 @@ simt_zgemm_tt_sm50.s: simt_zgemm_tt_sm50.cu.s
 
 # target to generate assembly for a file
 simt_zgemm_tt_sm50.cu.s:
-	cd /home/ubuntu/github/cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/build.make test/unit/gemm/device/CMakeFiles/cutlass_test_unit_gemm_device_simt.dir/simt_zgemm_tt_sm50.cu.s
 .PHONY : simt_zgemm_tt_sm50.cu.s
 
 # Help Target
@@ -4709,7 +4709,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -P /home/ubuntu/github/cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

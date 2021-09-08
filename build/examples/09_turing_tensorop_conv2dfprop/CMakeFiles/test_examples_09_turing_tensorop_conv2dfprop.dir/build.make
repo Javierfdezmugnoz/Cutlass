@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Utility rule file for test_examples_09_turing_tensorop_conv2dfprop.
 
@@ -67,7 +67,7 @@ include examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turi
 include examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/progress.make
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop: examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop
-	cd /home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop && ./09_turing_tensorop_conv2dfprop
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && ./09_turing_tensorop_conv2dfprop
 
 test_examples_09_turing_tensorop_conv2dfprop: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop
 test_examples_09_turing_tensorop_conv2dfprop: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/build.make
@@ -78,10 +78,10 @@ examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tenso
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/build
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/cmake_clean.cmake
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/clean
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/examples/09_turing_tensorop_conv2dfprop /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop /home/ubuntu/github/cutlass/build/examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/test_examples_09_turing_tensorop_conv2dfprop.dir/depend
 

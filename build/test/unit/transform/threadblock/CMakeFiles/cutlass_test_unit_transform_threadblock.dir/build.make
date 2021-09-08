@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Include any dependencies generated for this target.
 include test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/depend.make
@@ -72,30 +72,30 @@ include test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_t
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/flags.make
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o: ../test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o -c /home/ubuntu/github/cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o"
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o -MF CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o.d -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o -c /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu > CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu > CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.i
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/regular_tile_iterator_tensor_op.cu -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.s
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/flags.make
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o: ../test/unit/transform/threadblock/predicated_tile_iterator.cu
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o -MF CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o.d -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o -c /home/ubuntu/github/cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o"
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o -MF CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o.d -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o -c /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.i"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/github/cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu > CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.i
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu > CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.i
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.s"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/github/cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.s
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock/predicated_tile_iterator.cu -o CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.s
 
 # Object files for target cutlass_test_unit_transform_threadblock
 cutlass_test_unit_transform_threadblock_OBJECTS = \
@@ -104,8 +104,8 @@ cutlass_test_unit_transform_threadblock_OBJECTS = \
 
 # External object files for target cutlass_test_unit_transform_threadblock
 cutlass_test_unit_transform_threadblock_EXTERNAL_OBJECTS = \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
-"/home/ubuntu/github/cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
+"/home/javifdez/git_repositories/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra.dir/common/filter_architecture.cpp.o" \
+"/home/javifdez/git_repositories/Cutlass/build/test/unit/CMakeFiles/cutlass_test_unit_infra_lib.dir/test_unit.cpp.o"
 
 test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/regular_tile_iterator_tensor_op.cu.o
 test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/predicated_tile_iterator.cu.o
@@ -115,18 +115,18 @@ test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: test/un
 test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: /usr/local/cuda-10.2/lib64/libcudart.so
 test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: _deps/googletest-build/googlemock/gtest/libgtestd.a
 test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock: test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/github/cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cutlass_test_unit_transform_threadblock"
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_transform_threadblock.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cutlass_test_unit_transform_threadblock"
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cutlass_test_unit_transform_threadblock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/build: test/unit/transform/threadblock/cutlass_test_unit_transform_threadblock
 .PHONY : test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/build
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_transform_threadblock.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_transform_threadblock.dir/cmake_clean.cmake
 .PHONY : test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/clean
 
 test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/transform/threadblock /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock /home/ubuntu/github/cutlass/build/test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/transform/threadblock /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/transform/threadblock/CMakeFiles/cutlass_test_unit_transform_threadblock.dir/depend
 

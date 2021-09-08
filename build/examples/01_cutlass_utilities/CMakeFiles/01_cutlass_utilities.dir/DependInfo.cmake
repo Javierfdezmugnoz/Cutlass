@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/github/cutlass/examples/01_cutlass_utilities/cutlass_utilities.cu" "examples/01_cutlass_utilities/CMakeFiles/01_cutlass_utilities.dir/cutlass_utilities.cu.o" "gcc" "examples/01_cutlass_utilities/CMakeFiles/01_cutlass_utilities.dir/cutlass_utilities.cu.o.d"
+  "/home/javifdez/git_repositories/Cutlass/examples/01_cutlass_utilities/cutlass_utilities.cu" "examples/01_cutlass_utilities/CMakeFiles/01_cutlass_utilities.dir/cutlass_utilities.cu.o" "gcc" "examples/01_cutlass_utilities/CMakeFiles/01_cutlass_utilities.dir/cutlass_utilities.cu.o.d"
   )
 
 # Targets to which this target links.

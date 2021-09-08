@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/tools
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/tools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/github/cutlass/build/tools/util/cmake_install.cmake")
-  include("/home/ubuntu/github/cutlass/build/tools/library/cmake_install.cmake")
-  include("/home/ubuntu/github/cutlass/build/tools/profiler/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/tools/util/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/tools/library/cmake_install.cmake")
+  include("/home/javifdez/git_repositories/Cutlass/build/tools/profiler/cmake_install.cmake")
 
 endif()
 

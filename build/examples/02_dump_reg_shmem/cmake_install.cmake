@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/github/cutlass/examples/02_dump_reg_shmem
+# Install script for directory: /home/javifdez/git_repositories/Cutlass/examples/02_dump_reg_shmem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/02_dump_reg_shmem"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem/02_dump_reg_shmem")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/02_dump_reg_shmem/02_dump_reg_shmem")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/02_dump_reg_shmem" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/02_dump_reg_shmem")
     file(RPATH_CHANGE
@@ -63,6 +63,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/ubuntu/github/cutlass/build/examples/02_dump_reg_shmem/CTestTestfile.ctest_examples_02_dump_reg_shmem.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/examples/02_dump_reg_shmem/CTestTestfile.ctest_examples_02_dump_reg_shmem.cmake")
 endif()
 

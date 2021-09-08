@@ -33,7 +33,7 @@
 
 #include "cutlass/layout/matrix.h"
 #include "cutlass/gemm/gemm.h"
-
+#include "helper.h"
 // Included by JFdez
 #include "cutlass/gemm/threadblock/mma_pipelined.h"
 //#include "../../examples/ES_protection/checksum.h"
@@ -77,7 +77,7 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     d[0] = a[0] * b[0] + c[0];
 
     //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
-    #if INTERNAL_ES ==  XOR_CHECKSUM
+    #if INTERNAL_ES==XOR_CHECKSUM
       atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
       atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
       atomicXor(&ES_c[0], (uint32_t) *((uint32_t*) &d[0]));

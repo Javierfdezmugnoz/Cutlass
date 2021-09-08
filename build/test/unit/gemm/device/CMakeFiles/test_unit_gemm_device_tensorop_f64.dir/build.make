@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/github/cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/github/cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
 
 # Utility rule file for test_unit_gemm_device_tensorop_f64.
 
@@ -67,7 +67,7 @@ include test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/
 include test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/progress.make
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64: test/unit/gemm/device/cutlass_test_unit_gemm_device_tensorop_f64
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/device && ./cutlass_test_unit_gemm_device_tensorop_f64 --gtest_output=xml:test_unit_gemm_device_tensorop_f64.gtest.xml
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device && ./cutlass_test_unit_gemm_device_tensorop_f64 --gtest_output=xml:test_unit_gemm_device_tensorop_f64.gtest.xml
 
 test_unit_gemm_device_tensorop_f64: test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64
 test_unit_gemm_device_tensorop_f64: test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build.make
@@ -78,10 +78,10 @@ test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build: t
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/build
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/clean:
-	cd /home/ubuntu/github/cutlass/build/test/unit/gemm/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/cmake_clean.cmake
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/clean
 
 test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/depend:
-	cd /home/ubuntu/github/cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/github/cutlass /home/ubuntu/github/cutlass/test/unit/gemm/device /home/ubuntu/github/cutlass/build /home/ubuntu/github/cutlass/build/test/unit/gemm/device /home/ubuntu/github/cutlass/build/test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/gemm/device /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device /home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/gemm/device/CMakeFiles/test_unit_gemm_device_tensorop_f64.dir/depend
 

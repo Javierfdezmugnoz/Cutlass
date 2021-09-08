@@ -61,8 +61,12 @@
   #define NAME "NO_NAME"
 #endif
 
-#define xstr(s) str(s)
-#define str(s) #s
+// Defines cutlass::gemm::device::Gemm, the generic Gemm computation template class.
+#include "cutlass/gemm/device/gemm.h"
+#include <time.h>
+
+// lock memory
+#include <sys/mman.h>
 
 #define PUT_IN_REGISTER								 /* dummy definition  for Windows 32 */
 
@@ -91,25 +95,23 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
 // CUTLASS includes needed for single-precision GEMM kernel
 //
 
-// Defines cutlass::gemm::device::Gemm, the generic Gemm computation template class.
-#include "cutlass/gemm/device/gemm.h"
 
 // Include Smmm.h (MMM employed in the previous paper)
 //#include "cutlass/sequential_MMM/Smmm.h"
 
   // Definition of an struct to store th values of the Execution Signatures
-  struct ESs{
+struct ESs{
     uint32_t A;
     uint32_t B;
     uint32_t C;
   };
 
-#include <time.h>
+
 #define DEF_TIME_VAR(t) clock_t t;
 #define GET_TIME(t) t = clock();
-#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = (float32_t) (std::abs(tmr_end - tmr_start) / CLOCKS_PER_SEC)
+#define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = ((tmr_end - tmr_start) > 0) ? ( (float32_t)  (tmr_end - tmr_start) / CLOCKS_PER_SEC) : ( (float32_t)  (tmr_start - tmr_end)/ CLOCKS_PER_SEC)
 
-#define TIME_MEASUREMENT_LOOPS 10
+#define TIME_MEASUREMENT_LOOPS 100
 #define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
 
 
@@ -508,6 +510,54 @@ cudaError_t ReferenceGemm(
 cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   cudaError_t result;
 
+
+
+  /*==============================================================================
+  //                    CPU affinity
+	==============================================================================*/
+	cpu_set_t mask;
+	CPU_ZERO(&mask);
+	CPU_SET(3, &mask);
+	if(sched_setaffinity(0, sizeof(cpu_set_t), &mask) < 0)
+	{
+		perror("sched_setaffinity failed");
+		exit(-1);
+	}
+  
+  /*==============================================================================
+	//                  Real-time priority
+  ==============================================================================*/
+	struct sched_param param;
+	param.sched_priority = 98;
+	if(sched_setscheduler(0, SCHED_FIFO, &param) < 0)
+	{
+		perror("sched_setscheduler failed");
+		exit(-1);
+	}
+  
+  /*==============================================================================
+	//                      Memory locking
+	==============================================================================*/
+	if(mlockall(MCL_CURRENT | MCL_FUTURE) < 0)
+	{
+		perror("mlockall failed");
+		exit(-1);
+	}
+
+  /*==============================================================================
+	//                       Timing variables
+  ==============================================================================*/
+  struct timespec begin, end;
+	uint64_t time_max_ns = 0;
+	long long iteration_max_time = 0;
+  uint64_t time_ns;
+
+  DEF_TIME_VAR(tmr_start);
+	DEF_TIME_VAR(tmr_end);
+  float64_t time_interval;
+
+
+
   // Compute leading dimensions for each matrix.
   int lda = M;
   int ldb = K;
@@ -669,17 +719,20 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   /* ==============================================================================
   Brief: Timing measurements. The values are stored in a xlsx file
   ==============================================================================*/
-    FILE *p_file;
-	char str_file_name[100u] = NAME"_";
+  FILE *p_file;
+  char str_file_name[100u];
   char str_file_time[100u];
-	time_t time_now = time(NULL);
+  char str_file_name_aux[100u] = NAME;
+  snprintf(str_file_name, 100,"%d_%d_%d_",DIM_M,DIM_N,DIM_K);
+  time_t time_now = time(NULL);
 
-    struct tm *time_info;
+  struct tm *time_info;
 	time_info = localtime(&time_now);
-	strftime(str_file_time, sizeof(str_file_time), "%m_%d_%H_%M_%S.xlsx",time_info);
-  strcat(str_file_name,str_file_time);
+	strftime(str_file_time, sizeof(str_file_time), "%m_%d_%H_%M_%S.csv",time_info);
+  strcat(str_file_name,str_file_name_aux);
 
-	if ((p_file = fopen(str_file_name, "w+")) == NULL)
+
+	if ((p_file = fopen(str_file_name, "a")) == NULL)
 	{
 		fprintf(stderr, "cannot open file '%s'\n", str_file_name);
 		return cudaErrorInvalidValue;
@@ -690,45 +743,10 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 		perror("File opening failed");
 		return cudaErrorInvalidValue;
 	}
-	fprintf(p_file, "Global memory, Timing measurements\n");
-
-
-
-
-  /*==============================================================================
-  // CPU affinity
-	==============================================================================*/
-	cpu_set_t mask;
-	CPU_ZERO(&mask);
-	CPU_SET(3, &mask);
-	if(sched_setaffinity(0, sizeof(cpu_set_t), &mask) < 0)
-	{
-		perror("sched_setaffinity failed");
-		exit(-1);
-	}
   
-  /*==============================================================================
-	// Real-time priority
-  ==============================================================================*/
-	/*struct sched_param param;
-	param.sched_priority = 98;
-	if(sched_setscheduler(0, SCHED_FIFO, &param) < 0)
-	{
-		perror("sched_setscheduler failed");
-		exit(-1);
-	}
-  */
-  /*==============================================================================
-	//  Timing variables
-  ==============================================================================*/
-  struct timespec begin, end;
-	uint64_t time_max_ns = 0;
-	long long iteration_max_time = 0;
-  uint64_t time_ns;
+	fprintf(p_file, "%s,%s,%d,%d,%d,",NAME, str_file_time, DIM_M, DIM_N, DIM_K);
 
-  DEF_TIME_VAR(tmr_start);
-	DEF_TIME_VAR(tmr_end);
-  float64_t time_interval;
+
   
 
     for (size_t i = 0; i < TIME_MEASUREMENT_LOOPS; i++)
@@ -790,18 +808,17 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
             return result;
         }
 
-
         //GET_TIME(tmr_start);
         clock_gettime(CLOCK_MONOTONIC, &begin);
         result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
         clock_gettime(CLOCK_MONOTONIC, &end);
         time_ns = 1e9 * (end.tv_sec - begin.tv_sec) + (end.tv_nsec - begin.tv_nsec);
-        fprintf(p_file, "%f,", time_ns);
+        fprintf(p_file, "%lu,", time_ns);
 
         //GET_TIME(tmr_end);
         //GET_TIME_DIFF(tmr_start, tmr_end, time_interval);
         //time_interval *= ((float64_t)TIME_SEC2USEC);
-        // fprintf(p_file, "%f,", time_interval);
+        //fprintf(p_file, "%f,", time_interval);
         
 
         if (result != cudaSuccess) 
@@ -817,6 +834,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
             return result;
         }
     }
+    fprintf(p_file,"\n");
     fclose(p_file);
 
 
@@ -1013,7 +1031,7 @@ int main(int argc, const char *arg[]) {
   //
 
   // GEMM problem dimensions.
-  int problem[3] = { 128, 128, 128  };
+  int problem[3] = { DIM_M, DIM_N, DIM_K  };
 
   for (int i = 1; i < argc && i < 4; ++i) {
     std::stringstream ss(arg[i]);
