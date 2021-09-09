@@ -506,7 +506,7 @@ DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
 //No help, variable specified on the command line.
-EXTERNAL_ES:UNINITIALIZED=2
+EXTERNAL_ES:UNINITIALIZED=1
 
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/home/javifdez/git_repositories/Cutlass/build/_deps
@@ -561,7 +561,7 @@ MEMORYCHECK_COMMAND:FILEPATH=/usr/local/cuda-10.2/bin/cuda-memcheck
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
 //No help, variable specified on the command line.
-NAME:UNINITIALIZED=3_TECH_ONES_EXTERNAL
+NAME:UNINITIALIZED=0_TECH_XOR_EXTERNAL
 
 //Path to a library.
 NVRTC_LIBRARY:FILEPATH=/usr/local/cuda-10.2/lib64/libnvrtc.so
@@ -910,7 +910,7 @@ _Python3_EXECUTABLE:INTERNAL=/usr/bin/python3.8
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;8;0;64;;cpython-38-aarch64-linux-gnu;/usr/lib/python3.8;/usr/lib/python3.8;/usr/lib/python3/dist-packages;/usr/lib/python3/dist-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=1d67f3455c450d8c2e1e4f08924f9fd7
-__CUTLASS_CUDA_CLANG_FLAGS:INTERNAL=-DEXTERNAL_ES=2;-DINTERMEDIATE_ES=0;-DINTERNAL_ES=0;-DNAME="3_TECH_ONES_EXTERNAL";-DDIM_M=160;-DDIM_N=160;-DDIM_K=160;-DCUTLASS_TEST_LEVEL=0;--cuda-include-ptx=all;-gmlt;--cuda-path=/usr/local/cuda-10.2;-mllvm;-pragma-unroll-threshold=100000;-mllvm;-unroll-threshold=5000;-Wno-unused-command-line-argument;-D__CUDACC_VER_MAJOR__=10;-D__CUDACC_VER_MINOR__=2;-Wl,--disable-new-dtags
+__CUTLASS_CUDA_CLANG_FLAGS:INTERNAL=-DEXTERNAL_ES=1;-DINTERMEDIATE_ES=0;-DINTERNAL_ES=0;-DNAME="0_TECH_XOR_EXTERNAL";-DDIM_M=160;-DDIM_N=160;-DDIM_K=160;-DCUTLASS_TEST_LEVEL=0;--cuda-include-ptx=all;-gmlt;--cuda-path=/usr/local/cuda-10.2;-mllvm;-pragma-unroll-threshold=100000;-mllvm;-unroll-threshold=5000;-Wno-unused-command-line-argument;-D__CUDACC_VER_MAJOR__=10;-D__CUDACC_VER_MINOR__=2;-Wl,--disable-new-dtags
 __CUTLASS_CUDA_CLANG_FLAGS_DEBUG:INTERNAL=
 __CUTLASS_CUDA_CLANG_FLAGS_RELEASE:INTERNAL=
 __CUTLASS_CUDA_CLANG_FLAGS_RELWITHDEBINFO:INTERNAL=
