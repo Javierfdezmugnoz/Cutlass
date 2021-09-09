@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for cutlass_test_unit_epilogue.
 
@@ -79,10 +79,10 @@ test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build: cutlass_test
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/build
 
 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/epilogue && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/epilogue && $(CMAKE_COMMAND) -P CMakeFiles/cutlass_test_unit_epilogue.dir/cmake_clean.cmake
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/clean
 
 test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/epilogue /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/epilogue /home/javifdez/git_repositories/Cutlass/build/test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/test/unit/epilogue /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/test/unit/epilogue /home/javifdez/git_repository/Cutlass/build/test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/epilogue/CMakeFiles/cutlass_test_unit_epilogue.dir/depend
 

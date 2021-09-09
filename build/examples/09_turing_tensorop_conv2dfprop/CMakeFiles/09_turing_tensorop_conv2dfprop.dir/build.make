@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/depend.make
@@ -72,16 +72,16 @@ include examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_co
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/flags.make
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o: ../examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o -MF CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o.d -o CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o -c /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o -MF CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o.d -o CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.o -c /home/javifdez/git_repository/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.i"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu > CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repository/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu > CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.i
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.s"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu -o CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repository/Cutlass/examples/09_turing_tensorop_conv2dfprop/turing_tensorop_conv2dfprop.cu -o CMakeFiles/09_turing_tensorop_conv2dfprop.dir/turing_tensorop_conv2dfprop.cu.s
 
 # Object files for target 09_turing_tensorop_conv2dfprop
 09_turing_tensorop_conv2dfprop_OBJECTS = \
@@ -94,18 +94,18 @@ examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop: examples
 examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/build.make
 examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop: examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 09_turing_tensorop_conv2dfprop"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/09_turing_tensorop_conv2dfprop.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 09_turing_tensorop_conv2dfprop"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/09_turing_tensorop_conv2dfprop.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/build: examples/09_turing_tensorop_conv2dfprop/09_turing_tensorop_conv2dfprop
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/build
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/09_turing_tensorop_conv2dfprop.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop && $(CMAKE_COMMAND) -P CMakeFiles/09_turing_tensorop_conv2dfprop.dir/cmake_clean.cmake
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/clean
 
 examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repositories/Cutlass/build/examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop /home/javifdez/git_repository/Cutlass/build/examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/09_turing_tensorop_conv2dfprop/CMakeFiles/09_turing_tensorop_conv2dfprop.dir/depend
 

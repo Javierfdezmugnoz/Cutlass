@@ -518,7 +518,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	==============================================================================*/
 	cpu_set_t mask;
 	CPU_ZERO(&mask);
-	CPU_SET(1, &mask);
+	CPU_SET(0, &mask);
 	if(sched_setaffinity(0, sizeof(cpu_set_t), &mask) < 0)
 	{
 		perror("sched_setaffinity failed");
@@ -543,7 +543,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	{
 		perror("mlockall failed");
 		exit(-1);
-	}
+	} 
 
   /*==============================================================================
   //                       Timing variables
@@ -553,14 +553,16 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   long long iteration_max_time = 0;
   uint64_t time_ns;
 
-  // Statistical variables
-  /*----------------------------------------------------------------------------------------*/
+  /*==============================================================================
+  //                      Statistical variables
+  ==============================================================================*/
+
 	double M_time = 0.0;
 	double S_time = 0.0;
 
-    DEF_TIME_VAR(tmr_start);
+  DEF_TIME_VAR(tmr_start);
 	DEF_TIME_VAR(tmr_end);
-    float64_t time_interval;
+  float64_t time_interval;
 
     // Compute leading dimensions for each matrix.
     int lda = M;
@@ -626,7 +628,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
 
   // Copy the CRC lookup table from host to device
-  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t),0, cudaMemcpyHostToDevice);
+  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t));
   if (result != cudaSuccess) {
     std::cerr << "Failed to allocate Constant Memory: "
       << cudaGetErrorString(result) << std::endl;}
@@ -719,11 +721,280 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
     return result;
   }
+  
+  /* ==============================================================================
+    Brief: Diagnostic Coverage experiments
+  ==============================================================================*/
+	size_t size_a, size_b, size_c, size;
+	uint32_t ui32_idx_bit,
+		ui32_dc_cnt_all = 0u,
+		ui32_dc_cnt = 0u,
+		aui32_dc_value[e_FI_VAR_MAX];
+	float32_t f32_alpha = 1.0f;
 
-    uint64_t timing_values[TIME_MEASUREMENT_LOOPS-INITIAL_TIME_MEASUREMENT];
+	DEF_TIME_VAR(tmr_start_exp);
+	DEF_TIME_VAR(tmr_end_exp);
+
+	float64_t time_interval;
+
+	size_a = M * K * sizeof(float32_t);
+	size_b = N * K * sizeof(float32_t);
+	size_c = M * N * sizeof(float32_t);
+
+
+	/* 1. Execute DC measurement */
+
+  /* ==============================================================================
+  //                Initializations
+  ==============================================================================*/
+	matrix2zeros(&paf32_ma_fi[0u], M, K);
+	matrix2zeros(&paf32_mb_fi[0u], K, N);
+	matrix2zeros(&paf32_ma[0u], M, K);
+	matrix2zeros(&paf32_mb[0u], K, N);
+	matrix2zeros(&paf32_mc[0u], M, N);
+
+
+	/* Fault injection campaing */
+	uint32_t ui32_comb_a_max = size_a;
+	uint32_t ui32_comb_b_max = size_b;
+	memcpy(&paf32_ma_fi[0u], &paf32_ma[0u], size_a);
+#endif
+
+	//TECH_INTEL_XOR_CRC TECH_INTEL_ONES_INTERNAL TECH_INTEL_XOR_EXTERNAL TECH_INTEL_COMB
+	for (e_tech = TECH_INTEL_XOR_EXTERNAL; e_tech < TECH_INTEL_COMB; e_tech++)
+	{
+		if (ab32_selected_tech[e_tech])
+		{
+#ifdef _WIN32
+			FILE *p_file;
+			FILE *p_file_idx_fi;
+			char str_file_name[200u];
+			char str_file_name_aux[100u];
+			char str_file_name_idx_fi[200u];
+
+			errno_t err;
+			time_t time_now = time(NULL);
+			struct tm time_info;
+
+			/* 1. Open output file (csv) */
+
+			localtime_s(&time_info, &time_now);
+			if (b32_double_error)
+			{
+				strftime(str_file_name_aux, sizeof(str_file_name_aux), "dc_double_bit_csv_%y_%m_%d__%A__%H_%M_%S.csv", &time_info);
+			}
+			else
+			{
+				strftime(str_file_name_aux, sizeof(str_file_name_aux), "dc_single_bit_csv_%d_%H_%M_%S", &time_info);
+			}
+
+#ifdef Square_mtrx
+			snprintf(str_file_name, 200u, "%s_fi.csv", pstr_technique[e_tech]);
+			snprintf(str_file_name_idx_fi, 200u, "%s_fi_idx.csv", pstr_technique[e_tech]);
+#else
+			snprintf(str_file_name, 200u, "%s_fi_%u.csv", pstr_technique[e_tech], launch_number);
+			snprintf(str_file_name_idx_fi, 200u, "%s_fi_%u_idx.csv", pstr_technique[e_tech], launch_number);
+#endif
+
+
+			if ((err = fopen_s(&p_file, str_file_name, "w+")) != 0)
+			{
+				fprintf(stderr, "cannot open file '%s': %u\n", str_file_name, err);
+				return EXIT_FAILURE;
+			}
+
+			if ((err = fopen_s(&p_file_idx_fi, str_file_name_idx_fi, "w+")) != 0)
+			{
+				fprintf(stderr, "cannot open file '%s': %u\n", str_file_name_idx_fi, err);
+				return EXIT_FAILURE;
+			}
+#endif
+
+#ifdef __linux__
+			FILE *p_file;
+			FILE *p_file_idx_fi;
+			char str_file_name[200u];
+			char str_file_name_aux[100u];
+			char str_file_name_idx_fi[200u];
+
+			errno_t err;
+			time_t time_now = time(NULL);
+			struct tm *time_info;
+
+			/* 1. Open output file (csv) */
+			time_now = time(NULL);
+			time_info = localtime(&time_now);
+
+			if (b32_double_error)
+			{
+				strftime(str_file_name_aux, sizeof(str_file_name), "dc_double_bit_csv_%y_%m_%d__%A__%H_%M_%S.csv", time_info);
+			}
+			else
+			{
+				strftime(str_file_name_aux, sizeof(str_file_name), "%m_%d_%H_%M_%S", time_info);
+			}
+
+
+#ifdef Square_mtrx
+			snprintf(str_file_name, 200u, "%s_fi.csv", pstr_technique[e_tech]);
+			snprintf(str_file_name_idx_fi, 200u, "%s_fi_idx.csv", pstr_technique[e_tech]);
+#else
+			snprintf(str_file_name, 200u, "%s_fi_%u.csv", pstr_technique[e_tech], launch_number);
+			snprintf(str_file_name_idx_fi, 200u, "%s_fi_%u_idx.csv", pstr_technique[e_tech], launch_number);
+#endif
+
+
+			if ((p_file = fopen(str_file_name, "w+")) == NULL)
+			{
+				fprintf(stderr, "cannot open file '%s'\n", str_file_name);
+				return EXIT_FAILURE;
+			}
+
+			if ((p_file_idx_fi = fopen(str_file_name_idx_fi, "w+")) == NULL)
+			{
+				fprintf(stderr, "cannot open file '%s'\n", str_file_name_idx_fi);
+				return EXIT_FAILURE;
+			}
+#endif
+
+
+#ifdef Square_mtrx
+			e_size_max = (e_size_max < eSIZE_MAX) ? e_size_max : (eSIZE_MAX - 1u);
+
+			for (e_size = eSIZE_MIN; e_size <= e_size_max; e_size++)
+			{ //eSIZE_MIN eSIZE_20_20 eSize_40_40 e_size_max
+				// Restart the value of detected error for each matrix size experiment
+				ui32_dc_cnt = 0u;
+				ui32_dc_cnt_all = 0u;
+				size = kaui32_matrix_size[e_size] * kaui32_matrix_size[e_size] * sizeof(float32_t) * 8;
+				ui32_combinations = (kaui32_matrix_size[e_size] * kaui32_matrix_size[e_size]) * sizeof(uint32_t) * 8;
+
+				printf("\n\t\t [%3u x %3u],", kaui32_matrix_size[e_size], kaui32_matrix_size[e_size]);
+
+				/* 1. Store the Execution Signature (ES) for comparing with the value obtained after the fault injection*/
+				aui32_dc_value[e_FI_VAR_NONE] = ptr_fn_smm_technique[e_tech](kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], f32_alpha, (float32_t* const)paf32_ma, (float32_t* const)paf32_mb, (float32_t* const)paf32_mc);
+				for (ui32_idx_bit = 0u; ui32_idx_bit < ui32_combinations; ui32_idx_bit++) {
+					mem_fi(&paf32_ma_fi[0], ui32_idx_bit);
+					mem_fi(&paf32_mb_fi[0], ui32_idx_bit);
+
+					aui32_dc_value[e_FI_VAR_A] = ptr_fn_smm_technique[e_tech](kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], f32_alpha, (float32_t* const)paf32_ma_fi, (float32_t* const)paf32_mb, (float32_t* const)paf32_mc);
+					aui32_dc_value[e_FI_VAR_B] = ptr_fn_smm_technique[e_tech](kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], kaui32_matrix_size[e_size], f32_alpha, (float32_t* const)paf32_ma, (float32_t* const)paf32_mb_fi, (float32_t* const)paf32_mc);
+
+					ui32_dc_cnt_all += 2u;
+					//ui32_dc_cnt = (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_A]) ? (ui32_dc_cnt + 1u) : ui32_dc_cnt;
+					//ui32_dc_cnt = (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_B]) ? (ui32_dc_cnt + 1u) : ui32_dc_cnt;
+
+					if (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_A]) {
+						ui32_dc_cnt += 1u;
+					}
+					else {
+						fprintf(p_file_idx_fi, "%u,", ui32_idx_bit);
+					}
+					if (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_B]) {
+						ui32_dc_cnt += 1u;
+					}
+					else {
+						fprintf(p_file_idx_fi, "%u,", ui32_idx_bit);
+					}
+
+					mem_fi(&paf32_ma_fi[0], ui32_idx_bit);
+					mem_fi(&paf32_mb_fi[0], ui32_idx_bit);
+				}
+				fprintf(p_file, "\n%s, %u, %u, %u", pstr_technique[e_tech], kaui32_matrix_size[e_size], ui32_dc_cnt_all, ui32_dc_cnt);
+			}
+#else
+			// 1. Store the Execution Signature (ES) for comparing with the value obtained after the fault injection
+			aui32_dc_value[e_FI_VAR_NONE] = ptr_fn_smm_technique[e_tech](M, N, K, f32_alpha, (float32_t* const)paf32_ma, (float32_t* const)paf32_mb, (float32_t* const)paf32_mc);
+			fprintf(p_file, "diagnostic_technique,detected_errors_a,total_detected_errors,number_of_fi,M, N, K,idx_fi_initial,idx_fi_final_a,idx_fi_final_b,launch number,");
+			fprintf(p_file, "\n%s, ", pstr_technique[e_tech]);
+			for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_a_max; ui32_idx_bit++) {
+				mem_fi(&paf32_ma_fi[0], ui32_idx_bit);
+				aui32_dc_value[e_FI_VAR_A] = ptr_fn_smm_technique[e_tech](M, N, K, f32_alpha, (float32_t* const)paf32_ma_fi, (float32_t* const)paf32_mb, (float32_t* const)paf32_mc);
+				if (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_A]) {
+					ui32_dc_cnt += 1u;
+				}
+				else {
+					fprintf(p_file_idx_fi, "%u,", ui32_idx_bit);
+
+				}
+				mem_fi(&paf32_ma_fi[0], ui32_idx_bit);
+			}
+
+			fprintf(p_file, "%u,", ui32_dc_cnt);
+			fprintf(p_file_idx_fi, "\n");
+			for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_b_max; ui32_idx_bit++)
+			{
+				mem_fi(&paf32_mb_fi[0], ui32_idx_bit);
+				aui32_dc_value[e_FI_VAR_B] = ptr_fn_smm_technique[e_tech](M, N, K, f32_alpha, (float32_t* const)paf32_ma, (float32_t* const)paf32_mb_fi, (float32_t* const)paf32_mc);
+				if (aui32_dc_value[e_FI_VAR_NONE] != aui32_dc_value[e_FI_VAR_B]) {
+					ui32_dc_cnt += 1u;
+				}
+				else {
+					fprintf(p_file_idx_fi, "%u,", ui32_idx_bit);
+				}
+				mem_fi(&paf32_mb_fi[0], ui32_idx_bit);
+			}
+			fprintf(p_file, "%u,%u,%d,%d,%d,%u,%u,%u,%u", ui32_dc_cnt, (ui32_combinations_a + ui32_combinations_b), M, N, K, ui32_idx_bit_aux, ui32_comb_a_max, ui32_comb_b_max, launch_number);
+
+#endif
+			// Close the file where the result are been stored
+			fclose(p_file);
+			fclose(p_file_idx_fi);
+		}
+	}
+
+
+	GET_TIME(tmr_end_exp);
+	GET_TIME_DIFF(tmr_start_exp, tmr_end_exp, time_interval);
+	printf("\n Experiments executed in %10.8lf [sec]", time_interval);
+	return EXIT_SUCCESS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
   /* ==============================================================================
     Brief: Timing measurements. The values are stored in a xlsx file
   ==============================================================================*/
+    uint64_t timing_values[TIME_MEASUREMENT_LOOPS-INITIAL_TIME_MEASUREMENT];
+
     for (size_t i_loop = 0; i_loop < TIME_MEASUREMENT_LOOPS; i_loop++)
     {
         // Re-initialize ES_a

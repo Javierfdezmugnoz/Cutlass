@@ -32,7 +32,7 @@ namespace cutlass {
     return version;
   }
   inline std::string getGitRevision() {
-    return "5bc8a95";
+    return "83991e2";
   }
 
 } // namespace cutlass

@@ -24,30 +24,6 @@ void initialize_cutlass_simt_cgemm_128x128_8x2_nn_align1(Manifest &manifest);
 void initialize_cutlass_simt_cgemm_128x128_8x2_nt_align1(Manifest &manifest);
 void initialize_cutlass_simt_cgemm_128x128_8x2_tn_align1(Manifest &manifest);
 void initialize_cutlass_simt_cgemm_128x128_8x2_tt_align1(Manifest &manifest);
-void initialize_cutlass_simt_hgemm_256x128_8x2_nn_align1(Manifest &manifest);
-void initialize_cutlass_simt_hgemm_256x128_8x2_nt_align1(Manifest &manifest);
-void initialize_cutlass_simt_hgemm_256x128_8x2_tn_align1(Manifest &manifest);
-void initialize_cutlass_simt_hgemm_256x128_8x2_tt_align1(Manifest &manifest);
-void initialize_cutlass_simt_igemm_s8_128x128_32x2_nn_align1(Manifest &manifest);
-void initialize_cutlass_simt_igemm_s8_128x128_32x2_nt_align1(Manifest &manifest);
-void initialize_cutlass_simt_igemm_s8_128x128_32x2_tn_align1(Manifest &manifest);
-void initialize_cutlass_simt_igemm_s8_128x128_32x2_tt_align1(Manifest &manifest);
-void initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1(Manifest &manifest);
-void initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1(Manifest &manifest);
-void initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1(Manifest &manifest);
-void initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1(Manifest &manifest);
-void initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_h884gemm_256x128_32x2_nn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_h884gemm_256x128_32x2_nt_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_h884gemm_256x128_32x2_tn_align8(Manifest &manifest);
-void initialize_cutlass_tensorop_h884gemm_256x128_32x2_tt_align8(Manifest &manifest);
 
 
 //
@@ -66,30 +42,6 @@ void initialize_all_gemm_operations(Manifest &manifest) {
   initialize_cutlass_simt_cgemm_128x128_8x2_nt_align1(manifest);
   initialize_cutlass_simt_cgemm_128x128_8x2_tn_align1(manifest);
   initialize_cutlass_simt_cgemm_128x128_8x2_tt_align1(manifest);
-  initialize_cutlass_simt_hgemm_256x128_8x2_nn_align1(manifest);
-  initialize_cutlass_simt_hgemm_256x128_8x2_nt_align1(manifest);
-  initialize_cutlass_simt_hgemm_256x128_8x2_tn_align1(manifest);
-  initialize_cutlass_simt_hgemm_256x128_8x2_tt_align1(manifest);
-  initialize_cutlass_simt_igemm_s8_128x128_32x2_nn_align1(manifest);
-  initialize_cutlass_simt_igemm_s8_128x128_32x2_nt_align1(manifest);
-  initialize_cutlass_simt_igemm_s8_128x128_32x2_tn_align1(manifest);
-  initialize_cutlass_simt_igemm_s8_128x128_32x2_tt_align1(manifest);
-  initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_nn_align1(manifest);
-  initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_nt_align1(manifest);
-  initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_tn_align1(manifest);
-  initialize_cutlass_simt_s8_igemm_s8_128x128_32x2_tt_align1(manifest);
-  initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_nn_align8(manifest);
-  initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_nt_align8(manifest);
-  initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_tn_align8(manifest);
-  initialize_cutlass_tensorop_s884gemm_f16_256x128_32x2_tt_align8(manifest);
-  initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nn_align8(manifest);
-  initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_nt_align8(manifest);
-  initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tn_align8(manifest);
-  initialize_cutlass_tensorop_f16_s884gemm_f16_256x128_32x2_tt_align8(manifest);
-  initialize_cutlass_tensorop_h884gemm_256x128_32x2_nn_align8(manifest);
-  initialize_cutlass_tensorop_h884gemm_256x128_32x2_nt_align8(manifest);
-  initialize_cutlass_tensorop_h884gemm_256x128_32x2_tn_align8(manifest);
-  initialize_cutlass_tensorop_h884gemm_256x128_32x2_tt_align8(manifest);
 
 
 }

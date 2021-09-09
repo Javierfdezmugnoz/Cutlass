@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_examples_18_Simt.
 
@@ -67,7 +67,7 @@ include examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/compiler_depen
 include examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/progress.make
 
 examples/18_Sim_test/CMakeFiles/test_examples_18_Simt: examples/18_Sim_test/18_Simt
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/18_Sim_test && ./18_Simt
+	cd /home/javifdez/git_repository/Cutlass/build/examples/18_Sim_test && ./18_Simt
 
 test_examples_18_Simt: examples/18_Sim_test/CMakeFiles/test_examples_18_Simt
 test_examples_18_Simt: examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/build.make
@@ -78,10 +78,10 @@ examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/build: test_examples_1
 .PHONY : examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/build
 
 examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/18_Sim_test && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_18_Simt.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/18_Sim_test && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_18_Simt.dir/cmake_clean.cmake
 .PHONY : examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/clean
 
 examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/18_Sim_test /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/18_Sim_test /home/javifdez/git_repositories/Cutlass/build/examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/18_Sim_test /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/18_Sim_test /home/javifdez/git_repository/Cutlass/build/examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/18_Sim_test/CMakeFiles/test_examples_18_Simt.dir/depend
 

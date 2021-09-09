@@ -11,7 +11,7 @@ void initialize_all_conv2d_operations(Manifest &manifest);
 
 void initialize_all(Manifest &manifest) {
 
-  manifest.reserve(66);
+  manifest.reserve(24);
 
   initialize_all_gemm_operations(manifest);
   initialize_all_conv2d_operations(manifest);

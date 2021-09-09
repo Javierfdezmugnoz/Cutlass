@@ -21,8 +21,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/google/googletest.git" "GIT_TAG" "0fe9660"
-                    SOURCE_DIR          "/home/javifdez/git_repositories/Cutlass/build/_deps/googletest-src"
-                    BINARY_DIR          "/home/javifdez/git_repositories/Cutlass/build/_deps/googletest-build"
+                    SOURCE_DIR          "/home/javifdez/git_repository/Cutlass/build/_deps/googletest-src"
+                    BINARY_DIR          "/home/javifdez/git_repository/Cutlass/build/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

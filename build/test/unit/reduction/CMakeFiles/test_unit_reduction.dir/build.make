@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_unit_reduction.
 
@@ -77,10 +77,10 @@ test/unit/reduction/CMakeFiles/test_unit_reduction.dir/build: test_unit_reductio
 .PHONY : test/unit/reduction/CMakeFiles/test_unit_reduction.dir/build
 
 test/unit/reduction/CMakeFiles/test_unit_reduction.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/reduction && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/CMakeFiles/test_unit_reduction.dir/clean
 
 test/unit/reduction/CMakeFiles/test_unit_reduction.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/reduction /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/CMakeFiles/test_unit_reduction.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/test/unit/reduction /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/test/unit/reduction /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/CMakeFiles/test_unit_reduction.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/CMakeFiles/test_unit_reduction.dir/depend
 

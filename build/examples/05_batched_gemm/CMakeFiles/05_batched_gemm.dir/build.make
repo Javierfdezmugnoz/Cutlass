@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/depend.make
@@ -72,16 +72,16 @@ include examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/flags.make
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o: examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/flags.make
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o: ../examples/05_batched_gemm/batched_gemm.cu
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o: examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o -MF CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o.d -o CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o -c /home/javifdez/git_repositories/Cutlass/examples/05_batched_gemm/batched_gemm.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o -MF CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o.d -o CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.o -c /home/javifdez/git_repository/Cutlass/examples/05_batched_gemm/batched_gemm.cu
 
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.i"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/examples/05_batched_gemm/batched_gemm.cu > CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repository/Cutlass/examples/05_batched_gemm/batched_gemm.cu > CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.i
 
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.s"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/examples/05_batched_gemm/batched_gemm.cu -o CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repository/Cutlass/examples/05_batched_gemm/batched_gemm.cu -o CMakeFiles/05_batched_gemm.dir/batched_gemm.cu.s
 
 # Object files for target 05_batched_gemm
 05_batched_gemm_OBJECTS = \
@@ -94,18 +94,18 @@ examples/05_batched_gemm/05_batched_gemm: examples/05_batched_gemm/CMakeFiles/05
 examples/05_batched_gemm/05_batched_gemm: examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/build.make
 examples/05_batched_gemm/05_batched_gemm: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/05_batched_gemm/05_batched_gemm: examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 05_batched_gemm"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/05_batched_gemm.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 05_batched_gemm"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/05_batched_gemm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/build: examples/05_batched_gemm/05_batched_gemm
 .PHONY : examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/build
 
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -P CMakeFiles/05_batched_gemm.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm && $(CMAKE_COMMAND) -P CMakeFiles/05_batched_gemm.dir/cmake_clean.cmake
 .PHONY : examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/clean
 
 examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/05_batched_gemm /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm /home/javifdez/git_repositories/Cutlass/build/examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/05_batched_gemm /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm /home/javifdez/git_repository/Cutlass/build/examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/05_batched_gemm/CMakeFiles/05_batched_gemm.dir/depend
 

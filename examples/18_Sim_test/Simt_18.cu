@@ -518,7 +518,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	==============================================================================*/
 	cpu_set_t mask;
 	CPU_ZERO(&mask);
-	CPU_SET(1, &mask);
+	CPU_SET(0, &mask);
 	if(sched_setaffinity(0, sizeof(cpu_set_t), &mask) < 0)
 	{
 		perror("sched_setaffinity failed");
@@ -543,7 +543,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	{
 		perror("mlockall failed");
 		exit(-1);
-	}
+	} 
 
   /*==============================================================================
   //                       Timing variables
@@ -558,9 +558,9 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	double M_time = 0.0;
 	double S_time = 0.0;
 
-    DEF_TIME_VAR(tmr_start);
+  DEF_TIME_VAR(tmr_start);
 	DEF_TIME_VAR(tmr_end);
-    float64_t time_interval;
+  float64_t time_interval;
 
     // Compute leading dimensions for each matrix.
     int lda = M;
@@ -626,7 +626,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
 
   // Copy the CRC lookup table from host to device
-  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t),0, cudaMemcpyHostToDevice);
+  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t));
   if (result != cudaSuccess) {
     std::cerr << "Failed to allocate Constant Memory: "
       << cudaGetErrorString(result) << std::endl;}

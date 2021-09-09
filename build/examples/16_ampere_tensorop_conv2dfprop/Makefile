@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop//CMakeFiles/progress.marks
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles /home/javifdez/git_repository/Cutlass/build/examples/16_ampere_tensorop_conv2dfprop//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/clean
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/rule
 .PHONY : examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_16_ampere_tensorop_conv2dfprop: examples/16_ampere_tensorop_conv2d
 
 # fast build rule for target.
 test_examples_16_ampere_tensorop_conv2dfprop/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/test_examples_16_ampere_tensorop_conv2dfprop.dir/build
 .PHONY : test_examples_16_ampere_tensorop_conv2dfprop/fast
 
 # Convenience name for target.
 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/rule
 .PHONY : examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfpro
 
 # fast build rule for target.
 16_ampere_tensorop_conv2dfprop/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build
 .PHONY : 16_ampere_tensorop_conv2dfprop/fast
 
 ampere_tensorop_conv2dfprop.o: ampere_tensorop_conv2dfprop.cu.o
@@ -225,7 +225,7 @@ ampere_tensorop_conv2dfprop.o: ampere_tensorop_conv2dfprop.cu.o
 
 # target to build an object file
 ampere_tensorop_conv2dfprop.cu.o:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.o
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.o
 .PHONY : ampere_tensorop_conv2dfprop.cu.o
 
 ampere_tensorop_conv2dfprop.i: ampere_tensorop_conv2dfprop.cu.i
@@ -233,7 +233,7 @@ ampere_tensorop_conv2dfprop.i: ampere_tensorop_conv2dfprop.cu.i
 
 # target to preprocess a source file
 ampere_tensorop_conv2dfprop.cu.i:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.i
 .PHONY : ampere_tensorop_conv2dfprop.cu.i
 
 ampere_tensorop_conv2dfprop.s: ampere_tensorop_conv2dfprop.cu.s
@@ -241,7 +241,7 @@ ampere_tensorop_conv2dfprop.s: ampere_tensorop_conv2dfprop.cu.s
 
 # target to generate assembly for a file
 ampere_tensorop_conv2dfprop.cu.s:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/build.make examples/16_ampere_tensorop_conv2dfprop/CMakeFiles/16_ampere_tensorop_conv2dfprop.dir/ampere_tensorop_conv2dfprop.cu.s
 .PHONY : ampere_tensorop_conv2dfprop.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

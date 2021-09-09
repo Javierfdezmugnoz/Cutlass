@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_unit_reduction_thread.
 
@@ -67,7 +67,7 @@ include test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/com
 include test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/progress.make
 
 test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread: test/unit/reduction/thread/cutlass_test_unit_reduction_thread
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/thread && ./cutlass_test_unit_reduction_thread --gtest_output=xml:test_unit_reduction_thread.gtest.xml
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/thread && ./cutlass_test_unit_reduction_thread --gtest_output=xml:test_unit_reduction_thread.gtest.xml
 
 test_unit_reduction_thread: test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread
 test_unit_reduction_thread: test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/build.make
@@ -78,10 +78,10 @@ test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/build: test
 .PHONY : test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/build
 
 test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_thread.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/thread && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_thread.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/clean
 
 test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/reduction/thread /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/thread /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/test/unit/reduction/thread /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/thread /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/thread/CMakeFiles/test_unit_reduction_thread.dir/depend
 

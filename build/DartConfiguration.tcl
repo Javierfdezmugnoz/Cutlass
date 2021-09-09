@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/javifdez/git_repositories/Cutlass
-BuildDirectory: /home/javifdez/git_repositories/Cutlass/build
+SourceDirectory: /home/javifdez/git_repository/Cutlass
+BuildDirectory: /home/javifdez/git_repository/Cutlass/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: XavierNX-RT
+Site: Nano-RT
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-clang++
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/local/bin/cmake" "/home/javifdez/git_repositories/Cutlass"
+ConfigureCommand: "/usr/local/bin/cmake" "/home/javifdez/git_repository/Cutlass"
 MakeCommand: /usr/local/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

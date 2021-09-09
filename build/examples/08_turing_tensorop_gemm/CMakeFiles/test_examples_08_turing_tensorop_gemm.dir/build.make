@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_examples_08_turing_tensorop_gemm.
 
@@ -67,7 +67,7 @@ include examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tens
 include examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/progress.make
 
 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm: examples/08_turing_tensorop_gemm/08_turing_tensorop_gemm
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/08_turing_tensorop_gemm && ./08_turing_tensorop_gemm
+	cd /home/javifdez/git_repository/Cutlass/build/examples/08_turing_tensorop_gemm && ./08_turing_tensorop_gemm
 
 test_examples_08_turing_tensorop_gemm: examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm
 test_examples_08_turing_tensorop_gemm: examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build.make
@@ -78,10 +78,10 @@ examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gem
 .PHONY : examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/build
 
 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/08_turing_tensorop_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/08_turing_tensorop_gemm && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/cmake_clean.cmake
 .PHONY : examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/clean
 
 examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/08_turing_tensorop_gemm /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/08_turing_tensorop_gemm /home/javifdez/git_repositories/Cutlass/build/examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/08_turing_tensorop_gemm /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/08_turing_tensorop_gemm /home/javifdez/git_repository/Cutlass/build/examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/08_turing_tensorop_gemm/CMakeFiles/test_examples_08_turing_tensorop_gemm.dir/depend
 

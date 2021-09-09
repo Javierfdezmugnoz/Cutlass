@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_examples_10_planar_complex.
 
@@ -67,7 +67,7 @@ include examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.di
 include examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/progress.make
 
 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex: examples/10_planar_complex/10_planar_complex
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && ./10_planar_complex
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && ./10_planar_complex
 
 test_examples_10_planar_complex: examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex
 test_examples_10_planar_complex: examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build.make
@@ -78,10 +78,10 @@ examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build:
 .PHONY : examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/build
 
 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_10_planar_complex.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_10_planar_complex.dir/cmake_clean.cmake
 .PHONY : examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/clean
 
 examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/10_planar_complex /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/10_planar_complex /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/10_planar_complex/CMakeFiles/test_examples_10_planar_complex.dir/depend
 

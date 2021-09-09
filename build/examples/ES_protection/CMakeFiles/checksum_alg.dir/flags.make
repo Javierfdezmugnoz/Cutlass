@@ -4,7 +4,7 @@
 # compile CUDA with /usr/local/cuda-10.2/bin/nvcc
 CUDA_DEFINES = 
 
-CUDA_INCLUDES = -I/home/javifdez/git_repositories/Cutlass
+CUDA_INCLUDES = -I/home/javifdez/git_repository/Cutlass
 
 CUDA_FLAGS = -O0 -g -Xcompiler=-fPIC -std=c++11
 

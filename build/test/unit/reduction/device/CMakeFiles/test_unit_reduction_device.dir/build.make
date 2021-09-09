@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_unit_reduction_device.
 
@@ -67,7 +67,7 @@ include test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/com
 include test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/progress.make
 
 test/unit/reduction/device/CMakeFiles/test_unit_reduction_device: test/unit/reduction/device/cutlass_test_unit_reduction_device
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/device && ./cutlass_test_unit_reduction_device --gtest_output=xml:test_unit_reduction_device.gtest.xml
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/device && ./cutlass_test_unit_reduction_device --gtest_output=xml:test_unit_reduction_device.gtest.xml
 
 test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/test_unit_reduction_device
 test_unit_reduction_device: test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/build.make
@@ -78,10 +78,10 @@ test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/build: test
 .PHONY : test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/build
 
 test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_device.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/device && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_reduction_device.dir/cmake_clean.cmake
 .PHONY : test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/clean
 
 test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/reduction/device /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/device /home/javifdez/git_repositories/Cutlass/build/test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/test/unit/reduction/device /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/device /home/javifdez/git_repository/Cutlass/build/test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/reduction/device/CMakeFiles/test_unit_reduction_device.dir/depend
 

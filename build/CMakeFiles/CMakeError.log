@@ -1,25 +1,25 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/CMakeTmp
+Change Dir: /home/javifdez/git_repository/Cutlass/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_f2309/fast && /usr/bin/make  -f CMakeFiles/cmTC_f2309.dir/build.make CMakeFiles/cmTC_f2309.dir/build
-make[1]: Entering directory '/home/javifdez/git_repositories/Cutlass/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f2309.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f2309.dir/src.c.o -c /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_f2309
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2309.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_f2309.dir/src.c.o -o cmTC_f2309 
-CMakeFiles/cmTC_f2309.dir/src.c.o: In function `main':
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_228ed/fast && /usr/bin/make  -f CMakeFiles/cmTC_228ed.dir/build.make CMakeFiles/cmTC_228ed.dir/build
+make[1]: Entering directory '/home/javifdez/git_repository/Cutlass/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_228ed.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_228ed.dir/src.c.o -c /home/javifdez/git_repository/Cutlass/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_228ed
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_228ed.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_228ed.dir/src.c.o -o cmTC_228ed 
+CMakeFiles/cmTC_228ed.dir/src.c.o: In function `main':
 src.c:(.text+0x48): undefined reference to `pthread_create'
 src.c:(.text+0x50): undefined reference to `pthread_detach'
 src.c:(.text+0x58): undefined reference to `pthread_cancel'
 src.c:(.text+0x64): undefined reference to `pthread_join'
 src.c:(.text+0x74): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_f2309.dir/build.make:98: recipe for target 'cmTC_f2309' failed
-make[1]: *** [cmTC_f2309] Error 1
-make[1]: Leaving directory '/home/javifdez/git_repositories/Cutlass/build/CMakeFiles/CMakeTmp'
-Makefile:127: recipe for target 'cmTC_f2309/fast' failed
-make: *** [cmTC_f2309/fast] Error 2
+CMakeFiles/cmTC_228ed.dir/build.make:98: recipe for target 'cmTC_228ed' failed
+make[1]: *** [cmTC_228ed] Error 1
+make[1]: Leaving directory '/home/javifdez/git_repository/Cutlass/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_228ed/fast' failed
+make: *** [cmTC_228ed/fast] Error 2
 
 
 Source file was:

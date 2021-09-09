@@ -1,4 +1,4 @@
-# Install script for directory: /home/javifdez/git_repositories/Cutlass/examples/ES_protection
+# Install script for directory: /home/javifdez/git_repository/Cutlass/examples/ES_protection
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

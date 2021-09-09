@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_examples_12_gemm_bias_relu.
 
@@ -67,7 +67,7 @@ include examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.di
 include examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/progress.make
 
 examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu: examples/12_gemm_bias_relu/12_gemm_bias_relu
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu && ./12_gemm_bias_relu
+	cd /home/javifdez/git_repository/Cutlass/build/examples/12_gemm_bias_relu && ./12_gemm_bias_relu
 
 test_examples_12_gemm_bias_relu: examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu
 test_examples_12_gemm_bias_relu: examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/build.make
@@ -78,10 +78,10 @@ examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/build:
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/build
 
 examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_12_gemm_bias_relu.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/12_gemm_bias_relu && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_12_gemm_bias_relu.dir/cmake_clean.cmake
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/clean
 
 examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/12_gemm_bias_relu /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu /home/javifdez/git_repositories/Cutlass/build/examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/12_gemm_bias_relu /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/12_gemm_bias_relu /home/javifdez/git_repository/Cutlass/build/examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/12_gemm_bias_relu/CMakeFiles/test_examples_12_gemm_bias_relu.dir/depend
 

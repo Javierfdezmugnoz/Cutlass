@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javifdez/git_repositories/Cutlass/examples/17_fprop_per_channel_bias/fprop_per_channel_bias.cu" "examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o" "gcc" "examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o.d"
+  "/home/javifdez/git_repository/Cutlass/examples/17_fprop_per_channel_bias/fprop_per_channel_bias.cu" "examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o" "gcc" "examples/17_fprop_per_channel_bias/CMakeFiles/17_fprop_per_channel_bias.dir/fprop_per_channel_bias.cu.o.d"
   )
 
 # Targets to which this target links.

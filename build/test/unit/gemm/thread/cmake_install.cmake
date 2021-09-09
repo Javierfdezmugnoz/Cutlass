@@ -1,4 +1,4 @@
-# Install script for directory: /home/javifdez/git_repositories/Cutlass/test/unit/gemm/thread
+# Install script for directory: /home/javifdez/git_repository/Cutlass/test/unit/gemm/thread
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_gemm_thread"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/thread/cutlass_test_unit_gemm_thread")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/bin" TYPE EXECUTABLE FILES "/home/javifdez/git_repository/Cutlass/build/test/unit/gemm/thread/cutlass_test_unit_gemm_thread")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_gemm_thread" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/test/cutlass/bin/cutlass_test_unit_gemm_thread")
     file(RPATH_CHANGE
@@ -63,12 +63,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/thread/CTestTestfile.ctest_unit_gemm_thread.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/test/cutlass/ctest" TYPE FILE FILES "/home/javifdez/git_repository/Cutlass/build/test/unit/gemm/thread/CTestTestfile.ctest_unit_gemm_thread.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/javifdez/git_repositories/Cutlass/build/test/unit/gemm/thread/host/cmake_install.cmake")
+  include("/home/javifdez/git_repository/Cutlass/build/test/unit/gemm/thread/host/cmake_install.cmake")
 
 endif()
 

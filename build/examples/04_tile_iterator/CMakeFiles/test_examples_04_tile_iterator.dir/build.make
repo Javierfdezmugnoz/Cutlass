@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_examples_04_tile_iterator.
 
@@ -67,7 +67,7 @@ include examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/
 include examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/progress.make
 
 examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator: examples/04_tile_iterator/04_tile_iterator
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/04_tile_iterator && ./04_tile_iterator
+	cd /home/javifdez/git_repository/Cutlass/build/examples/04_tile_iterator && ./04_tile_iterator
 
 test_examples_04_tile_iterator: examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator
 test_examples_04_tile_iterator: examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/build.make
@@ -78,10 +78,10 @@ examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/build: t
 .PHONY : examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/build
 
 examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/04_tile_iterator && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_04_tile_iterator.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/04_tile_iterator && $(CMAKE_COMMAND) -P CMakeFiles/test_examples_04_tile_iterator.dir/cmake_clean.cmake
 .PHONY : examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/clean
 
 examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/04_tile_iterator /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/04_tile_iterator /home/javifdez/git_repositories/Cutlass/build/examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/04_tile_iterator /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/04_tile_iterator /home/javifdez/git_repository/Cutlass/build/examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/04_tile_iterator/CMakeFiles/test_examples_04_tile_iterator.dir/depend
 

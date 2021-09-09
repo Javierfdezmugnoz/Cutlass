@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -111,7 +111,7 @@ install/strip/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -121,7 +121,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/test/unit/layout//CMakeFiles/progress.marks
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles /home/javifdez/git_repository/Cutlass/build/test/unit/layout//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/clean
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/unit/layout/CMakeFiles/test_unit_layout.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/CMakeFiles/test_unit_layout.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/CMakeFiles/test_unit_layout.dir/rule
 .PHONY : test/unit/layout/CMakeFiles/test_unit_layout.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_unit_layout: test/unit/layout/CMakeFiles/test_unit_layout.dir/rule
 
 # fast build rule for target.
 test_unit_layout/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/test_unit_layout.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/test_unit_layout.dir/build
 .PHONY : test_unit_layout/fast
 
 # Convenience name for target.
 test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/rule
 .PHONY : test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ cutlass_test_unit_layout: test/unit/layout/CMakeFiles/cutlass_test_unit_layout.d
 
 # fast build rule for target.
 cutlass_test_unit_layout/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build
 .PHONY : cutlass_test_unit_layout/fast
 
 matrix.o: matrix.cu.o
@@ -225,7 +225,7 @@ matrix.o: matrix.cu.o
 
 # target to build an object file
 matrix.cu.o:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.o
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.o
 .PHONY : matrix.cu.o
 
 matrix.i: matrix.cu.i
@@ -233,7 +233,7 @@ matrix.i: matrix.cu.i
 
 # target to preprocess a source file
 matrix.cu.i:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.i
 .PHONY : matrix.cu.i
 
 matrix.s: matrix.cu.s
@@ -241,7 +241,7 @@ matrix.s: matrix.cu.s
 
 # target to generate assembly for a file
 matrix.cu.s:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/matrix.cu.s
 .PHONY : matrix.cu.s
 
 tensor.o: tensor.cu.o
@@ -249,7 +249,7 @@ tensor.o: tensor.cu.o
 
 # target to build an object file
 tensor.cu.o:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.o
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.o
 .PHONY : tensor.cu.o
 
 tensor.i: tensor.cu.i
@@ -257,7 +257,7 @@ tensor.i: tensor.cu.i
 
 # target to preprocess a source file
 tensor.cu.i:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.i
 .PHONY : tensor.cu.i
 
 tensor.s: tensor.cu.s
@@ -265,7 +265,7 @@ tensor.s: tensor.cu.s
 
 # target to generate assembly for a file
 tensor.cu.s:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor.cu.s
 .PHONY : tensor.cu.s
 
 tensor_nhwc.o: tensor_nhwc.cu.o
@@ -273,7 +273,7 @@ tensor_nhwc.o: tensor_nhwc.cu.o
 
 # target to build an object file
 tensor_nhwc.cu.o:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.o
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.o
 .PHONY : tensor_nhwc.cu.o
 
 tensor_nhwc.i: tensor_nhwc.cu.i
@@ -281,7 +281,7 @@ tensor_nhwc.i: tensor_nhwc.cu.i
 
 # target to preprocess a source file
 tensor_nhwc.cu.i:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.i
 .PHONY : tensor_nhwc.cu.i
 
 tensor_nhwc.s: tensor_nhwc.cu.s
@@ -289,7 +289,7 @@ tensor_nhwc.s: tensor_nhwc.cu.s
 
 # target to generate assembly for a file
 tensor_nhwc.cu.s:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/build.make test/unit/layout/CMakeFiles/cutlass_test_unit_layout.dir/tensor_nhwc.cu.s
 .PHONY : tensor_nhwc.cu.s
 
 # Help Target
@@ -329,7 +329,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

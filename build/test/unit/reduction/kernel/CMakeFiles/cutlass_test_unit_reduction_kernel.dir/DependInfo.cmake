@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/javifdez/git_repositories/Cutlass/test/unit/reduction/kernel/reduce_splitk.cu" "test/unit/reduction/kernel/CMakeFiles/cutlass_test_unit_reduction_kernel.dir/reduce_splitk.cu.o" "gcc" "test/unit/reduction/kernel/CMakeFiles/cutlass_test_unit_reduction_kernel.dir/reduce_splitk.cu.o.d"
+  "/home/javifdez/git_repository/Cutlass/test/unit/reduction/kernel/reduce_splitk.cu" "test/unit/reduction/kernel/CMakeFiles/cutlass_test_unit_reduction_kernel.dir/reduce_splitk.cu.o" "gcc" "test/unit/reduction/kernel/CMakeFiles/cutlass_test_unit_reduction_kernel.dir/reduce_splitk.cu.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/javifdez/git_repositories/Cutlass/build/_deps/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/javifdez/git_repository/Cutlass/build/_deps/googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

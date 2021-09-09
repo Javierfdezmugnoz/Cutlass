@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -133,7 +133,7 @@ test/fast: test
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -143,7 +143,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/javifdez/git_repositories/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repositories/Cutlass/build/CPackSourceConfig.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && /usr/local/bin/cpack --config ./CPackSourceConfig.cmake /home/javifdez/git_repository/Cutlass/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles /home/javifdez/git_repositories/Cutlass/build/examples/14_ampere_tf32_tensorop_gemm//CMakeFiles/progress.marks
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repositories/Cutlass/build/CMakeFiles 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles /home/javifdez/git_repository/Cutlass/build/examples/14_ampere_tf32_tensorop_gemm//CMakeFiles/progress.marks
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/javifdez/git_repository/Cutlass/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/clean
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/preinstall
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/rule
 .PHONY : examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ test_examples_14_ampere_tf32_tensorop_gemm: examples/14_ampere_tf32_tensorop_gem
 
 # fast build rule for target.
 test_examples_14_ampere_tf32_tensorop_gemm/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/test_examples_14_ampere_tf32_tensorop_gemm.dir/build
 .PHONY : test_examples_14_ampere_tf32_tensorop_gemm/fast
 
 # Convenience name for target.
 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/rule:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/rule
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/rule
 .PHONY : examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/rule
 
 # Convenience name for target.
@@ -217,7 +217,7 @@ examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.di
 
 # fast build rule for target.
 14_ampere_tf32_tensorop_gemm/fast:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build
 .PHONY : 14_ampere_tf32_tensorop_gemm/fast
 
 ampere_tf32_tensorop_gemm.o: ampere_tf32_tensorop_gemm.cu.o
@@ -225,7 +225,7 @@ ampere_tf32_tensorop_gemm.o: ampere_tf32_tensorop_gemm.cu.o
 
 # target to build an object file
 ampere_tf32_tensorop_gemm.cu.o:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.o
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.o
 .PHONY : ampere_tf32_tensorop_gemm.cu.o
 
 ampere_tf32_tensorop_gemm.i: ampere_tf32_tensorop_gemm.cu.i
@@ -233,7 +233,7 @@ ampere_tf32_tensorop_gemm.i: ampere_tf32_tensorop_gemm.cu.i
 
 # target to preprocess a source file
 ampere_tf32_tensorop_gemm.cu.i:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.i
 .PHONY : ampere_tf32_tensorop_gemm.cu.i
 
 ampere_tf32_tensorop_gemm.s: ampere_tf32_tensorop_gemm.cu.s
@@ -241,7 +241,7 @@ ampere_tf32_tensorop_gemm.s: ampere_tf32_tensorop_gemm.cu.s
 
 # target to generate assembly for a file
 ampere_tf32_tensorop_gemm.cu.s:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build && $(MAKE) $(MAKESILENT) -f examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/build.make examples/14_ampere_tf32_tensorop_gemm/CMakeFiles/14_ampere_tf32_tensorop_gemm.dir/ampere_tf32_tensorop_gemm.cu.s
 .PHONY : ampere_tf32_tensorop_gemm.cu.s
 
 # Help Target
@@ -275,7 +275,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repositories/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -P /home/javifdez/git_repository/Cutlass/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

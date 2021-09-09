@@ -67,7 +67,7 @@ echo $TECH_FLET_CRC
                         EXTERNAL_ES=$UNPROTECTED
                         INTERMEDIATE_ES=$ONES_CHECKSUM
                         INTERNAL_ES=$UNPROTECTED
-                        NAME= TECH_ONES_INTERMEDIATE
+                        NAME=TECH_ONES_INTERMEDIATE
                 ;;
                 $TECH_ONES_INTERNAL)
                         EXTERNAL_ES=$UNPROTECTED

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Include any dependencies generated for this target.
 include examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/depend.make
@@ -72,16 +72,16 @@ include examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/flags.make
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o: examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/flags.make
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o: ../examples/10_planar_complex/planar_complex.cu
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o: examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o -MF CMakeFiles/10_planar_complex.dir/planar_complex.cu.o.d -o CMakeFiles/10_planar_complex.dir/planar_complex.cu.o -c /home/javifdez/git_repositories/Cutlass/examples/10_planar_complex/planar_complex.cu
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.o -MF CMakeFiles/10_planar_complex.dir/planar_complex.cu.o.d -o CMakeFiles/10_planar_complex.dir/planar_complex.cu.o -c /home/javifdez/git_repository/Cutlass/examples/10_planar_complex/planar_complex.cu
 
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/10_planar_complex.dir/planar_complex.cu.i"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repositories/Cutlass/examples/10_planar_complex/planar_complex.cu > CMakeFiles/10_planar_complex.dir/planar_complex.cu.i
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javifdez/git_repository/Cutlass/examples/10_planar_complex/planar_complex.cu > CMakeFiles/10_planar_complex.dir/planar_complex.cu.i
 
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/planar_complex.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/10_planar_complex.dir/planar_complex.cu.s"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repositories/Cutlass/examples/10_planar_complex/planar_complex.cu -o CMakeFiles/10_planar_complex.dir/planar_complex.cu.s
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javifdez/git_repository/Cutlass/examples/10_planar_complex/planar_complex.cu -o CMakeFiles/10_planar_complex.dir/planar_complex.cu.s
 
 # Object files for target 10_planar_complex
 10_planar_complex_OBJECTS = \
@@ -95,18 +95,18 @@ examples/10_planar_complex/10_planar_complex: examples/10_planar_complex/CMakeFi
 examples/10_planar_complex/10_planar_complex: tools/library/libcutlassd.so
 examples/10_planar_complex/10_planar_complex: /usr/local/cuda-10.2/lib64/libcudart.so
 examples/10_planar_complex/10_planar_complex: examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repositories/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 10_planar_complex"
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/10_planar_complex.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/javifdez/git_repository/Cutlass/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 10_planar_complex"
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/10_planar_complex.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build: examples/10_planar_complex/10_planar_complex
 .PHONY : examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/build
 
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -P CMakeFiles/10_planar_complex.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex && $(CMAKE_COMMAND) -P CMakeFiles/10_planar_complex.dir/cmake_clean.cmake
 .PHONY : examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/clean
 
 examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/examples/10_planar_complex /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex /home/javifdez/git_repositories/Cutlass/build/examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/examples/10_planar_complex /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex /home/javifdez/git_repository/Cutlass/build/examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/10_planar_complex/CMakeFiles/10_planar_complex.dir/depend
 

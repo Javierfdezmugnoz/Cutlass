@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javifdez/git_repositories/Cutlass
+CMAKE_SOURCE_DIR = /home/javifdez/git_repository/Cutlass
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javifdez/git_repositories/Cutlass/build
+CMAKE_BINARY_DIR = /home/javifdez/git_repository/Cutlass/build
 
 # Utility rule file for test_unit_transform.
 
@@ -77,10 +77,10 @@ test/unit/transform/CMakeFiles/test_unit_transform.dir/build: test_unit_transfor
 .PHONY : test/unit/transform/CMakeFiles/test_unit_transform.dir/build
 
 test/unit/transform/CMakeFiles/test_unit_transform.dir/clean:
-	cd /home/javifdez/git_repositories/Cutlass/build/test/unit/transform && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_transform.dir/cmake_clean.cmake
+	cd /home/javifdez/git_repository/Cutlass/build/test/unit/transform && $(CMAKE_COMMAND) -P CMakeFiles/test_unit_transform.dir/cmake_clean.cmake
 .PHONY : test/unit/transform/CMakeFiles/test_unit_transform.dir/clean
 
 test/unit/transform/CMakeFiles/test_unit_transform.dir/depend:
-	cd /home/javifdez/git_repositories/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repositories/Cutlass /home/javifdez/git_repositories/Cutlass/test/unit/transform /home/javifdez/git_repositories/Cutlass/build /home/javifdez/git_repositories/Cutlass/build/test/unit/transform /home/javifdez/git_repositories/Cutlass/build/test/unit/transform/CMakeFiles/test_unit_transform.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/javifdez/git_repository/Cutlass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javifdez/git_repository/Cutlass /home/javifdez/git_repository/Cutlass/test/unit/transform /home/javifdez/git_repository/Cutlass/build /home/javifdez/git_repository/Cutlass/build/test/unit/transform /home/javifdez/git_repository/Cutlass/build/test/unit/transform/CMakeFiles/test_unit_transform.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/unit/transform/CMakeFiles/test_unit_transform.dir/depend
 
