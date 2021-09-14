@@ -32,9 +32,14 @@ TWOS_CHECKSUM=3
 FLETCHER_CHECKSUM=4
 CRC_CHECKSUM=5
 
+TIMING_EXPERIMENT=$1
+DC_EXPERIMENT=$2
+
+echo "TIMING_EXPERIMENT=$TIMING_EXPERIMENT"
+echo "DC_EXPERIMENT=$DC_EXPERIMENT"
 echo $TECH_FLET_CRC
 # Define an enum type with the kind of memory
- for j_loop in 80 160 320 128 256 #80 160 320 128 256 512 
+ for j_loop in 20 #80 160 320 128 256 #80 160 320 128 256 512 
         do
         for i_loop in `seq 0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
         do
@@ -179,7 +184,7 @@ echo $TECH_FLET_CRC
                 ;;
                 esac
                 cd ../../.
-                bash init_cmake.sh $EXTERNAL_ES $INTERMEDIATE_ES $INTERNAL_ES $i_loop"_"$NAME $j_loop $j_loop $j_loop
+                bash init_cmake.sh $EXTERNAL_ES $INTERMEDIATE_ES $INTERNAL_ES $i_loop"_"$NAME $j_loop $j_loop $j_loop $TIMING_EXPERIMENT $DC_EXPERIMENT
                 cd examples/18_Sim_test
                 cmake --build . --clean-first
                 ./18_Simt
