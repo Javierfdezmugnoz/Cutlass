@@ -22,7 +22,7 @@
 #endif
 
 #ifndef INTERNAL_ES
-  #define INTERNAL_ES XOR_CHECKSUM
+  #define INTERNAL_ES UNPROTECTED
 #endif
 
 #ifndef DIM_M

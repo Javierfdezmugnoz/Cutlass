@@ -751,12 +751,12 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   memset(h_c,0,nBytes_c);
   
   // Initialization of the values of h_a and h_b
-  #if (1==TIMING_EXP)
-      matrix2rand(h_a,M,K);
-      matrix2rand(h_b,K,N);
-  #else
+  #if (1==DC_EXP) 
       memset(h_a,0,nBytes_a);
       memset(h_b,0,nBytes_b);
+  #else
+      matrix2rand(h_a,M,K);
+      matrix2rand(h_b,K,N);
   #endif
 
 
@@ -845,9 +845,12 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 	DEF_TIME_VAR(tmr_end_exp);
   printf("===============================\nDIAGNOSTIC COVERAGE EXPERIMENT\n===============================\n");
 
+#if (ES_OPT_TEST==1)
+  #define size_a  100//(DIM_M * DIM_K * sizeof(float32_t) * CHAR_BIT)
+#else
 	#define size_a  (DIM_M * DIM_K * sizeof(float32_t) * CHAR_BIT)
 	#define size_b  (DIM_N * DIM_K * sizeof(float32_t) * CHAR_BIT)
-
+#endif
 
   // ==============================================================================
   //  0)             DC Set-up environment
@@ -884,7 +887,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         cudaFree(A);
         return result;
     }
-    // Copy to host the values of the ES of A, B and C performed and stored in the GPU device (h_ES_a_REF)
+    // Copy to host the values of the ES of A, B and C performed and stored in the GPU device (h_ES_a_ref)
     result = cudaMemcpy(h_ES_a_ref, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
     if (result != cudaSuccess) {
       std::cerr << "Failed to copy d_ES_a matrix to h_ES_a (return)" << cudaGetErrorString(result) << std::endl;
@@ -921,7 +924,9 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     // =======================================================================================
     // Modify a bit of the matrix A
     // =======================================================================================
-    mem_fi(&h_a[0], ui32_idx_bit);
+    #if (ES_OPT_TEST==0)
+      mem_fi(&h_a[0], ui32_idx_bit);
+    #endif
 
     // =======================================================================================
     // Copy the values initialized and stored in host to the device (h_a -> A, h_b -> B ...)
@@ -1066,7 +1071,9 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     // =======================================================================================
     // TO flip again the bit that was fliped in host
     // =======================================================================================
-    mem_fi(&h_a[0], ui32_idx_bit);
+    #if (ES_OPT_TEST==0)
+      mem_fi(&h_a[0], ui32_idx_bit);
+    #endif
 
     // =======================================================================================
     // dummy way of now of the process is being 
@@ -1094,7 +1101,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
 
 
-
+#if (ES_OPT_TEST==1)
   // =======================================================================================
   // Copy the values initialized and stored in host to the device (h_a -> A)
   // =======================================================================================
@@ -1108,141 +1115,141 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     return result;
   }
 
-for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_b_max; ui32_idx_bit++) 
-  {
-    // =======================================================================================
-    // Modify a bit of the matrix B
-    // =======================================================================================
-    mem_fi(&h_b[0], ui32_idx_bit);
-
-    result = cudaMemcpy (B,h_b,nBytes_b,cudaMemcpyHostToDevice);
-    if (result != cudaSuccess) {
-        std::cerr << "Failed to copy h_b matrix to B: " << cudaGetErrorString(result) << std::endl;
-        cudaFree(C_reference);
-        cudaFree(C_cutlass);
-        cudaFree(B);
-        cudaFree(A);
-        return result;
-    }
-    
-
-    result = cudaMemcpy (C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
-    if (result != cudaSuccess) {
-      std::cerr << "Failed to copy C_cutlass matrix to C_reference: " << cudaGetErrorString(result) << std::endl;
-      cudaFree(C_reference);
-      cudaFree(C_cutlass);
-      cudaFree(B);
-      cudaFree(A);
-      return result;
-    }
-
-    // =======================================================================================
-    // 1) Initialize h_ES_a,b,c 
-    // 2) Re-initialize d_ES_a,b,c with zero values
-    // =======================================================================================
-    // Initialice to 0 all values of h_ES_a,b,c
-    memset(h_ES_a,0,nBytes_ES);
-    memset(h_ES_b,0,nBytes_ES);
-    memset(h_ES_c,0,nBytes_ES);
-
-    result = cudaMemcpy(d_ES_a, h_ES_a, nBytes_ES, cudaMemcpyHostToDevice);
-    if (result != cudaSuccess) {
-        std::cerr << "Failed to copy h_ES_a matrix to d_ES_a: " << cudaGetErrorString(result) << std::endl;
-        cudaFree(C_reference);
-        cudaFree(C_cutlass);
-        cudaFree(B);
-        cudaFree(A);
-        return result;
-    }
-
-    // Re-initialize d_ES_b
-    result = cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
-    if (result != cudaSuccess) 
+  for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_b_max; ui32_idx_bit++) 
     {
-        std::cerr << "Failed to copy h_ES_b matrix to h_ES_b: " << cudaGetErrorString(result) << std::endl;
+      // =======================================================================================
+      // Modify a bit of the matrix B
+      // =======================================================================================
+      mem_fi(&h_b[0], ui32_idx_bit);
+
+      result = cudaMemcpy (B,h_b,nBytes_b,cudaMemcpyHostToDevice);
+      if (result != cudaSuccess) {
+          std::cerr << "Failed to copy h_b matrix to B: " << cudaGetErrorString(result) << std::endl;
+          cudaFree(C_reference);
+          cudaFree(C_cutlass);
+          cudaFree(B);
+          cudaFree(A);
+          return result;
+      }
+      
+
+      result = cudaMemcpy (C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
+      if (result != cudaSuccess) {
+        std::cerr << "Failed to copy C_cutlass matrix to C_reference: " << cudaGetErrorString(result) << std::endl;
         cudaFree(C_reference);
         cudaFree(C_cutlass);
         cudaFree(B);
         cudaFree(A);
         return result;
-    }
+      }
 
-    // Re-initialize d_ES_c
-    cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
-    if (result != cudaSuccess) {
-        std::cerr << "Failed to copy h_ES_c matrix to d_ES_c " << cudaGetErrorString(result) << std::endl;
+      // =======================================================================================
+      // 1) Initialize h_ES_a,b,c 
+      // 2) Re-initialize d_ES_a,b,c with zero values
+      // =======================================================================================
+      // Initialice to 0 all values of h_ES_a,b,c
+      memset(h_ES_a,0,nBytes_ES);
+      memset(h_ES_b,0,nBytes_ES);
+      memset(h_ES_c,0,nBytes_ES);
+
+      result = cudaMemcpy(d_ES_a, h_ES_a, nBytes_ES, cudaMemcpyHostToDevice);
+      if (result != cudaSuccess) {
+          std::cerr << "Failed to copy h_ES_a matrix to d_ES_a: " << cudaGetErrorString(result) << std::endl;
+          cudaFree(C_reference);
+          cudaFree(C_cutlass);
+          cudaFree(B);
+          cudaFree(A);
+          return result;
+      }
+
+      // Re-initialize d_ES_b
+      result = cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
+      if (result != cudaSuccess) 
+      {
+          std::cerr << "Failed to copy h_ES_b matrix to h_ES_b: " << cudaGetErrorString(result) << std::endl;
+          cudaFree(C_reference);
+          cudaFree(C_cutlass);
+          cudaFree(B);
+          cudaFree(A);
+          return result;
+      }
+
+      // Re-initialize d_ES_c
+      cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
+      if (result != cudaSuccess) {
+          std::cerr << "Failed to copy h_ES_c matrix to d_ES_c " << cudaGetErrorString(result) << std::endl;
+          cudaFree(C_reference);
+          cudaFree(C_cutlass);
+          cudaFree(B);
+          cudaFree(A);
+          return result;
+      }
+
+      // =======================================================================================
+      // Launch the kernel to GPU and verify that has not return an error
+      // =======================================================================================
+      result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
+      cudaDeviceSynchronize();
+      if (result != cudaSuccess) 
+      {
+          std::cerr << "CUTLASS GEMM kernel failed: " << cudaGetErrorString(result) << std::endl;
+          cudaFree(C_reference);
+          cudaFree(C_cutlass);
+          cudaFree(B);
+          cudaFree(A);
+          return result;
+      }
+
+      // =======================================================================================
+      // Launch the kernel to GPU and verify that has not return an error
+      // =======================================================================================
+      // Copy to host the values of the ES of A, B and C performed and stored in the GPU device
+      result = cudaMemcpy(h_ES_a, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
+      if (result != cudaSuccess) {
+        std::cerr << "Failed to copy d_ES_a matrix to h_ES_a (return)" << cudaGetErrorString(result) << std::endl;
         cudaFree(C_reference);
         cudaFree(C_cutlass);
         cudaFree(B);
         cudaFree(A);
         return result;
-    }
+      }
 
-    // =======================================================================================
-    // Launch the kernel to GPU and verify that has not return an error
-    // =======================================================================================
-    result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
-    cudaDeviceSynchronize();
-    if (result != cudaSuccess) 
-    {
-        std::cerr << "CUTLASS GEMM kernel failed: " << cudaGetErrorString(result) << std::endl;
+      result = cudaMemcpy(h_ES_b, d_ES_b, nBytes_ES, cudaMemcpyDeviceToHost);
+      if (result != cudaSuccess) {
+        std::cerr << "Failed to copy d_ES_b matrix to h_ES_b (return)" << cudaGetErrorString(result) << std::endl;
         cudaFree(C_reference);
         cudaFree(C_cutlass);
         cudaFree(B);
         cudaFree(A);
         return result;
+      }
+
+      result = cudaMemcpy(h_ES_c, d_ES_c, nBytes_ES, cudaMemcpyDeviceToHost);
+      if (result != cudaSuccess) {
+        std::cerr << "Failed to copy d_ES_c matrix to h_ES_c (return)" << cudaGetErrorString(result) << std::endl;
+        cudaFree(C_reference);
+        cudaFree(C_cutlass);
+        cudaFree(B);
+        cudaFree(A);
+        return result;
+      }
+
+      // =======================================================================================
+      // Verify that the ES_a,b,c is the same than the values stored in ES_a_ref,b,c
+      // =======================================================================================
+      if ((memcmp(h_ES_a,h_ES_a_ref,nBytes_ES)!=0) || (memcmp(h_ES_b,h_ES_b_ref,nBytes_ES)!=0) || (memcmp(h_ES_c,h_ES_c_ref,nBytes_ES)!=0)) {
+            ui32_dc_cnt_b += 1u;
+      }
+      ui32_dc_cnt_all += 1u;
+
+      // =======================================================================================
+      // TO flip again the bit that was fliped in host
+      // =======================================================================================
+      mem_fi(&h_b[0], ui32_idx_bit);
     }
 
-    // =======================================================================================
-    // Launch the kernel to GPU and verify that has not return an error
-    // =======================================================================================
-    // Copy to host the values of the ES of A, B and C performed and stored in the GPU device
-    result = cudaMemcpy(h_ES_a, d_ES_a, nBytes_ES, cudaMemcpyDeviceToHost);
-    if (result != cudaSuccess) {
-      std::cerr << "Failed to copy d_ES_a matrix to h_ES_a (return)" << cudaGetErrorString(result) << std::endl;
-      cudaFree(C_reference);
-      cudaFree(C_cutlass);
-      cudaFree(B);
-      cudaFree(A);
-      return result;
-    }
-
-    result = cudaMemcpy(h_ES_b, d_ES_b, nBytes_ES, cudaMemcpyDeviceToHost);
-    if (result != cudaSuccess) {
-      std::cerr << "Failed to copy d_ES_b matrix to h_ES_b (return)" << cudaGetErrorString(result) << std::endl;
-      cudaFree(C_reference);
-      cudaFree(C_cutlass);
-      cudaFree(B);
-      cudaFree(A);
-      return result;
-    }
-
-    result = cudaMemcpy(h_ES_c, d_ES_c, nBytes_ES, cudaMemcpyDeviceToHost);
-    if (result != cudaSuccess) {
-      std::cerr << "Failed to copy d_ES_c matrix to h_ES_c (return)" << cudaGetErrorString(result) << std::endl;
-      cudaFree(C_reference);
-      cudaFree(C_cutlass);
-      cudaFree(B);
-      cudaFree(A);
-      return result;
-    }
-
-    // =======================================================================================
-    // Verify that the ES_a,b,c is the same than the values stored in ES_a_ref,b,c
-    // =======================================================================================
-    if ((memcmp(h_ES_a,h_ES_a_ref,nBytes_ES)!=0) || (memcmp(h_ES_b,h_ES_b_ref,nBytes_ES)!=0) || (memcmp(h_ES_c,h_ES_c_ref,nBytes_ES)!=0)) {
-          ui32_dc_cnt_b += 1u;
-    }
-    ui32_dc_cnt_all += 1u;
-
-    // =======================================================================================
-    // TO flip again the bit that was fliped in host
-    // =======================================================================================
-    mem_fi(&h_b[0], ui32_idx_bit);
-  }
-
-printf("Number of executions: %d\nDifferents ES: %d\n",ui32_comb_b_max, ui32_dc_cnt_b);
-
+  printf("Number of executions: %d\nDifferents ES: %d\n",ui32_comb_b_max, ui32_dc_cnt_b);
+#endif
 
 
 
@@ -1281,7 +1288,24 @@ printf("Number of executions: %d\nDifferents ES: %d\n",ui32_comb_b_max, ui32_dc_
 		return cudaErrorInvalidValue;
 	}
   
+#if (ES_OPT_TEST==1)
+	fprintf(p_file, "%s,%s,%d,%d,%d,%d,%d,%d,",NAME, str_file_time, DIM_M, DIM_N, DIM_K, ui32_dc_cnt_a,ui32_dc_cnt_all,ui32_comb_a_max);
+  // Here i store in the csv file the content of the ES_a_ref,b_ref and c_ref
+  for(ui32_idx_ES_number=0;ui32_idx_ES_number<nElem_ES;ui32_idx_ES_number++){
+    if(ui32_idx_ES_number==0)       { fprintf(p_file,"\nES_a,");}
+    else if (ui32_idx_ES_number==1) { fprintf(p_file,"\nES_b,");}
+    else                            { fprintf(p_file,"\nES_c,");}
+    
+    for(ui32_idx_ES=0;ui32_idx_ES<nElem_ES;ui32_idx++){
+      if(ui32_idx_ES_number==0)       { fprintf(p_file,"%u,",h_ES_a_ref[ui32_idx_ES]);}
+      else if (ui32_idx_ES_number==1) { fprintf(p_file,"%u,",h_ES_b_ref[ui32_idx_ES]);}
+      else                            { fprintf(p_file,"%u,",h_ES_c_ref[ui32_idx_ES]);}
+    }
+  }
+  
+#else
 	fprintf(p_file, "%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,",NAME, str_file_time, DIM_M, DIM_N, DIM_K, ui32_dc_cnt_a,ui32_dc_cnt_b,ui32_dc_cnt_all,ui32_comb_a_max, ui32_comb_b_max);
+#endif
   fprintf(p_file,"\n");
   fclose(p_file);
 

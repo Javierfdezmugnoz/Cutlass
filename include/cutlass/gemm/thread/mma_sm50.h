@@ -34,6 +34,7 @@
 #include "cutlass/arch/mma.h"
 #include "cutlass/gemm/gemm.h"
 #include "cutlass/gemm/thread/mma.h"
+#include "helper.h"
 //#include "../../examples/ES_protection/checksum.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -176,19 +177,19 @@ struct MmaGeneric {
           atomicXor(&d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
           atomicXor(&d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
           atomicXor(&d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES == ONES_CHECKSUM
+        #elif INTERMEDIATE_ES==ONES_CHECKSUM
           d_ES_a[0] = __a1c(d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
           d_ES_b[0] = __a1c(d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
           d_ES_c[0] = __a1c(d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES == TWOS_CHECKSUM
+        #elif INTERMEDIATE_ES==TWOS_CHECKSUM
           d_ES_a[0] =  __a2c(d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
           d_ES_b[0] =  __a2c(d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
           d_ES_c[0] =  __a2c(d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES == FLETCHER_CHECKSUM
+        #elif INTERMEDIATE_ES==FLETCHER_CHECKSUM
           d_ES_a[0] = Fletcher32c_ui32(d_ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
           d_ES_b[0] = Fletcher32c_ui32(d_ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
           d_ES_c[0] = Fletcher32c_ui32(d_ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES == CRC_CHECKSUM
+        #elif INTERMEDIATE_ES==CRC_CHECKSUM
           d_ES_a[0] = singletable_crc32c_ui32(d_ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
           d_ES_b[0] = singletable_crc32c_ui32(d_ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
           d_ES_c[0] = singletable_crc32c_ui32(d_ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
@@ -199,23 +200,23 @@ struct MmaGeneric {
       // ==============================================================================
       //    Implementation of the execution signature in the External loop
       // ==============================================================================
-      #if EXTERNAL_ES ==  XOR_CHECKSUM
+      #if (EXTERNAL_ES==XOR_CHECKSUM)
         atomicXor(&d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
         atomicXor(&d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
         atomicXor(&d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-      #elif EXTERNAL_ES == ONd_ES_cHECKSUM
-        d_ES_a[0] = __a1c(d_ES_a[0], (uint32_t) *((uint32_t*) &A[0]));
-        d_ES_b[0] = __a1c(d_ES_b[0], (uint32_t) *((uint32_t*) &B[0]));
-        d_ES_c[0] = __a1c(d_ES_c[0], (uint32_t) *((uint32_t*) &D[0]));
-      #elif EXTERNAL_ES == TWOS_CHECKSUM
+      #elif (EXTERNAL_ES==ONES_CHECKSUM)
+        d_ES_a[0] = __a1c(d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
+        d_ES_b[0] = __a1c(d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c[0] = __a1c(d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
+      #elif (EXTERNAL_ES==TWOS_CHECKSUM)
         d_ES_a[0] =  __a2c(d_ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
         d_ES_b[0] =  __a2c(d_ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
         d_ES_c[0] =  __a2c(d_ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-      #elif EXTERNAL_ES == FLETCHER_CHECKSUM
+      #elif (EXTERNAL_ES==FLETCHER_CHECKSUM)
         d_ES_a[0] = Fletcher32c_ui32(d_ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
         d_ES_b[0] = Fletcher32c_ui32(d_ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
         d_ES_c[0] = Fletcher32c_ui32(d_ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
-      #elif EXTERNAL_ES == CRC_CHECKSUM
+      #elif (EXTERNAL_ES==CRC_CHECKSUM)
         d_ES_a[0] = singletable_crc32c_ui32(d_ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
         d_ES_b[0] = singletable_crc32c_ui32(d_ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
         d_ES_c[0] = singletable_crc32c_ui32(d_ES_c[0],(uint32_t) *((uint32_t*) &d[0]));

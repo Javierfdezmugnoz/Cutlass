@@ -77,49 +77,29 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     d[0] = a[0] * b[0] + c[0];
 
     //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
-    #if INTERNAL_ES==XOR_CHECKSUM
+    #if (INTERNAL_ES==XOR_CHECKSUM)
       atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
       atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
       atomicXor(&ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif INTERNAL_ES == ONES_CHECKSUM
+    #elif (INTERNAL_ES==ONES_CHECKSUM)
       ES_a[0] = __a1c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
       ES_b[0] = __a1c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] = __a1c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif INTERNAL_ES == TWOS_CHECKSUM
+    #elif (INTERNAL_ES==TWOS_CHECKSUM)
       ES_a[0] =  __a2c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
       ES_b[0] =  __a2c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] =  __a2c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif INTERNAL_ES == FLETCHER_CHECKSUM
+    #elif (INTERNAL_ES==FLETCHER_CHECKSUM)
       ES_a[0] = Fletcher32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
       ES_b[0] = Fletcher32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] = Fletcher32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
-    #elif INTERNAL_ES == CRC_CHECKSUM
+    #elif (INTERNAL_ES==CRC_CHECKSUM)
       ES_a[0] = singletable_crc32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
       ES_b[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] = singletable_crc32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
     #else
       
     #endif
-
-    
-
-    // Uncomment the desired Checksum in the internal loop
-    /* // XOR checksum
-    atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
-    atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-    atomicXor(&ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    */
-
-
-/*
-    if(threadIdx.x == 0){
-    printf("previous_ES_c:%x \tcurrent_ES_c:%x \tb_value:%x \n", prev_ES_c, ES_c[0], (uint32_t) *((uint32_t*) &c[0]));
-//    printf("thread.x:%d \ty:%d \tz:%d \t previous_ES_b:%u \tES_b:%p \tval:%x \tb_value:%x \n",threadIdx.x, threadIdx.y, threadIdx.z, prev_ES_b, ES_b, (uint32_t) *((uint32_t*) &ES_b[0]), (uint32_t) *((uint32_t*) &b[0]));
-      //printf("Previous ES_c : %x \t Ones_addition: %x \t d_value=%x \n", prev_ES_c,  ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    }
-*/
-
-
 
   }
 };
