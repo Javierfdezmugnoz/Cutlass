@@ -35,9 +35,23 @@
 #include "cutlass/matrix_coord.h"
 #include "cutlass/semaphore.h"
 
-// Take a look to CRC_table_element (How to do reference to a #define from Simt_18.cu? HOWWWW?)
-extern __constant__ uint32_t d_CRC_table_constant[];
-extern __shared__ uint32_t d_CRC_table_shared[];
+// Take a look to CRC_table_element 
+#if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+  extern __constant__ uint32_t d_CRC_table_constant[];
+  extern __shared__ uint32_t d_CRC_table_shared[];
+#endif
+
+#if (INTERNAL_ES!=UNPROTECTED) && (INTERMEDIATE_ES!=UNPROTECTED) && (CRC_CHECKSUM!=UNPROTECTED)
+  // Constant memory en device memory
+  //extern __constant__ uint32_t d_ES_a_shared[nElem_ES];
+  //extern __constant__ uint32_t d_ES_b_shared[nElem_ES];
+  //extern __constant__ uint32_t d_ES_c_shared[nElem_ES];
+
+  // Shared memory in device memory
+  extern __shared__ uint32_t d_ES_a_shared[];
+  extern __shared__ uint32_t d_ES_b_shared[];
+  extern __shared__ uint32_t d_ES_c_shared[];
+#endif
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -263,16 +277,29 @@ struct Gemm {
     //printf("thread:%d \twarp:%d \tlane%d \tAux:%d\n",thread_idx, warp_idx, lane_idx,lane_idx+(32*(warp_idx%2)));
 
 
-
-
     /* ==========================================================================================================
-        Shared Memory copy from Host
+      Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory 
     ========================================================================================================== */
-    if (threadIdx.x < 256) //CRC_table_elements
-      {
-        d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
-      }
-    __syncthreads();
+    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (CRC_CHECKSUM!=UNPROTECTED))
+      if (threadIdx.x < 256) // ES_a, ES_b, ES_c
+        {
+          /*d_ES_a_shared[threadIdx.x] = 0u;//d_ES_a_constant[threadIdx.x];
+          d_ES_b_shared[threadIdx.x] = 0u;//d_ES_b_constant[threadIdx.x];
+          d_ES_c_shared[threadIdx.x] = 0u;//d_ES_c_constant[threadIdx.x];
+          */
+        /* =================================================================================
+          Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory 
+        ==================================================================================== */
+          #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
+            d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
+            __syncthreads();
+          #endif
+        }
+      
+    #endif
+
+
+
  
 
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c);
@@ -283,6 +310,7 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
+      //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a_shared[thread_idx], &params.d_ES_b_shared[thread_idx], &params.d_ES_c_shared[thread_idx]);
       mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[thread_idx], &params.d_ES_b[thread_idx], &params.d_ES_c[thread_idx]);
       // The following code is expected to be used with 2 SMP
       //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx+(32*(warp_idx%2))], &params.d_ES_b[lane_idx+(32*(warp_idx%2))], &params.d_ES_c[lane_idx+(32*(warp_idx%2))]);

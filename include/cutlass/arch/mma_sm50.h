@@ -70,13 +70,12 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     // Included by JFdez
     uint32_t *ES_a =nullptr,
     uint32_t *ES_b =nullptr,
-    uint32_t *ES_c =nullptr,
-    uint32_t *d_CRC_table = nullptr
+    uint32_t *ES_c =nullptr
   ) {
     //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
 
-    //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
+     //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
     #if (INTERNAL_ES==XOR_CHECKSUM)
       atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
       atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
@@ -94,7 +93,7 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
       ES_b[0] = Fletcher32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] = Fletcher32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
     #elif (INTERNAL_ES==CRC_CHECKSUM)
-      ES_a[0] = singletable_crc32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
+      ES_a[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &a[0]));
       ES_b[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
       ES_c[0] = singletable_crc32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
     #else

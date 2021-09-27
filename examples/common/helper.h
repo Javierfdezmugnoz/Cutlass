@@ -12,6 +12,7 @@
 #define FLETCHER_CHECKSUM 4
 #define CRC_CHECKSUM 5
 #define DEFAULT_DIM 128
+#define FLET_DIVISOR 255 
 
 #ifndef EXTERNAL_ES
   #define EXTERNAL_ES UNPROTECTED
@@ -37,8 +38,9 @@
   #define DIM_K DEFAULT_DIM
 #endif
 
-
-extern __shared__ uint32_t d_CRC_table_shared[];
+#if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
+  extern __shared__ uint32_t d_CRC_table_shared[];
+#endif
 // extern __constant__ uint32_t d_CRC_table[];
 
 /* ==============================================================================================================
@@ -120,19 +122,20 @@ __device__ uint32_t a2c_atomic (uint32_t ui32_a, uint32_t ui32_b)
 /* ==========================================================================
   Description: CRC checksum
 =============================================================================*/
+#if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
 __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_data)
-{
-	ui32_to_ui8_t u;
-	u.ui32 = ui32_data;
+  {
+    ui32_to_ui8_t u;
+    u.ui32 = ui32_data;
 
-	/* 4 bytes*/
-	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
-	return ui32_crc;
-}
-
+    /* 4 bytes*/
+    ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[0u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+    ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[1u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+    ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[2u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+    ui32_crc = d_CRC_table_shared[(ui32_crc ^ u.ui8[3u]) & 0x00ffu] ^ (ui32_crc >> 8u);
+    return ui32_crc;
+  }
+#endif
 
 /* ==========================================================================
   Description: Fletcher checksum
@@ -148,6 +151,11 @@ __device__ uint32_t Fletcher32c_ui32(uint32_t Prev_Fletcher, uint32_t ui32_data)
 	Fletcher.ui16[1] += Fletcher.ui16[0];
 	Fletcher.ui16[0] += v.ui16[1];
 	Fletcher.ui16[1] += Fletcher.ui16[0];
+  /*
+  Fletcher.ui16[0] = Fletcher.ui16[0] % 255
+  Fletcher.ui16[0] = Fletcher.ui16[0] & (FLET_DIVISOR-1)
+  */
+
 	Fletcher.ui16[0] %= 255;
 	Fletcher.ui16[1] %= 255;
 
