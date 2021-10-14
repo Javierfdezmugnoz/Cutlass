@@ -66,39 +66,22 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     Array<float, 1> &d,
     Array<float, 1> const &a,
     Array<float, 1> const &b,
-    Array<float, 1> const &c,
+    Array<float, 1> const &c
     // Included by JFdez
-    uint32_t *ES_a =nullptr,
-    uint32_t *ES_b =nullptr,
-    uint32_t *ES_c =nullptr
+    // ,uint32_t *ES_a =nullptr,
+    // uint32_t *ES_b =nullptr,
+    // uint32_t *ES_c =nullptr
   ) {
     //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
-
+    
+    // if(threadIdx.x==0u && blockIdx.x==0u)
+    // {
+    //   static uint32_t thread_iteration = 0;
+    //   printf("val a[%u]=%u\n",thread_iteration,(uint32_t)*((uint32_t*) &a[0]));
+    //   thread_iteration++;
+    // }
      //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
-    #if (INTERNAL_ES==XOR_CHECKSUM)
-      atomicXor(&ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
-      atomicXor(&ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-      atomicXor(&ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif (INTERNAL_ES==ONES_CHECKSUM)
-      ES_a[0] = __a1c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
-      ES_b[0] = __a1c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-      ES_c[0] = __a1c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif (INTERNAL_ES==TWOS_CHECKSUM)
-      ES_a[0] =  __a2c(ES_a[0], (uint32_t) *((uint32_t*) &a[0]));
-      ES_b[0] =  __a2c(ES_b[0], (uint32_t) *((uint32_t*) &b[0]));
-      ES_c[0] =  __a2c(ES_c[0], (uint32_t) *((uint32_t*) &d[0]));
-    #elif (INTERNAL_ES==FLETCHER_CHECKSUM)
-      ES_a[0] = Fletcher32c_ui32(ES_a[0],(uint32_t) *((uint32_t*) &a[0]));
-      ES_b[0] = Fletcher32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
-      ES_c[0] = Fletcher32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
-    #elif (INTERNAL_ES==CRC_CHECKSUM)
-      ES_a[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &a[0]));
-      ES_b[0] = singletable_crc32c_ui32(ES_b[0],(uint32_t) *((uint32_t*) &b[0]));
-      ES_c[0] = singletable_crc32c_ui32(ES_c[0],(uint32_t) *((uint32_t*) &d[0]));
-    #else
-      
-    #endif
 
   }
 };

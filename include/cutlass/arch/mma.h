@@ -143,7 +143,6 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, ElementA, LayoutA, ElementB, LayoutB, El
     Array<ElementB, 1> const &b,
     Array<ElementC, 1> const &c
   ) {
-    printf("MMA\n");
     d[0] = a[0] * b[0] + c[0];
   }
 };

@@ -41,6 +41,9 @@
 #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
   extern __shared__ uint32_t d_CRC_table_shared[];
 #endif
+
+
+
 // extern __constant__ uint32_t d_CRC_table[];
 
 /* ==============================================================================================================
@@ -65,10 +68,28 @@ typedef union ui32_to_ui16 {
   url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
   https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf 
 =============================================================================*/
+__device__ uint32_t _xor (uint32_t ui32_a, uint32_t ui32_b)
+{
+    uint32_t acc;
+    asm volatile ("xor.b32  %0, %1, %2;\n\t"
+                : "=r"(acc)
+                : "r"(ui32_a), "r"(ui32_b));
+    return acc;
+}
+
+
+/* ==========================================================================
+  Descritption: Addition of two values using PTX (parallel thread execution) 
+  and ISA (parallel thread execution with instruction set architecture) adding
+  the carry bit. After that, one's complement is implemented (bit negation). 
+  Additional info:
+  url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
+  https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf 
+=============================================================================*/
 __device__ uint32_t __a1c (uint32_t ui32_a, uint32_t ui32_b)
 {
     uint32_t acc;
-    asm ("add.cc.u32      %0, %1, %2;\n\t"
+    asm volatile ("add.cc.u32      %0, %1, %2;\n\t"
          "addc.u32        %0, %0, 0;\n\t"
          "not.b32         %0, %0;\n\t"
          : "=r"(acc)
@@ -100,7 +121,7 @@ __device__ uint32_t a1c_atomic (uint32_t ui32_a, uint32_t ui32_b)
 __device__ uint32_t __a2c (uint32_t ui32_a, uint32_t ui32_b)
 {
     uint32_t acc = 0;
-    asm ("add.u32     %0, %1, %2;\n\t"
+    asm volatile ("add.u32     %0, %1, %2;\n\t"
          "not.b32     %0, %0;\n\t"
          "add.u32     %0, %0, 1;\n\t"
          : "=r"(acc)

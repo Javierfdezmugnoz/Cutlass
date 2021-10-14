@@ -67,10 +67,10 @@ namespace device {
   may construct their kernels of interest using CUTLASS components at the threadblock, warp, 
   and thread levels of abstraction.
 
-  CUTLASS exposes computations using the functor design pattern in which objects compose some
-  internal state with an overloaded function call operator. This enables decoupling of
-  initialization from execution, possibly reducing overhead during steady state phases of
-  application execution.
+    CUTLASS exposes computations using the functor design pattern in which objects compose some
+    internal state with an overloaded function call operator. This enables decoupling of
+    initialization from execution, possibly reducing overhead during steady state phases of
+    application execution.
 
   CUTLASS device-level operators expose an Arguments structure encompassing each logical
   input to the computation. This is distinct from the kernel-level Params structure pattern
@@ -647,9 +647,9 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       TensorRef<ElementC, LayoutC> ref_D_,
       typename EpilogueOutputOp::Params epilogue_ = 
         typename EpilogueOutputOp::Params(),
-      uint32_t *d_ES_a_ = nullptr,
-      uint32_t *d_ES_b_ = nullptr,
-      uint32_t *d_ES_c_ = nullptr,
+       uint32_t *d_ES_a_ = nullptr,
+       uint32_t *d_ES_b_ = nullptr,
+       uint32_t *d_ES_c_ = nullptr,
       int split_k_slices = 1
     ):
       problem_size(problem_size_),
@@ -658,9 +658,9 @@ class Gemm<ElementA_, LayoutA_, ElementB_, LayoutB_, ElementC_,
       ref_C(ref_C_),
       ref_D(ref_D_),
       epilogue(epilogue_),
-      d_ES_a(d_ES_a_),
-      d_ES_b(d_ES_b_),
-      d_ES_c(d_ES_c_),
+       d_ES_a(d_ES_a_),
+       d_ES_b(d_ES_b_),
+       d_ES_c(d_ES_c_),
       split_k_slices(split_k_slices){
       }
   };
@@ -683,9 +683,9 @@ public:
       {args.ref_C.data(), args.ref_C.stride(0)},
       {args.ref_D.data(), args.ref_D.stride(0)},
       args.epilogue,
-      args.d_ES_a,
-      args.d_ES_b,
-      args.d_ES_c,
+       args.d_ES_a,
+       args.d_ES_b,
+       args.d_ES_c,
       args.split_k_slices    
     );
   }

@@ -35,22 +35,25 @@
 #include "cutlass/matrix_coord.h"
 #include "cutlass/semaphore.h"
 
-// Take a look to CRC_table_element 
-#if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
-  extern __constant__ uint32_t d_CRC_table_constant[];
-  extern __shared__ uint32_t d_CRC_table_shared[];
-#endif
 
-#if (INTERNAL_ES!=UNPROTECTED) && (INTERMEDIATE_ES!=UNPROTECTED) && (CRC_CHECKSUM!=UNPROTECTED)
-  // Constant memory en device memory
-  //extern __constant__ uint32_t d_ES_a_shared[nElem_ES];
-  //extern __constant__ uint32_t d_ES_b_shared[nElem_ES];
-  //extern __constant__ uint32_t d_ES_c_shared[nElem_ES];
+
+#if (INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED)
+  // Global memory en device memory
+  // extern __device__ uint32_t d_ES_a[];
+  // extern __device__ uint32_t d_ES_b[];
+  // extern __device__ uint32_t d_ES_c[];
 
   // Shared memory in device memory
   extern __shared__ uint32_t d_ES_a_shared[];
   extern __shared__ uint32_t d_ES_b_shared[];
   extern __shared__ uint32_t d_ES_c_shared[];
+
+  // Take a look to CRC_table_element
+  #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+    extern __constant__ uint32_t d_CRC_table_constant[];
+    extern __shared__   uint32_t d_CRC_table_shared[];
+  #endif
+
 #endif
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +65,7 @@ namespace kernel {
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <
-  typename Mma_,                  ///! Threadblock-scoped matrix multiply-accumulate 
+  typename Mma_,                  ///! Threadblock-scoped matrix multiply-accumulate
   typename Epilogue_,             ///! Epilogue
   typename ThreadblockSwizzle_,   ///! Threadblock swizzling function
   bool SplitKSerial               ///! If true, code supporting split-K via serial reduction is enabled.
@@ -116,9 +119,9 @@ struct Gemm {
       typename Epilogue::OutputTileIterator::TensorRef ref_C,
       typename Epilogue::OutputTileIterator::TensorRef ref_D,
       typename OutputOp::Params output_op = typename OutputOp::Params(),
-      uint32_t *d_ES_a_ = nullptr,
-      uint32_t *d_ES_b_ = nullptr,
-      uint32_t *d_ES_c_ = nullptr,
+      uint32_t *d_ES_a = nullptr,
+      uint32_t *d_ES_b = nullptr,
+      uint32_t *d_ES_c = nullptr,
       int *workspace = nullptr
     ):
       problem_size(problem_size),
@@ -131,14 +134,14 @@ struct Gemm {
       ref_C(ref_C),
       params_D(ref_D.layout()),
       ref_D(ref_D),
-      d_ES_a(d_ES_a_),
-      d_ES_b(d_ES_b_),
-      d_ES_c(d_ES_c_),
+      d_ES_a(d_ES_a),
+      d_ES_b(d_ES_b),
+      d_ES_c(d_ES_c),
       output_op(output_op) {
 
       int total_gemm_k_iterations = (problem_size.k() + Mma::Shape::kK - 1) / Mma::Shape::kK;
       int gemm_k_iterations = (total_gemm_k_iterations + grid_tiled_shape.k() - 1) / grid_tiled_shape.k();
-      
+
       gemm_k_size = gemm_k_iterations * Mma::Shape::kK;
 
     semaphore = workspace;
@@ -156,7 +159,7 @@ struct Gemm {
   //
 
   CUTLASS_HOST_DEVICE
-  Gemm() { } 
+  Gemm() { }
 
   /// Determines whether kernel satisfies alignment
     static Status can_implement(
@@ -238,7 +241,7 @@ struct Gemm {
 
     // Problem size is a function of threadblock index in the K dimension
     int problem_size_k = min(
-      params.problem_size.k(), 
+      params.problem_size.k(),
       (threadblock_tile_offset.k() + 1) * params.gemm_k_size);
 
     // Compute threadblock-scoped matrix multiply-add
@@ -272,37 +275,30 @@ struct Gemm {
     //
 
 
-    // Construct thread-scoped matrix multiply
-    // Comment added by Javi Fdez:
-    //printf("thread:%d \twarp:%d \tlane%d \tAux:%d\n",thread_idx, warp_idx, lane_idx,lane_idx+(32*(warp_idx%2)));
-
-
     /* ==========================================================================================================
-      Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory 
+      Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
     ========================================================================================================== */
-    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (CRC_CHECKSUM!=UNPROTECTED))
+    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
       if (threadIdx.x < 256) // ES_a, ES_b, ES_c
         {
-          /*d_ES_a_shared[threadIdx.x] = 0u;//d_ES_a_constant[threadIdx.x];
+          d_ES_a_shared[threadIdx.x] = 0u;//d_ES_a_constant[threadIdx.x];
           d_ES_b_shared[threadIdx.x] = 0u;//d_ES_b_constant[threadIdx.x];
           d_ES_c_shared[threadIdx.x] = 0u;//d_ES_c_constant[threadIdx.x];
-          */
+
         /* =================================================================================
-          Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory 
+          Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
         ==================================================================================== */
           #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
             d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
-            __syncthreads();
           #endif
         }
-      
+        __syncthreads();
     #endif
 
 
 
- 
-
-    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx, params.d_ES_a, params.d_ES_b, params.d_ES_c);
+    // Construct thread-scoped matrix multiply
+    Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
 
     typename Mma::FragmentC accumulators;
 
@@ -310,10 +306,9 @@ struct Gemm {
 
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a_shared[thread_idx], &params.d_ES_b_shared[thread_idx], &params.d_ES_c_shared[thread_idx]);
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[thread_idx], &params.d_ES_b[thread_idx], &params.d_ES_c[thread_idx]);
-      // The following code is expected to be used with 2 SMP
-      //mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a[lane_idx+(32*(warp_idx%2))], &params.d_ES_b[lane_idx+(32*(warp_idx%2))], &params.d_ES_c[lane_idx+(32*(warp_idx%2))]);
+      // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a_shared[thread_idx], &params.d_ES_b_shared[thread_idx], &params.d_ES_c_shared[thread_idx]);
+      // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &d_ES_a_shared[thread_idx], &d_ES_b_shared[thread_idx], &d_ES_c_shared[thread_idx]);
+        mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators);
     }
 
     //
@@ -342,7 +337,7 @@ struct Gemm {
 
     // If performing a reduction via split-K, fetch the initial synchronization
     if (kSplitKSerial && params.grid_tiled_shape.k() > 1) {
-      
+
       // Fetch the synchronization lock initially but do not block.
       semaphore.fetch();
 
@@ -369,14 +364,14 @@ struct Gemm {
     );
 
     Epilogue epilogue(
-      shared_storage.epilogue, 
-      thread_idx, 
-      warp_idx, 
+      shared_storage.epilogue,
+      thread_idx,
+      warp_idx,
       lane_idx);
 
     // Wait on the semaphore - this latency may have been covered by iterator construction
     if (kSplitKSerial && params.grid_tiled_shape.k() > 1) {
-        
+
       // For subsequent threadblocks, the source matrix is held in the 'D' tensor.
       if (threadblock_tile_offset.k()) {
         iterator_C = iterator_D;
@@ -388,13 +383,13 @@ struct Gemm {
     }
 
     // Execute the epilogue operator to update the destination tensor.
-    epilogue(output_op, iterator_D, accumulators, iterator_C); 
-    
+    epilogue(output_op, iterator_D, accumulators, iterator_C);
+
     //
     // Release the semaphore
     //
     if (kSplitKSerial && params.grid_tiled_shape.k() > 1) {
-      
+
       int lock = 0;
       if (params.grid_tiled_shape.k() == threadblock_tile_offset.k() + 1) {
 
@@ -409,6 +404,25 @@ struct Gemm {
       __threadfence();
       semaphore.release(lock);
     }
+
+
+    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
+      if (threadIdx.x < 256) // ES_a, ES_b, ES_c
+        {
+        /* =================================================================================
+          Memory copy of ES_a,b and values from shared GPU memory to Global GPU memory
+        ==================================================================================== */
+        //if(threadIdx.x==1){printf("THere we go! (It should be displayed only once on screen...\n");}
+
+          params.d_ES_a[threadIdx.x] = d_ES_a_shared[threadIdx.x];
+          //printf("ES_a[%u]=%u\n",threadIdx.x,d_ES_a_shared[threadIdx.x]);
+          params.d_ES_b[threadIdx.x] = d_ES_b_shared[threadIdx.x];
+          params.d_ES_c[threadIdx.x] = d_ES_c_shared[threadIdx.x];
+        }
+        __syncthreads();
+    #endif
+
+
   }
 };
 
