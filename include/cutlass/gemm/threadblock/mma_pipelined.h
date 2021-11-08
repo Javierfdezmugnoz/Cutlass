@@ -185,6 +185,7 @@ public:
     IteratorA iterator_A,                             ///< iterator over A operand in global memory
     IteratorB iterator_B,                             ///< iterator over B operand in global memory
     FragmentC const &src_accum,                       ///< source accumulator tile
+    uint32_t thread_idx,
     // uint32_t *d_ES_a = nullptr,
     // uint32_t *d_ES_b = nullptr,
     // uint32_t *d_ES_c = nullptr,
@@ -318,7 +319,7 @@ public:
         }
 
         warp_mma(accum, warp_frag_A[warp_mma_k % 2],
-                 warp_frag_B[warp_mma_k % 2], accum); //, d_ES_a, d_ES_b, d_ES_c);
+                 warp_frag_B[warp_mma_k % 2], accum,thread_idx); //, d_ES_a, d_ES_b, d_ES_c);
       }
     }
 

@@ -221,7 +221,8 @@ public:
     FragmentC &d, 
     FragmentA a, 
     FragmentB b, 
-    FragmentC const &c,
+    FragmentC const &c
+    ,uint32_t thread_idx,
     // uint32_t *d_ES_a = nullptr,
     // uint32_t *d_ES_b = nullptr,
     // uint32_t *d_ES_c = nullptr,
@@ -239,7 +240,7 @@ public:
       b = conj_b(b);
     }
  // Included by JFdez
-    mma(d, a, b, c);//, d_ES_a, d_ES_b, d_ES_c);
+    mma(d, a, b, c,thread_idx);//, d_ES_a, d_ES_b, d_ES_c);
   }
 
   /// Transform the mma operands to the required types

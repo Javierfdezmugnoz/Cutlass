@@ -113,7 +113,11 @@ struct GemmIdentityThreadblockSwizzle {
     GemmCoord problem_size,
     GemmCoord tile_size,
     int split_k_slices) const {
-
+    printf("==========================================\n");
+    printf("Tiled Shape \n");
+    printf("Problem_size m:%u \tn:%u \n tile_size m:%u \tn:%u\n return:1)%u\t 2)%u \t3)%u\n",problem_size.m(),problem_size.n(), tile_size.m(),tile_size.n(),(problem_size.m() + tile_size.m() - 1) / tile_size.m(), (problem_size.n() + tile_size.n() - 1) / tile_size.n(),split_k_slices);
+    printf("==========================================\n");
+    
     return GemmCoord(
       (problem_size.m() + tile_size.m() - 1) / tile_size.m(),
       (problem_size.n() + tile_size.n() - 1) / tile_size.n(),
@@ -123,6 +127,11 @@ struct GemmIdentityThreadblockSwizzle {
   /// Computes CUDA grid dimensions given a size in units of logical tiles
   CUTLASS_HOST_DEVICE
   dim3 get_grid_shape(GemmCoord tiled_shape) const {
+    printf("==========================================\n");
+    printf("Grid Shape \n");
+    printf("kTile:%u\t return:%u\t %u\t %u \n",kTile, tiled_shape.m(),tiled_shape.n(),tiled_shape.k());
+    printf("==========================================\n");
+
     if ((tiled_shape.m() < kTile) || (tiled_shape.n() < kTile))
       return dim3(tiled_shape.m(), tiled_shape.n(), tiled_shape.k());
 

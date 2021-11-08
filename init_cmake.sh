@@ -42,19 +42,19 @@ TIMING_EXPERIMENT=$1
 DC_EXPERIMENT=$2
 ES_EXP=$3
 
-OPTIMIZATION_FLAG="-O0"
-rm -rf build
+OPTIMIZATION_FLAG="O0"
+# rm -rf build
 # Define an enum type with the kind of memory
- for j_loop in 18 #128 #160 256 320 #20 40 80 #80 160 320 128 256 #80 160 320 128 256 512 # o
+ for j_loop in 8 #128 #160 256 320 #20 40 80 #80 160 320 128 256 #80 160 320 128 256 512 # o
         do
         if [ $TIMING_EXPERIMENT -eq 1 ]
         then
-                mkdir timing_measurements/$j_loop
+                mkdir exp_results/"Opt_"${OPTIMIZATION_FLAG}/$j_loop
         else
                 mkdir dc/$j_loop
         fi
 
-        for i_loop in `seq $TECH_NO_ED 1 $TECH_FLET_CRC` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
+        for i_loop in `seq $TECH_ONES_INTERNAL 1 $TECH_ONES_INTERNAL` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
         do
                 case $i_loop in
                 $TECH_NO_ED)
@@ -196,19 +196,19 @@ rm -rf build
                         NAME=TECH_FLET_CRC
                 ;;
                 esac
-                rm -rf build
+                # rm -rf build
                 mkdir build
                 cd build/.
-                cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=72 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS=$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$i_loop"_"$NAME -DDIM_M=18 -DDIM_N=230400 -DDIM_K=64 -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
+                cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=53 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$i_loop"_"$NAME -DDIM_M=16 -DDIM_N=16 -DDIM_K=16 -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
                 echo "NAME: $i_loop"_"$NAME"
                 echo "MATRIX_DIM = [$j_loop,$j_loop,$j_loop]"
                 echo "[TIMING,DC,ES_OPT]=[$1,$2,$3]"
                 cd examples/18_Sim_test/.
                 cmake --build . --clean-first
-                sudo ./18_Simt
+                # sudo ./18_Simt
                 if [ $TIMING_EXPERIMENT -eq 1 ]
                 then
-                        mv ./${j_loop}*.csv ../../../timing_measurements/$j_loop/.
+                        mv ./${j_loop}*.csv ../../../exp_results/"Opt_"${OPTIMIZATION_FLAG}/$j_loop/.
                 else
                         mv ./${j_loop}*.csv ../../../dc/$j_loop/.
                 fi

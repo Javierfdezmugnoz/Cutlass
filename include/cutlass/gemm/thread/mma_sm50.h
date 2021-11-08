@@ -127,7 +127,8 @@ struct MmaGeneric {
     FragmentC & D,
     FragmentA const & A,
     FragmentB const & B,
-    FragmentC const & C
+    FragmentC const & C,
+    uint32_t thread_idx
     // ,uint32_t *d_ES_a =nullptr,
     // uint32_t *d_ES_b =nullptr,
     // uint32_t *d_ES_c =nullptr
@@ -146,15 +147,22 @@ struct MmaGeneric {
     // Copy accumulators
     D = C;
 
+    //printf("thread_idx:%u\n",thread_idx);
     // Compute matrix product
-    //printf("%i, %i, %i\n", Shape::kK, Shape::kN, Shape::kM);
-
-    // JFDEZ: Compute position within threadblock
-    uint32_t thread_idx = threadIdx.x;
+    if(thread_idx==0){
+      printf("==============================================\n");
+      printf("K=%i\t N=%i\t M=%i\n", Shape::kK, Shape::kN, Shape::kM);
+    }
 
     // Definition of the registers where are stored the ES_a,b and c
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      uint32_t d_ES_a_reg = d_ES_a_shared[thread_idx];
+      volatile uint32_t d_ES_a_reg = d_ES_a_shared[thread_idx];
+      //  if(thread_idx==0)
+       {
+         printf("Previous value of d_ES_a_reg=%x\n",d_ES_a_reg);
+         printf("==============================================\n");
+         __syncthreads();
+       }
       uint32_t d_ES_b_reg = d_ES_b_shared[thread_idx];
       uint32_t d_ES_c_reg = d_ES_c_shared[thread_idx];
       //uint32_t probando = 125u;
@@ -184,9 +192,12 @@ struct MmaGeneric {
           //printf("m_serpentine: %x, %x, %x\n", (uint32_t) d_ref.at(mn),(uint32_t) a_ref.at(mk),(uint32_t) b_ref.at(kn));
           //mma_op(d, a, b, d);
           
+          uint32_t prev;
           mma_op(d, a, b, d); //, d_ES_a, d_ES_b, d_ES_c);
 
-
+          // DELETE THIS LINE IN THE EXPERIMENTS (USEFULL ONLY IN DEBUG MODE)
+          prev=d_ES_a_reg;
+          
           #if (INTERNAL_ES==XOR_CHECKSUM)
             #if (INTERMEDIATE_ES!=UNPROTECTED)
                 //atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
@@ -228,6 +239,15 @@ struct MmaGeneric {
           #else
             
           #endif
+          // if(thread_idx==0)
+          {
+            //UNCOMMENT
+            //printf("thread_Idx:%2u\t kN:%u, kM:%u, kK=%u, d_ES_a_reg_prev=%8x\t a=%8x \t d_ES_a_reg=%8x\t m_serpentine:%u\t b=%3.0f\t c=%7.0f\t a=%4.0f\n",thread_idx,n, m, k, prev,(uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg, m_serpentine, b[0], d[0], a[0]);
+           __syncthreads();
+          }
+          // if(threadidx.x==0){
+          //   printf("thread_Idx:%u\t kN:%u, kM:%u, kK=%u, d_ES_a_reg_prev=%8x\t a=%8x \t d_ES_a_reg=%8x\t m_serpentine:%u\t b=%3.0f\t c=%7.0f\t a=%4.0f\n",thread_idx, n, m, k, prev,(uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg, m_serpentine, b[0], d[0], a[0]);
+          // }
           d_ref.at(mn) = d[0];
         }
       // ==============================================================================
@@ -323,9 +343,10 @@ struct MmaGeneric {
     }
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
       d_ES_a_shared[thread_idx] = d_ES_a_reg;
-      //printf("ES_a[%u]=%u \t reg_a=%u\n",threadIdx.x,d_ES_a_shared[threadIdx.x],d_ES_a_reg);
+      // printf("ES_a[%3u & %3u]=%x \t reg_a=%x\n",threadIdx.x, thread_idx,d_ES_a_shared[threadIdx.x], d_ES_a_reg);
       d_ES_b_shared[thread_idx] = d_ES_b_reg;
       d_ES_c_shared[thread_idx] = d_ES_c_reg;
+      __threadfence();
     #endif
   }
 };
@@ -414,7 +435,8 @@ struct Mma<
     FragmentC & D,
     FragmentA const & A,
     FragmentB const & B,
-    FragmentC const & C
+    FragmentC const & C,
+    uint32_t thread_idx
     // ,uint32_t *d_ES_a =nullptr,
     // uint32_t *d_ES_b =nullptr,
     // uint32_t *d_ES_c =nullptr
@@ -430,7 +452,7 @@ struct Mma<
       LayoutC,
       Operator> mma;
 
-    mma(D, A, B, C); //,d_ES_a, d_ES_b, d_ES_c);
+    mma(D, A, B, C, thread_idx); //,d_ES_a, d_ES_b, d_ES_c);
   }
 };
 

@@ -274,14 +274,14 @@ struct Gemm {
     // Main loop
     //
 
-
     /* ==========================================================================================================
       Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
     ========================================================================================================== */
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
       if (threadIdx.x < 256) // ES_a, ES_b, ES_c
         {
-          d_ES_a_shared[threadIdx.x] = 0u;//d_ES_a_constant[threadIdx.x];
+          d_ES_a_shared[threadIdx.x] = threadIdx.x;//d_ES_a_constant[threadIdx.x];
+          printf("thread:%u\t warp=%u\t lane_idx=%u\n",threadIdx.x,warp_idx,lane_idx);
           d_ES_b_shared[threadIdx.x] = 0u;//d_ES_b_constant[threadIdx.x];
           d_ES_c_shared[threadIdx.x] = 0u;//d_ES_c_constant[threadIdx.x];
 
@@ -294,9 +294,7 @@ struct Gemm {
         }
         __syncthreads();
     #endif
-
-
-
+    printf("\n\nInitial value=%u\n\n",d_ES_a_shared[threadIdx.x]);
     // Construct thread-scoped matrix multiply
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
 
@@ -308,7 +306,7 @@ struct Gemm {
       // Compute threadblock-scoped matrix multiply-add
       // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a_shared[thread_idx], &params.d_ES_b_shared[thread_idx], &params.d_ES_c_shared[thread_idx]);
       // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &d_ES_a_shared[thread_idx], &d_ES_b_shared[thread_idx], &d_ES_c_shared[thread_idx]);
-        mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators);
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators,thread_idx);
     }
 
     //
@@ -410,11 +408,15 @@ struct Gemm {
       if (threadIdx.x < 256) // ES_a, ES_b, ES_c
         {
         /* =================================================================================
-          Memory copy of ES_a,b and values from shared GPU memory to Global GPU memory
+          Memory copy of ES_a,b and c values from shared GPU memory to Global GPU memory
         ==================================================================================== */
         //if(threadIdx.x==1){printf("THere we go! (It should be displayed only once on screen...\n");}
-
-          params.d_ES_a[threadIdx.x] = d_ES_a_shared[threadIdx.x];
+          params.d_ES_a[thread_idx] = d_ES_a_shared[thread_idx];
+          if(thread_idx==0){
+            printf("=====================================================\n");
+            printf("Final value of d_ES_a=%x\n",d_ES_a_shared[thread_idx]);
+            printf("=====================================================\n");
+          }
           //printf("ES_a[%u]=%u\n",threadIdx.x,d_ES_a_shared[threadIdx.x]);
           params.d_ES_b[threadIdx.x] = d_ES_b_shared[threadIdx.x];
           params.d_ES_c[threadIdx.x] = d_ES_c_shared[threadIdx.x];
