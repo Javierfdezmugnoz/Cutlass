@@ -36,13 +36,6 @@
 #include "cutlass/gemm/thread/mma.h"
 #include "helper.h"
 
-#if (INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED)
-  // Shared memory in device memory
-    extern __shared__ uint32_t d_ES_a_shared[];
-    extern __shared__ uint32_t d_ES_b_shared[];
-    extern __shared__ uint32_t d_ES_c_shared[];
-#endif
-
 //#include "../../examples/ES_protection/checksum.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,10 +122,14 @@ struct MmaGeneric {
     FragmentB const & B,
     FragmentC const & C,
     uint32_t thread_idx
-    // ,uint32_t *d_ES_a =nullptr,
-    // uint32_t *d_ES_b =nullptr,
-    // uint32_t *d_ES_c =nullptr
-    ) {
+    ,uint32_t *d_ES_a =nullptr,
+    uint32_t *d_ES_b =nullptr,
+    uint32_t *d_ES_c =nullptr
+    #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+      ,uint32_t *d_CRC_shared = nullptr
+    #endif
+    )
+    {
     TensorRef<ElementA const, LayoutA> a_ref(
       reinterpret_cast<ElementA const *>(&A), LayoutA::packed({Shape::kM, Shape::kK}));
 
@@ -147,25 +144,19 @@ struct MmaGeneric {
     // Copy accumulators
     D = C;
 
-    //printf("thread_idx:%u\n",thread_idx);
-    // Compute matrix product
-    if(thread_idx==0){
-      printf("==============================================\n");
-      printf("K=%i\t N=%i\t M=%i\n", Shape::kK, Shape::kN, Shape::kM);
-    }
-
     // Definition of the registers where are stored the ES_a,b and c
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      volatile uint32_t d_ES_a_reg = d_ES_a_shared[thread_idx];
-      //  if(thread_idx==0)
-       {
-         printf("Previous value of d_ES_a_reg=%x\n",d_ES_a_reg);
-         printf("==============================================\n");
-         __syncthreads();
-       }
-      uint32_t d_ES_b_reg = d_ES_b_shared[thread_idx];
-      uint32_t d_ES_c_reg = d_ES_c_shared[thread_idx];
-      //uint32_t probando = 125u;
+      uint32_t d_ES_a_reg = 0u;
+      uint32_t d_ES_b_reg = 0u;
+      uint32_t d_ES_c_reg = 0u;
+      uint32_t prev       = 0u;
+      d_ES_a_reg = d_ES_a[thread_idx];
+      d_ES_b_reg = d_ES_b[thread_idx];
+      d_ES_c_reg = d_ES_c[thread_idx];
+      prev = 0u;
+      // if(thread_idx==0u){
+      //   printf("Initially: d_ES_a[%u]=%u\t d_ES_a_reg=%u \td_ES_a_reg_prev=%u\n",thread_idx, d_ES_a[thread_idx],d_ES_a_reg, prev);
+      // }
     #endif
 
     CUTLASS_PRAGMA_UNROLL
@@ -173,15 +164,13 @@ struct MmaGeneric {
       Array<ElementC, 1> d;
       Array<ElementA, 1> a;
       Array<ElementB, 1> b;
-      // if(threadIdx.x==1u){
-      //   printf("kK = %u\t kN = %u\t kM=%u\n",Shape::kK,Shape::kN,Shape::kM);
-      // }
+
       CUTLASS_PRAGMA_UNROLL
       for (int n = 0; n < Shape::kN; ++n) {
         CUTLASS_PRAGMA_UNROLL
         for (int m = 0; m < Shape::kM; ++m) {
-          int m_serpentine = (n % 2) ? (Shape::kM - 1 - m) : m;
-          
+          int m_serpentine = (n&1) ? (Shape::kM - 1 - m) : m;
+
           MatrixCoord mn(m_serpentine, n);
           MatrixCoord mk(m_serpentine, k);
           MatrixCoord kn(k, n);
@@ -189,127 +178,95 @@ struct MmaGeneric {
           d[0] = d_ref.at(mn);
           a[0] = a_ref.at(mk);
           b[0] = b_ref.at(kn);
-          //printf("m_serpentine: %x, %x, %x\n", (uint32_t) d_ref.at(mn),(uint32_t) a_ref.at(mk),(uint32_t) b_ref.at(kn));
-          //mma_op(d, a, b, d);
-          
-          uint32_t prev;
-          mma_op(d, a, b, d); //, d_ES_a, d_ES_b, d_ES_c);
 
-          // DELETE THIS LINE IN THE EXPERIMENTS (USEFULL ONLY IN DEBUG MODE)
-          prev=d_ES_a_reg;
-          
+          mma_op(d, a, b, d);
+
+           d_ref.at(mn) = d[0];      
+
           #if (INTERNAL_ES==XOR_CHECKSUM)
-            #if (INTERMEDIATE_ES!=UNPROTECTED)
-                //atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-            #endif
             d_ES_a_reg = _xor((uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
             d_ES_b_reg = _xor((uint32_t) *((uint32_t*) &b[0]), d_ES_b_reg);
             d_ES_c_reg = _xor((uint32_t) *((uint32_t*) &d[0]), d_ES_c_reg);
-            // atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-            // atomicXor(&d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-            // atomicXor(&d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
           #elif (INTERNAL_ES==ONES_CHECKSUM)
-            #if (INTERMEDIATE_ES!=UNPROTECTED)
-                //d_ES_a_reg = __a1c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-            #endif
             d_ES_a_reg = __a1c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
             d_ES_b_reg = __a1c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
             d_ES_c_reg = __a1c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
           #elif (INTERNAL_ES==TWOS_CHECKSUM)
-            #if (INTERMEDIATE_ES!=UNPROTECTED)
-                //d_ES_a_reg = __a2c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-            #endif
             d_ES_a_reg = __a2c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
             d_ES_b_reg = __a2c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
             d_ES_c_reg = __a2c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
           #elif (INTERNAL_ES==FLETCHER_CHECKSUM)
-            #if (INTERMEDIATE_ES!=UNPROTECTED)
-                //d_ES_a_reg = Fletcher32c_ui32(d_ES_a_reg,(uint32_t) *((uint32_t*) &a[0]));
-            #endif
             d_ES_a_reg = Fletcher32c_ui32(d_ES_a_reg,(uint32_t) *((uint32_t*) &a[0]));
             d_ES_b_reg = Fletcher32c_ui32(d_ES_b_reg,(uint32_t) *((uint32_t*) &b[0]));
             d_ES_c_reg = Fletcher32c_ui32(d_ES_c_reg,(uint32_t) *((uint32_t*) &d[0]));
           #elif (INTERNAL_ES==CRC_CHECKSUM)
-              #if (INTERMEDIATE_ES!=UNPROTECTED)
-                  //d_ES_a_reg = singletable_crc32c_ui32(d_ES_a_reg,(uint32_t) *((uint32_t*) &a[0]));
-              #endif
-            d_ES_a_reg = singletable_crc32c_ui32(d_ES_a_reg,(uint32_t) *((uint32_t*) &a[0]));
-            d_ES_b_reg = singletable_crc32c_ui32(d_ES_b_reg,(uint32_t) *((uint32_t*) &b[0]));
-            d_ES_c_reg = singletable_crc32c_ui32(d_ES_c_reg,(uint32_t) *((uint32_t*) &d[0]));
+            d_ES_a_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));            
+            d_ES_b_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+            d_ES_c_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
           #else
-            
+
           #endif
-          // if(thread_idx==0)
-          {
-            //UNCOMMENT
-            //printf("thread_Idx:%2u\t kN:%u, kM:%u, kK=%u, d_ES_a_reg_prev=%8x\t a=%8x \t d_ES_a_reg=%8x\t m_serpentine:%u\t b=%3.0f\t c=%7.0f\t a=%4.0f\n",thread_idx,n, m, k, prev,(uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg, m_serpentine, b[0], d[0], a[0]);
-           __syncthreads();
+                    
+          if(thread_idx==0u){
+            // printf("ES_b_prev:%u\t a_value=%0.0f\t b_value=%0.0f\t ES_b_reg=%u\n",prev, a[0], b[0], d_ES_b_reg);
+            //printf("kK = %u\t kN = %u\t kM=%u\t",Shape::kK,Shape::kN,Shape::kM);
           }
-          // if(threadidx.x==0){
-          //   printf("thread_Idx:%u\t kN:%u, kM:%u, kK=%u, d_ES_a_reg_prev=%8x\t a=%8x \t d_ES_a_reg=%8x\t m_serpentine:%u\t b=%3.0f\t c=%7.0f\t a=%4.0f\n",thread_idx, n, m, k, prev,(uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg, m_serpentine, b[0], d[0], a[0]);
-          // }
-          d_ref.at(mn) = d[0];
         }
+      // prev=d_ES_b_reg;
       // ==============================================================================
       //    Implementation of the execution signature in the Intermediate loop (internal)
       // ==============================================================================
+      //prev=d_ES_a_reg;
       #if (INTERMEDIATE_ES==UNPROTECTED)
         #if INTERNAL_ES==XOR_CHECKSUM
           d_ES_a_reg = _xor((uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
-          //atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          /*if(1u==thread_idx)
-          {
-            printf("value a=%x \t value xor=%x \n",(uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
-            atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-            printf("value xor=%x\n",d_ES_a_reg);
-            probando = _xor((uint32_t) *((uint32_t*) &a[0]), probando);
-            printf("value a=%u \t value _xor=%u \n",(uint32_t) *((uint32_t*) &a[0]), probando);
-          }*/
+          d_ES_b_reg = _xor((uint32_t) *((uint32_t*) &b[0]), d_ES_b_reg);
         #elif INTERNAL_ES==ONES_CHECKSUM
           d_ES_a_reg = __a1c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+          d_ES_b_reg = __a1c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
         #elif INTERNAL_ES==TWOS_CHECKSUM
           d_ES_a_reg =  __a2c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+          d_ES_b_reg =  __a2c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
         #elif INTERNAL_ES==FLETCHER_CHECKSUM
           d_ES_a_reg = Fletcher32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+          d_ES_b_reg = Fletcher32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
         #elif INTERNAL_ES==CRC_CHECKSUM
-          d_ES_a_reg = singletable_crc32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+          d_ES_a_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+          d_ES_b_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
         #else
-          
+
         #endif
       #endif
-
-
-
 
       // ==============================================================================
       //    Implementation of the execution signature in the Intermediate loop
       // ==============================================================================
-        #if INTERMEDIATE_ES==XOR_CHECKSUM
-          // atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          // atomicXor(&d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-          // atomicXor(&d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
-          d_ES_a_reg = _xor((uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
-          d_ES_b_reg = _xor((uint32_t) *((uint32_t*) &b[0]), d_ES_b_reg);
-          d_ES_c_reg = _xor((uint32_t) *((uint32_t*) &d[0]), d_ES_c_reg);
-        #elif INTERMEDIATE_ES==ONES_CHECKSUM
-          d_ES_a_reg = __a1c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          d_ES_b_reg = __a1c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-          d_ES_c_reg = __a1c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES==TWOS_CHECKSUM
-          d_ES_a_reg =  __a2c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          d_ES_b_reg =  __a2c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-          d_ES_c_reg =  __a2c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES==FLETCHER_CHECKSUM
-          d_ES_a_reg = Fletcher32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          d_ES_b_reg = Fletcher32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-          d_ES_c_reg = Fletcher32c_ui32(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
-        #elif INTERMEDIATE_ES==CRC_CHECKSUM
-          d_ES_a_reg = singletable_crc32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-          d_ES_b_reg = singletable_crc32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-          d_ES_c_reg = singletable_crc32c_ui32(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
-        #else
-          
-        #endif
+      #if INTERMEDIATE_ES==XOR_CHECKSUM
+        // atomicXor(&d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+        // atomicXor(&d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        // atomicXor(&d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+        d_ES_a_reg = _xor((uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
+        d_ES_b_reg = _xor((uint32_t) *((uint32_t*) &b[0]), d_ES_b_reg);
+        d_ES_c_reg = _xor((uint32_t) *((uint32_t*) &d[0]), d_ES_c_reg);
+      #elif INTERMEDIATE_ES==ONES_CHECKSUM
+        d_ES_a_reg = __a1c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+        d_ES_b_reg = __a1c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c_reg = __a1c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+      #elif INTERMEDIATE_ES==TWOS_CHECKSUM
+        d_ES_a_reg =  __a2c(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+        d_ES_b_reg =  __a2c(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c_reg =  __a2c(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+      #elif INTERMEDIATE_ES==FLETCHER_CHECKSUM
+        d_ES_a_reg = Fletcher32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
+        d_ES_b_reg = Fletcher32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c_reg = Fletcher32c_ui32(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+      #elif INTERMEDIATE_ES==CRC_CHECKSUM
+        d_ES_a_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));            
+        d_ES_b_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+      #else
+
+      #endif
       }
       // ==============================================================================
       //    Implementation of the execution signature in the External loop
@@ -334,20 +291,25 @@ struct MmaGeneric {
         d_ES_b_reg = Fletcher32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
         d_ES_c_reg = Fletcher32c_ui32(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
       #elif (EXTERNAL_ES==CRC_CHECKSUM)
-        d_ES_a_reg = singletable_crc32c_ui32(d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));
-        d_ES_b_reg = singletable_crc32c_ui32(d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
-        d_ES_c_reg = singletable_crc32c_ui32(d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
+        d_ES_a_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_a_reg, (uint32_t) *((uint32_t*) &a[0]));            
+        d_ES_b_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_b_reg, (uint32_t) *((uint32_t*) &b[0]));
+        d_ES_c_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
       #else
-        
+
       #endif
     }
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      d_ES_a_shared[thread_idx] = d_ES_a_reg;
-      // printf("ES_a[%3u & %3u]=%x \t reg_a=%x\n",threadIdx.x, thread_idx,d_ES_a_shared[threadIdx.x], d_ES_a_reg);
-      d_ES_b_shared[thread_idx] = d_ES_b_reg;
-      d_ES_c_shared[thread_idx] = d_ES_c_reg;
-      __threadfence();
+      /* =================================================================================
+        Memory copy of ES_a,b and c values from shared GPU memory to Global GPU memory
+      ==================================================================================== */
+      d_ES_a[thread_idx] = d_ES_a_reg;
+      d_ES_b[thread_idx] = d_ES_b_reg;
+      d_ES_c[thread_idx] = d_ES_c_reg;
+      __syncthreads();
     #endif
+    // if(threadIdx.x==0){
+    //    printf("CRC[1]=%x\n",d_CRC_shared[1],thread_idx_);
+    // }
   }
 };
 
@@ -437,9 +399,12 @@ struct Mma<
     FragmentB const & B,
     FragmentC const & C,
     uint32_t thread_idx
-    // ,uint32_t *d_ES_a =nullptr,
-    // uint32_t *d_ES_b =nullptr,
-    // uint32_t *d_ES_c =nullptr
+    ,uint32_t *d_ES_a =nullptr,
+    uint32_t *d_ES_b =nullptr,
+    uint32_t *d_ES_c =nullptr
+    #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+      , uint32_t *d_CRC_shared =nullptr
+    #endif
     ) {
 
     MmaGeneric<
@@ -452,7 +417,11 @@ struct Mma<
       LayoutC,
       Operator> mma;
 
-    mma(D, A, B, C, thread_idx); //,d_ES_a, d_ES_b, d_ES_c);
+    #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+      mma(D, A, B, C, thread_idx, d_ES_a, d_ES_b, d_ES_c,d_CRC_shared);
+    #else
+      mma(D, A, B, C, thread_idx, d_ES_a, d_ES_b, d_ES_c);
+    #endif
   }
 };
 

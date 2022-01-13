@@ -459,7 +459,7 @@ public:
     dim3 grid = threadblock_swizzle.get_grid_shape(params_.grid_tiled_shape);
     dim3 block(GemmKernel::kThreadCount, 1, 1);
     
-    printf("\n\nBlock:%i, %i, %i \t grid:%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
+    // printf("\n\nthreads(block):%i, %i, %i \t block(grid):%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
     cudaError_t result;
 
 

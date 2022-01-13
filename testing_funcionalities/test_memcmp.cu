@@ -81,6 +81,13 @@ int  main(){
 	out_var = (mod_operand & (mod_divisor-1));
 	printf("value of mod_operand: %u\nvalue of var: %u\n",out_mod,out_var);
 
+
+	// How to printf with two decimals instead of 1
+	for(__uint32_t ui32_idx_i=0u;ui32_idx_i <11;ui32_idx_i++)
+	{
+		printf("value %02u\n",ui32_idx_i);
+	}
+
 return 0;
 
 }

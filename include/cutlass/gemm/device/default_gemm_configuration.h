@@ -74,9 +74,11 @@ struct DefaultGemmConfiguration<
   
   static int const kAlignmentA = 1;
   static int const kAlignmentB = 1;
-  using ThreadblockShape = GemmShape<32, 32, 8>;
-  using WarpShape = GemmShape<32, 32, 8>;
+
+  using ThreadblockShape = GemmShape<128, 128, 8>;
+  using WarpShape = GemmShape<32, 64, 8>;
   using InstructionShape = GemmShape<1, 1, 1>;
+
   static int const kStages = 2;
 
   using EpilogueOutputOp = epilogue::thread::LinearCombination<
@@ -98,8 +100,8 @@ struct DefaultGemmConfiguration<arch::OpClassSimt, ArchTag, int8_t, int8_t, Elem
   
   static int const kAlignmentA = 4;
   static int const kAlignmentB = 4;
-  using ThreadblockShape = GemmShape<128, 128, 32>;
-  using WarpShape = GemmShape<32, 64, 32>;
+  using ThreadblockShape = GemmShape<1024, 1024, 32>;
+  using WarpShape = GemmShape<32, 32, 32>;
   using InstructionShape = GemmShape<1, 1, 4>;
   static int const kStages = 2;
 

@@ -223,9 +223,12 @@ public:
     FragmentB b, 
     FragmentC const &c
     ,uint32_t thread_idx,
-    // uint32_t *d_ES_a = nullptr,
-    // uint32_t *d_ES_b = nullptr,
-    // uint32_t *d_ES_c = nullptr,
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr,
+    #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+      uint32_t * d_CRC_shared = nullptr,
+    #endif
     int group_idx = 0) const {
 
     ThreadMma mma;
@@ -240,7 +243,11 @@ public:
       b = conj_b(b);
     }
  // Included by JFdez
-    mma(d, a, b, c,thread_idx);//, d_ES_a, d_ES_b, d_ES_c);
+  #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+    mma(d, a, b, c, thread_idx, d_ES_a, d_ES_b, d_ES_c, d_CRC_shared);
+  #else
+    mma(d, a, b, c, thread_idx, d_ES_a, d_ES_b, d_ES_c);
+  #endif
   }
 
   /// Transform the mma operands to the required types

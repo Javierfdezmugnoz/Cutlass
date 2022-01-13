@@ -152,9 +152,9 @@ public:
     int thread_idx,                                     ///< ID within the threadblock
     int warp_idx,                                       ///< ID of warp
     int lane_idx                                        ///< ID of each thread within a warp
-    // ,uint32_t *d_ES_a = nullptr,
-    // uint32_t *d_ES_b = nullptr,
-    // uint32_t *d_ES_c = nullptr
+    ,uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr
   ):
     Base(shared_storage, thread_idx, warp_idx, lane_idx),
     smem_iterator_A_(shared_storage.operand_A_ref(), thread_idx),
@@ -186,9 +186,9 @@ public:
     IteratorB iterator_B,                             ///< iterator over B operand in global memory
     FragmentC const &src_accum,                       ///< source accumulator tile
     uint32_t thread_idx,
-    // uint32_t *d_ES_a = nullptr,
-    // uint32_t *d_ES_b = nullptr,
-    // uint32_t *d_ES_c = nullptr,
+    uint32_t *d_ES_a = nullptr,
+    uint32_t *d_ES_b = nullptr,
+    uint32_t *d_ES_c = nullptr,
     TransformA transform_A = TransformA(),            ///< transformation applied to A fragment
     TransformB transform_B = TransformB()             ///< transformation applied to B fragment
     ) {
@@ -247,10 +247,26 @@ public:
     // Issue loads during the first warp-level matrix multiply-add *AFTER* issuing
     // shared memory loads (which have the tighest latency requirement).
 
+      /* ==========================================================================================================
+      Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
+      ========================================================================================================== */
+      #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+        __shared__ uint32_t d_CRC_table_shared[CRC_TABLE_ELEMENTS];
+        if (threadIdx.x < CRC_TABLE_ELEMENTS)
+          {
+            d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
+            // printf("ID:%u\n",threadIdx.x);
+          }
+          __syncthreads();
+        // printf("CRC[1]=%x CRC[2]=%x block(%u,%u) and threadIdx.x=%u _idx:%u\n", d_CRC_table_shared[1u],d_CRC_table_shared[2u],blockIdx.x,blockIdx.y, threadIdx.x, thread_idx);
+        // if ((blockIdx.x==0)&(blockIdx.y==0)&(threadIdx.x==1))
+        // {
+        //   printf("CRC[1]=%x CRC[2]=%x block(%u,%u) and threadIdx.x=%u\n", d_CRC_table_shared[1u],d_CRC_table_shared[2u],blockIdx.x,blockIdx.y, thread_idx);
+        // }
+      #endif
     // =================================================
     //                Mainloop
     // =================================================
-
 
     //printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
@@ -317,9 +333,12 @@ public:
             iterator_B.clear_mask();
           }
         }
+        #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c, d_CRC_table_shared);
+        #else
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c);
+        #endif
 
-        warp_mma(accum, warp_frag_A[warp_mma_k % 2],
-                 warp_frag_B[warp_mma_k % 2], accum,thread_idx); //, d_ES_a, d_ES_b, d_ES_c);
       }
     }
 

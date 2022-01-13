@@ -14,6 +14,8 @@
 #define DEFAULT_DIM 128
 #define FLET_DIVISOR 255 
 
+#define CRC_TABLE_ELEMENTS 256u
+
 #ifndef EXTERNAL_ES
   #define EXTERNAL_ES UNPROTECTED
 #endif
@@ -39,7 +41,7 @@
 #endif
 
 #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
-  extern __shared__ uint32_t d_CRC_table_shared[];
+  extern __device__ __constant__ uint32_t d_CRC_table_constant[];
 #endif
 
 
@@ -68,10 +70,10 @@ typedef union ui32_to_ui16 {
   url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
   https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf 
 =============================================================================*/
-__device__ uint32_t _xor (uint32_t ui32_a, uint32_t ui32_b)
+__forceinline__ __device__ uint32_t _xor (uint32_t ui32_a, uint32_t ui32_b)
 {
     uint32_t acc;
-    asm volatile ("xor.b32  %0, %1, %2;\n\t"
+    asm ("xor.b32  %0, %1, %2;\n\t"
                 : "=r"(acc)
                 : "r"(ui32_a), "r"(ui32_b));
     return acc;
@@ -86,10 +88,10 @@ __device__ uint32_t _xor (uint32_t ui32_a, uint32_t ui32_b)
   url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
   https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf 
 =============================================================================*/
-__device__ uint32_t __a1c (uint32_t ui32_a, uint32_t ui32_b)
+__forceinline__ __device__ uint32_t __a1c (uint32_t ui32_a, uint32_t ui32_b)
 {
     uint32_t acc;
-    asm volatile ("add.cc.u32      %0, %1, %2;\n\t"
+    asm ("add.cc.u32      %0, %1, %2;\n\t"
          "addc.u32        %0, %0, 0;\n\t"
          "not.b32         %0, %0;\n\t"
          : "=r"(acc)
@@ -101,7 +103,7 @@ __device__ uint32_t __a1c (uint32_t ui32_a, uint32_t ui32_b)
 /* ==========================================================================
   Descritption: Ones complement with atomic instructions
 =============================================================================*/
-__device__ uint32_t a1c_atomic (uint32_t ui32_a, uint32_t ui32_b)
+__forceinline__ __device__ uint32_t a1c_atomic (uint32_t ui32_a, uint32_t ui32_b)
 {
     atomicAdd((uint32_t*) &ui32_a, ui32_b);
     ui32_a = ~ui32_a;
@@ -118,10 +120,10 @@ __device__ uint32_t a1c_atomic (uint32_t ui32_a, uint32_t ui32_b)
   url: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html or
   https://docs.nvidia.com/pdf/ptx_isa_5.0.pdf
 =============================================================================*/
-__device__ uint32_t __a2c (uint32_t ui32_a, uint32_t ui32_b)
+__forceinline__ __device__ uint32_t __a2c (uint32_t ui32_a, uint32_t ui32_b)
 {
     uint32_t acc = 0;
-    asm volatile ("add.u32     %0, %1, %2;\n\t"
+    asm ("add.u32     %0, %1, %2;\n\t"
          "not.b32     %0, %0;\n\t"
          "add.u32     %0, %0, 1;\n\t"
          : "=r"(acc)
@@ -132,7 +134,7 @@ __device__ uint32_t __a2c (uint32_t ui32_a, uint32_t ui32_b)
 /* ==========================================================================
   Descritption: Two's complement with atomic instructions
 =============================================================================*/
-__device__ uint32_t a2c_atomic (uint32_t ui32_a, uint32_t ui32_b)
+__forceinline__ __device__ uint32_t a2c_atomic (uint32_t ui32_a, uint32_t ui32_b)
 {
     atomicAdd((uint32_t*) &ui32_a, ui32_b);
     ui32_a = ~ui32_a;
@@ -144,7 +146,7 @@ __device__ uint32_t a2c_atomic (uint32_t ui32_a, uint32_t ui32_b)
   Description: CRC checksum
 =============================================================================*/
 #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
-__device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_data)
+__forceinline__ __device__  uint32_t singletable_crc32c_ui32(uint32_t *d_CRC_table_shared, uint32_t ui32_crc, uint32_t ui32_data) //
   {
     ui32_to_ui8_t u;
     u.ui32 = ui32_data;
@@ -161,7 +163,7 @@ __device__  uint32_t singletable_crc32c_ui32(uint32_t ui32_crc, uint32_t ui32_da
 /* ==========================================================================
   Description: Fletcher checksum
 =============================================================================*/
-__device__ uint32_t Fletcher32c_ui32(uint32_t Prev_Fletcher, uint32_t ui32_data)
+__forceinline__ __device__ uint32_t Fletcher32c_ui32(uint32_t Prev_Fletcher, uint32_t ui32_data)
 {
 	  ui32_to_ui16_t v;
     ui32_to_ui16_t Fletcher;
@@ -183,6 +185,16 @@ __device__ uint32_t Fletcher32c_ui32(uint32_t Prev_Fletcher, uint32_t ui32_data)
 	return Fletcher.ui32;
 }
 
+
+// ==========================================================================
+//  Descritption: Two's complement with atomic instructions
+// ==========================================================================
+ __forceinline__ __device__ uint32_t get_smid(void) 
+{
+     uint32_t ret;
+     asm("mov.u32 %0, %%smid;" : "=r"(ret) );
+     return ret;
+}
 
 #define CUTLASS_CHECK(status)                                                                    \
   {                                                                                              \

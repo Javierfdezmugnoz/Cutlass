@@ -54,7 +54,7 @@
 
 // Helper methods to check for errors
 #include "helper.h"
-
+#include <time.h>
 //
 // CUTLASS includes needed for single-precision GEMM kernel
 //
@@ -68,6 +68,16 @@
 // and launches it on the CUDA device.
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  /*==============================================================================
+  //                       Timing variables
+  ==============================================================================*/
+  struct timespec begin, end;
+  uint64_t time_max_ns = 0;
+  long long iteration_max_time = 0;
+  uint64_t time_ns;
+
 
 /// Define a CUTLASS GEMM template and launch a GEMM kernel.
 cudaError_t CutlassSgemmNN(
@@ -350,8 +360,15 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   //
   // Launch CUTLASS GEMM.
   //
-
+  //GET_TIME(tmr_start);
+  for (size_t i = 0; i < 10; i++)
+  {  
+  clock_gettime(CLOCK_MONOTONIC, &begin);
   result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc);
+  cudaDeviceSynchronize();
+  clock_gettime(CLOCK_MONOTONIC, &end);
+
+  printf("Iteration[%i]=%u\n",i,1e9 * (end.tv_sec - begin.tv_sec) + (end.tv_nsec - begin.tv_nsec));
 
   if (result != cudaSuccess) {
     std::cerr << "CUTLASS GEMM kernel failed: "
@@ -434,7 +451,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 
     return cudaErrorUnknown;
   }
-
+  }
   return cudaSuccess;
 }
 

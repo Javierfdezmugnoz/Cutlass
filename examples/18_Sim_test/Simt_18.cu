@@ -103,16 +103,16 @@ typedef void     void_t;
 static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint32_t ui32_max_columns)
 {
 	uint32_t ui32_idx;
-  printf("==========================\n");
-  printf("\tMatrix A\n");
-  printf("==========================\n");
+  // printf("==========================\n");
+  // printf("\tMatrix A\n");
+  // printf("==========================\n");
 	for (ui32_idx = 0u; ui32_idx < (ui32_max_rows * ui32_max_columns); ui32_idx++)
 	{
 		*paf32_matrix++ = (float32_t) (ui32_idx+1);//(float32_t)rand(); 
-     printf("%0.0f\t", paf32_matrix);
+    //  printf("%0.0f\t", paf32_matrix);
     if((ui32_idx+1)%16==0)
     {
-      printf("\n");
+      // printf("\n");
     }
 	}
 }
@@ -120,17 +120,17 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
 static void_t matrix2randb(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint32_t ui32_max_columns)
 {
 	uint32_t ui32_idx;
-  printf("==========================\n");
-  printf("\tMatrix B\n");
-  printf("==========================\n");
+  // printf("==========================\n");
+  // printf("\tMatrix B\n");
+  // printf("==========================\n");
 	for (ui32_idx = 0u; ui32_idx < (ui32_max_rows * ui32_max_columns); ui32_idx++)
 	{
 		*paf32_matrix++ = (float32_t) ((ui32_idx+1)*10);//(float32_t)rand(); 
-    printf("%0.0f\t", *paf32_matrix);
-    if((ui32_idx+1)%16==0)
-    {
-      printf("\n");
-    }
+    // printf("%0.0f\t", *paf32_matrix);
+    // if((ui32_idx+1)%16==0)
+    // {
+    //   printf("\n");
+    // }
 	}
 }
 
@@ -154,11 +154,11 @@ struct ESs{
 #define GET_TIME(t) t = clock();
 #define GET_TIME_DIFF(tmr_start, tmr_end, f_time_interval) f_time_interval = ((tmr_end - tmr_start) > 0) ? ( (float32_t)  (tmr_end - tmr_start) / CLOCKS_PER_SEC) : ( (float32_t)  (tmr_start - tmr_end)/ CLOCKS_PER_SEC)
 
-#define TIME_MEASUREMENT_LOOPS 1u //300u
-#define INITIAL_TIME_MEASUREMENT 0u
+#define TIME_MEASUREMENT_LOOPS 30u //300u
+#define INITIAL_TIME_MEASUREMENT 10u
 #define TIME_SEC2USEC       ((uint32_t) 1000000u) /*!< Microseconds per second*/
 
-#define nElem_ES 256
+#define nElem_ES 1000000u
 
 #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
   // Global memory en device memory
@@ -167,17 +167,16 @@ struct ESs{
   // __device__ uint32_t d_ES_c[nElem_ES];
 
   // Shared memory in device memory
-  __shared__ uint32_t d_ES_a_shared[nElem_ES];
-  __shared__ uint32_t d_ES_b_shared[nElem_ES];
-  __shared__ uint32_t d_ES_c_shared[nElem_ES];
+  // __shared__ uint32_t d_ES_a_shared[nElem_ES];
+  // __shared__ uint32_t d_ES_b_shared[nElem_ES];
+  // __shared__ uint32_t d_ES_c_shared[nElem_ES];
 #endif
 
 #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
-    #define CRC_table_elements 256u
     /* ==============================================================================================================
     * 										CONSTS
     * ============================================================================================================== */
-    uint32_t kaui32_crc_table[CRC_table_elements] = 
+    uint32_t kaui32_crc_table[] = 
     {
       0x00000000L, 0xF26B8303L, 0xE13B70F7L, 0x1350F3F4L,
       0xC79A971FL, 0x35F1141CL, 0x26A1E7E8L, 0xD4CA64EBL,
@@ -244,8 +243,7 @@ struct ESs{
       0x79B737BAL, 0x8BDCB4B9L, 0x988C474DL, 0x6AE7C44EL,
       0xBE2DA0A5L, 0x4C4623A6L, 0x5F16D052L, 0xAD7D5351L
     };
-    __constant__ uint32_t d_CRC_table_constant[CRC_table_elements];
-    __shared__ uint32_t d_CRC_table_shared[CRC_table_elements];
+    __device__ __constant__ uint32_t d_CRC_table_constant[CRC_TABLE_ELEMENTS];
 
     /* ==========================================================================
       Description: CRC function
@@ -440,7 +438,6 @@ ESs smm_ones_internal(uint32_t ui32_m, uint32_t ui32_n, uint32_t ui32_k, float32
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Define a CUTLASS GEMM template and launch a GEMM kernel.
-#pragma clang optimize off
 cudaError_t CutlassSgemmNN(
   int M,
   int N,
@@ -521,7 +518,7 @@ cudaError_t CutlassSgemmNN(
   // Return success, if no errors were encountered.
   return cudaSuccess;
 }
-#pragma clang optimize on
+
 
 
 /// Naive reference GEMM computation.
@@ -765,7 +762,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 //  7) If CRC is in one loop => Copy the CRC lookup table from host to device
 // ==============================================================================
 #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
-  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_table_elements*sizeof(uint32_t));
+  result = cudaMemcpyToSymbol(d_CRC_table_constant, kaui32_crc_table, CRC_TABLE_ELEMENTS*sizeof(uint32_t));
   if (result != cudaSuccess) {
     std::cerr << "Failed to allocate Constant Memory: "
       << cudaGetErrorString(result) << std::endl;
@@ -791,14 +788,17 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   float *h_a;
   float *h_b;
   float *h_c;
+  float *h_c_ref;
 
   // Allocate h_a, h_b and h_c in CPU 
   h_a     = (float *) malloc(nBytes_a);
   h_b     = (float *) malloc(nBytes_b);
   h_c     = (float *) malloc(nBytes_c);
+  h_c_ref = (float *) malloc(nBytes_c);
 
   // Initialice to 0 all values of h_c
   memset(h_c,0,nBytes_c);
+  memset(h_c_ref,0,nBytes_c);
   
   // Initialization of the values of h_a and h_b
   #if (ES_EXP==1) || (TIMING_EXP==1)
@@ -809,7 +809,6 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
       // matrix2rand(h_b,K,N);
       memset(h_a,0,nBytes_a);
       memset(h_b,0,nBytes_b);
-      memset(h_c,0,nBytes_c);
   #else
 
   #endif
@@ -1361,7 +1360,11 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   ==============================================================================*/
     FILE *p_file;
     char str_file_name[100u];
-    char str_file_name_aux[100u] = NAME"_DC.csv";
+    #if (1==TIMING_EXP)
+      char str_file_name_aux[100u] = NAME"_timing.csv";
+    #else 
+      char str_file_name_aux[100u] = NAME"_DC.csv";
+    #endif
     snprintf(str_file_name, 100,"%d_%d_%d_",DIM_M,DIM_N,DIM_K);
     strcat(str_file_name,str_file_name_aux);
 
@@ -1431,7 +1434,40 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     Brief: Timing measurements. The values are stored in a xlsx file
   ==============================================================================*/
   #if (1==TIMING_EXP)
-  printf("===============================\nTIME MEASUREMENT EXPERIMENTS\n===============================\n");
+    // Launch reference GEMM
+    // Re-initialize C_cutlass
+    result = cudaMemcpy (C_reference,h_c_ref,nBytes_c,cudaMemcpyHostToDevice);
+    if (result != cudaSuccess) {
+        std::cerr << "Failed to copy h_c_ref matrix to C_reference " << cudaGetErrorString(result) << std::endl;
+        cudaFree(C_reference);
+        cudaFree(C_cutlass);
+        cudaFree(B);
+        cudaFree(A);
+        return result;
+    }
+
+    result = ReferenceGemm(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc);
+    if (result != cudaSuccess) {
+      std::cerr << "Reference GEMM kernel failed: " << cudaGetErrorString(result) << std::endl;
+      cudaFree(C_reference);
+      cudaFree(C_cutlass);
+      cudaFree(B);
+      cudaFree(A);
+      return result;
+    }
+    
+
+    result = cudaMemcpy(h_c_ref, C_reference, nBytes_c, cudaMemcpyDeviceToHost);
+    if (result != cudaSuccess) {
+      std::cerr << "Failed to copy C_refence matrix to h_c_ref (timing)" << cudaGetErrorString(result) << std::endl;
+      cudaFree(C_reference);
+      cudaFree(C_cutlass);
+      cudaFree(B);
+      cudaFree(A);
+      return result;
+    }
+
+    printf("===============================\nTIME MEASUREMENT EXPERIMENTS\n===============================\n");
     uint64_t timing_values[TIME_MEASUREMENT_LOOPS-INITIAL_TIME_MEASUREMENT];
 
     for (size_t i_loop = 0; i_loop < TIME_MEASUREMENT_LOOPS; i_loop++)
@@ -1439,14 +1475,11 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         // Re-initialize ES_a
         result = cudaMemcpy(d_ES_a, h_ES_a, nBytes_ES, cudaMemcpyHostToDevice);
         if (result != cudaSuccess) {
-            std::cerr << "Failed to copy h_ES_a matrix to d_ES_a: "
-                << cudaGetErrorString(result) << std::endl;
-
+            std::cerr << "Failed to copy h_ES_a matrix to d_ES_a: " << cudaGetErrorString(result) << std::endl;
             cudaFree(C_reference);
             cudaFree(C_cutlass);
             cudaFree(B);
             cudaFree(A);
-
             return result;
         }
 
@@ -1454,37 +1487,29 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         result = cudaMemcpy(d_ES_b, h_ES_b, nBytes_ES, cudaMemcpyHostToDevice);
         if (result != cudaSuccess) 
         {
-            std::cerr << "Failed to copy h_ES_b matrix to h_ES_b: "
-                << cudaGetErrorString(result) << std::endl;
-
+            std::cerr << "Failed to copy h_ES_b matrix to h_ES_b: "        << cudaGetErrorString(result) << std::endl;
             cudaFree(C_reference);
             cudaFree(C_cutlass);
             cudaFree(B);
             cudaFree(A);
-
             return result;
         }
 
         // Re-initialize ES_c
         result = cudaMemcpy(d_ES_c, h_ES_c, nBytes_ES, cudaMemcpyHostToDevice);
         if (result != cudaSuccess) {
-            std::cerr << "Failed to copy h_ES_c matrix to d_ES_c "
-                << cudaGetErrorString(result) << std::endl;
-
+            std::cerr << "Failed to copy h_ES_c matrix to d_ES_c " << cudaGetErrorString(result) << std::endl;
             cudaFree(C_reference);
             cudaFree(C_cutlass);
             cudaFree(B);
             cudaFree(A);
-
             return result;
         }
 
         // Re-initialize C_cutlass
         result = cudaMemcpy (C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
         if (result != cudaSuccess) {
-            std::cerr << "Failed to copy h_c matrix to C_cutlass "
-                << cudaGetErrorString(result) << std::endl;
-
+            std::cerr << "Failed to copy h_c matrix to C_cutlass " << cudaGetErrorString(result) << std::endl;
             cudaFree(C_reference);
             cudaFree(C_cutlass);
             cudaFree(B);
@@ -1498,10 +1523,14 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass , ldc, d_ES_a, d_ES_b, d_ES_c);
         cudaDeviceSynchronize();
         clock_gettime(CLOCK_MONOTONIC, &end);
+        if (result != cudaSuccess) {
+          std::cerr << "Failed launch the kernel (return)" << cudaGetErrorString(result) << std::endl;
+        return result;
+        }
 
         result = cudaMemcpy(h_c, C_cutlass, nBytes_c, cudaMemcpyDeviceToHost);
         if (result != cudaSuccess) {
-          std::cerr << "Failed to copy d_ES_a_ref matrix to h_ES_a (return)" << cudaGetErrorString(result) << std::endl;
+          std::cerr << "Failed to copy C_cutlass matrix to h_c (return)" << cudaGetErrorString(result) << std::endl;
           cudaFree(C_reference);
           cudaFree(C_cutlass);
           cudaFree(B);
@@ -1509,14 +1538,12 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
           return result;
         }
 
-        for(int ui32_idx=0;ui32_idx<(M*K);ui32_idx++)
-        {
-          printf("%0.0f\t", h_c[ui32_idx]);
-          if((ui32_idx+1)%16==0)
-          {
-            printf("\n");
-          }
+        // Verify that the value of h_c is the same that "h_ref"
+        if (memcmp(h_c,h_c_ref,nBytes_c)!=0) {
+          std::cerr << "Failed: CUTLASS results incorrect (timing)"<< i_loop << std::endl;
+          return cudaErrorUnknown;
         }
+
 
         if (i_loop >= INITIAL_TIME_MEASUREMENT)
         {
@@ -1655,7 +1682,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
    d_ES.B = 0;
    d_ES.C = 0;
 
-    printf("Final value of h_ES_a=%x\n",h_ES_a[0]);
+  printf("Final value of h_ES_a=%u\n",h_ES_a[0]);
 /* To use with XOR
   for(int i=0;i<nElem_ES;i++){
     printf("ES_a[%i] = %u \t ES_b = %u \t ES_c = %u\n",i,h_ES_a[i],h_ES_b[i],h_ES_c[i]);
@@ -1760,8 +1787,6 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
   }
 
   result = cudaMemcpy(host_reference.data(), C_reference, sizeof_C, cudaMemcpyDeviceToHost);
-   result = cudaMemcpy(host_reference.data(), C_reference, sizeof_C, cudaMemcpyDeviceToHost);
-
   if (result != cudaSuccess) {
     std::cerr << "Failed to copy Reference GEMM results: "
       << cudaGetErrorString(result) << std::endl;
@@ -1789,6 +1814,7 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
   //
   // Test for bit equivalence of results.
   //
+
 
   if (host_cutlass != host_reference) {
     std::cerr << "CUTLASS results incorrect." << std::endl;

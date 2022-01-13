@@ -72,17 +72,7 @@ struct Mma<gemm::GemmShape<1, 1, 1>, 1, float, LayoutA, float, LayoutB, float, L
     // uint32_t *ES_b =nullptr,
     // uint32_t *ES_c =nullptr
   ) {
-    //int lane_idx = threadIdx.x % 32;
     d[0] = a[0] * b[0] + c[0];
-    
-    // if(threadIdx.x==0u && blockIdx.x==0u)
-    // {
-    //   static uint32_t thread_iteration = 0;
-    //   printf("val a[%u]=%u\n",thread_iteration,(uint32_t)*((uint32_t*) &a[0]));
-    //   thread_iteration++;
-    // }
-     //printf("\n Value of EXTERNAL:%d INTERMEDIATE:%d INTERNAL: %d \n",EXTERNAL_ES, INTERMEDIATE_ES, INTERNAL_ES);
-
   }
 };
 

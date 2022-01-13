@@ -1,5 +1,6 @@
 #!/bin/bash
-
+PATH2RESULTS=$PWD"/exp_results"
+PATH2ROOT=$PWD
 # Define an enum type
 TECH_NO_ED=0
 # TECH_XOR_INTERNAL=1
@@ -42,19 +43,55 @@ TIMING_EXPERIMENT=$1
 DC_EXPERIMENT=$2
 ES_EXP=$3
 
-OPTIMIZATION_FLAG="O0"
-# rm -rf build
-# Define an enum type with the kind of memory
- for j_loop in 8 #128 #160 256 320 #20 40 80 #80 160 320 128 256 #80 160 320 128 256 512 # o
+OPTIMIZATION_FLAG="O3"
+
+#ARRAYS WITH THE DIMENSION OF THE EXPERIMENTS
+tm_square1=(80 80 80)
+tm_square2=(160 160 160)
+tm_square3=(320 320 320)
+tm_unbalanced1=(18 230400 64)
+tm_unbalanced2=(1024 900 468)
+tm_unbalanced3=(128 14400 128)
+tm_unbalanced4=(256 3600 768)
+
+dc_square1=(20 20 20)
+dc_square2=(40 40 40)
+dc_square3=(80 80 80)
+dc_unbalanced1=(32 29 144)
+dc_unbalanced2=(8 900 8)
+dc_unbalanced3=(15 225 48)
+dc_unbalanced4=(1024 900 468)
+dc_unbalanced5=(128 14400 128)
+dc_unbalanced6=(256 3600 768)
+
+#tm_arrays=('tm_square1' 'tm_square2' 'tm_square3' 'tm_unbalanced1' 'tm_unbalanced2' 'tm_unbalanced3' 'tm_unbalanced4')
+
+tm_arrays=('tm_square1' 'tm_square2' 'tm_square3' 'tm_unbalanced1' 'tm_unbalanced2' 'tm_unbalanced3' 'tm_unbalanced4')
+dc_arrays=( 'dc_unbalanced3')
+#dc_arrays=( 'dc_square1' 'dc_square2' 'dc_square3' 'dc_unbalanced1' 'dc_unbalanced2' 'dc_unbalanced3' 'dc_unbalanced4' 'dc_unbalanced5' 'dc_unbalanced6')
+
+if [ $TIMING_EXPERIMENT -eq 1 ]
+        then
+                declare -n arr=tm_arrays
+        else
+                declare -n arr=dc_arrays
+fi
+
+        for j_loop in "${arr[@]}"
         do
+        declare -n M_DIM="$j_loop[0]"
+        declare -n N_DIM="$j_loop[1]"
+        declare -n K_DIM="$j_loop[2]"
+        FOLDER_NAME=${M_DIM}"_"${N_DIM}"_"${K_DIM}
         if [ $TIMING_EXPERIMENT -eq 1 ]
         then
-                mkdir exp_results/"Opt_"${OPTIMIZATION_FLAG}/$j_loop
+                mkdir exp_results/"opt_"${OPTIMIZATION_FLAG}/timing/$FOLDER_NAME
         else
-                mkdir dc/$j_loop
+                mkdir exp_results/"opt_"${OPTIMIZATION_FLAG}/dc/$FOLDER_NAME
         fi
 
-        for i_loop in `seq $TECH_ONES_INTERNAL 1 $TECH_ONES_INTERNAL` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
+        rm -rf build
+        for i_loop in `seq $TECH_XOR_INTERNAL 1 $TECH_XOR_INTERNAL` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
         do
                 case $i_loop in
                 $TECH_NO_ED)
@@ -62,6 +99,7 @@ OPTIMIZATION_FLAG="O0"
                         INTERMEDIATE_ES=$UNPROTECTED
                         INTERNAL_ES=$UNPROTECTED
                         NAME=TECH_NO_ED
+                        #NAME=$(printf %2d "${TECH_NO_ED}")
                 ;;
                 $TECH_XOR_EXTERNAL)
                         EXTERNAL_ES=$XOR_CHECKSUM
@@ -196,38 +234,38 @@ OPTIMIZATION_FLAG="O0"
                         NAME=TECH_FLET_CRC
                 ;;
                 esac
-                # rm -rf build
+                rm -rf build
                 mkdir build
                 cd build/.
-                cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=53 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$i_loop"_"$NAME -DDIM_M=16 -DDIM_N=16 -DDIM_K=16 -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
-                echo "NAME: $i_loop"_"$NAME"
-                echo "MATRIX_DIM = [$j_loop,$j_loop,$j_loop]"
+                NAME=$(printf %02d "$i_loop")"_"$NAME
+                cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=72 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$NAME -DDIM_M=$M_DIM -DDIM_N=$N_DIM -DDIM_K=$K_DIM -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
+                echo "NAME: $NAME"
+                echo "MATRIX_DIM = [$M_DIM,$N_DIM,$K_DIM]"
                 echo "[TIMING,DC,ES_OPT]=[$1,$2,$3]"
                 cd examples/18_Sim_test/.
                 cmake --build . --clean-first
-                # sudo ./18_Simt
+                sudo ./18_Simt
+                
                 if [ $TIMING_EXPERIMENT -eq 1 ]
                 then
-                        mv ./${j_loop}*.csv ../../../exp_results/"Opt_"${OPTIMIZATION_FLAG}/$j_loop/.
+                        mkdir ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}
+                        mv ./${M_DIM}*.csv ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}/.
                 else
-                        mv ./${j_loop}*.csv ../../../dc/$j_loop/.
+                        mkdir ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}
+                        mv ./${M_DIM}*.csv ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}/.
                 fi
+                cd ${PATH2ROOT}
 
-                cd ../../../.
         done
-        cp convergence.sh timing_measurements/${j_loop}/.
-        cd timing_measurements/$j_loop/.
-	bash convergence.sh $j_loop $OPTIMIZATION_FLAG
-        cd ../../.
+        if [ $TIMING_EXPERIMENT -eq 1 ]
+        then
+                cp ${PATH2ROOT}/convergence.sh ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}/.
+                cd ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}/.
+                
+        else
+                cp ${PATH2ROOT}/convergence.sh ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}/.
+                cd ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}/.
+        fi
+        bash convergence.sh ${FOLDER_NAME} $OPTIMIZATION_FLAG
+        cd ${PATH2ROOT}
 done
-
-
-
-
-
-
-
-
-
-
-        

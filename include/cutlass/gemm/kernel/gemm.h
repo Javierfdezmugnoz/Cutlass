@@ -35,27 +35,6 @@
 #include "cutlass/matrix_coord.h"
 #include "cutlass/semaphore.h"
 
-
-
-#if (INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED)
-  // Global memory en device memory
-  // extern __device__ uint32_t d_ES_a[];
-  // extern __device__ uint32_t d_ES_b[];
-  // extern __device__ uint32_t d_ES_c[];
-
-  // Shared memory in device memory
-  extern __shared__ uint32_t d_ES_a_shared[];
-  extern __shared__ uint32_t d_ES_b_shared[];
-  extern __shared__ uint32_t d_ES_c_shared[];
-
-  // Take a look to CRC_table_element
-  #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
-    extern __constant__ uint32_t d_CRC_table_constant[];
-    extern __shared__   uint32_t d_CRC_table_shared[];
-  #endif
-
-#endif
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -274,27 +253,6 @@ struct Gemm {
     // Main loop
     //
 
-    /* ==========================================================================================================
-      Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
-    ========================================================================================================== */
-    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      if (threadIdx.x < 256) // ES_a, ES_b, ES_c
-        {
-          d_ES_a_shared[threadIdx.x] = threadIdx.x;//d_ES_a_constant[threadIdx.x];
-          printf("thread:%u\t warp=%u\t lane_idx=%u\n",threadIdx.x,warp_idx,lane_idx);
-          d_ES_b_shared[threadIdx.x] = 0u;//d_ES_b_constant[threadIdx.x];
-          d_ES_c_shared[threadIdx.x] = 0u;//d_ES_c_constant[threadIdx.x];
-
-        /* =================================================================================
-          Memory copy of CRC look-up table from Constant GPU memory to Shared GPU memory
-        ==================================================================================== */
-          #if ((INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES))
-            d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
-          #endif
-        }
-        __syncthreads();
-    #endif
-    printf("\n\nInitial value=%u\n\n",d_ES_a_shared[threadIdx.x]);
     // Construct thread-scoped matrix multiply
     Mma mma(shared_storage.main_loop, thread_idx, warp_idx, lane_idx);
 
@@ -302,11 +260,22 @@ struct Gemm {
 
     accumulators.clear();
 
+    
+    unsigned int thread_idx_i = 0u;
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
-      // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &params.d_ES_a_shared[thread_idx], &params.d_ES_b_shared[thread_idx], &params.d_ES_c_shared[thread_idx]);
+      // Thread (inside the block) + column of the block + raw of the block
+      thread_idx_i = threadIdx.x + (blockIdx.x *  blockDim.x) + (blockIdx.y * (blockDim.x * gridDim.x));
+      // if((blockIdx.y==blockDim.y)&(blockIdx.x==blockDim.x)){
+      //   printf("Global thread idx:%u\tBlock_x:%u\tBlock_y:%u\tGrid_x:%u\tGrid_y:%u\n", thread_idx_i, blockIdx.x, blockIdx.y, gridDim.x, gridDim.y);
+      //   //printf("Global thread idx:%u\tBlock_x:%u\tBlock_y:%u\tGrid_x:%u\tGrid_y:%u\n", thread_idx_i, blockIdx.x, blockIdx.y, gridDim.x, gridDim.y);
+      // }
+
+      // printf("Params.d_ES_a[%u]=%0.0u\t sm=%u\n",thread_idx_i, params.d_ES_a[thread_idx_i],get_smid());
+
+      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, thread_idx_i, &params.d_ES_a[thread_idx_i], &params.d_ES_b[thread_idx_i], &params.d_ES_c[thread_idx_i]);
       // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, &d_ES_a_shared[thread_idx], &d_ES_b_shared[thread_idx], &d_ES_c_shared[thread_idx]);
-      mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators,thread_idx);
+      // mma(gemm_k_iterations, accumulators, iterator_A, iterator_B, accumulators, thread_idx_i);
     }
 
     //
@@ -403,26 +372,11 @@ struct Gemm {
       semaphore.release(lock);
     }
 
-
-    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      if (threadIdx.x < 256) // ES_a, ES_b, ES_c
-        {
-        /* =================================================================================
-          Memory copy of ES_a,b and c values from shared GPU memory to Global GPU memory
-        ==================================================================================== */
-        //if(threadIdx.x==1){printf("THere we go! (It should be displayed only once on screen...\n");}
-          params.d_ES_a[thread_idx] = d_ES_a_shared[thread_idx];
-          if(thread_idx==0){
-            printf("=====================================================\n");
-            printf("Final value of d_ES_a=%x\n",d_ES_a_shared[thread_idx]);
-            printf("=====================================================\n");
-          }
-          //printf("ES_a[%u]=%u\n",threadIdx.x,d_ES_a_shared[threadIdx.x]);
-          params.d_ES_b[threadIdx.x] = d_ES_b_shared[threadIdx.x];
-          params.d_ES_c[threadIdx.x] = d_ES_c_shared[threadIdx.x];
-        }
-        __syncthreads();
-    #endif
+    // if(thread_idx_i == 0u){
+    //   printf("--------------------------------------------------------------------------------------------\n");
+    //   printf("FINAL: Params.d_ES_a[%u]=%u\n",thread_idx, params.d_ES_a[thread_idx]);
+    //   printf("--------------------------------------------------------------------------------------------\n");
+    // }
 
 
   }
