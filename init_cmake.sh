@@ -3,11 +3,6 @@ PATH2RESULTS=$PWD"/exp_results"
 PATH2ROOT=$PWD
 # Define an enum type
 TECH_NO_ED=0
-# TECH_XOR_INTERNAL=1
-# TECH_ONES_INTERNAL=2
-# TECH_TWOS_INTERNAL=3
-# TECH_FLETCHER_INTERNAL=4
-# TECH_CRC_INTERNAL=5
 TECH_XOR_EXTERNAL=1
 TECH_XOR_INTERMEDIATE=2
 TECH_XOR_INTERNAL=3
@@ -30,7 +25,11 @@ TECH_ONES_CRC=19
 TECH_TWOS_FLET=20
 TECH_TWOS_CRC=21
 TECH_FLET_CRC=22
-
+# TECH_XOR_INTERNAL=1
+# TECH_ONES_INTERNAL=2
+# TECH_TWOS_INTERNAL=3
+# TECH_FLETCHER_INTERNAL=4
+# TECH_CRC_INTERNAL=5
 
 UNPROTECTED=0
 XOR_CHECKSUM=1
@@ -64,17 +63,43 @@ dc_unbalanced4=(1024 900 468)
 dc_unbalanced5=(128 14400 128)
 dc_unbalanced6=(256 3600 768)
 
-#tm_arrays=('tm_square1' 'tm_square2' 'tm_square3' 'tm_unbalanced1' 'tm_unbalanced2' 'tm_unbalanced3' 'tm_unbalanced4')
+dc_unbalanced7=(16 25 4)
+dc_unbalanced8=(128 200 32)
 
-tm_arrays=('tm_square1' 'tm_square2' 'tm_square3' 'tm_unbalanced1' 'tm_unbalanced2' 'tm_unbalanced3' 'tm_unbalanced4')
-dc_arrays=( 'dc_unbalanced3')
+
+#tm_arrays=('tm_square1' 'tm_square2' 'tm_square3' 'tm_unbalanced1' 'tm_unbalanced2' 'tm_unbalanced3' 'tm_unbalanced4')
+tm_arrays=('tm_unbalanced5' 'tm_unbalanced6')
+
+dc_arrays=('dc_unbalanced8')
 #dc_arrays=( 'dc_square1' 'dc_square2' 'dc_square3' 'dc_unbalanced1' 'dc_unbalanced2' 'dc_unbalanced3' 'dc_unbalanced4' 'dc_unbalanced5' 'dc_unbalanced6')
+
+# New phase: YOLO-v3 tiny evaluation
+layer_2=(2 2704 9)
+layer_3=(4 676 18)
+layer_4=(8 169 36)
+layer_11=(128 169 256)
+
+# layer_1=( )
+# layer_5=( )
+# layer_6=( )
+# layer_7=( )
+# layer_8=( )
+# layer_9=( )
+# layer_10=( )
+# layer_12=( )
+# layer_13=( )
+# dc_arrays_tiny=('layer_1' 'layer_2' 'layer_3' 'layer_4' 'layer_5' 'layer_6' 'layer_7' 'layer_8' 'layer_9' 'layer_10' 'layer_11' 'layer_12' 'layer_13')
+# dc_arrays_tiny=('layer_2' 'layer_3' 'layer_4' 'layer_11')
+dc_arrays_tiny=('layer_2')
+
+
 
 if [ $TIMING_EXPERIMENT -eq 1 ]
         then
                 declare -n arr=tm_arrays
         else
-                declare -n arr=dc_arrays
+                #declare -n arr=dc_arrays
+                declare -n arr=dc_arrays_tiny
 fi
 
         for j_loop in "${arr[@]}"
@@ -91,7 +116,7 @@ fi
         fi
 
         rm -rf build
-        for i_loop in `seq $TECH_XOR_INTERNAL 1 $TECH_XOR_INTERNAL` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
+        for i_loop in `seq $TECH_TWOS_CRC 1 $TECH_FLET_CRC` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
         do
                 case $i_loop in
                 $TECH_NO_ED)
@@ -238,14 +263,15 @@ fi
                 mkdir build
                 cd build/.
                 NAME=$(printf %02d "$i_loop")"_"$NAME
-                cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=72 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$NAME -DDIM_M=$M_DIM -DDIM_N=$N_DIM -DDIM_K=$K_DIM -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
+                cmake .. -DCMAKE_BUILD_TYPE=Release -DCUTLASS_NVCC_ARCHS=72 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$NAME -DDIM_M=$M_DIM -DDIM_N=$N_DIM -DDIM_K=$K_DIM -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
+                #cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUTLASS_NVCC_ARCHS=72 -DCUTLASS_ENABLE_CUBLAS=OFF -DCUTLASS_ENABLE_CUDNN=OFF -Wno-dev -DCUDA_COMPILER=clang -DCUTLASS_CUDA_CLANG_FLAGS="-"$OPTIMIZATION_FLAG -DCMAKE_CXX_COMPILER=clang++ -DEXTERNAL_ES=$EXTERNAL_ES -DINTERMEDIATE_ES=$INTERMEDIATE_ES -DINTERNAL_ES=$INTERNAL_ES -DNAME=$NAME -DDIM_M=$M_DIM -DDIM_N=$N_DIM -DDIM_K=$K_DIM -DTIMING_EXP=$TIMING_EXPERIMENT -DDC_EXP=$DC_EXPERIMENT -DES_EXP=$ES_EXP
                 echo "NAME: $NAME"
                 echo "MATRIX_DIM = [$M_DIM,$N_DIM,$K_DIM]"
                 echo "[TIMING,DC,ES_OPT]=[$1,$2,$3]"
                 cd examples/18_Sim_test/.
                 cmake --build . --clean-first
                 sudo ./18_Simt
-                
+
                 if [ $TIMING_EXPERIMENT -eq 1 ]
                 then
                         mkdir ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}
@@ -261,7 +287,7 @@ fi
         then
                 cp ${PATH2ROOT}/convergence.sh ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}/.
                 cd ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/timing/${FOLDER_NAME}/.
-                
+
         else
                 cp ${PATH2ROOT}/convergence.sh ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}/.
                 cd ${PATH2RESULTS}/"opt_"${OPTIMIZATION_FLAG}/dc/${FOLDER_NAME}/.
