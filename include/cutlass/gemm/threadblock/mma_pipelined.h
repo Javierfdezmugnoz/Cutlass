@@ -151,8 +151,8 @@ public:
     typename Base::SharedStorage &shared_storage,       ///< Shared storage needed for internal use by threadblock-scoped GEMM
     int thread_idx,                                     ///< ID within the threadblock
     int warp_idx,                                       ///< ID of warp
-    int lane_idx                                        ///< ID of each thread within a warp
-    ,uint32_t *d_ES_a = nullptr,
+    int lane_idx,                                       ///< ID of each thread within a warp
+    uint32_t *d_ES_a = nullptr,
     uint32_t *d_ES_b = nullptr,
     uint32_t *d_ES_c = nullptr
   ):
@@ -255,20 +255,32 @@ public:
         if (threadIdx.x < CRC_TABLE_ELEMENTS)
           {
             d_CRC_table_shared[threadIdx.x] = d_CRC_table_constant[threadIdx.x];
-            // printf("ID:%u\n",threadIdx.x);
           }
           __syncthreads();
-        // printf("CRC[1]=%x CRC[2]=%x block(%u,%u) and threadIdx.x=%u _idx:%u\n", d_CRC_table_shared[1u],d_CRC_table_shared[2u],blockIdx.x,blockIdx.y, threadIdx.x, thread_idx);
-        // if ((blockIdx.x==0)&(blockIdx.y==0)&(threadIdx.x==1))
-        // {
-        //   printf("CRC[1]=%x CRC[2]=%x block(%u,%u) and threadIdx.x=%u\n", d_CRC_table_shared[1u],d_CRC_table_shared[2u],blockIdx.x,blockIdx.y, thread_idx);
-        // }
       #endif
+
+      /* ==========================================================================================================
+      Memory Test: define a shared memory and store there an intermediate Execution Signature values
+      ========================================================================================================== */
+      #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
+        __shared__ uint32_t d_ES_a_shared[256u];
+        __shared__ uint32_t d_ES_b_shared[256u];
+        __shared__ uint32_t d_ES_c_shared[256u];
+        if (threadIdx.x < 256u)
+        {
+          d_ES_a_shared[threadIdx.x] = 0u;
+          d_ES_b_shared[threadIdx.x] = 0u;
+          d_ES_c_shared[threadIdx.x] = 0u;
+        }
+          __syncthreads();
+      #endif
+    
     // =================================================
     //                Mainloop
     // =================================================
-
-    //printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
+    // if(thread_idx==0) {
+    //   printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
+    // }
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
     CUTLASS_GEMM_LOOP
     for (; gemm_k_iterations > 0; --gemm_k_iterations) {
@@ -334,14 +346,29 @@ public:
           }
         }
         #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
-          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c, d_CRC_table_shared);
+          // printf("GOOD!\n");
+          // warp_mma(accum, warp_frag_A[warp_mma_k % 2e],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c, d_CRC_table_shared);
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%256u, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared, d_CRC_table_shared);
+        #elif ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%256u, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared);
         #else
           warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c);
         #endif
 
       }
     }
-
+    /* ==========================================================================================================
+      Memory Test:Transfer from shared to global memory the ES_a,b,c
+    ========================================================================================================== */
+    #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
+      if (threadIdx.x < 256u)
+      {
+        d_ES_a[thread_idx] = d_ES_a_shared[threadIdx.x];
+        d_ES_b[thread_idx] = d_ES_b_shared[threadIdx.x];
+        d_ES_c[thread_idx] = d_ES_c_shared[threadIdx.x];
+      }
+        __syncthreads();
+    #endif
   }
 };
 

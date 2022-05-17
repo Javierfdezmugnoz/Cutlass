@@ -54,7 +54,6 @@
 #include <vector>
 // Helper methods to check for errors
 #include "helper.h"
-//
 #include <sched.h>
 #include <string.h>
 
@@ -810,7 +809,8 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
       memset(h_a,0,nBytes_a);
       memset(h_b,0,nBytes_b);
   #else
-
+      matrix2rand(h_a,M,K);
+      matrix2randb(h_b,K,N);
   #endif
 
 
@@ -933,6 +933,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   // =======================================================================================
   // Launch the kernel to GPU and verify that has not return an error
     result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc, d_ES_a, d_ES_b, d_ES_c);
+    // result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc, nullptr, nullptr, nullptr);
     cudaDeviceSynchronize();
 
     if (result != cudaSuccess) 
@@ -990,7 +991,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     // =======================================================================================
     // Copy the values initialized and stored in host to the device (h_a -> A, h_b -> B ...)
     // =======================================================================================
-    result = cudaMemcpy (A,h_a,nBytes_a,cudaMemcpyHostToDevice);
+    result = cudaMemcpy(A,h_a,nBytes_a,cudaMemcpyHostToDevice);
     if (result != cudaSuccess) {
         std::cerr << "Failed to copy h_a matrix to A: "
           << cudaGetErrorString(result) << std::endl;
@@ -1003,7 +1004,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         return result;
       }
 
-    result = cudaMemcpy (B,h_b,nBytes_b,cudaMemcpyHostToDevice);
+    result = cudaMemcpy(B,h_b,nBytes_b,cudaMemcpyHostToDevice);
     if (result != cudaSuccess) {
         std::cerr << "Failed to copy h_b matrix to B: "
           << cudaGetErrorString(result) << std::endl;
@@ -1170,7 +1171,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
       // =======================================================================================
     // Copy the values initialized and stored in host to the device (h_a -> A, h_b -> B ...)
     // =======================================================================================
-    result = cudaMemcpy (A,h_a,nBytes_a,cudaMemcpyHostToDevice);
+    result = cudaMemcpy(A,h_a,nBytes_a,cudaMemcpyHostToDevice);
     if (result != cudaSuccess) {
         std::cerr << "Failed to copy h_a matrix to A: "
           << cudaGetErrorString(result) << std::endl;
@@ -1183,7 +1184,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
         return result;
       }
 
-    result = cudaMemcpy (B,h_b,nBytes_b,cudaMemcpyHostToDevice);
+    result = cudaMemcpy(B,h_b,nBytes_b,cudaMemcpyHostToDevice);
     if (result != cudaSuccess) {
         std::cerr << "Failed to copy h_b matrix to B: "
           << cudaGetErrorString(result) << std::endl;
@@ -1196,7 +1197,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     }
     
 
-    result = cudaMemcpy (C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
+    result = cudaMemcpy(C_cutlass,h_c,nBytes_c,cudaMemcpyHostToDevice);
     if (result != cudaSuccess) {
       std::cerr << "Failed to copy C_cutlass matrix to C_reference: " << cudaGetErrorString(result) << std::endl;
       cudaFree(C_reference);
@@ -1402,7 +1403,10 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   }
   
 #else
-	fprintf(p_file, "%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,",NAME, str_file_time, DIM_M, DIM_N, DIM_K, ui32_dc_cnt_a,ui32_dc_cnt_b,ui32_dc_cnt_all,ui32_comb_a_max, ui32_comb_b_max);
+  float32_t detected_fi = (float32_t) (ui32_dc_cnt_a+ui32_dc_cnt_b);
+  float32_t total_fi =  (float32_t) ui32_dc_cnt_all;
+  printf("total_fi:%f\ndetected_fi:%f\nPercentage:%f",total_fi, detected_fi, detected_fi/total_fi);
+	fprintf(p_file, "%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,%3.4f",NAME, str_file_time, DIM_M, DIM_N, DIM_K, ui32_dc_cnt_a,ui32_dc_cnt_b,ui32_dc_cnt_all,ui32_comb_a_max, ui32_comb_b_max,detected_fi/total_fi);
 #endif
   fprintf(p_file,"\n");
   fclose(p_file);
@@ -1425,7 +1429,6 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 			fprintf(p_file, "%u,%u,%d,%d,%d,%u,%u,%u,%u", ui32_dc_cnt, (ui32_combinations_a + ui32_combinations_b), M, N, K, ui32_idx_bit_aux, ui32_comb_a_max, ui32_comb_b_max, launch_number);
   */
 #endif
-
 
 
 
@@ -1753,11 +1756,28 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
   // Verify.
   //
 
+    // Included by JFdez
+    result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
+    cudaDeviceSynchronize();
+    if (result != cudaSuccess) {
+    std::cerr << "Reference CUTLASS SS GEMM NN kernel failed: "
+      << cudaGetErrorString(result) << std::endl;
+
+    cudaFree(C_reference);
+    cudaFree(C_cutlass);
+    cudaFree(B);
+    cudaFree(A);
+
+    return result;
+  }
+
+
+
   // Launch reference GEMM
   result = ReferenceGemm(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc);
-
+  cudaDeviceSynchronize();
   if (result != cudaSuccess) {
-    std::cerr << "Reference GEMM kernel failed: "
+    std::cerr << "Reference GEMM kernel failed 1: "
       << cudaGetErrorString(result) << std::endl;
 
     cudaFree(C_reference);
@@ -1842,6 +1862,7 @@ int main(int argc, const char *arg[]) {
   // GEMM problem dimensions.
   int problem[3] = { DIM_M, DIM_N, DIM_K  };
 
+printf("M:%d\t N:%d\tK:%d\n" , DIM_M, DIM_N, DIM_K);
   for (int i = 1; i < argc && i < 4; ++i) {
     std::stringstream ss(arg[i]);
     ss >> problem[i - 1];

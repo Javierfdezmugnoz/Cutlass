@@ -75,7 +75,7 @@ struct DefaultGemmConfiguration<
   static int const kAlignmentA = 1;
   static int const kAlignmentB = 1;
 
-  using ThreadblockShape = GemmShape<128, 128, 8>;
+  using ThreadblockShape = GemmShape<64, 64, 8>;
   using WarpShape = GemmShape<32, 64, 8>;
   using InstructionShape = GemmShape<1, 1, 1>;
 

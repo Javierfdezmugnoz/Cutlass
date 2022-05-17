@@ -129,12 +129,14 @@ struct GemmIdentityThreadblockSwizzle {
   dim3 get_grid_shape(GemmCoord tiled_shape) const {
     // printf("==========================================\n");
     // printf("Grid Shape \n");
-    // printf("kTile:%u\t return:%u\t %u\t %u \n",kTile, tiled_shape.m(),tiled_shape.n(),tiled_shape.k());
-    // printf("==========================================\n");
 
-    if ((tiled_shape.m() < kTile) || (tiled_shape.n() < kTile))
+    if ((tiled_shape.m() < kTile) || (tiled_shape.n() < kTile)){
+      // printf("==========================================\n");
       return dim3(tiled_shape.m(), tiled_shape.n(), tiled_shape.k());
-
+    }
+      
+    // printf("kTile:%u\t return:%u\t %u\t %u \n",kTile, tiled_shape.m() * kTile,  (tiled_shape.n() + kTile - 1) / kTile,tiled_shape.k());
+    // printf("==========================================\n");
     return dim3(tiled_shape.m() * kTile, (tiled_shape.n() + kTile - 1) / kTile, tiled_shape.k());
   }
 
