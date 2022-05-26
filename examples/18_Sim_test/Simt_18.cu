@@ -67,6 +67,9 @@
 
 // Defines cutlass::gemm::device::Gemm, the generic Gemm computation template class.
 #include "cutlass/gemm/device/gemm.h"
+// #include "cutlass/cutlass.h"
+struct h_configuration *h_struct_conf;
+
 #include <time.h>
 
 // lock memory
@@ -108,11 +111,13 @@ static void_t matrix2rand(float32_t * paf32_matrix, uint32_t ui32_max_rows, uint
 	for (ui32_idx = 0u; ui32_idx < (ui32_max_rows * ui32_max_columns); ui32_idx++)
 	{
 		*paf32_matrix++ = (float32_t) (ui32_idx+1);//(float32_t)rand(); 
-    //  printf("%0.0f\t", paf32_matrix);
-    if((ui32_idx+1)%16==0)
-    {
-      // printf("\n");
-    }
+    // *paf32_matrix--;
+    // printf("%0.0f\t", *paf32_matrix);
+    // *paf32_matrix++;
+    // if((ui32_idx+1)%ui32_max_columns==0)
+    // {
+    //   printf("\n");
+    // }
 	}
 }
 
@@ -125,8 +130,10 @@ static void_t matrix2randb(float32_t * paf32_matrix, uint32_t ui32_max_rows, uin
 	for (ui32_idx = 0u; ui32_idx < (ui32_max_rows * ui32_max_columns); ui32_idx++)
 	{
 		*paf32_matrix++ = (float32_t) ((ui32_idx+1)*10);//(float32_t)rand(); 
+    // *paf32_matrix--;
     // printf("%0.0f\t", *paf32_matrix);
-    // if((ui32_idx+1)%16==0)
+    // *paf32_matrix++;
+    // if((ui32_idx+1)%ui32_max_columns==0)
     // {
     //   printf("\n");
     // }
@@ -1756,6 +1763,24 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
   // Verify.
   //
 
+  // Number of bytes of the struct
+  uint32_t nBytes_h_struct = sizeof(struct h_configuration);
+  uint32_t nBytes_d_struct = sizeof(struct d_configuration);
+  // printf("nbytes_dstruct:%d, nbytes_h_struct:%d\n",nBytes_d_struct,nBytes_h_struct);
+
+  // Allocate ES_a, ES_b and ES_c in CPU 
+  h_struct_conf = (struct h_configuration*) malloc(nBytes_h_struct);
+
+  // Initialice to 0 all values of ES_a, ES_b and ES_c
+  memset(h_struct_conf,0,nBytes_h_struct);
+  h_struct_conf->matrix_dim[0] =M;
+  h_struct_conf->matrix_dim[1] =N;
+  h_struct_conf->matrix_dim[2] =K;
+  printf("========================================================================================================================\n");
+  printf("Input matrix dimension:\t%d,%d,%d\n", h_struct_conf->matrix_dim[0], h_struct_conf->matrix_dim[1], h_struct_conf->matrix_dim[2]);
+
+
+    // printf("%d")
     // Included by JFdez
     result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_cutlass, ldc, d_ES_a, d_ES_b, d_ES_c);
     cudaDeviceSynchronize();
@@ -1836,8 +1861,11 @@ printf("Final ES (GPU)\n Es_a =%12u \t Es_b =%12u \t Es_c =%12u \n", d_ES.A, d_E
   //
 
 
+
+
+  
   if (host_cutlass != host_reference) {
-    std::cerr << "CUTLASS results incorrect." << std::endl;
+    std::cerr << "CUTLASS results incorrect" << std::endl;
 
     return cudaErrorUnknown;
   }
@@ -1860,7 +1888,7 @@ int main(int argc, const char *arg[]) {
   //
 
   // GEMM problem dimensions.
-  int problem[3] = { DIM_M, DIM_N, DIM_K  };
+  int problem[3] = {DIM_M, DIM_N, DIM_K};
 
 printf("M:%d\t N:%d\tK:%d\n" , DIM_M, DIM_N, DIM_K);
   for (int i = 1; i < argc && i < 4; ++i) {

@@ -39,6 +39,7 @@
 #include "cutlass/gemm/gemm.h"
 #include "cutlass/gemm/threadblock/mma_base.h"
 
+#define THREAD_PER_BLOCK 64
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace cutlass {
@@ -263,10 +264,10 @@ public:
       Memory Test: define a shared memory and store there an intermediate Execution Signature values
       ========================================================================================================== */
       #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-        __shared__ uint32_t d_ES_a_shared[256u];
-        __shared__ uint32_t d_ES_b_shared[256u];
-        __shared__ uint32_t d_ES_c_shared[256u];
-        if (threadIdx.x < 256u)
+        __shared__ uint32_t d_ES_a_shared[THREAD_PER_BLOCK];
+        __shared__ uint32_t d_ES_b_shared[THREAD_PER_BLOCK];
+        __shared__ uint32_t d_ES_c_shared[THREAD_PER_BLOCK];
+        if (threadIdx.x < THREAD_PER_BLOCK)
         {
           d_ES_a_shared[threadIdx.x] = 0u;
           d_ES_b_shared[threadIdx.x] = 0u;
@@ -278,9 +279,14 @@ public:
     // =================================================
     //                Mainloop
     // =================================================
-    // if(thread_idx==0) {
-    //   printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
-    // }
+    if(thread_idx==0) {
+      // d_p_struct_conf=&d_struct_conf;
+      // printf("warp_iterations: %i \t gemm_k_iterations: %i\n",gemm_k_iterations, Base::kWarpGemmIterations);
+      // d_struct_conf.gemm_k_iterations = (uint32_t) gemm_k_iterations;
+      // d_struct_conf.kWarpGemmIterations = (uint32_t) Base::kWarpGemmIterations;
+      // printf("d_struct_conf->gemm_k_iterations: %d\n ->kWarpGemmIteration:%d\n",d_p_struct_conf->gemm_k_iterations, d_p_struct_conf->kWarpGemmIterations);
+    }
+    // printf("ThreadIdx.x=%d\t thread_idx:%d\t(Thread_idx%256) not optimized:%d\t Optimized:%d\n",threadIdx.x,thread_idx,(thread_idx%THREAD_PER_BLOCK), (thread_idx&(THREAD_PER_BLOCK-1u)));
     // Note: The main loop does not support Base::kWarpGemmIterations == 2.
     CUTLASS_GEMM_LOOP
     for (; gemm_k_iterations > 0; --gemm_k_iterations) {
@@ -348,9 +354,13 @@ public:
         #if (INTERNAL_ES==CRC_CHECKSUM) || (INTERMEDIATE_ES==CRC_CHECKSUM) || (CRC_CHECKSUM==EXTERNAL_ES)
           // printf("GOOD!\n");
           // warp_mma(accum, warp_frag_A[warp_mma_k % 2e],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c, d_CRC_table_shared);
-          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%256u, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared, d_CRC_table_shared);
+          // warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%THREAD_PER_BLOCK, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared, d_CRC_table_shared);
+          // Previous code line has been optimized avoiding the modulo operation.
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,(thread_idx&(THREAD_PER_BLOCK-1u)), d_ES_a_shared, d_ES_b_shared, d_ES_c_shared, d_CRC_table_shared);
         #elif ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%256u, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared);
+          // warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx%THREAD_PER_BLOCK, d_ES_a_shared, d_ES_b_shared, d_ES_c_shared);
+           // Previous code line has been optimized avoiding the modulo operation.
+          warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,(thread_idx&(THREAD_PER_BLOCK-1u)), d_ES_a_shared, d_ES_b_shared, d_ES_c_shared);
         #else
           warp_mma(accum, warp_frag_A[warp_mma_k % 2],warp_frag_B[warp_mma_k % 2], accum,thread_idx, d_ES_a, d_ES_b, d_ES_c);
         #endif
@@ -361,7 +371,7 @@ public:
       Memory Test:Transfer from shared to global memory the ES_a,b,c
     ========================================================================================================== */
     #if ((INTERNAL_ES!=UNPROTECTED) || (INTERMEDIATE_ES!=UNPROTECTED) || (EXTERNAL_ES!=UNPROTECTED))
-      if (threadIdx.x < 256u)
+      if (threadIdx.x < THREAD_PER_BLOCK)
       {
         d_ES_a[thread_idx] = d_ES_a_shared[threadIdx.x];
         d_ES_b[thread_idx] = d_ES_b_shared[threadIdx.x];
@@ -369,6 +379,13 @@ public:
       }
         __syncthreads();
     #endif
+    // printf("%u\t%u\n",(uint32_t) *((uint32_t*) &d_struct_conf.kWarpGemmIterations),d_p_struct_conf->kWarpGemmIterations);
+    // if(thread_idx ==0u){
+    //   printf("KERNEL:Gemm_k_iteration:%d\n",d_p_struct_conf->gemm_k_iterations);
+    //   printf("KERNEL:kWarpGemmIterations:%d\n",d_p_struct_conf->kWarpGemmIterations);
+    //   printf("THREAD:Shape(M,N,K):\t%d,%d,%d\n", d_p_struct_conf->thread_shape[0], d_p_struct_conf->thread_shape[1], d_p_struct_conf->thread_shape[2]);
+    //   printf("========================================================================================================================\n");
+    // }
   }
 };
 

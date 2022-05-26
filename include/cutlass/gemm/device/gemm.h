@@ -460,6 +460,14 @@ public:
     dim3 block(GemmKernel::kThreadCount, 1, 1);
     
     // printf("\n\nthreads(block):%i, %i, %i \t block(grid):%i,%i,%i\n\n",block.x,block.y,block.z, grid.x,grid.y,grid.z);
+    // h_struct_conf->block_dim[0] = grid.x;
+    // h_struct_conf->block_dim[1] = grid.y;
+    // h_struct_conf->block_dim[2] = grid.z;
+    // h_struct_conf->threads_per_block[0] = block.x;
+    // h_struct_conf->threads_per_block[1] = block.y;
+    // h_struct_conf->threads_per_block[2] = block.z;
+    // printf("DEVICE:Grid Shape:\t%d,%d,%d\n", h_struct_conf->block_dim[0], h_struct_conf->block_dim[1], h_struct_conf->block_dim[2]);
+    // printf("DEVICE:Thread per block:%d,%d,%d\n", h_struct_conf->threads_per_block[0], h_struct_conf->threads_per_block[1], h_struct_conf->threads_per_block[2]);
     cudaError_t result;
 
 

@@ -90,14 +90,14 @@ layer_12=(32 85 432)
 layer_13=(32 85 32)
 
 # Testing the following theory: The DC of a MMM with the proporcional dimensions is the same
-Aux_layer_1=(64 64 8)
-Aux_layer_2=(64 64 16)
-Aux_layer_3=(128 128 8)
+# Aux_layer_1=(6 64 8)
+Aux_layer_1=(64 6 8)
+# Aux_layer_3=(6 6 8)
 # Aux_layer_1=(4 8 20)
 # Aux_layer_1=(173056 16 27)
 # Aux_layer_2=(16 173056 27)
 
-dc_arrays_tiny=('Aux_layer_1' 'Aux_layer_2' 'Aux_layer_3')
+dc_arrays_tiny=('Aux_layer_1') 
 # dc_arrays_tiny=('layer_1' 'layer_2' 'layer_3' 'layer_4' 'layer_5' 'layer_6' 'layer_7' 'layer_8' 'layer_9' 'layer_10' 'layer_11' 'layer_12' 'layer_13')
 # dc_arrays_tiny=('layer_2' 'layer_3' 'layer_4' 'layer_11')
 # dc_arrays_tiny=('layer_8' 'layer_10' 'layer_13' 'layer_12' 'layer_1' 'layer_5' 'layer_7')
@@ -124,7 +124,7 @@ fi
                 mkdir exp_results/"opt_"${OPTIMIZATION_FLAG}/dc/$FOLDER_NAME
         fi
 
-        rm -rf build
+        # rm -rf build
         for i_loop in `seq $TECH_ONES_INTERNAL 1 $TECH_TWOS_INTERNAL` #0 1 ${TECH_NO_ED}` #${TECH_FLET_CRC}
         do
                 case $i_loop in

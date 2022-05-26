@@ -167,3 +167,6 @@ int SmId() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// extern struct h_configuration *h_struct_conf;
+// extern __device__ struct d_configuration *d_p_struct_conf;
+// extern __device__ struct d_configuration d_struct_conf;

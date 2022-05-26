@@ -30,6 +30,28 @@
 #include "cutlass/cutlass.h"
 #include "cutlass/coord.h"
 
+
+// Included by JFDez
+struct h_configuration
+{
+  uint32_t matrix_dim[3];
+  uint32_t block_dim[3];
+  uint32_t threads_per_block[3];
+  uint32_t thread_shape[3];
+  uint32_t gemm_k_iterations;
+  uint32_t kWarpGemmIterations;
+};
+
+struct d_configuration
+{
+  uint32_t thread_shape[3];
+  uint32_t gemm_k_iterations;
+  uint32_t kWarpGemmIterations;
+};
+
+__device__ struct d_configuration d_struct_conf;
+__device__ struct d_configuration *d_p_struct_conf =&d_struct_conf;
+
 namespace cutlass {
 namespace gemm {
 

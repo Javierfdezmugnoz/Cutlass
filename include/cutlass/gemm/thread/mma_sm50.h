@@ -36,7 +36,6 @@
 #include "cutlass/gemm/thread/mma.h"
 #include "helper.h"
 
-//#include "../../examples/ES_protection/checksum.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -157,7 +156,24 @@ struct MmaGeneric {
       // if(thread_idx==0u){
       //   printf("Initially: d_ES_a[%u]=%u\t d_ES_a_reg=%u \td_ES_a_reg_prev=%u\n",thread_idx, d_ES_a[thread_idx],d_ES_a_reg, prev);
       // }
+
+      static uint32_t initial_operation = 0u;
+      if(thread_idx==0u && initial_operation==0u){
+        if(initial_operation==0u){
+          if(blockIdx.x==0u){
+            d_struct_conf.thread_shape[0]= Shape::kM;
+            d_struct_conf.thread_shape[1]= Shape::kN;
+            d_struct_conf.thread_shape[2]= Shape::kK;
+            initial_operation++;
+            // printf("kK = %u\t kN = %u\t kM=%u\n",Shape::kK,Shape::kN,Shape::kM);
+          }
+        }
+      }
+      
     #endif
+
+    uint32_t array_a[16] = {1, 2, 3, 4, 5, 6, 7, 8 ,9, 10, 11, 12, 13, 14, 15, 16};
+    uint32_t array_b[16] = {10, 650, 1290, 1930, 2570, 3210, 3850, 4490,5130 ,5770, 6410, 7050, 7690, 8330, 8970, 9610};
 
     CUTLASS_PRAGMA_UNROLL
     for (int k = 0; k < Shape::kK; ++k) {
@@ -179,9 +195,28 @@ struct MmaGeneric {
           a[0] = a_ref.at(mk);
           b[0] = b_ref.at(kn);
 
+          // for(uint32_t idx_array=0;idx_array<16; idx_array++)
+          // {
+          //   if( ((uint32_t) a[0])==array_b[idx_array])
+          //   {
+          //     if(((uint32_t) b[0])==array_a[idx_array])
+          //     printf("a=%0.0f \t b=%0.0f\t c=%0.0f\n",a[0],b[0], d[0]);
+          //   }
+          // }
+          
+
           mma_op(d, a, b, d);
 
-           d_ref.at(mn) = d[0];      
+          d_ref.at(mn) = d[0]; 
+
+          // for(uint32_t idx_array=0;idx_array<16; idx_array++)
+          // {
+          //   if( ((uint32_t) a[0])==array_b[idx_array])
+          //   {
+          //     if(((uint32_t) b[0])==array_a[idx_array])
+          //     printf("d=%0.0f\t thread:%d\t block:%d\n", d[0],threadIdx.x,blockIdx.x);
+          //   }
+          // }
 
           #if (INTERNAL_ES==XOR_CHECKSUM)
             d_ES_a_reg = _xor((uint32_t) *((uint32_t*) &a[0]), d_ES_a_reg);
@@ -205,12 +240,7 @@ struct MmaGeneric {
             d_ES_c_reg = singletable_crc32c_ui32(d_CRC_shared, d_ES_c_reg, (uint32_t) *((uint32_t*) &d[0]));
           #else
 
-          #endif
-                    
-          if(thread_idx==0u){
-            // printf("ES_b_prev:%u\t a_value=%0.0f\t b_value=%0.0f\t ES_b_reg=%u\n",prev, a[0], b[0], d_ES_b_reg);
-            //printf("kK = %u\t kN = %u\t kM=%u\t",Shape::kK,Shape::kN,Shape::kM);
-          }
+          #endif        
         }
       // prev=d_ES_b_reg;
       // ==============================================================================

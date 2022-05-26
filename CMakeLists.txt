@@ -32,6 +32,7 @@ endif()
 
 message(STATUS "CMake Version: ${CMAKE_VERSION}")
 
+set(CMAKE_CUDA_COMPILER /usr/local/cuda-10.2/bin/nvcc)
 project(CUTLASS VERSION 2.5.0 LANGUAGES CXX CUDA)
 include(${CMAKE_CURRENT_SOURCE_DIR}/CUDA.cmake)
 
@@ -737,5 +738,8 @@ install(
   )
 
 ################################################################################
+
+    # Included by Jfdez
+  set_property(TARGET CUTLASS PROPERTY CUDA_SEPARABLE_COMPILATION ON)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/NvidiaCutlassPackageConfig.cmake)

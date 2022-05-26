@@ -262,10 +262,13 @@ struct Gemm {
 
     
     unsigned int thread_idx_i = 0u;
+
     if (!kSplitKSerial || gemm_k_iterations > 0) {
       // Compute threadblock-scoped matrix multiply-add
       // Thread (inside the block) + column of the block + raw of the block
       thread_idx_i = threadIdx.x + (blockIdx.x *  blockDim.x) + (blockIdx.y * (blockDim.x * gridDim.x));
+      // printf("thread_idx_i=%d\n",thread_idx_i);
+      
       // if((blockIdx.y==blockDim.y)&(blockIdx.x==blockDim.x)){
       //   printf("Global thread idx:%u\tBlock_x:%u\tBlock_y:%u\tGrid_x:%u\tGrid_y:%u\n", thread_idx_i, blockIdx.x, blockIdx.y, gridDim.x, gridDim.y);
       //   //printf("Global thread idx:%u\tBlock_x:%u\tBlock_y:%u\tGrid_x:%u\tGrid_y:%u\n", thread_idx_i, blockIdx.x, blockIdx.y, gridDim.x, gridDim.y);
