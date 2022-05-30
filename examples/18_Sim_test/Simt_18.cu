@@ -52,6 +52,10 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+
+#include <stdio.h>
+#include <stdlib.h> // atoi()
+#include <math.h>   // abs()
 // Helper methods to check for errors
 #include "helper.h"
 #include <sched.h>
@@ -933,7 +937,121 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   #define ui32_40_percent_a size_a*40/100
   #define ui32_60_percent_a size_a*60/100
   #define ui32_80_percent_a size_a*80/100
+
+  // ==============================================================================
+  // ======================     Commit 08_00       ================================
+  // ==============================================================================
   
+  // Declare and initialice two arrays of bool to zero
+  bool b_array_detected_fi_A[ui32_comb_a_max];
+  bool b_array_detected_fi_B[ui32_comb_b_max];
+  bool idx_common = 1u;
+  
+  for(uint32_t idx_fi_A=0;idx_fi_A<ui32_comb_a_max;idx_fi_A++)
+  {
+    b_array_detected_fi_A[idx_fi_A]= 0;
+  }
+
+  for(uint32_t idx_fi_B=0;idx_fi_B<ui32_comb_b_max;idx_fi_B++)
+  {
+    b_array_detected_fi_B[idx_fi_B]= 0;
+  }
+
+
+
+  uint32_t max_val = (DIM_M>DIM_N) ? DIM_M : DIM_N;
+  uint32_t min_val = (DIM_M<DIM_N) ? DIM_M : DIM_N;
+  uint32_t max_combinations = max_val * DIM_K * 32;
+  uint32_t min_combinations = min_val * DIM_K * 32;
+  printf("max_combinations=%d\nmin_combinations=%d\n",max_combinations,min_combinations);
+
+
+  bool b_array_detected_fi_A1[max_combinations];
+  bool b_array_detected_fi_B1[max_combinations];
+  bool b_array_detected_fi_A4[min_combinations];
+  bool b_array_detected_fi_B4[min_combinations];
+
+  if(idx_common==1u)
+  {
+  char buffer[1000000];
+  char *buffer_aux;
+  char str_fi_idx_aux[100u];
+  char str_path_aux[100u] = "/home/javifdez/git_repository/Cutlass/exp_results/opt_O3/dc/";
+  char str_fi_idx_1[100u];
+  char str_fi_idx_4[100u];
+  char str_path_1[150u];
+  char str_path_4[150u];
+
+  snprintf(str_fi_idx_aux,100, "_%s_idx_DC.csv",NAME);
+  snprintf(str_fi_idx_1, 100,"%d_%d_%d",max_val,max_val,DIM_K);
+  snprintf(str_path_1, 150,"%s%s/%s%s",str_path_aux,str_fi_idx_1,str_fi_idx_1,str_fi_idx_aux);
+
+  snprintf(str_fi_idx_4, 100,"%d_%d_%d",min_val,min_val,DIM_K);
+  snprintf(str_path_4, 150,"%s%s/%s%s",str_path_aux,str_fi_idx_4,str_fi_idx_4,str_fi_idx_aux);
+
+  printf("matrix_1: %s\nmatrix_2: %s\n",str_fi_idx_1,str_fi_idx_4);
+  printf("path1: %s\npath2: %s\n",str_path_1,str_path_4);
+
+
+
+
+
+  FILE *p_file_idx_1 = fopen(str_path_1, "r+");
+  if (p_file_idx_1 == NULL) 
+  {
+      printf("Could not open file str_path_4.txt\n");
+      return (cudaErrorInitializationError); 
+  }
+
+  // Move the pointer to the beggining of the file
+  fseek(p_file_idx_1,0,SEEK_SET);
+  fscanf(p_file_idx_1,"%[^\n] ",buffer);
+  buffer_aux = strtok(buffer,"{");
+  for(uint32_t idx_num_it=0;idx_num_it<max_combinations;idx_num_it++)
+  {
+      buffer_aux = strtok(NULL,",");
+      b_array_detected_fi_B1[idx_num_it]=atoi(buffer_aux);
+  }
+  fscanf(p_file_idx_1,"%[^\n] ",buffer);
+  buffer_aux = strtok(buffer,"{");
+  for(uint32_t idx_num_it=0;idx_num_it<max_combinations;idx_num_it++)
+  {
+      buffer_aux = strtok(NULL,",");
+      b_array_detected_fi_A1[idx_num_it]=atoi(buffer_aux);
+  }
+  fclose(p_file_idx_1);
+
+
+  FILE *p_file_idx_4 = fopen(str_path_4, "r+");
+  if (p_file_idx_4 == NULL) 
+  {
+      printf("Could not open file str_path_4.txt\n");
+      return (cudaErrorInitializationError); 
+  }
+
+  // Move the pointer to the beggining of the file
+  fseek(p_file_idx_4,0,SEEK_SET);
+  fscanf(p_file_idx_4,"%[^\n] ",buffer);
+  buffer_aux = strtok(buffer,"{");
+  for(uint32_t idx_num_it=0;idx_num_it<min_combinations;idx_num_it++)
+  {
+      buffer_aux = strtok(NULL,",");
+      b_array_detected_fi_B4[idx_num_it]=atoi(buffer_aux);
+  }
+  fscanf(p_file_idx_4,"%[^\n] ",buffer);
+  buffer_aux = strtok(buffer,"{");
+  for(uint32_t idx_num_it=0;idx_num_it<min_combinations;idx_num_it++)
+  {
+      buffer_aux = strtok(NULL,",");
+      b_array_detected_fi_A4[idx_num_it]=atoi(buffer_aux);
+  }
+  fclose(p_file_idx_4);
+}
+
+
+  // ==============================================================================
+  // ======================  END: Commit 08_00     ================================
+  // ==============================================================================
 
   // =======================================================================================
   // 1) Store the ES_a,b and c that will be employed as reference
@@ -942,7 +1060,8 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc, d_ES_a, d_ES_b, d_ES_c);
     // result = CutlassSgemmNN(M, N, K, alpha, A, lda, B, ldb, beta, C_reference, ldc, nullptr, nullptr, nullptr);
     cudaDeviceSynchronize();
-
+  printf("b_array_detected_fi_A1[%d]=%d\n",0u,b_array_detected_fi_A1[0u]);
+  printf("b_array_detected_fi_B1[%d]=%d\n",0u,b_array_detected_fi_B1[0u]);
     if (result != cudaSuccess) 
     {
         std::cerr << "CUTLASS GEMM reference kernel failed: " << cudaGetErrorString(result) << std::endl;
@@ -1132,8 +1251,33 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
     // =======================================================================================
     // Verify that the ES_a,b,c is the same than the values stored in ES_a_ref,b,c
     // =======================================================================================
-    if ((memcmp(h_ES_a,h_ES_a_ref,nBytes_ES)!=0) || (memcmp(h_ES_b,h_ES_b_ref,nBytes_ES)!=0) || (memcmp(h_ES_c,h_ES_c_ref,nBytes_ES)!=0)) {
+    if ((memcmp(h_ES_a,h_ES_a_ref,nBytes_ES)!=0) || (memcmp(h_ES_b,h_ES_b_ref,nBytes_ES)!=0) || (memcmp(h_ES_c,h_ES_c_ref,nBytes_ES)!=0)) 
+    {
+        // Commit 08_00
+        // Declare and initialice two arrays of bool to zero
+        if(idx_common==1u)
+        {
+          if(DIM_M>DIM_N)
+          {
+            if(b_array_detected_fi_A1[ui32_idx_bit]==0u)
+            {
+              b_array_detected_fi_A[ui32_idx_bit] = 1u;
+              ui32_dc_cnt_a += 1u;
+            }
+          } 
+          else 
+          {
+            if(b_array_detected_fi_A4[ui32_idx_bit]==0u)
+            {
+              b_array_detected_fi_A[ui32_idx_bit] = 1u;
+              ui32_dc_cnt_a += 1u;
+            }
+          }
+        } 
+        else {
+          b_array_detected_fi_A[ui32_idx_bit] = 1u;
           ui32_dc_cnt_a += 1u;
+        }
     }
     ui32_dc_cnt_all += 1u;
 
@@ -1163,7 +1307,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
           break;
     }*/
   }
-  printf("Number of executions: %d\n Detected fi: %d\n",ui32_comb_a_max, ui32_dc_cnt_a);
+  printf("Detected fi: %d / %d\n",ui32_dc_cnt_a,ui32_comb_a_max);
 
 
 
@@ -1175,7 +1319,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
   memset(h_b,0,nBytes_b);
   memset(h_c,0,nBytes_c);
 
-      // =======================================================================================
+    // =======================================================================================
     // Copy the values initialized and stored in host to the device (h_a -> A, h_b -> B ...)
     // =======================================================================================
     result = cudaMemcpy(A,h_a,nBytes_a,cudaMemcpyHostToDevice);
@@ -1340,7 +1484,28 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
       // Verify that the ES_a,b,c is the same than the values stored in ES_a_ref,b,c
       // =======================================================================================
       if ((memcmp(h_ES_a,h_ES_a_ref,nBytes_ES)!=0) || (memcmp(h_ES_b,h_ES_b_ref,nBytes_ES)!=0) || (memcmp(h_ES_c,h_ES_c_ref,nBytes_ES)!=0)) {
-            ui32_dc_cnt_b += 1u;
+        // Commit 08_00
+        // Declare and initialice two arrays of bool to zero
+        if(idx_common==1u)
+        {
+          if(DIM_M>DIM_N)
+          {
+            if(b_array_detected_fi_B4[ui32_idx_bit]==0u){
+              b_array_detected_fi_B[ui32_idx_bit] = 1u;
+              ui32_dc_cnt_a += 1u;
+            }
+          }
+          else {
+            if(b_array_detected_fi_B1[ui32_idx_bit]==0u){
+              b_array_detected_fi_B[ui32_idx_bit] = 1u;
+              ui32_dc_cnt_a += 1u;
+            }
+          }
+        } 
+        else {
+          b_array_detected_fi_B[ui32_idx_bit] = 1u;
+          ui32_dc_cnt_b += 1u;
+        }
       }
       ui32_dc_cnt_all += 1u;
 
@@ -1350,7 +1515,7 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
       mem_fi(&h_b[0], ui32_idx_bit);
     }
 
-  printf("Number of executions: %d\n Detected fi: %d\n",ui32_comb_b_max, ui32_dc_cnt_b);
+  printf("Detected fi: %d / %d\n",ui32_dc_cnt_b, ui32_comb_b_max);
 #endif
 
 
@@ -1366,21 +1531,21 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 /* ==============================================================================
     Brief: Store the timing measurements in a file (csv/xlsx)
   ==============================================================================*/
-    FILE *p_file;
-    char str_file_name[100u];
-    #if (1==TIMING_EXP)
-      char str_file_name_aux[100u] = NAME"_timing.csv";
-    #else 
-      char str_file_name_aux[100u] = NAME"_DC.csv";
-    #endif
-    snprintf(str_file_name, 100,"%d_%d_%d_",DIM_M,DIM_N,DIM_K);
-    strcat(str_file_name,str_file_name_aux);
+  FILE *p_file;
+  char str_file_name[100u];
+  #if (1==TIMING_EXP)
+    char str_file_name_aux[100u] = NAME"_timing.csv";
+  #else 
+    char str_file_name_aux[100u] = NAME"_DC.csv";
+  #endif
+  snprintf(str_file_name, 100,"%d_%d_%d_",DIM_M,DIM_N,DIM_K);
+  strcat(str_file_name,str_file_name_aux);
 
-    char str_file_time[100u];
-    time_t time_now = time(NULL);
-    struct tm *time_info;
-    time_info = localtime(&time_now);
-    strftime(str_file_time, sizeof(str_file_time), "%m_%d_%H_%M_%S.csv",time_info);
+  char str_file_time[100u];
+  time_t time_now = time(NULL);
+  struct tm *time_info;
+  time_info = localtime(&time_now);
+  strftime(str_file_time, sizeof(str_file_time), "%m_%d_%H_%M_%S.csv",time_info);
 
 	if ((p_file = fopen(str_file_name, "a")) == NULL)
 	{
@@ -1412,11 +1577,55 @@ cudaError_t TestCutlassGemm(int M, int N, int K, float alpha, float beta) {
 #else
   float32_t detected_fi = (float32_t) (ui32_dc_cnt_a+ui32_dc_cnt_b);
   float32_t total_fi =  (float32_t) ui32_dc_cnt_all;
-  printf("total_fi:%f\ndetected_fi:%f\nPercentage:%f",total_fi, detected_fi, detected_fi/total_fi);
+  printf("Percentage= detected_fi / total_fi = %0.0f / %0.0f = %f\n",detected_fi, total_fi, detected_fi/total_fi);
 	fprintf(p_file, "%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,%3.4f",NAME, str_file_time, DIM_M, DIM_N, DIM_K, ui32_dc_cnt_a,ui32_dc_cnt_b,ui32_dc_cnt_all,ui32_comb_a_max, ui32_comb_b_max,detected_fi/total_fi);
 #endif
   fprintf(p_file,"\n");
   fclose(p_file);
+
+#if (DC_EXP==1)
+  if(idx_common==0u)
+  {
+  FILE *p_file_idx;
+  char str_1[100u];
+  char str_2[100u] = NAME"_idx_DC.csv";
+
+  snprintf(str_1, 100,"%d_%d_%d_",DIM_M,DIM_N,DIM_K);
+  strcat(str_1,str_2);
+
+	if ((p_file_idx = fopen(str_1, "a")) == NULL)
+	{
+		fprintf(stderr, "cannot open file '%s'\n", str_1);
+		return cudaErrorInvalidValue;
+	}
+
+	if (!p_file_idx)
+	{
+		perror("File opening failed");
+		return cudaErrorInvalidValue;
+	}
+
+  fprintf(p_file_idx, "bool b_array_detected_fi_B[%d] = {",ui32_comb_b_max);
+  for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_b_max; ui32_idx_bit++) 
+  {
+    fprintf(p_file_idx,"%d,",b_array_detected_fi_B[ui32_idx_bit]);
+  }
+
+  fprintf(p_file_idx, "};\nbool b_array_detected_fi_A[%d] = {",ui32_comb_a_max);
+  for (ui32_idx_bit = ui32_idx_bit_aux; ui32_idx_bit < ui32_comb_a_max; ui32_idx_bit++) 
+  {
+    fprintf(p_file_idx,"%d,",b_array_detected_fi_A[ui32_idx_bit]);
+  }
+  fprintf(p_file_idx, "};\n");
+  fclose(p_file_idx);
+  }
+#endif
+
+
+
+
+
+
 
 /*
 			fprintf(p_file, "%u,", ui32_dc_cnt);
